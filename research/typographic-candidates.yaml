@@ -451,6 +451,13 @@
       "kind": "typography design exhibit",
       "url": "https://www.commarts.com/exhibit/headache-city-album-cover-poster",
       "scope": "Superkonduktor Chicago's silkscreen cover for Headache City's T-T-T-T-Tonite, explicitly derived from collaged typography"
+    },
+    {
+      "id": "moma-consolidated-business-of-punishment",
+      "authority": "The Museum of Modern Art",
+      "kind": "museum collection object and design-history record",
+      "url": "https://www.moma.org/collection/works/73582",
+      "scope": "Barbara Kruger's 1994 cover for Consolidated, Business of Punishment, documented as a CD-cover insert using her signature black, white, and red text-block system"
     }
   ],
   "candidates": [
@@ -2180,6 +2187,23 @@
       "screening_observation": "The Golden Pin front image uses oversized orange band and title lettering around a black square, with the waveform-derived orange structure sharing the same optical voice. It is retained for a second pass because the central abstract profiles may compete with rather than depend on the title frame at thumbnail size.",
       "transfer_question": "How can a title frame and an audio-derived diagram share one color and stroke system, so the cover reads as a single signal rather than type placed around artwork?",
       "status": "visual-second-pass"
+    },
+    {
+      "id": "consolidated-business-of-punishment",
+      "artist": "Consolidated",
+      "title": "Business of Punishment",
+      "year": 1994,
+      "region": "North America",
+      "genre": "industrial rock and electronic",
+      "scripts": ["Latin"],
+      "evidence_ids": ["moma-consolidated-business-of-punishment"],
+      "design_credit": "Barbara Kruger",
+      "acclaim_scope": "MoMA collection object and design-history record",
+      "dominance": "T5",
+      "type_mode": "black-white-red slogan blocks over a halftone image",
+      "screening_observation": "The directly inspected MoMA object is organized by Kruger's high-contrast title blocks. The record and artist names occupy the center as the active message layer, while the halftone boxing image supplies pressure and confrontation rather than an independent pictorial identity.",
+      "transfer_question": "How can a release title use declarative text blocks as the principal image while avoiding borrowed political-advertising mannerisms or an unreadable slogan wall?",
+      "status": "visual-pass"
     }
   ],
   "documented_rejections": [
