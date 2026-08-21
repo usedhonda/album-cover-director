@@ -2,6 +2,36 @@
 
 Typography is a separate design system and acceptance gate. Font selection is one input, never the whole solution.
 
+## Research screening: when typography truly controls the cover
+
+Use this test when selecting precedent, not only when judging a final lockup. A
+cover is typography-dominant only when its lettering, numeral, glyph, or
+wordmark is an organizing force rather than an identifying caption.
+
+- **T5 — type is the image.** Remove the photographic or illustrative layer:
+  the remaining title system still identifies and organizes the square. This
+  includes custom-lettered titles, numeral systems, encoded text, and
+  deliberately authored wordmarks.
+- **T4 — type is the strongest mass.** Image and lettering can interact, but
+  the first fixation, largest mass, or governing grid belongs to type. The
+  image depends on that structure rather than merely sharing space with it.
+- **Reject as T3.** A small title on a photograph, a label pasted onto a color
+  field, or corner metadata on a geometric image is not T4/T5, even when the
+  cover is historically important or visually acclaimed. Do not promote it
+  because it is minimal, uses a good font, or appears in a museum collection.
+
+Perform three quick falsification checks before recording T4/T5:
+
+1. At 56 px, does the title shape, numeral, or lettering mass survive as the
+   strongest recognition signal?
+2. Hide the image layer. Does the remaining lettering system still make a
+   distinctive square rather than an ordinary caption?
+3. Hide the lettering layer. If the image still supplies the cover's primary
+   identity, classify it as T3 unless the type governs the image's geometry.
+
+Record borderline examples as `visual-second-pass`; do not use them as final
+corpus evidence until the full-size and thumbnail tests agree.
+
 ## Choose a mode
 
 ### `image-native`
