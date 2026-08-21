@@ -292,6 +292,20 @@
       "scope": "2015 Best Recording Package nominees including Formosa Medicine Show"
     },
     {
+      "id": "golden-pin-formosa-medicine-show",
+      "authority": "Golden Pin Design Award",
+      "kind": "cover-specific design award and project record",
+      "url": "https://www2.goldenpin.org.tw/en/project/the-muddy-basin-ramblers-formosa-medicine-show-cd/",
+      "scope": "Golden Pin's project record for Onion Design Associates' Formosa Medicine Show package, including designers, typography method, and front package imagery"
+    },
+    {
+      "id": "muddy-basin-bandcamp-formosa-medicine-show",
+      "authority": "The Muddy Basin Ramblers",
+      "kind": "artist release page",
+      "url": "https://themuddybasinramblers.bandcamp.com/album/formosa-medicine-show",
+      "scope": "Artist release page naming Onion Design Associates, Taipei, for design and artwork"
+    },
+    {
       "id": "grammy-recording-package-2020",
       "authority": "Recording Academy",
       "kind": "recording_package_award",
@@ -1746,14 +1760,19 @@
       "region": "East Asia",
       "genre": "roots, blues and folk",
       "scripts": ["Chinese", "Latin", "mixed-script"],
-      "evidence_ids": ["grammy-recording-package-2015"],
-      "design_credit": "David Chen and Andrew Wong",
-      "acclaim_scope": "recording-package award nominee",
+      "evidence_ids": ["grammy-recording-package-2015", "golden-pin-formosa-medicine-show", "muddy-basin-bandcamp-formosa-medicine-show"],
+      "design_credit": "Andrew Wong and Fong Ming Yang / Onion Design Associates",
+      "acclaim_scope": "Golden Pin project award and Recording Academy Best Recording Package nominee",
       "dominance": "T4",
       "type_mode": "vintage-poster Chinese and Latin title frame",
       "screening_observation": "Bold Chinese display lettering, vertical side inscriptions, and a Latin headline frame the central performer as a period-poster construction.",
       "transfer_question": "How can a multilingual vintage poster hierarchy remain legible without imitating its historical source too literally?",
-      "status": "visual-pass"
+      "status": "evidence-complete",
+      "evidence_roles": {
+        "visual": ["golden-pin-formosa-medicine-show"],
+        "acclaim": ["grammy-recording-package-2015", "golden-pin-formosa-medicine-show"],
+        "credit": ["golden-pin-formosa-medicine-show", "muddy-basin-bandcamp-formosa-medicine-show"]
+      }
     },
     {
       "id": "muddy-basin-ramblers-hold-that-tiger",
