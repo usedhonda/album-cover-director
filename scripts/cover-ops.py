@@ -230,7 +230,7 @@ def parser() -> argparse.ArgumentParser:
     inspect_parser = subparsers.add_parser("inspect", help="Print image metadata and SHA-256")
     inspect_parser.add_argument("images", nargs="+", type=Path)
 
-    sheet_parser = subparsers.add_parser("contact-sheet", help="Create 56/256/grayscale/blur comparison")
+    sheet_parser = subparsers.add_parser("contact-sheet", help="Create 56/128/256/grayscale/blur comparison")
     sheet_parser.add_argument("images", nargs="+", type=Path)
     sheet_parser.add_argument("--output", required=True, type=Path)
 
