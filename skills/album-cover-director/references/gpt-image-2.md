@@ -24,6 +24,18 @@ Write prompts in this order:
 
 Use concrete visual nouns and verbs. Do not send the model an essay about the song. Translate interpretation into observable image decisions.
 
+## Palette-temperature guard
+
+GPT Image 2 can drift toward parchment, sepia, brass, amber, or warm-yellow
+light when the brief does not explicitly control the neutral point. Do not
+make a cool palette the new default: derive the color script from the release.
+When a warm cast is unwanted, state the intended paper/skin/white neutral,
+name the dominant and accent colors, and explicitly exclude the unwanted warm
+cast. For a selected image that is otherwise correct, treat temperature as a
+small correction only: preserve composition, drawing, title, material, and
+value structure; do not reimagine the cover with an all-blue, neon, or
+night-time palette.
+
 ## Variants
 
 Treat each candidate as an independent generation. Do not use one image and request palette-only variants when the brief requires structural diversity. Log direction ID, candidate ID, prompt, inputs, model, size, quality, output, and human notes.
