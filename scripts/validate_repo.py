@@ -52,6 +52,25 @@ def require(condition: bool, message: str) -> None:
         raise ValidationError(message)
 
 
+def validate_anti_concentration(works: list[dict], limits: dict[str, int]) -> None:
+    fields = {
+        "designer": "designer",
+        "label": "label",
+        "country": "country",
+        "genre": "genre",
+    }
+    for limit_name, field in fields.items():
+        values = Counter(work[field] for work in works)
+        highest_value, highest_count = values.most_common(1)[0]
+        require(highest_count <= limits[limit_name],
+                f"{limit_name} concentration exceeds {limits[limit_name]}: {highest_value} has {highest_count}")
+
+    source_counts = Counter(source_id for work in works for source_id in work["evidence_source_ids"])
+    highest_source, highest_source_count = source_counts.most_common(1)[0]
+    require(highest_source_count <= limits["source"],
+            f"source concentration exceeds {limits['source']}: {highest_source} has {highest_source_count}")
+
+
 def validate_manifest() -> None:
     manifest = json.loads((ROOT / ".codex-plugin/plugin.json").read_text())
     require(manifest["name"] == "album-cover-director", "plugin name mismatch")
@@ -80,6 +99,14 @@ def validate_corpus() -> None:
     require(corpus.get("research_status") == "final", "production corpus must declare research_status=final")
     require(corpus.get("production_use") is True, "final corpus must enable production use")
     ledger = json.loads((ROOT / "research/typographic-candidates.yaml").read_text())
+    anti_concentration_limits = ledger["checkpoint_contract"].get("anti_concentration_limits", {})
+    require(anti_concentration_limits == {
+        "designer": 3,
+        "label": 6,
+        "country": 16,
+        "genre": 18,
+        "source": 12,
+    }, "final anti-concentration limits mismatch")
     evidence_complete = {
         candidate["id"]
         for candidate in ledger.get("candidates", [])
@@ -95,11 +122,11 @@ def validate_corpus() -> None:
     require(present_patterns == PATTERNS, f"pattern coverage mismatch: {PATTERNS - present_patterns}")
 
     required = {
-        "id", "title", "artist", "year", "era", "region", "genre", "designer",
+        "id", "title", "artist", "year", "era", "region", "country", "label", "genre", "designer",
         "source_url", "source_kind", "subject", "composition", "typography_role",
         "color_ratio", "materiality", "thumbnail_performance", "genre_anchor",
         "genre_betrayal", "transferable_principle", "primary_pattern", "secondary_techniques",
-        "candidate_id",
+        "candidate_id", "evidence_source_ids",
     }
     for work in works:
         missing = required - work.keys()
@@ -108,9 +135,24 @@ def validate_corpus() -> None:
         require(1 <= len(work["secondary_techniques"]) <= 2, f"secondary technique count in {work['id']}")
         require(work["candidate_id"] in evidence_complete,
                 f"final corpus work {work['id']} must reference an evidence-complete candidate")
+        candidate = next(candidate for candidate in ledger["candidates"] if candidate["id"] == work["candidate_id"])
+        candidate_sources = {
+            source_id
+            for role_sources in candidate["evidence_roles"].values()
+            for source_id in role_sources
+        }
+        evidence_source_ids = work["evidence_source_ids"]
+        require(isinstance(evidence_source_ids, list) and len(set(evidence_source_ids)) >= 2,
+                f"final corpus work {work['id']} needs two distinct evidence source IDs")
+        require(set(evidence_source_ids) <= candidate_sources,
+                f"final corpus work {work['id']} includes evidence not verified for its candidate")
+        require(all(isinstance(work[field], str) and work[field].strip()
+                    for field in ("country", "label", "designer", "genre")),
+                f"final corpus work {work['id']} has empty anti-concentration metadata")
         parsed = urlparse(work["source_url"])
         require(parsed.scheme == "https" and parsed.netloc, f"invalid source URL in {work['id']}")
         require(1940 <= int(work["year"]) <= 2026, f"year outside corpus range in {work['id']}")
+    validate_anti_concentration(works, anti_concentration_limits)
 
 
 def validate_typographic_candidates() -> None:

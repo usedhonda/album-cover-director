@@ -43,7 +43,14 @@
       "non_latin_or_mixed_script": 24,
       "T5": 60
     },
-    "anti_concentration": "No designer, label, country, genre system, or source may become a shortcut for acclaim or typography quality."
+    "anti_concentration": "No designer, label, country, genre system, or source may become a shortcut for acclaim or typography quality.",
+    "anti_concentration_limits": {
+      "designer": 3,
+      "label": 6,
+      "country": 16,
+      "genre": 18,
+      "source": 12
+    }
   },
   "source_registry": [
     {
