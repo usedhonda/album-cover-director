@@ -2,6 +2,36 @@
 
 Typography is a separate design system and acceptance gate. Font selection is one input, never the whole solution.
 
+## Research screening: when typography truly controls the cover
+
+Use this test when selecting precedent, not only when judging a final lockup. A
+cover is typography-dominant only when its lettering, numeral, glyph, or
+wordmark is an organizing force rather than an identifying caption.
+
+- **T5 — type is the image.** Remove the photographic or illustrative layer:
+  the remaining title system still identifies and organizes the square. This
+  includes custom-lettered titles, numeral systems, encoded text, and
+  deliberately authored wordmarks.
+- **T4 — type is the strongest mass.** Image and lettering can interact, but
+  the first fixation, largest mass, or governing grid belongs to type. The
+  image depends on that structure rather than merely sharing space with it.
+- **Reject as T3.** A small title on a photograph, a label pasted onto a color
+  field, or corner metadata on a geometric image is not T4/T5, even when the
+  cover is historically important or visually acclaimed. Do not promote it
+  because it is minimal, uses a good font, or appears in a museum collection.
+
+Perform three quick falsification checks before recording T4/T5:
+
+1. At 56 px, does the title shape, numeral, or lettering mass survive as the
+   strongest recognition signal?
+2. Hide the image layer. Does the remaining lettering system still make a
+   distinctive square rather than an ordinary caption?
+3. Hide the lettering layer. If the image still supplies the cover's primary
+   identity, classify it as T3 unless the type governs the image's geometry.
+
+Record borderline examples as `visual-second-pass`; do not use them as final
+corpus evidence until the full-size and thumbnail tests agree.
+
 ## Choose a mode
 
 ### `image-native`
@@ -33,6 +63,48 @@ Define all seven variables before prompting or drawing:
 7. **Transformation** — one repeatable operation such as cut, offset, interlock, reflection, melt, stretch, or weave. Avoid random per-letter effects.
 
 Also specify case, line breaks, alignment, tracking, leading, baseline behavior, optical corrections, language/script handling, and relation to the image.
+
+## Title-image architectures
+
+When the title must organize the square, choose one construction relationship
+before styling individual glyphs. Do not combine these just to make type look
+busy.
+
+- **Aperture wordmark.** The title is a solid mass and color, texture, light, or
+  a secondary scene appears only inside its counters or cut-outs. Use it for a
+  short title with a distinctive silhouette. Keep the outer word shape legible
+  in one color; the contained image may enrich the letters but must not replace
+  their recognition.
+- **Title grid.** Divide a multi-character title into a stated row/column
+  system, then make that system the governing geometry for the whole square.
+  Specify reading order, cell proportion, inter-cell spacing, and where any
+  pictorial layer is permitted to sit. The grid must still read as a title at
+  128 px, not merely as abstract tiles.
+- **Constructed glyph system.** Build each letter or character from a limited
+  repeatable vocabulary such as dots, lines, clipped strokes, or modules. State
+  the minimum recognition cues that may not be removed, especially for complex
+  scripts. Change one construction rule at a time; random distortion makes a
+  title less ownable, not more expressive.
+
+For each architecture, make a one-color proof and a textless master separately.
+If either proof fails, return to the skeleton rather than adding effects.
+
+## Information fields are not automatically wordmarks
+
+A cover can make all of its text into one visual field: handwriting can cover a
+ground, metadata can become a calibration ring, and lyrics can operate as a
+spatial score. Treat this as **type-as-material**, not as a successful title
+system by default. It passes only when the viewer can still find one intended
+title entry point at 128 px through at least one controlled distinction:
+
+- scale, weight, contrast, color, or empty space;
+- a unique baseline, orientation, or placement rule;
+- a repeated title glyph or monogram that survives reduction; or
+- a stated reading route such as edge-to-center, spiral, or vertical column.
+
+If every line has equal visual priority, preserve the field as a texture and
+add a separate exact title lockup. Never rely on a dense information field to
+carry spelling accuracy by itself.
 
 ## Mixed-script titles
 

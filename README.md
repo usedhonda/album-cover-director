@@ -10,7 +10,7 @@ The project is for musicians, track makers, producers, independent labels, and d
 - Twelve organizing patterns that describe what controls the square, rather than a menu of visual styles.
 - Three-direction divergence: every run must change image structure, not just color or rendering.
 - A typography gate with deterministic fallback to post-typesetting.
-- Comparative checks at 56 px, 256 px, full size, grayscale, and blur.
+- Comparative checks at 56 px, 128 px, 256 px, full size, grayscale, and blur.
 - One-variable edits, at most two cycles, always returning to the selected original after regression.
 - Reproducible 3000 x 3000 PNG/JPG and 256 px thumbnail export.
 
@@ -120,16 +120,19 @@ Pillow is the only optional runtime dependency:
 python -m pip install Pillow
 python scripts/cover-ops.py inspect selected-master.png
 python scripts/cover-ops.py contact-sheet candidates/*.png --output comparison.png
+python scripts/cover-ops.py typeset selected-master.png --output typeset-master.png \
+  --text "Exact Release Title" --font /path/to/licensed-font.ttf --font-size 260 \
+  --x 1500 --y 2400 --align center --tracking 8
 python scripts/cover-ops.py export selected-master.png --out-dir delivery
 ~~~
 
-The export command refuses non-square sources and records dimensions, scaling, byte size, and SHA-256.
+The typeset command applies the exact supplied text character-by-character with deterministic tracking and records the font, placement, and resulting SHA-256. The export command refuses non-square sources and records dimensions, scaling, byte size, and SHA-256.
 
 ## Research and copyright
 
-[research/corpus.yaml](research/corpus.yaml) is a superseded draft and is not a production reference. Its replacement is being rebuilt from cover-specific design evidence and direct visual screening before `v0.1.0`. The repository contains no third-party album-cover images.
+[research/corpus.yaml](research/corpus.yaml) is a superseded draft and is not a production reference. The current bounded teaching set is distilled in [verified-principles.md](skills/album-cover-director/references/verified-principles.md) from the evidence-complete entries in [typographic-candidates.yaml](research/typographic-candidates.yaml). It exists to improve cover decisions now; it is not a reason to keep collecting precedents during a cover run. The repository contains no third-party album-cover images.
 
-The replacement method requires each admitted work to have cover-specific acclaim evidence, typography dominance at T4 or T5, a direct visual check, and a work-specific transferable principle. Music rankings, sales, and album fame do not count as cover-design evidence.
+The replacement method requires each admitted work to have cover-specific acclaim evidence, typography dominance at T4 or T5, a direct visual check, and a work-specific transferable principle. Every final record must also name its country, label, and at least two candidate-verified evidence-source IDs. Validation rejects a final corpus if one designer supplies more than three works, one label more than six, one country more than sixteen, one genre more than eighteen, or one source supports more than twelve works. Music rankings, sales, and album fame do not count as cover-design evidence. Future expansion is failure-driven: add research only when repeated real cover runs reveal a missing construction rule, not to enumerate music genres.
 
 Reference images supplied during use must be owned, licensed, public-domain, or used only as non-reproduced analytical input. Do not request direct imitation of a living artist.
 
@@ -142,7 +145,7 @@ python /path/to/skill-creator/scripts/quick_validate.py skills/album-cover-direc
 python /path/to/plugin-creator/scripts/validate_plugin.py .
 ~~~
 
-CI verifies the skill frontmatter, plugin manifest, corpus schema and distribution, URL syntax, absence of third-party raster images, and absence of secrets or local absolute paths.
+CI verifies the skill frontmatter, plugin manifest, explicit superseded/final corpus state, research checkpoint contract and distribution, URL syntax, absence of third-party raster images, and absence of secrets or local absolute paths.
 
 ## License
 

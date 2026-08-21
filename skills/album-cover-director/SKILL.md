@@ -32,16 +32,17 @@ If the environment exposes an image-generation tool, use GPT Image 2. If it does
 1. Create `creative-brief.yaml` from the title, artist, intended audience, listening context, shelf neighbors, musical evidence, and constraints using `assets/art-direction-brief.yaml`. Name the release's point of difference and rejection criteria.
 2. Extract one central contradiction, three sensory qualities, two physical phenomena, and six to ten concrete symbols. Prefer observable nouns, actions, materials, and spatial relations over mood adjectives.
 3. Read `references/design-patterns.md`. Choose three different primary patterns. Give each one or two secondary techniques. Keep one genre anchor and betray one genre expectation in every direction.
-4. Separate genre, era, color, material, and rendering method from the primary pattern. Do not let genre select a template by itself.
-5. Read `references/typography.md`. Choose a typography mode for each direction and define the title's structural role before prompting.
-6. Write `directions.md` and one prompt per candidate. Each prompt must state composition, depth, palette proportions, material behavior, title treatment, exact allowed text, and exclusions. Use `references/gpt-image-2.md` for model-specific execution.
-7. Generate the requested number of candidates. Record every run or edit in `run-ledger.jsonl` using `assets/run-ledger.yaml` as the field contract.
-8. Compare all candidates at 56 px, 256 px, full size, grayscale, and blur. Use `scripts/cover-ops.py contact-sheet` when Pillow is available. Score with `assets/scorecard.yaml` and `references/evaluation-delivery.md`.
-9. Select a leader and runner-up. Refine only the leader. Change one variable per edit, for no more than two cycles. If an edit regresses, return to the selected original rather than editing the degraded result.
-10. Apply the typography gate. If spelling, spacing, baseline, mixed-script shaping, or letter integrity fails, stop regenerating text and switch to a textless master plus exact post-typesetting. Record font or lettering rights.
-11. Validate rights, exact title, absence of unapproved readable text, square composition, thumbnail recognition, and technical requirements.
-12. Export a 3000 x 3000 PNG and JPG plus a 256 px thumbnail with `scripts/cover-ops.py export`. If the required image library is unavailable, provide the exact export specification and do not claim delivery completion.
-13. Write `cover-report.md` with the selected direction, why it won, typography mode, checks, provenance, unresolved human review, and paths.
+4. Read `references/verified-principles.md` only to solve a specific lettering or composition problem. Use at most one primary and one supporting principle. Do not research new covers during a production run; an unmatched brief is not a research failure.
+5. Separate genre, era, color, material, and rendering method from the primary pattern. Do not let genre select a template by itself.
+6. Read `references/typography.md`. Choose a typography mode for each direction and define the title's structural role before prompting.
+7. Write `directions.md` and one prompt per candidate. Each prompt must state composition, depth, palette proportions, material behavior, title treatment, exact allowed text, and exclusions. Use `references/gpt-image-2.md` for model-specific execution.
+8. Generate the requested number of candidates. Record every run or edit in `run-ledger.jsonl` using `assets/run-ledger.yaml` as the field contract.
+9. Compare all candidates at 56 px, 256 px, full size, grayscale, and blur. Use `scripts/cover-ops.py contact-sheet` when Pillow is available. Score with `assets/scorecard.yaml` and `references/evaluation-delivery.md`.
+10. Select a leader and runner-up. Refine only the leader. Change one variable per edit, for no more than two cycles. If an edit regresses, return to the selected original rather than editing the degraded result.
+11. Apply the typography gate. If spelling, spacing, baseline, mixed-script shaping, or letter integrity fails, stop regenerating text and switch to a textless master plus exact post-typesetting. When Pillow is available, use `scripts/cover-ops.py typeset` with an exact copied title string, licensed font path, explicit position, alignment, and tracking; record font or lettering rights.
+12. Validate rights, exact title, absence of unapproved readable text, square composition, thumbnail recognition, and technical requirements.
+13. Export a 3000 x 3000 PNG and JPG plus a 256 px thumbnail with `scripts/cover-ops.py export`. If the required image library is unavailable, provide the exact export specification and do not claim delivery completion.
+14. Write `cover-report.md` with the selected direction, why it won, typography mode, checks, provenance, unresolved human review, and paths.
 
 ## Output contract
 
@@ -72,6 +73,7 @@ album-cover/<release-slug>/
 ## Reference routing
 
 - Pattern selection and anti-template logic: `references/design-patterns.md`
+- Bounded, verified construction rules: `references/verified-principles.md`
 - Lettering construction and fallback gate: `references/typography.md`
 - Genre and era as independent axes: `references/genre-era-codes.md`
 - GPT Image 2 prompting and editing: `references/gpt-image-2.md`
