@@ -110,6 +110,13 @@
       "scope": "2025 winner BRAT; package evidence supplemented by front-cover screening"
     },
     {
+      "id": "architectural-digest-brat-design-process",
+      "authority": "Architectural Digest",
+      "kind": "design-process interview and front-cover close reading",
+      "url": "https://www.architecturaldigest.com/story/charli-xcx-brat-green-color-trend",
+      "scope": "Charli xcx, Imogene Strauss, and Special Offer's iterative refinement of BRAT's green field, font, and blur"
+    },
+    {
       "id": "best-art-vinyl-2009",
       "authority": "Best Art Vinyl",
       "kind": "cover_specific_award_shortlist",
@@ -729,14 +736,19 @@
       "region": "Europe",
       "genre": "electronic pop and club",
       "scripts": ["Latin"],
-      "evidence_ids": ["grammy-brat"],
+      "evidence_ids": ["grammy-brat", "architectural-digest-brat-design-process"],
       "design_credit": "Charli xcx, Brent David Freaney, and Imogene Strauss",
       "acclaim_scope": "award-winning package with independently screened front cover",
       "dominance": "T5",
       "type_mode": "low-resolution all-type anti-polish",
       "screening_observation": "One small blurred word and a highly specific green field create a complete identity through apparent under-design.",
       "transfer_question": "Which optical defects make a plain word feel authored, and which produce merely poor typesetting?",
-      "status": "visual-pass"
+      "status": "evidence-complete",
+      "evidence_roles": {
+        "visual": ["architectural-digest-brat-design-process"],
+        "acclaim": ["grammy-brat"],
+        "credit": ["grammy-brat", "architectural-digest-brat-design-process"]
+      }
     },
     {
       "id": "terence-lam-camouflage",
