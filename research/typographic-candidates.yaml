@@ -82,6 +82,13 @@
       "scope": "Jamie Reid and John Varnom's typographic Sex Pistols artwork"
     },
     {
+      "id": "sex-pistols-official-never-mind-artwork",
+      "authority": "Sex Pistols Official",
+      "kind": "official artwork archive",
+      "url": "https://www.sexpistolsofficial.com/sex-pistols-artwork/",
+      "scope": "Official archive record of the original 1977 UK sleeve's screenprinted yellow, pink, and cut-out wordmark construction"
+    },
+    {
       "id": "dandad-camouflage",
       "authority": "D&AD",
       "kind": "design_award_archive",
@@ -677,14 +684,19 @@
       "region": "Europe",
       "genre": "punk",
       "scripts": ["Latin"],
-      "evidence_ids": ["vam-never-mind-the-bollocks"],
+      "evidence_ids": ["vam-never-mind-the-bollocks", "sex-pistols-official-never-mind-artwork"],
       "design_credit": "Jamie Reid and John Varnom",
       "acclaim_scope": "museum collection and design history",
       "dominance": "T5",
       "type_mode": "ransom-note collage and institutional disruption",
       "screening_observation": "Cut-and-paste lettering is the entire confrontation; color and misalignment amplify the typographic voice.",
       "transfer_question": "Which controlled inconsistencies create antagonism, and which merely imitate punk styling?",
-      "status": "visual-pass"
+      "status": "evidence-complete",
+      "evidence_roles": {
+        "visual": ["sex-pistols-official-never-mind-artwork"],
+        "acclaim": ["vam-never-mind-the-bollocks"],
+        "credit": ["vam-never-mind-the-bollocks", "sex-pistols-official-never-mind-artwork"]
+      }
     },
     {
       "id": "fela-kuti-no-agreement",
