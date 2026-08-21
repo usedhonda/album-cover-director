@@ -96,6 +96,13 @@
       "scope": "2017 winner Blackstar; package evidence supplemented by front-cover screening"
     },
     {
+      "id": "creativecommons-barnbrook-blackstar",
+      "authority": "Creative Commons",
+      "kind": "designer interview and licensed artwork record",
+      "url": "https://creativecommons.org/2016/02/26/jonathan-barnbrook-interview/",
+      "scope": "Jonathan Barnbrook's account of releasing the Blackstar artwork for reuse, with the licensed cover artwork"
+    },
+    {
       "id": "grammy-brat",
       "authority": "Recording Academy",
       "kind": "recording_package_award",
@@ -686,14 +693,19 @@
       "region": "Europe",
       "genre": "art rock and experimental jazz",
       "scripts": ["custom glyph system"],
-      "evidence_ids": ["grammy-blackstar"],
+      "evidence_ids": ["grammy-blackstar", "creativecommons-barnbrook-blackstar"],
+      "evidence_roles": {
+        "visual": ["creativecommons-barnbrook-blackstar"],
+        "acclaim": ["grammy-blackstar"],
+        "credit": ["grammy-blackstar", "creativecommons-barnbrook-blackstar"]
+      },
       "design_credit": "Jonathan Barnbrook",
       "acclaim_scope": "award-winning package with independently screened front cover",
       "dominance": "T5",
       "type_mode": "title encoded as glyph and symbol",
       "screening_observation": "The star and component glyphs replace conventional spelling while retaining a learnable title identity.",
       "transfer_question": "How few custom glyphs are needed before a title becomes a coherent writing system rather than a logo trick?",
-      "status": "visual-pass"
+      "status": "evidence-complete"
     },
     {
       "id": "charli-xcx-brat",
