@@ -1,0 +1,82 @@
+[
+  {
+    "name": "japanese-lyrics-standard",
+    "title": "夜の余白",
+    "artist": "Example Artist",
+    "evidence_kind": "lyrics",
+    "mode": "standard",
+    "typography_mode": "post-typeset",
+    "expected_candidates": 6,
+    "directions": ["Archive / Collage / Found Material", "Landscape / Architecture / Absence", "Typographic Hero / Wordmark"]
+  },
+  {
+    "name": "english-lyrics-standard",
+    "title": "Read The Tape",
+    "artist": "Example Artist",
+    "evidence_kind": "lyrics",
+    "mode": "standard",
+    "typography_mode": "post-typeset",
+    "expected_candidates": 6,
+    "directions": ["Abstract Material / Process", "Symbolic Object / Still Life", "Typographic Hero / Wordmark"]
+  },
+  {
+    "name": "mixed-script-title",
+    "title": "透明なSignal",
+    "artist": "Example Artist",
+    "evidence_kind": "track-description",
+    "mode": "standard",
+    "typography_mode": "post-typeset",
+    "expected_candidates": 6,
+    "directions": ["Minimal Geometry / Color Field", "Archive / Collage / Found Material", "Portrait / Identity"]
+  },
+  {
+    "name": "instrumental-audio",
+    "title": "Tidal Vector",
+    "artist": "Example Artist",
+    "evidence_kind": "audio",
+    "mode": "standard",
+    "typography_mode": "auto",
+    "expected_candidates": 6,
+    "directions": ["Diagram / Grid / Data / Repetition", "Abstract Material / Process", "Landscape / Architecture / Absence"]
+  },
+  {
+    "name": "type-hero-custom-wordmark",
+    "title": "PULSE//VOID",
+    "artist": "Example Artist",
+    "evidence_kind": "track-description",
+    "mode": "quick",
+    "typography_mode": "custom-wordmark",
+    "expected_candidates": 3,
+    "directions": ["Typographic Hero / Wordmark", "Package Object / Intervention / Anti-cover", "Minimal Geometry / Color Field"]
+  },
+  {
+    "name": "rights-cleared-portrait-reference",
+    "title": "After the Flash",
+    "artist": "Example Artist",
+    "evidence_kind": "lyrics",
+    "mode": "standard",
+    "typography_mode": "auto",
+    "expected_candidates": 6,
+    "directions": ["Portrait / Identity", "Documentary Moment", "Symbolic Object / Still Life"]
+  },
+  {
+    "name": "existing-series-system",
+    "title": "Fourth Window",
+    "artist": "Example Artist",
+    "evidence_kind": "track-description",
+    "mode": "deep",
+    "typography_mode": "post-typeset",
+    "expected_candidates": 12,
+    "directions": ["Illustration / Character World", "Diagram / Grid / Data / Repetition", "Package Object / Intervention / Anti-cover"]
+  },
+  {
+    "name": "image-native-short-title",
+    "title": "SILT",
+    "artist": "Example Artist",
+    "evidence_kind": "lyrics",
+    "mode": "quick",
+    "typography_mode": "image-native",
+    "expected_candidates": 3,
+    "directions": ["Symbolic Object / Still Life", "Abstract Material / Process", "Narrative Tableau"]
+  }
+]

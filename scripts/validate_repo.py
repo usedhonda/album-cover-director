@@ -172,6 +172,45 @@ def validate_invocation_cases() -> None:
     require(required_tags <= tags, f"invocation coverage missing: {sorted(required_tags - tags)}")
 
 
+def validate_forward_cases() -> None:
+    cases = json.loads((ROOT / "tests/forward-cases.json").read_text())
+    require(len(cases) >= 8, "need at least eight forward cases")
+    required_keys = {
+        "name", "title", "artist", "evidence_kind", "mode", "typography_mode",
+        "expected_candidates", "directions",
+    }
+    volumes = {"quick": 3, "standard": 6, "deep": 12}
+    evidence_kinds = {"lyrics", "track-description", "audio"}
+    typography_modes = {"auto", "image-native", "post-typeset", "custom-wordmark"}
+    names = set()
+    covered_modes = set()
+    for case in cases:
+        missing = required_keys - case.keys()
+        require(not missing, f"forward case missing fields: {sorted(missing)}")
+        require(case["name"] not in names, f"duplicate forward case name: {case['name']}")
+        names.add(case["name"])
+        require(bool(case["title"].strip()) and bool(case["artist"].strip()),
+                f"forward case title/artist missing: {case['name']}")
+        require(case["evidence_kind"] in evidence_kinds,
+                f"unsupported evidence kind: {case['name']}")
+        require(case["mode"] in volumes, f"unsupported volume: {case['name']}")
+        covered_modes.add(case["mode"])
+        require(case["expected_candidates"] == volumes[case["mode"]],
+                f"candidate count does not match mode: {case['name']}")
+        require(case["typography_mode"] in typography_modes,
+                f"unsupported typography mode: {case['name']}")
+        require(len(case["directions"]) == 3 and len(set(case["directions"])) == 3,
+                f"forward case must specify three distinct directions: {case['name']}")
+        require(set(case["directions"]) <= PATTERNS,
+                f"forward case uses unknown pattern: {case['name']}")
+    require(covered_modes == set(volumes), "forward cases must cover quick, standard, and deep")
+    require(any(case["evidence_kind"] == "audio" for case in cases), "forward cases need instrumental/audio coverage")
+    require(any(case["typography_mode"] == "custom-wordmark" for case in cases),
+            "forward cases need custom-wordmark coverage")
+    require(any(case["typography_mode"] == "image-native" for case in cases),
+            "forward cases need image-native coverage")
+
+
 def validate_public_safety() -> None:
     image_files = []
     violations = []
@@ -198,6 +237,7 @@ def main() -> int:
         validate_corpus,
         validate_typographic_candidates,
         validate_invocation_cases,
+        validate_forward_cases,
         validate_public_safety,
     ]
     try:
