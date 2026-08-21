@@ -411,6 +411,27 @@
       "kind": "cover-specific award shortlist with design credits",
       "url": "https://artvinyl.com/award-year/2013/",
       "scope": "2013 Best Art Vinyl winners and nominees, including credited artwork for Paul McCartney's New"
+    },
+    {
+      "id": "commarts-alagoas",
+      "authority": "Communication Arts",
+      "kind": "typography award gallery and designer close reading",
+      "url": "https://www.commarts.com/project/23676/alagoas-album-packaging",
+      "scope": "Alex Trochut's Alagoas cover, in which layered acetate patterns reveal the band name in a custom typeface"
+    },
+    {
+      "id": "grammy-alagoas",
+      "authority": "Recording Academy / GRAMMYs",
+      "kind": "cover-specific recording-package award nominee",
+      "url": "https://www.grammy.com/artists/alex-trochut/19408",
+      "scope": "2016 Best Album Package nomination for Alex Trochut's Alagoas"
+    },
+    {
+      "id": "commarts-headache-city",
+      "authority": "Communication Arts",
+      "kind": "typography design exhibit",
+      "url": "https://www.commarts.com/exhibit/headache-city-album-cover-poster",
+      "scope": "Superkonduktor Chicago's silkscreen cover for Headache City's T-T-T-T-Tonite, explicitly derived from collaged typography"
     }
   ],
   "candidates": [
@@ -2078,6 +2099,40 @@
       "type_mode": "single-word black wordmark as an aperture over color",
       "screening_observation": "The oversized word NEW is the front cover's fixed black mass, with only a blurred, high-chroma field visible through its letter apertures. At small size, the word remains the complete identity and the color functions as material inside the glyphs.",
       "transfer_question": "How can one short title become an architectural aperture that contains a changing color world, while retaining absolute legibility and a strong silhouette?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "alagoas-alagoas",
+      "artist": "Alagoas",
+      "title": "Alagoas",
+      "year": 2014,
+      "region": "North America",
+      "genre": "indie pop and electronic",
+      "scripts": ["Latin"],
+      "evidence_ids": ["commarts-alagoas", "grammy-alagoas"],
+      "design_credit": "Alex Trochut",
+      "acclaim_scope": "Communication Arts typography gallery and GRAMMY Best Album Package nominee",
+      "dominance": "T5",
+      "type_mode": "three-layer acetate system revealing a custom wordmark",
+      "screening_observation": "Communication Arts documents three cyan, magenta, and yellow abstract layers whose registration reveals the band's name in a custom black typeface. The wordmark is the image-producing mechanism: no separate illustration has to carry recognition.",
+      "transfer_question": "How can several independently plausible color layers produce a precise title only when combined, so that registration becomes part of the release identity?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "headache-city-t-tonite",
+      "artist": "Headache City",
+      "title": "T-T-T-T-Tonite",
+      "year": 2007,
+      "region": "North America",
+      "genre": "garage rock and punk",
+      "scripts": ["Latin", "punctuation"],
+      "evidence_ids": ["commarts-headache-city"],
+      "design_credit": "Superkonduktor Chicago",
+      "acclaim_scope": "Communication Arts typography design exhibit",
+      "dominance": "T5",
+      "type_mode": "stuttered title rebuilt as collaged silkscreen typography",
+      "screening_observation": "Communication Arts identifies the cover as a silkscreen design whose visual analogy comes directly from the title song's stuttering refrain. Repetition, hyphens, and collage turn the title into the cover's energetic event rather than set type beside an image.",
+      "transfer_question": "How can the sound or delivery of one lyric phrase dictate repetition, interruption, and physical letter assembly without making the title unreadable?",
       "status": "visual-pass"
     }
   ],
