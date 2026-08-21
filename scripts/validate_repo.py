@@ -37,6 +37,7 @@ IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".tif", ".tiff"}
 TEXT_SUFFIXES = {".md", ".yaml", ".yml", ".json", ".jsonl", ".py", ".toml", ".txt"}
 FORBIDDEN = [
     re.compile("/" + "Users" + "/"),
+    re.compile(r"(?m)^(?!#!).*?/" + r"(?:home|System" + r"/Library|usr" + r"/share)/"),
     re.compile(r"(?i)(api[_-]?key|access[_-]?token|client[_-]?secret)\s*[:=]\s*['\"][^'\"]+"),
     re.compile(r"AKIA[0-9A-Z]{16}"),
 ]

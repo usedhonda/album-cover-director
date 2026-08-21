@@ -58,21 +58,15 @@ class CoverOpsTest(unittest.TestCase):
             source = root / "source.png"
             output = root / "typeset.png"
             Image.new("RGB", (512, 512), (20, 90, 160)).save(source)
-            font_path = next(
-                (
-                    path for path in (
-                        Path("/System/Library/Fonts/Geneva.ttf"),
-                        Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
-                    ) if path.is_file()
-                ),
-                None,
-            )
-            if font_path is None:
-                self.skipTest("No known TrueType font is installed for the CLI integration test")
-            font = ImageFont.truetype(str(font_path), 24)
+            font = ImageFont.load_default()
+            font_bytes = getattr(font.path, "getvalue", lambda: None)()
+            if not font_bytes:
+                self.skipTest("Pillow does not expose its bundled test font")
+            font_path = root / "test-font.ttf"
+            font_path.write_bytes(font_bytes)
             result = self.run_cli(
                 "typeset", str(source), "--output", str(output),
-                "--text", "Exact Title", "--font", str(font.path),
+                "--text", "Exact Title", "--font", str(font_path),
                 "--font-size", "48", "--x", "256", "--y", "180",
                 "--align", "center", "--tracking", "2",
             )
