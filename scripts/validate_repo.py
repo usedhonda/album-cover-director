@@ -120,19 +120,23 @@ def validate_typographic_candidates() -> None:
     require(Counter(checkpoints.get("final_era_counts", {})) == Counter(ERA_COUNTS),
             "candidate ledger final-era contract must be 30 each")
     candidates = ledger.get("candidates", [])
-    require(len(candidates) >= 40, f"need at least 40 visually screened candidates, found {len(candidates)}")
+    require(len(candidates) >= 80, f"need at least 80 visually screened candidates, found {len(candidates)}")
     require(len({candidate["id"] for candidate in candidates}) == len(candidates),
             "typographic candidate IDs must be unique")
-    require(len({candidate["region"] for candidate in candidates}) >= 7,
-            "40-work checkpoint must cover at least seven regions")
-    require(len({candidate["genre"] for candidate in candidates}) >= 10,
-            "seed candidates must cover at least ten genre labels")
+    require(len({candidate["region"] for candidate in candidates}) >= 10,
+            "80-work checkpoint must cover at least ten regions")
+    require(len({candidate["genre"] for candidate in candidates}) >= 16,
+            "80-work checkpoint must cover at least sixteen genre labels")
     require(any(candidate["region"] == "East Asia" for candidate in candidates),
             "seed candidates must include East Asia")
     require(any(candidate["region"] == "South Asia" for candidate in candidates),
             "seed candidates must include South Asia")
     require(any(candidate["region"] == "Africa" for candidate in candidates),
             "seed candidates must include Africa")
+    require(any(candidate["region"] == "Middle East and North Africa" for candidate in candidates),
+            "80-work checkpoint must include Middle East and North Africa")
+    require(any(candidate["region"] == "Oceania" for candidate in candidates),
+            "80-work checkpoint must include Oceania")
     eras = Counter(
         "1940-1979" if candidate["year"] <= 1979 else
         "1980-1999" if candidate["year"] <= 1999 else
@@ -140,10 +144,10 @@ def validate_typographic_candidates() -> None:
         "2015-present"
         for candidate in candidates
     )
-    require(set(eras) == set(ERA_COUNTS), f"40-work checkpoint must cover all eras, found {sorted(eras)}")
-    require(min(eras.values()) >= 3, f"40-work checkpoint needs at least three candidates per era, found {dict(eras)}")
-    require(sum(candidate["dominance"] == "T5" for candidate in candidates) >= 20,
-            "40-work checkpoint needs at least twenty T5 candidates")
+    require(set(eras) == set(ERA_COUNTS), f"80-work checkpoint must cover all eras, found {sorted(eras)}")
+    require(min(eras.values()) >= 6, f"80-work checkpoint needs at least six candidates per era, found {dict(eras)}")
+    require(sum(candidate["dominance"] == "T5" for candidate in candidates) >= 40,
+            "80-work checkpoint needs at least forty T5 candidates")
     for candidate in candidates:
         require(candidate["dominance"] in {"T4", "T5"},
                 f"{candidate['id']} is below the typography-dominance threshold")
