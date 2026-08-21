@@ -348,6 +348,13 @@
       "scope": "2024 Bronze Cube for Manshaa - Noise Record's identity and album artwork"
     },
     {
+      "id": "scenenoise-manshaa-release",
+      "authority": "SceneNoise / NoiseRecords",
+      "kind": "label_release_reporting",
+      "url": "https://scenenoise.com/Features/NoiseRecords-Manshaa-Spotlights-MENA-s-Groundbreaking-Sounds",
+      "scope": "Label-side release reporting that identifies NTSAL and describes Manshaa's custom calligraphy, geographic stamps, and regionally sourced cover system"
+    },
+    {
       "id": "museo-jumex-rogerio-duarte",
       "authority": "Museo Jumex",
       "kind": "design_history_exhibition",
@@ -1854,14 +1861,19 @@
       "region": "Middle East and North Africa",
       "genre": "MENA experimental and electronic",
       "scripts": ["Arabic", "Latin", "mixed-script"],
-      "evidence_ids": ["oneclub-manshaa"],
+      "evidence_ids": ["oneclub-manshaa", "scenenoise-manshaa-release"],
       "design_credit": "Ntsal / Cairo; design direction by Nardine Shenouda; Amr Bakr, Malak Ghoneim, Nouran Abed and Zeina Ahmed",
       "acclaim_scope": "ADC Bronze Cube",
       "dominance": "T5",
       "type_mode": "custom Naskh title mark and typographic stamps",
       "screening_observation": "A giant Arabic logomark takes the main cover's center while custom Naskh information, stamps, and header/footer structure establish the artwork's visual universe.",
       "transfer_question": "How can a calligraphic title mark serve as both cultural language and flexible identity system without flattening Arabic script into ornament?",
-      "status": "visual-pass"
+      "status": "evidence-complete",
+      "evidence_roles": {
+        "visual": ["scenenoise-manshaa-release"],
+        "acclaim": ["oneclub-manshaa"],
+        "credit": ["oneclub-manshaa", "scenenoise-manshaa-release"]
+      }
     },
     {
       "id": "caetano-veloso-caetano-veloso-1968",
