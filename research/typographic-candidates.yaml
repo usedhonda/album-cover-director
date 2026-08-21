@@ -369,6 +369,13 @@
       "kind": "cover-specific exhibition catalogue",
       "url": "https://museoph.org/files/exposiciones/diasdevinilo-completo.pdf",
       "scope": "Exhibition-catalogue discussion of Hipgnosis's Go 2 as conceptual graphic reflection on pop-music circulation"
+    },
+    {
+      "id": "moma-neubauten-strategies-against-architecture",
+      "authority": "The Museum of Modern Art",
+      "kind": "museum collection object",
+      "url": "https://www.moma.org/collection/works/189091",
+      "scope": "Martyn Atkins's 1984 Einstürzende Neubauten sleeve in MoMA's Architecture and Design collection"
     }
   ],
   "candidates": [
@@ -1867,6 +1874,23 @@
       "screening_observation": "Dense white typewriter copy on a black field is the complete front image: it explains and performs the commercial purpose of a record cover while making reading the visual event.",
       "transfer_question": "How can continuous copy become a thumbnail-resilient image through density, contrast, and an idea that unfolds only when the viewer moves closer?",
       "status": "visual-pass"
+    },
+    {
+      "id": "einsturzende-neubauten-strategies-against-architecture",
+      "artist": "Einstürzende Neubauten",
+      "title": "Strategies Against Architecture '80-'83",
+      "year": 1984,
+      "region": "Europe",
+      "genre": "industrial and experimental music",
+      "scripts": ["Latin", "custom glyph"],
+      "evidence_ids": ["moma-neubauten-strategies-against-architecture"],
+      "design_credit": "Martyn Atkins",
+      "acclaim_scope": "museum collection object",
+      "dominance": "T4",
+      "type_mode": "rough band-name wordmark with emblematic glyph",
+      "screening_observation": "The jagged gold band-name across the black field is the first reading mass; the smaller central figure behaves as an emblem that takes its visual authority from the same distressed mark-making system.",
+      "transfer_question": "How can a rough wordmark and a nonverbal emblem share one fracture vocabulary without competing for the title role?",
+      "status": "visual-second-pass"
     }
   ],
   "documented_rejections": [
