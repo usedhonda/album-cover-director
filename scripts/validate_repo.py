@@ -39,6 +39,10 @@ DEMO_IMAGES = {
     "docs/examples/hero-wordmark-secretary-chi.png",
     "docs/examples/japanese-title-shachoshitsu-no-asa.png",
     "docs/examples/tsundere-secretary-chi.png",
+    "docs/examples/oceanographic-title-system.png",
+    "docs/examples/treasure-chart-title-system.png",
+    "docs/examples/board-game-title-system.png",
+    "docs/examples/botanical-specimen-title-system.png",
 }
 TEXT_SUFFIXES = {".md", ".yaml", ".yml", ".json", ".jsonl", ".py", ".toml", ".txt"}
 FORBIDDEN = [

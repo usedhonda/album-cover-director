@@ -6,6 +6,17 @@ The project is for musicians, track makers, producers, independent labels, and d
 
 ## See what it makes
 
+### Titles as physical worlds
+
+|  |  |
+| --- | --- |
+| ![ALBUM COVER DIRECTOR becomes a dense oceanographic line system.](docs/examples/oceanographic-title-system.png) | ![ALBUM COVER DIRECTOR becomes a pirate captain's treasure chart.](docs/examples/treasure-chart-title-system.png) |
+| **Oceanographic system** — contour lines, routes, and soundings determine the title's anatomy. | **Treasure chart** — folds, compass wells, rope, and red routes make a navigable title artifact. |
+| ![ALBUM COVER DIRECTOR becomes a playable board-game machine.](docs/examples/board-game-title-system.png) | ![ALBUM COVER DIRECTOR becomes a pinned botanical specimen.](docs/examples/botanical-specimen-title-system.png) |
+| **Board game** — tiles, tracks, bridges, and game pieces turn title letters into a playable system. | **Botanical specimen** — roots, pressed leaves, petals, pins, and thread grow the letters. |
+
+### Character-led title systems
+
 |  |  |
 | --- | --- |
 | ![A giant SECRETARY CHI title becomes a navigable office world.](docs/examples/title-map-secretary-chi.png) | ![A tsundere Secretary Chi points a red pen through a high-energy Japanese title field.](docs/examples/tsundere-secretary-chi.png) |
@@ -13,7 +24,7 @@ The project is for musicians, track makers, producers, independent labels, and d
 | ![Secretary Chi framed by a giant integrated SECRETARY CHI wordmark.](docs/examples/hero-wordmark-secretary-chi.png) | ![Secretary Chi serving coffee with 社長室の across the top and a giant 朝 at lower left.](docs/examples/japanese-title-shachoshitsu-no-asa.png) |
 | **Hero wordmark** — person and title share one hierarchy. | **Japanese hierarchy** — a lead-in yields to one giant character. |
 
-Every title above is generated within the image itself. It is never repaired with a font overlay, redraw, or post-typesetting.
+Every title above is generated within the image itself. It is never repaired with a font overlay, redraw, or post-typesetting: its material, structure, and image are one design decision.
 
 ## What makes it different
 

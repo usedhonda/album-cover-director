@@ -6,6 +6,17 @@ $album-cover-director は、アルバム、EP、シングルのジャケット�
 
 ## 作れるジャケット
 
+### 文字が物理世界になる4型
+
+|  |  |
+| --- | --- |
+| ![ALBUM COVER DIRECTORが高密度な海洋図の線体系になる。](docs/examples/oceanographic-title-system.png) | ![ALBUM COVER DIRECTORが海賊船長の宝の地図になる。](docs/examples/treasure-chart-title-system.png) |
+| **海洋図システム** — 等深線、航路、測線が文字の骨格を決める。 | **宝の地図** — 折り目、羅針盤、索具、赤い航路が題字を工作物にする。 |
+| ![ALBUM COVER DIRECTORが遊べるボードゲームになる。](docs/examples/board-game-title-system.png) | ![ALBUM COVER DIRECTORがピン留めされた植物標本になる。](docs/examples/botanical-specimen-title-system.png) |
+| **ボードゲーム** — タイル、コース、橋、コマが文字を遊べる構造にする。 | **植物標本** — 根、押し花、花弁、ピン、糸が文字を成長させる。 |
+
+### キャラクターと題字を一体化する4型
+
 |  |  |
 | --- | --- |
 | ![巨大なSECRETARY CHIがオフィス世界になるタイトルマップ。](docs/examples/title-map-secretary-chi.png) | ![ツン顔のちーが赤ペンを突き出す高密度な文字画像。](docs/examples/tsundere-secretary-chi.png) |
@@ -13,7 +24,7 @@ $album-cover-director は、アルバム、EP、シングルのジャケット�
 | ![ちーと巨大なSECRETARY CHIが一体になるヒーローワードマーク。](docs/examples/hero-wordmark-secretary-chi.png) | ![社長室の朝と巨大な朝を描いたジャケット。](docs/examples/japanese-title-shachoshitsu-no-asa.png) |
 | **ヒーロー・ワードマーク** — 人物とタイトルが同じ階層を支配する。 | **日本語の階層** — 導入の文字列から、巨大な一文字へ展開する。 |
 
-ここにある題字はすべて画像の中で同時に生成されています。後からフォント、描き直し、後組版、合成で直すことはありません。
+ここにある題字はすべて画像の中で同時に生成されています。題字の素材・構造・画像は一つのデザイン判断であり、後からフォント、描き直し、後組版、合成で直すことはありません。
 
 ## 特徴
 
