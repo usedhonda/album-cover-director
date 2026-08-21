@@ -72,6 +72,12 @@ def validate_skill() -> None:
 def validate_corpus() -> None:
     corpus = json.loads((ROOT / "research/corpus.yaml").read_text())
     require(corpus.get("schema_version") == 1, "corpus schema version mismatch")
+    if corpus.get("research_status") == "superseded-draft":
+        require(corpus.get("production_use") is False, "superseded corpus must disable production use")
+        require(bool(corpus.get("replacement")), "superseded corpus must name its replacement state")
+        return
+    require(corpus.get("research_status") == "final", "production corpus must declare research_status=final")
+    require(corpus.get("production_use") is True, "final corpus must enable production use")
     works = corpus.get("works", [])
     require(len(works) == 120, f"expected 120 works, found {len(works)}")
     require(len({work["id"] for work in works}) == 120, "corpus IDs must be unique")
@@ -104,12 +110,21 @@ def validate_typographic_candidates() -> None:
             "music quality must not count as cover evidence")
     source_ids = {source["id"] for source in ledger.get("source_registry", [])}
     require(len(source_ids) == len(ledger.get("source_registry", [])), "candidate source IDs must be unique")
+    for source in ledger.get("source_registry", []):
+        parsed = urlparse(source["url"])
+        require(parsed.scheme == "https" and parsed.netloc, f"invalid candidate source URL: {source['id']}")
+    checkpoints = ledger.get("checkpoint_contract", {})
+    require(checkpoints.get("candidate_pool_target") == 180, "candidate-pool target must be 180")
+    require(checkpoints.get("visual_checkpoints") == [40, 80, 120], "visual checkpoints must be 40/80/120")
+    require(checkpoints.get("final_corpus_target") == 120, "final corpus target must be 120")
+    require(Counter(checkpoints.get("final_era_counts", {})) == Counter(ERA_COUNTS),
+            "candidate ledger final-era contract must be 30 each")
     candidates = ledger.get("candidates", [])
-    require(len(candidates) >= 18, f"need at least 18 seed candidates, found {len(candidates)}")
+    require(len(candidates) >= 40, f"need at least 40 visually screened candidates, found {len(candidates)}")
     require(len({candidate["id"] for candidate in candidates}) == len(candidates),
             "typographic candidate IDs must be unique")
-    require(len({candidate["region"] for candidate in candidates}) >= 6,
-            "seed candidates must cover at least six regions")
+    require(len({candidate["region"] for candidate in candidates}) >= 7,
+            "40-work checkpoint must cover at least seven regions")
     require(len({candidate["genre"] for candidate in candidates}) >= 10,
             "seed candidates must cover at least ten genre labels")
     require(any(candidate["region"] == "East Asia" for candidate in candidates),
@@ -118,13 +133,27 @@ def validate_typographic_candidates() -> None:
             "seed candidates must include South Asia")
     require(any(candidate["region"] == "Africa" for candidate in candidates),
             "seed candidates must include Africa")
+    eras = Counter(
+        "1940-1979" if candidate["year"] <= 1979 else
+        "1980-1999" if candidate["year"] <= 1999 else
+        "2000-2014" if candidate["year"] <= 2014 else
+        "2015-present"
+        for candidate in candidates
+    )
+    require(set(eras) == set(ERA_COUNTS), f"40-work checkpoint must cover all eras, found {sorted(eras)}")
+    require(min(eras.values()) >= 3, f"40-work checkpoint needs at least three candidates per era, found {dict(eras)}")
+    require(sum(candidate["dominance"] == "T5" for candidate in candidates) >= 20,
+            "40-work checkpoint needs at least twenty T5 candidates")
     for candidate in candidates:
         require(candidate["dominance"] in {"T4", "T5"},
                 f"{candidate['id']} is below the typography-dominance threshold")
         require(candidate["evidence_ids"], f"{candidate['id']} has no design-acclaim evidence")
+        require(bool(candidate.get("design_credit")), f"{candidate['id']} has no design credit")
+        require(bool(candidate.get("screening_observation")), f"{candidate['id']} has no visual observation")
+        require(bool(candidate.get("transfer_question")), f"{candidate['id']} has no transfer question")
         unknown = set(candidate["evidence_ids"]) - source_ids
         require(not unknown, f"{candidate['id']} references unknown evidence: {sorted(unknown)}")
-        require(candidate["status"] in {"screened-pass", "visual-second-pass"},
+        require(candidate["status"] in {"visual-pass", "visual-second-pass", "evidence-complete"},
                 f"{candidate['id']} has invalid screening status")
 
 

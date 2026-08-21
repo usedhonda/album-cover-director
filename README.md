@@ -127,7 +127,7 @@ The export command refuses non-square sources and records dimensions, scaling, b
 
 ## Research and copyright
 
-[research/corpus.yaml](research/corpus.yaml) is a superseded draft and is not a production reference. Its replacement is being rebuilt from cover-specific design evidence and direct visual screening before `v0.1.0`. The repository contains no third-party album-cover images.
+[research/corpus.yaml](research/corpus.yaml) is a superseded draft and is not a production reference. Its replacement is being rebuilt from cover-specific design evidence and direct visual screening before `v0.1.0`. The current research milestone is documented in [checkpoint-40.md](research/checkpoint-40.md); none of those candidates is final until its evidence sources are separated and verified. The repository contains no third-party album-cover images.
 
 The replacement method requires each admitted work to have cover-specific acclaim evidence, typography dominance at T4 or T5, a direct visual check, and a work-specific transferable principle. Music rankings, sales, and album fame do not count as cover-design evidence.
 
@@ -142,7 +142,7 @@ python /path/to/skill-creator/scripts/quick_validate.py skills/album-cover-direc
 python /path/to/plugin-creator/scripts/validate_plugin.py .
 ~~~
 
-CI verifies the skill frontmatter, plugin manifest, corpus schema and distribution, URL syntax, absence of third-party raster images, and absence of secrets or local absolute paths.
+CI verifies the skill frontmatter, plugin manifest, explicit superseded/final corpus state, research checkpoint contract and distribution, URL syntax, absence of third-party raster images, and absence of secrets or local absolute paths.
 
 ## License
 

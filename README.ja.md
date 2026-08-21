@@ -84,7 +84,7 @@ album-cover/<release-slug>/
 
 ## 研究と著作権
 
-[research/corpus.yaml](research/corpus.yaml) は置換予定の旧ドラフトであり、制作時の正本ではありません。`v0.1.0` 前に、ジャケット固有の評価根拠と実物視覚審査を持つ文字支配型コーパスへ置き換えます。第三者のジャケット画像は収録しません。
+[research/corpus.yaml](research/corpus.yaml) は置換予定の旧ドラフトであり、制作時の正本ではありません。`v0.1.0` 前に、ジャケット固有の評価根拠と実物視覚審査を持つ文字支配型コーパスへ置き換えます。現在の研究到達点は [checkpoint-40.md](research/checkpoint-40.md) に記録しており、出典を分離して検証するまでは最終採用品ではありません。第三者のジャケット画像は収録しません。
 
 新コーパスの採用条件は、ジャケット固有の評価根拠、文字支配度T4/T5、実物視覚確認、作品固有の転用原理です。名盤順位、売上、音楽的知名度はジャケット評価の根拠にしません。
 
@@ -95,7 +95,7 @@ python scripts/validate_repo.py
 python -m unittest discover -s tests -v
 ~~~
 
-CIではSkill frontmatter、Plugin manifest、リンク形式、120作品の分布、第三者画像の不在、秘密情報・ローカル絶対パスの不在を検査します。
+CIではSkill frontmatter、Plugin manifest、旧ドラフト／最終コーパスの明示状態、研究チェックポイントと分布、リンク形式、第三者画像の不在、秘密情報・ローカル絶対パスの不在を検査します。
 
 ## ライセンス
 

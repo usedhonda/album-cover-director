@@ -14,7 +14,31 @@
       "package winners whose front cover is not typography-dominant",
       "unverified designer credits",
       "third-party image files"
-    ]
+    ],
+    "status_lifecycle": {
+      "visual-pass": "The square cover was directly inspected and met T4 or T5; credit and source separation may still be incomplete.",
+      "visual-second-pass": "The cover is close to the T3/T4 boundary and must be compared again at full size and 56 px.",
+      "evidence-complete": "Visual pass, cover-specific acclaim, designer credit, and distinct source fields are all verified; eligible for the final corpus.",
+      "rejected": "Retained only as a documented boundary example."
+    }
+  },
+  "checkpoint_contract": {
+    "candidate_pool_target": 180,
+    "visual_checkpoints": [40, 80, 120],
+    "final_corpus_target": 120,
+    "final_era_counts": {
+      "1940-1979": 30,
+      "1980-1999": 30,
+      "2000-2014": 30,
+      "2015-present": 30
+    },
+    "final_minimums": {
+      "regions": 8,
+      "genre_systems": 12,
+      "non_latin_or_mixed_script": 24,
+      "T5": 60
+    },
+    "anti_concentration": "No designer, label, country, genre system, or source may become a shortcut for acclaim or typography quality."
   },
   "source_registry": [
     {
@@ -81,6 +105,69 @@
       "scope": "Annual cover-design shortlist including The xx's xx"
     },
     {
+      "id": "best-art-vinyl-2005",
+      "authority": "Best Art Vinyl",
+      "kind": "cover_specific_award_shortlist_with_design_credits",
+      "url": "https://artvinyl.com/award-year/2005/",
+      "scope": "Annual cover-design shortlist and credited sleeve designers"
+    },
+    {
+      "id": "best-art-vinyl-2006",
+      "authority": "Best Art Vinyl",
+      "kind": "cover_specific_award_shortlist_with_design_credits",
+      "url": "https://artvinyl.com/award-year/2006/",
+      "scope": "Annual cover-design shortlist and credited sleeve designers"
+    },
+    {
+      "id": "best-art-vinyl-2007",
+      "authority": "Best Art Vinyl",
+      "kind": "cover_specific_award_shortlist_with_design_credits",
+      "url": "https://artvinyl.com/award-year/2007/",
+      "scope": "Annual cover-design shortlist and credited sleeve designers"
+    },
+    {
+      "id": "best-art-vinyl-2008",
+      "authority": "Best Art Vinyl",
+      "kind": "cover_specific_award_shortlist_with_design_credits",
+      "url": "https://artvinyl.com/award-year/2008/",
+      "scope": "Annual cover-design shortlist and credited sleeve designers"
+    },
+    {
+      "id": "moma-man-machine",
+      "authority": "The Museum of Modern Art",
+      "kind": "museum_collection_object",
+      "url": "https://www.moma.org/collection/works/185417",
+      "scope": "Karl Klefisch and Günther Fröhling's album cover for Kraftwerk, The Man-Machine"
+    },
+    {
+      "id": "aiga-raising-hell",
+      "authority": "AIGA Eye on Design",
+      "kind": "designer_first_person_close_reading",
+      "url": "https://eyeondesign.aiga.org/under-the-covers-there-wasnt-a-concept-concept-behind-the-design-of-run-dmcs-seminal-raising-hell/",
+      "scope": "Janet Perr's construction and color process for Run-DMC, Raising Hell"
+    },
+    {
+      "id": "aiga-iconic-electronic",
+      "authority": "AIGA Eye on Design and the Design Museum",
+      "kind": "exhibition_based_cover_close_reading",
+      "url": "https://eyeondesign.aiga.org/iconic-electronic-exploring-dance-cultures-seminal-album-designs-2/",
+      "scope": "Underworld, Dubnobasswithmyheadman and Aphex Twin, Collapse"
+    },
+    {
+      "id": "moma-new-alphabet-substance",
+      "authority": "The Museum of Modern Art",
+      "kind": "museum_typography_close_reading",
+      "url": "https://www.moma.org/collection/works/139322",
+      "scope": "Wim Crouwel's New Alphabet and Peter Saville Associates' use on Joy Division, Substance"
+    },
+    {
+      "id": "creative-bloq-master-of-reality",
+      "authority": "Creative Bloq",
+      "kind": "design_history_close_reading",
+      "url": "https://www.creativebloq.com/design/how-ozzy-and-black-sabbaths-album-art-changed-the-look-of-rocknroll-forever",
+      "scope": "Typography and embossed material treatment on Black Sabbath, Master of Reality"
+    },
+    {
       "id": "cca-lagos-fela-covers",
       "authority": "Centre for Contemporary Art, Lagos",
       "kind": "cover_specific_exhibition",
@@ -98,12 +185,13 @@
       "genre": "jazz",
       "scripts": ["Latin"],
       "evidence_ids": ["aiga-mingus-changes"],
+      "design_credit": "Paula Scher",
       "acclaim_scope": "cover-specific designer close reading",
       "dominance": "T5",
       "type_mode": "all-type custom display lettering",
       "screening_observation": "Drawn wood-type skeletons, drop shadows, and color separations make the title the complete image rather than a caption.",
       "transfer_question": "How can a paired release share one lettering system while preserving distinct rhythmic color identities?",
-      "status": "screened-pass"
+      "status": "visual-pass"
     },
     {
       "id": "sonny-rollins-vol-2",
@@ -114,12 +202,13 @@
       "genre": "jazz",
       "scripts": ["Latin", "Arabic numeral"],
       "evidence_ids": ["cooper-hewitt-art-of-noise-covers"],
+      "design_credit": "Reid Miles; photography by Francis Wolff",
       "acclaim_scope": "museum exhibition",
       "dominance": "T5",
       "type_mode": "numeral as primary architecture",
       "screening_observation": "The oversized numeral organizes scale and identity before the portrait or supporting copy.",
       "transfer_question": "When can a catalog number, volume, or count become the strongest title image?",
-      "status": "screened-pass"
+      "status": "visual-pass"
     },
     {
       "id": "joe-henderson-in-n-out",
@@ -130,12 +219,13 @@
       "genre": "jazz",
       "scripts": ["Latin"],
       "evidence_ids": ["cooper-hewitt-art-of-noise-covers"],
+      "design_credit": "Reid Miles; photography by Francis Wolff",
       "acclaim_scope": "museum exhibition",
       "dominance": "T5",
       "type_mode": "title words as opposing spatial blocks",
       "screening_observation": "Large words construct an inside-outside spatial argument and reduce the portrait to a punctuating insert.",
       "transfer_question": "How can a title's semantic opposition determine crop, direction, and negative space?",
-      "status": "screened-pass"
+      "status": "visual-pass"
     },
     {
       "id": "jackie-mclean-its-time",
@@ -146,12 +236,13 @@
       "genre": "jazz",
       "scripts": ["Latin", "punctuation"],
       "evidence_ids": ["cooper-hewitt-art-of-noise-covers"],
+      "design_credit": "Reid Miles; photography by Francis Wolff",
       "acclaim_scope": "museum exhibition",
       "dominance": "T5",
       "type_mode": "punctuation as repeated visual event",
       "screening_observation": "Exclamation marks become a modular field whose urgency governs the portrait and title.",
       "transfer_question": "How can punctuation carry tempo without becoming decorative noise?",
-      "status": "screened-pass"
+      "status": "visual-pass"
     },
     {
       "id": "hank-mobley-the-turnaround",
@@ -162,12 +253,13 @@
       "genre": "jazz",
       "scripts": ["Latin", "punctuation"],
       "evidence_ids": ["cooper-hewitt-art-of-noise-covers"],
+      "design_credit": "Reid Miles; photography by Francis Wolff",
       "acclaim_scope": "museum exhibition",
       "dominance": "T4",
       "type_mode": "directional headline",
       "screening_observation": "The title's rotation and scale establish the directional force; the photograph confirms rather than initiates it.",
       "transfer_question": "How can a word describing movement physically turn the reader through the square?",
-      "status": "screened-pass"
+      "status": "visual-pass"
     },
     {
       "id": "willie-colon-the-big-break",
@@ -178,12 +270,13 @@
       "genre": "salsa",
       "scripts": ["Latin"],
       "evidence_ids": ["cooper-hewitt-art-of-noise-covers"],
+      "design_credit": "Izzy Sanabria",
       "acclaim_scope": "museum exhibition",
       "dominance": "T4",
       "type_mode": "found-document headline and bilingual evidence",
       "screening_observation": "Wanted-poster typography establishes the cover as evidence; the portrait is read through the document convention.",
       "transfer_question": "How can an institutional text format be appropriated without merely imitating its surface?",
-      "status": "screened-pass"
+      "status": "visual-pass"
     },
     {
       "id": "joe-bataan-riot",
@@ -194,6 +287,7 @@
       "genre": "Latin soul and salsa",
       "scripts": ["Latin", "punctuation"],
       "evidence_ids": ["cooper-hewitt-art-of-noise-covers"],
+      "design_credit": "Izzy Sanabria",
       "acclaim_scope": "museum exhibition",
       "dominance": "T4",
       "type_mode": "single-word impact headline",
@@ -210,12 +304,13 @@
       "genre": "Indian film music and instrumental",
       "scripts": ["Latin"],
       "evidence_ids": ["aiga-kamal-shedge"],
+      "design_credit": "Kamal Shedge",
       "acclaim_scope": "design-history close reading",
       "dominance": "T5",
       "type_mode": "custom Art Deco display lettering",
       "screening_observation": "Lettering supplies era, spectacle, and futurity while psychedelic texture acts as its atmosphere.",
       "transfer_question": "How can one letter skeleton express technological futurity without borrowing a named font?",
-      "status": "screened-pass"
+      "status": "visual-pass"
     },
     {
       "id": "paanch-dushman",
@@ -226,12 +321,13 @@
       "genre": "Indian film soundtrack",
       "scripts": ["Devanagari", "Latin"],
       "evidence_ids": ["aiga-kamal-shedge"],
+      "design_credit": "Kamal Shedge",
       "acclaim_scope": "design-history close reading",
       "dominance": "T5",
       "type_mode": "custom action lettering with physical marks",
       "screening_observation": "Sharp title strokes and bullet holes turn the letterforms into an action premise.",
       "transfer_question": "How can damage alter counters, terminals, and rhythm while leaving the title readable?",
-      "status": "screened-pass"
+      "status": "visual-pass"
     },
     {
       "id": "anamika-soundtrack",
@@ -242,12 +338,13 @@
       "genre": "Indian film soundtrack",
       "scripts": ["Devanagari", "Latin"],
       "evidence_ids": ["aiga-kamal-shedge"],
+      "design_credit": "Kamal Shedge",
       "acclaim_scope": "design-history close reading",
       "dominance": "T5",
       "type_mode": "circular custom lettering",
       "screening_observation": "The title's curling circular construction becomes both identity and narrative enclosure.",
       "transfer_question": "How can a wordmark embody loss of identity through closure, repetition, or disrupted reading order?",
-      "status": "screened-pass"
+      "status": "visual-pass"
     },
     {
       "id": "joseph-jarman-song-for",
@@ -258,12 +355,13 @@
       "genre": "avant-garde jazz",
       "scripts": ["Latin"],
       "evidence_ids": ["aiga-laini-abernathy"],
+      "design_credit": "Laini Sylvia Abernathy",
       "acclaim_scope": "design-history close reading",
       "dominance": "T4",
       "type_mode": "antique type as image frame",
       "screening_observation": "Multiple antique faces form a typographic perimeter that actively contains and destabilizes the mirrored portrait.",
       "transfer_question": "How can mixed type histories remain hierarchical instead of becoming indiscriminate collage?",
-      "status": "screened-pass"
+      "status": "visual-pass"
     },
     {
       "id": "sex-pistols-never-mind-the-bollocks",
@@ -274,12 +372,13 @@
       "genre": "punk",
       "scripts": ["Latin"],
       "evidence_ids": ["vam-never-mind-the-bollocks"],
+      "design_credit": "Jamie Reid and John Varnom",
       "acclaim_scope": "museum collection and design history",
       "dominance": "T5",
       "type_mode": "ransom-note collage and institutional disruption",
       "screening_observation": "Cut-and-paste lettering is the entire confrontation; color and misalignment amplify the typographic voice.",
       "transfer_question": "Which controlled inconsistencies create antagonism, and which merely imitate punk styling?",
-      "status": "screened-pass"
+      "status": "visual-pass"
     },
     {
       "id": "fela-kuti-no-agreement",
@@ -290,12 +389,13 @@
       "genre": "Afrobeat",
       "scripts": ["Latin"],
       "evidence_ids": ["cca-lagos-fela-covers"],
+      "design_credit": "Lemi Ghariokwu",
       "acclaim_scope": "cover-specific exhibition",
       "dominance": "T4",
       "type_mode": "headline plus semantic text field",
       "screening_observation": "The title and surrounding political phrases make language the conceptual environment, with the central figure acting inside it.",
       "transfer_question": "How can multiple readable phrases create a political chorus without losing the title hierarchy?",
-      "status": "screened-pass"
+      "status": "visual-pass"
     },
     {
       "id": "fela-kuti-zombie",
@@ -306,6 +406,7 @@
       "genre": "Afrobeat",
       "scripts": ["Latin"],
       "evidence_ids": ["cca-lagos-fela-covers"],
+      "design_credit": "Lemi Ghariokwu",
       "acclaim_scope": "cover-specific exhibition",
       "dominance": "T4",
       "type_mode": "hand-painted protest headline",
@@ -322,12 +423,13 @@
       "genre": "art rock and experimental jazz",
       "scripts": ["custom glyph system"],
       "evidence_ids": ["grammy-blackstar"],
+      "design_credit": "Jonathan Barnbrook",
       "acclaim_scope": "award-winning package with independently screened front cover",
       "dominance": "T5",
       "type_mode": "title encoded as glyph and symbol",
       "screening_observation": "The star and component glyphs replace conventional spelling while retaining a learnable title identity.",
       "transfer_question": "How few custom glyphs are needed before a title becomes a coherent writing system rather than a logo trick?",
-      "status": "screened-pass"
+      "status": "visual-pass"
     },
     {
       "id": "charli-xcx-brat",
@@ -338,12 +440,13 @@
       "genre": "electronic pop and club",
       "scripts": ["Latin"],
       "evidence_ids": ["grammy-brat"],
+      "design_credit": "Charli xcx, Brent David Freaney, and Imogene Strauss",
       "acclaim_scope": "award-winning package with independently screened front cover",
       "dominance": "T5",
       "type_mode": "low-resolution all-type anti-polish",
       "screening_observation": "One small blurred word and a highly specific green field create a complete identity through apparent under-design.",
       "transfer_question": "Which optical defects make a plain word feel authored, and which produce merely poor typesetting?",
-      "status": "screened-pass"
+      "status": "visual-pass"
     },
     {
       "id": "terence-lam-camouflage",
@@ -354,12 +457,13 @@
       "genre": "Cantopop",
       "scripts": ["Latin"],
       "evidence_ids": ["dandad-camouflage"],
+      "design_credit": "STUDIOWMW",
       "acclaim_scope": "cover and package design award",
       "dominance": "T5",
       "type_mode": "transparent molded title as material intervention",
       "screening_observation": "The title is physically present but optically recessive, making invisibility the typographic behavior rather than an image effect.",
       "transfer_question": "How can relief, transparency, shadow, and viewing angle carry a title after the physical package becomes a flat thumbnail?",
-      "status": "screened-pass"
+      "status": "visual-pass"
     },
     {
       "id": "the-xx-xx",
@@ -370,12 +474,387 @@
       "genre": "indie pop and electronic",
       "scripts": ["Latin glyph"],
       "evidence_ids": ["best-art-vinyl-2009"],
+      "design_credit": "Phil Lee and The xx",
       "acclaim_scope": "cover-specific award shortlist",
       "dominance": "T5",
       "type_mode": "single letterform as mask and identity",
       "screening_observation": "The X is simultaneously title, band mark, frame, and negative-space event.",
       "transfer_question": "When can one existing letter become a complete series system without requiring a custom alphabet?",
-      "status": "screened-pass"
+      "status": "visual-pass"
+    },
+    {
+      "id": "thelonious-monk-genius-volume-one",
+      "artist": "Thelonious Monk",
+      "title": "Genius of Modern Music, Volume One",
+      "year": 1956,
+      "region": "North America",
+      "genre": "jazz and bebop",
+      "scripts": ["Latin"],
+      "evidence_ids": ["cooper-hewitt-art-of-noise-covers"],
+      "design_credit": "Reid Miles; photography by Francis Wolff",
+      "acclaim_scope": "museum exhibition",
+      "dominance": "T5",
+      "type_mode": "split wordmark as central mass",
+      "screening_observation": "The staggered black-and-white MONK letter blocks occupy the center and turn the small gesturing portrait into punctuation.",
+      "transfer_question": "How can color division inside one word create syncopation without weakening recognition?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "lee-morgan-the-rumproller",
+      "artist": "Lee Morgan",
+      "title": "The Rumproller",
+      "year": 1966,
+      "region": "North America",
+      "genre": "hard bop and soul jazz",
+      "scripts": ["Latin"],
+      "evidence_ids": ["cooper-hewitt-art-of-noise-covers"],
+      "design_credit": "Reid Miles; photography by Francis Wolff",
+      "acclaim_scope": "museum exhibition",
+      "dominance": "T5",
+      "type_mode": "distorted title as rolling waveform",
+      "screening_observation": "The title and artist name bend into a broad diagonal wave while the portrait is reduced to a small confirming inset.",
+      "transfer_question": "How can a word physically perform rolling motion while its baseline remains recoverable?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "azuquita-pura-salsa",
+      "artist": "Azuquita y Su Melao",
+      "title": "Pura Salsa",
+      "year": 1975,
+      "region": "Latin America and Caribbean",
+      "genre": "salsa",
+      "scripts": ["Latin"],
+      "evidence_ids": ["cooper-hewitt-art-of-noise-covers"],
+      "design_credit": "Izzy Sanabria",
+      "acclaim_scope": "museum exhibition",
+      "dominance": "T5",
+      "type_mode": "found food-package typography",
+      "screening_observation": "The cover behaves as a boxed ingredient label: title, weight claims, and format copy collectively become the image.",
+      "transfer_question": "Which borrowed package fields make a fictional product legible without drowning the release title?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "eddie-lebron-ghetto-records-presents",
+      "artist": "Eddie Lebrón",
+      "title": "Ghetto Records Presents... Eddie Lebrón",
+      "year": 1970,
+      "region": "Caribbean and North America",
+      "genre": "salsa and Latin soul",
+      "scripts": ["Latin"],
+      "evidence_ids": ["cooper-hewitt-art-of-noise-covers"],
+      "design_credit": "Izzy Sanabria; photography by Rahman Ali",
+      "acclaim_scope": "museum exhibition",
+      "dominance": "T4",
+      "type_mode": "vernacular banner inside annotated border",
+      "screening_observation": "A hand-lettered title banner and dense drawn annotations frame the group photograph as a neighborhood document.",
+      "transfer_question": "When does surrounding marginal writing become a voice rather than uncontrolled texture?",
+      "status": "visual-second-pass"
+    },
+    {
+      "id": "black-sabbath-master-of-reality",
+      "artist": "Black Sabbath",
+      "title": "Master of Reality",
+      "year": 1971,
+      "region": "Europe",
+      "genre": "heavy metal",
+      "scripts": ["Latin"],
+      "evidence_ids": ["creative-bloq-master-of-reality"],
+      "design_credit": "Bloomsbury Group; typography by Typographic House",
+      "acclaim_scope": "design-history close reading",
+      "dominance": "T5",
+      "type_mode": "warped all-type embossing",
+      "screening_observation": "Huge vibrating letters fill the black field; the original black-on-black title must be read partly through embossed relief.",
+      "transfer_question": "How can a title remain identifiable when material relief carries information that a thumbnail cannot preserve?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "kraftwerk-the-man-machine",
+      "artist": "Kraftwerk",
+      "title": "The Man-Machine",
+      "year": 1978,
+      "region": "Europe",
+      "genre": "electronic and synth-pop",
+      "scripts": ["Latin", "Cyrillic", "mixed-script"],
+      "evidence_ids": ["moma-man-machine"],
+      "design_credit": "Karl Klefisch and Günther Fröhling",
+      "acclaim_scope": "museum collection",
+      "dominance": "T4",
+      "type_mode": "multilingual constructivist diagonals",
+      "screening_observation": "Band name, translated titles, rules, and portrait formation share one diagonal machine grid; type commands the reading order.",
+      "transfer_question": "How can multiple scripts share one mechanical rhythm without reducing translations to decoration?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "run-dmc-raising-hell",
+      "artist": "Run-DMC",
+      "title": "Raising Hell",
+      "year": 1986,
+      "region": "North America",
+      "genre": "hip-hop",
+      "scripts": ["Latin"],
+      "evidence_ids": ["aiga-raising-hell"],
+      "design_credit": "Janet Perr; photography by Caroline Greyshock",
+      "acclaim_scope": "designer first-person close reading",
+      "dominance": "T4",
+      "type_mode": "vertical title against stacked group wordmark",
+      "screening_observation": "The vertical album title collides with the horizontal stacked RUN-DMC name and bars, structuring the tinted portrait field.",
+      "transfer_question": "How can orthogonal title directions create pressure without trapping the portrait in leftover space?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "joy-division-substance",
+      "artist": "Joy Division",
+      "title": "Substance",
+      "year": 1988,
+      "region": "Europe",
+      "genre": "post-punk",
+      "scripts": ["Latin", "custom digital alphabet"],
+      "evidence_ids": ["moma-new-alphabet-substance"],
+      "design_credit": "Peter Saville Associates; letterforms adapted from Wim Crouwel's New Alphabet",
+      "acclaim_scope": "museum typography close reading",
+      "dominance": "T5",
+      "type_mode": "experimental alphabet as complete cover",
+      "screening_observation": "The title and band name are rendered as an austere, partially encoded horizontal-line alphabet with no competing image.",
+      "transfer_question": "What redundancy lets an unfamiliar alphabet feel intentional before every character is decoded?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "underworld-dubnobasswithmyheadman",
+      "artist": "Underworld",
+      "title": "Dubnobasswithmyheadman",
+      "year": 1994,
+      "region": "Europe",
+      "genre": "progressive house and techno",
+      "scripts": ["Latin"],
+      "evidence_ids": ["aiga-iconic-electronic"],
+      "design_credit": "Tomato; lettering process initiated by John Warwicker",
+      "acclaim_scope": "design-museum exhibition close reading",
+      "dominance": "T5",
+      "type_mode": "fax-distorted typographic collision",
+      "screening_observation": "Stretched words, fragments, bars, and black print splurges fuse into a dense monochrome signal rather than captioning an image.",
+      "transfer_question": "Which degradations preserve the title's rhythm, and which collapse it into generic grunge?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "mylo-destroy-rock-and-roll",
+      "artist": "Mylo",
+      "title": "Destroy Rock & Roll",
+      "year": 2004,
+      "region": "Europe",
+      "genre": "electronic and dance",
+      "scripts": ["Latin"],
+      "evidence_ids": ["best-art-vinyl-2005"],
+      "design_credit": "Phantom",
+      "acclaim_scope": "cover-specific award shortlist",
+      "dominance": "T5",
+      "type_mode": "oversized cropped title grid",
+      "screening_observation": "The title repeats across rows at near-square scale, with counters and crops turning the words into the entire field.",
+      "transfer_question": "How much of a repeated word can leave the frame while the title remains reconstructable?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "can-i-want-more",
+      "artist": "Can",
+      "title": "I Want More",
+      "year": 2006,
+      "region": "Europe",
+      "genre": "krautrock and electronic",
+      "scripts": ["Latin"],
+      "evidence_ids": ["best-art-vinyl-2006"],
+      "design_credit": "Paul Taylor",
+      "acclaim_scope": "cover-specific award shortlist",
+      "dominance": "T5",
+      "type_mode": "single-word legacy mark as color object",
+      "screening_observation": "The swollen CAN mark fills the orange square while the song title is kept as a small, deliberate countervoice.",
+      "transfer_question": "When can artist identity dominate while a long release title remains intentionally subordinate?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "the-rakes-ten-new-messages",
+      "artist": "The Rakes",
+      "title": "Ten New Messages",
+      "year": 2007,
+      "region": "Europe",
+      "genre": "indie rock",
+      "scripts": ["Latin", "encoded marks"],
+      "evidence_ids": ["best-art-vinyl-2007"],
+      "design_credit": "Rob Crane at Work",
+      "acclaim_scope": "cover-specific award shortlist",
+      "dominance": "T5",
+      "type_mode": "message content encoded as modular signals",
+      "screening_observation": "Rows of colored dots and dashes turn communication marks into the principal architecture, supported by tiny labels.",
+      "transfer_question": "How can an encoded title remain compelling when the literal words nearly disappear?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "deerhoof-friend-opportunity",
+      "artist": "Deerhoof",
+      "title": "Friend Opportunity",
+      "year": 2007,
+      "region": "North America",
+      "genre": "experimental indie rock",
+      "scripts": ["Latin", "letterform-like marks"],
+      "evidence_ids": ["best-art-vinyl-2007"],
+      "design_credit": "Photography by Jan Lankisch; painting by David Shrigley",
+      "acclaim_scope": "cover-specific award shortlist",
+      "dominance": "T5",
+      "type_mode": "painted pseudo-alphabet grid",
+      "screening_observation": "A grid of inconsistent painted signs reads as both a homemade alphabet and the entire image field.",
+      "transfer_question": "What repeated proportions let unstable hand-painted signs behave as one alphabet?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "thievery-corporation-originality",
+      "artist": "Thievery Corporation",
+      "title": "Originality",
+      "year": 2007,
+      "region": "North America",
+      "genre": "downtempo and electronic",
+      "scripts": ["Latin", "Arabic numeral"],
+      "evidence_ids": ["best-art-vinyl-2007"],
+      "design_credit": "Nick Ashby",
+      "acclaim_scope": "cover-specific award shortlist",
+      "dominance": "T5",
+      "type_mode": "quoted keyword as institutional label",
+      "screening_observation": "The quoted word ORIGINALITY, block number, and record-player silhouette form a propaganda-like product label.",
+      "transfer_question": "How can quotation marks turn a positive title into critique without needing explanatory copy?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "metallica-death-magnetic",
+      "artist": "Metallica",
+      "title": "Death Magnetic",
+      "year": 2008,
+      "region": "North America",
+      "genre": "heavy metal",
+      "scripts": ["Latin"],
+      "evidence_ids": ["best-art-vinyl-2008"],
+      "design_credit": "Turner Duckworth",
+      "acclaim_scope": "cover-specific award shortlist",
+      "dominance": "T4",
+      "type_mode": "wordmark and title pulled by a magnetic field",
+      "screening_observation": "The Metallica wordmark, coffin aperture, and radiating line field behave as one force diagram, with title letters caught inside it.",
+      "transfer_question": "How can environmental lines deform a familiar wordmark without redrawing every letter?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "liquid-liquid-slip-in-and-out",
+      "artist": "Liquid Liquid",
+      "title": "Slip In & Out of the Phenomenon",
+      "year": 2008,
+      "region": "North America",
+      "genre": "post-punk and dance-punk",
+      "scripts": ["Latin"],
+      "evidence_ids": ["best-art-vinyl-2008"],
+      "design_credit": "Richard McGuire",
+      "acclaim_scope": "cover-specific award shortlist",
+      "dominance": "T5",
+      "type_mode": "stacked words as modular geometry",
+      "screening_observation": "LIQUID repeats in a compressed black-and-white stack whose counters become containers for the colored forms below.",
+      "transfer_question": "How can repeated artist words establish a liquid rhythm while a long title remains a secondary path?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "no-age-nouns",
+      "artist": "No Age",
+      "title": "Nouns",
+      "year": 2008,
+      "region": "North America",
+      "genre": "noise rock",
+      "scripts": ["Latin"],
+      "evidence_ids": ["best-art-vinyl-2008"],
+      "design_credit": "Brian Roettinger at Hand Held Heart",
+      "acclaim_scope": "cover-specific award shortlist",
+      "dominance": "T5",
+      "type_mode": "extruded wordmark as impossible object",
+      "screening_observation": "NO AGE is drawn as a cropped white three-dimensional structure; its shadow and depth are the only image.",
+      "transfer_question": "Which joins and shadows make flat letters read as one inhabitable object?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "hercules-and-love-affair-blind",
+      "artist": "Hercules & Love Affair",
+      "title": "Blind",
+      "year": 2008,
+      "region": "North America",
+      "genre": "disco and house",
+      "scripts": ["Latin"],
+      "evidence_ids": ["best-art-vinyl-2008"],
+      "design_credit": "Art direction by Scott Williams; drawings by Ben Guttin",
+      "acclaim_scope": "cover-specific award shortlist",
+      "dominance": "T5",
+      "type_mode": "oversized title behind repeated figures",
+      "screening_observation": "The word BLIND consumes the lower half and becomes a ground plane for repeated pale figures rather than a caption.",
+      "transfer_question": "How can figures interrupt a large title while its silhouette still survives at thumbnail size?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "thee-vicars-back-on-the-streets",
+      "artist": "Thee Vicars",
+      "title": "Back on the Streets",
+      "year": 2009,
+      "region": "Europe",
+      "genre": "garage rock",
+      "scripts": ["Latin"],
+      "evidence_ids": ["best-art-vinyl-2009"],
+      "design_credit": "Niels Ejnar Rust",
+      "acclaim_scope": "cover-specific award shortlist",
+      "dominance": "T5",
+      "type_mode": "condensed headline as street barricade",
+      "screening_observation": "Tall black letters form a dense wall interrupted by one red directional accent; there is no separate illustrative subject.",
+      "transfer_question": "How can one accent word break a severe condensed block without making the hierarchy arbitrary?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "the-prodigy-invaders-must-die",
+      "artist": "The Prodigy",
+      "title": "Invaders Must Die",
+      "year": 2009,
+      "region": "Europe",
+      "genre": "electronic and rave",
+      "scripts": ["Latin"],
+      "evidence_ids": ["best-art-vinyl-2009"],
+      "design_credit": "Luke Insect",
+      "acclaim_scope": "cover-specific award shortlist",
+      "dominance": "T4",
+      "type_mode": "stencil alarm headline with emblem",
+      "screening_observation": "The distressed title arrives as a warning sign; the aircraft emblem and rays amplify its attack rather than replace it.",
+      "transfer_question": "How can distress communicate impact while preserving the internal shapes of a long title?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "the-rakes-klang",
+      "artist": "The Rakes",
+      "title": "Klang",
+      "year": 2009,
+      "region": "Europe",
+      "genre": "indie rock",
+      "scripts": ["Latin"],
+      "evidence_ids": ["best-art-vinyl-2009"],
+      "design_credit": "Rob Crane",
+      "acclaim_scope": "cover-specific award shortlist",
+      "dominance": "T5",
+      "type_mode": "compressed word as architectural block",
+      "screening_observation": "The short title is enlarged into a hard black structure whose spacing and crop dominate the pale square.",
+      "transfer_question": "How can a five-letter word become architectural without relying on generic extra-bold type?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "aphex-twin-collapse",
+      "artist": "Aphex Twin",
+      "title": "Collapse",
+      "year": 2018,
+      "region": "Europe",
+      "genre": "electronic and IDM",
+      "scripts": ["custom logo glyph"],
+      "evidence_ids": ["aiga-iconic-electronic"],
+      "design_credit": "Weirdcore; Aphex Twin logo by Paul Nicholson",
+      "acclaim_scope": "design-museum exhibition close reading",
+      "dominance": "T4",
+      "type_mode": "logo glyph as geographic center",
+      "screening_observation": "The Aphex glyph occupies the central dust-cap position while a topographic amphitheatre radiates outward as a speaker-like field.",
+      "transfer_question": "When does a known logo glyph organize an environment, and when is the environment still the true subject?",
+      "status": "visual-second-pass"
     }
   ],
   "documented_rejections": [
