@@ -10,6 +10,21 @@ Every reviewed candidate must contain the exact title once. The title is the
 largest or most structurally decisive visual form, while song-derived details
 are discovered after the title is read.
 
+## Choose a title-system family first
+
+There are two equal image-native families. Choose one before choosing a card;
+both reject ordinary title placement.
+
+- **Material-world:** the title becomes a route, artifact, game, living
+  specimen, or other physical system. Its material determines letter anatomy.
+- **Character-led:** a central figure's action, setting, and the title share
+  one hierarchy. Use this only when a supplied artist system, rights-cleared
+  identity reference, or the brief genuinely calls for a figure.
+
+`auto` selects the family from the brief. Do not force a character into a
+material-world brief, and do not turn a character-led brief into a detached
+wordmark.
+
 ## 1. Title map
 
 **Use when:** the song has routes, systems, memories, crowds, fragments, or a
@@ -178,6 +193,53 @@ Latin names, and decorative floral borders.
 
 **Reject when:** plants frame conventional text, the result is a generic floral
 arrangement, or darkness erases the material logic.
+
+## Character-led title systems
+
+### 10. Shared-scale hero wordmark
+
+**Use when:** a figure's identity is central and the title must feel as large
+as the person rather than as release metadata.
+
+**Geometry:** figure and title share the same dominant scale and interlock.
+The figure may stand inside counters, lean on a stroke, interrupt a letter,
+or make the word's depth legible; neither may read as a separate layer.
+
+**Prompt requirements:** name the figure source/rights; define the action,
+title share, contact points, depth order, and protected recognition features.
+
+**Reject when:** the title is simply behind/above/below a portrait, or the
+figure can be cropped away without changing the title system.
+
+### 11. Gesture and kinetic title field
+
+**Use when:** a figure's gesture, attitude, or energy is the track's primary
+force.
+
+**Geometry:** a limb, prop, trajectory, or gaze activates a large title system.
+The same stroke/material logic continues into a dense non-linguistic evidence
+field, making gesture and title one directional event.
+
+**Prompt requirements:** define gesture vector, title movement, figure/title
+overlap, evidence-field density, and the single title entry point.
+
+**Reject when:** the gesture points at an otherwise detached word, or the
+supporting field becomes pseudo-writing or extra title text.
+
+### 12. Script hierarchy with a figure
+
+**Use when:** a title has parts with intentionally unequal semantic or visual
+weight, especially mixed scripts or a phrase that needs one decisive glyph.
+
+**Geometry:** the figure inhabits the hierarchy: a lead-in, dominant character
+or word, and any remaining title elements each have a defined scale and depth.
+The figure's action connects the levels rather than filling empty space.
+
+**Prompt requirements:** exact title split, reading order, dominant element,
+figure action/contact, script-specific shaping, and empty-space plan.
+
+**Reject when:** hierarchy becomes a header plus ordinary illustration, or a
+dominant glyph is merely enlarged without changing the image structure.
 
 ## From reference to prompt
 

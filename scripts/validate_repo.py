@@ -259,13 +259,14 @@ def validate_forward_cases() -> None:
     require(len(cases) >= 8, "need at least eight forward cases")
     required_keys = {
         "name", "title", "artist", "evidence_kind", "mode", "typography_mode",
-        "expected_candidates", "directions",
+        "title_system_family", "title_system", "expected_candidates", "directions",
     }
     volumes = {"quick": 3, "standard": 6, "deep": 12}
     evidence_kinds = {"lyrics", "track-description", "audio"}
     typography_modes = {"auto", "image-native", "custom-wordmark"}
     names = set()
     covered_modes = set()
+    covered_title_families = set()
     for case in cases:
         missing = required_keys - case.keys()
         require(not missing, f"forward case missing fields: {sorted(missing)}")
@@ -281,6 +282,11 @@ def validate_forward_cases() -> None:
                 f"candidate count does not match mode: {case['name']}")
         require(case["typography_mode"] in typography_modes,
                 f"unsupported typography mode: {case['name']}")
+        require(case["title_system_family"] in {"material-world", "character-led"},
+                f"unsupported title-system family: {case['name']}")
+        require(bool(case["title_system"].strip()),
+                f"title system missing: {case['name']}")
+        covered_title_families.add(case["title_system_family"])
         require(len(case["directions"]) == 3 and len(set(case["directions"])) == 3,
                 f"forward case must specify three distinct directions: {case['name']}")
         require(set(case["directions"]) <= PATTERNS,
@@ -291,6 +297,8 @@ def validate_forward_cases() -> None:
             "forward cases need custom-wordmark coverage")
     require(any(case["typography_mode"] == "image-native" for case in cases),
             "forward cases need image-native coverage")
+    require(covered_title_families == {"material-world", "character-led"},
+            "forward cases must cover both image-native title-system families")
 
 
 def validate_public_safety() -> None:

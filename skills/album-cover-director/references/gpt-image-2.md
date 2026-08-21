@@ -18,7 +18,7 @@ Write prompts in this order:
 4. foreground, midground, background, light, and dominant geometry;
 5. palette with approximate area proportions;
 6. physical medium and production process;
-7. image-native title architecture, exact title, glyph count, reading order, material, position, color hierarchy, and line break;
+7. title-system family, image-native architecture, exact title, glyph count, reading order, material or character connection, position, color hierarchy, and line break;
 8. thumbnail priority;
 9. exclusions and rights-safe constraints.
 
@@ -51,6 +51,12 @@ Edit one variable at a time. State invariants before the requested change: subje
 ## Text strategy
 
 Generate every artistic candidate with the exact title visibly integrated into the jacket. Generate all title lettering in the same image as the scene: never add, redraw, typeset, or composite letters afterward. For complex-script or long titles, state each glyph exactly once, its reading order, placement, relative scale, color hierarchy, and relation to the scene. If letter accuracy fails, reject the candidate and use one of the two allowed refinement cycles to regenerate from a more explicit prompt. Never present a textless master, a detached title banner, generic caption box, or font layer as a cover candidate.
+
+For `material-world`, state the material vocabulary and exactly how it forms
+strokes, counters, joins, terminals, spacing, and the title's role in the
+world. For `character-led`, state the figure's action, the title's shared
+scale/hierarchy, contact points, and depth order. In either case, explicitly
+forbid ordinary typography placed on a finished scene.
 
 ## Required provenance
 

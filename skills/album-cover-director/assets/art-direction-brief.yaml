@@ -30,31 +30,41 @@ runtime:
   volume: standard
   candidate_count: 6
   typography_mode: auto
+  title_system_family: auto
 directions:
   - id: A
     primary_pattern: ""
     secondary_techniques: []
+    title_system_family: ""
     title_system: ""
     material_vocabulary: []
     letter_anatomy_mapping: ""
     title_world_role: ""
+    central_figure: ""
+    character_title_relation: ""
     genre_anchor: ""
     genre_betrayal: ""
   - id: B
     primary_pattern: ""
     secondary_techniques: []
+    title_system_family: ""
     title_system: ""
     material_vocabulary: []
     letter_anatomy_mapping: ""
     title_world_role: ""
+    central_figure: ""
+    character_title_relation: ""
     genre_anchor: ""
     genre_betrayal: ""
   - id: C
     primary_pattern: ""
     secondary_techniques: []
+    title_system_family: ""
     title_system: ""
     material_vocabulary: []
     letter_anatomy_mapping: ""
     title_world_role: ""
+    central_figure: ""
+    character_title_relation: ""
     genre_anchor: ""
     genre_betrayal: ""

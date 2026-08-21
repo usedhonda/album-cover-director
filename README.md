@@ -1,6 +1,6 @@
 # Album Cover Director
 
-$album-cover-director is a Codex skill and plugin bundle for directing distinctive, release-ready album, EP, and single covers. It turns musical evidence into three structurally different visual directions, generates and compares candidates with GPT Image 2, treats lettering as its own design system, and prepares 3000 px delivery assets.
+$album-cover-director is a Codex skill and plugin bundle for distinctive, release-ready album, EP, and single covers. Its specialty is image-native title design: the exact title either becomes the cover's physical world or shares one visual hierarchy with a central figure. It turns musical evidence into three structurally different directions, generates and compares candidates with GPT Image 2, and prepares 3000 px delivery assets.
 
 The project is for musicians, track makers, producers, independent labels, and designers. It has no artist-specific identity, no required MCP server, and no required API key.
 
@@ -26,13 +26,16 @@ The project is for musicians, track makers, producers, independent labels, and d
 
 Every title above is generated within the image itself. It is never repaired with a font overlay, redraw, or post-typesetting: its material, structure, and image are one design decision.
 
+The gallery demonstrates two equal title-system families. Choose **material-world** when routes, artifacts, games, specimens, or another physical system should form the title's anatomy. Choose **character-led** when a supplied artist system or brief calls for a figure whose pose, action, setting, and title must work as one structure. Neither family permits ordinary type merely placed on a completed scene.
+
 ## What makes it different
 
 - A work-specific research pipeline for covers acclaimed for visual design, with typography-dominant examples screened independently from music reputation.
-- Twelve organizing patterns that describe what controls the square, rather than a menu of visual styles.
+- Two image-native title-system families: material-world and character-led; each has specific construction cards and rejection tests.
+- Twelve supporting organizing patterns that describe what controls the square, rather than a menu of visual styles.
 - Three-direction divergence: every run must change image structure, not just color or rendering.
 - A title-integrated typography gate: every evaluated candidate is a complete jacket; title lettering must be generated as part of the image, never added afterward.
-- Five reusable title-image architectures: map, enclosing contour, kinetic wordmark and evidence field, palimpsest intervention, and emblem orbit.
+- Material title-world cards for route fields, constructed artifacts, playable rule systems, and living specimens; plus character-led hero, gesture, and script-hierarchy systems.
 - Comparative checks at 56 px, 128 px, 256 px, full size, grayscale, and blur.
 - One-variable edits, at most two cycles, always returning to the selected original after regression.
 - Reproducible 3000 x 3000 PNG/JPG and 256 px thumbnail export.
@@ -97,6 +100,12 @@ Typography modes:
 - auto;
 - image-native;
 - custom-wordmark.
+
+Title-system families:
+
+- auto: chooses from the brief;
+- material-world: title anatomy is made by a physical system;
+- character-led: central figure and title share a single hierarchy.
 
 ## Output
 

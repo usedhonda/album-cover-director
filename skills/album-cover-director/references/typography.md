@@ -38,6 +38,11 @@ corpus evidence until the full-size and thumbnail tests agree.
 
 Use when letters must belong physically to the scene: painted on glass, cast as metal, formed by shadows, stitched into cloth, bent into architecture, or damaged by the same process as the image. Require exact text and prohibit all other readable text. Use this mode for conceptual integration, but inspect every glyph.
 
+Before prompting, choose the family in `title-image-architectures.md`:
+`material-world` makes the title's physical anatomy and world inseparable;
+`character-led` makes a figure, its action, and the title share one hierarchy.
+Neither family permits ordinary type placed on an otherwise complete scene.
+
 ### `custom-wordmark`
 
 Use when the title itself is the image or needs ownable identity. Define the construction system below and generate it as part of the jacket; do not repair unstable letters with a later font layer.

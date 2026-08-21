@@ -1,6 +1,11 @@
-# Design patterns
+# Supporting image patterns
 
-The primary pattern answers one question: **what organizes the square?** It is not a genre, era, visual style, rendering engine, or preset. Choose one primary pattern and one or two secondary techniques. Three initial directions must use three different primary patterns.
+The title-system family is the first decision for this skill. This reference is
+the second decision: **what else organizes the square?** A pattern is not a
+genre, era, visual style, rendering engine, or preset. Choose one pattern and
+one or two secondary techniques. Three initial directions must use three
+different patterns, but none may detach the title from its material world or
+character-led hierarchy.
 
 ## 1. Portrait / Identity
 

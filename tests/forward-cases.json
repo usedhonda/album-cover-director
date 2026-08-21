@@ -6,6 +6,8 @@
     "evidence_kind": "lyrics",
     "mode": "standard",
     "typography_mode": "image-native",
+    "title_system_family": "material-world",
+    "title_system": "route-field",
     "expected_candidates": 6,
     "directions": ["Archive / Collage / Found Material", "Landscape / Architecture / Absence", "Typographic Hero / Wordmark"]
   },
@@ -16,6 +18,8 @@
     "evidence_kind": "lyrics",
     "mode": "standard",
     "typography_mode": "image-native",
+    "title_system_family": "material-world",
+    "title_system": "constructed-artifact",
     "expected_candidates": 6,
     "directions": ["Abstract Material / Process", "Symbolic Object / Still Life", "Typographic Hero / Wordmark"]
   },
@@ -26,6 +30,8 @@
     "evidence_kind": "track-description",
     "mode": "standard",
     "typography_mode": "image-native",
+    "title_system_family": "character-led",
+    "title_system": "script-hierarchy-with-a-figure",
     "expected_candidates": 6,
     "directions": ["Minimal Geometry / Color Field", "Archive / Collage / Found Material", "Portrait / Identity"]
   },
@@ -36,6 +42,8 @@
     "evidence_kind": "audio",
     "mode": "standard",
     "typography_mode": "auto",
+    "title_system_family": "material-world",
+    "title_system": "route-field",
     "expected_candidates": 6,
     "directions": ["Diagram / Grid / Data / Repetition", "Abstract Material / Process", "Landscape / Architecture / Absence"]
   },
@@ -46,6 +54,8 @@
     "evidence_kind": "track-description",
     "mode": "quick",
     "typography_mode": "custom-wordmark",
+    "title_system_family": "material-world",
+    "title_system": "playable-rule-system",
     "expected_candidates": 3,
     "directions": ["Typographic Hero / Wordmark", "Package Object / Intervention / Anti-cover", "Minimal Geometry / Color Field"]
   },
@@ -56,6 +66,8 @@
     "evidence_kind": "lyrics",
     "mode": "standard",
     "typography_mode": "auto",
+    "title_system_family": "character-led",
+    "title_system": "shared-scale-hero-wordmark",
     "expected_candidates": 6,
     "directions": ["Portrait / Identity", "Documentary Moment", "Symbolic Object / Still Life"]
   },
@@ -66,6 +78,8 @@
     "evidence_kind": "track-description",
     "mode": "deep",
     "typography_mode": "image-native",
+    "title_system_family": "character-led",
+    "title_system": "gesture-and-kinetic-title-field",
     "expected_candidates": 12,
     "directions": ["Illustration / Character World", "Diagram / Grid / Data / Repetition", "Package Object / Intervention / Anti-cover"]
   },
@@ -76,6 +90,8 @@
     "evidence_kind": "lyrics",
     "mode": "quick",
     "typography_mode": "image-native",
+    "title_system_family": "material-world",
+    "title_system": "living-specimen-system",
     "expected_candidates": 3,
     "directions": ["Symbolic Object / Still Life", "Abstract Material / Process", "Narrative Tableau"]
   }

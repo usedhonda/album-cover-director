@@ -1,18 +1,18 @@
 {
   "name": "album-cover-director",
   "version": "0.1.0",
-  "description": "Direct distinctive, release-ready album covers from musical meaning through typography, image generation, evaluation, and delivery.",
+  "description": "Create release-ready album covers where the title becomes a physical world or shares one hierarchy with a central figure.",
   "author": {
     "name": "usedhonda"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "Album Cover Director",
-    "shortDescription": "Direct release-ready album artwork.",
-    "longDescription": "Turns a title plus lyrics, a music description, or audio into structurally distinct cover directions; generates and evaluates artwork; applies a dedicated typography gate; and prepares square delivery assets.",
+    "shortDescription": "Create image-native title-led album covers.",
+    "longDescription": "Turns a title plus lyrics, a music description, or audio into cover directions built around material title-worlds or character-led title systems; generates and evaluates artwork; applies a dedicated title-image gate; and prepares square delivery assets.",
     "developerName": "usedhonda",
     "category": "Creative & Design",
     "capabilities": ["album-art-direction", "image-generation", "typography", "delivery-validation"],
-    "defaultPrompt": "Use $album-cover-director to develop and deliver a distinctive album cover from this track."
+    "defaultPrompt": "Use $album-cover-director to create three image-native title-system cover directions from this track."
   }
 }
