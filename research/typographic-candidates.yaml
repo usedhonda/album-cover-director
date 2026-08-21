@@ -327,6 +327,20 @@
       "kind": "museum_collection_object",
       "url": "https://www.moma.org/collection/works/189274",
       "scope": "András Wahorn's 1983 A.E. Bizottság cover in MoMA's Architecture and Design collection"
+    },
+    {
+      "id": "moma-cabaret-voltaire-2x45",
+      "authority": "The Museum of Modern Art",
+      "kind": "museum_collection_object",
+      "url": "https://www.moma.org/collection/works/156038?classifications=34&date_begin=Pre-1850&date_end=2017&high_contrast=false&locale=en&page=20&q=&with_images=1",
+      "scope": "MoMA's 1982 collection record for Cabaret Voltaire's 2x45 sleeve"
+    },
+    {
+      "id": "artvinyl-neville-brody",
+      "authority": "Art Vinyl",
+      "kind": "designer_cover_archive",
+      "url": "https://artvinyl.com/designers/neville-brody/",
+      "scope": "Neville Brody's experimental typography across Cabaret Voltaire and related record-cover work"
     }
   ],
   "candidates": [
@@ -1774,6 +1788,23 @@
       "screening_observation": "The loose gold band-name mark, white scripted title, pink strip, and lightning-shaped bridge make lettering and graphic bands the organising reading path around the small documentary image.",
       "transfer_question": "How can two hand-drawn title levels and a hard color band form a hierarchy without becoming a poster pasted onto a photograph?",
       "status": "visual-second-pass"
+    },
+    {
+      "id": "cabaret-voltaire-2x45",
+      "artist": "Cabaret Voltaire",
+      "title": "2x45",
+      "year": 1982,
+      "region": "Europe",
+      "genre": "industrial and avant-funk",
+      "scripts": ["Arabic numerals", "Latin"],
+      "evidence_ids": ["moma-cabaret-voltaire-2x45", "artvinyl-neville-brody"],
+      "design_credit": "Cabaret Voltaire (outside artwork); Neville Brody (inside artwork)",
+      "acclaim_scope": "museum collection and designer cover archive",
+      "dominance": "T5",
+      "type_mode": "oversized numeral-and-cross construction",
+      "screening_observation": "The numerals and X are the cover's only large-scale event: a sparse black field turns title notation into an industrial object and lets the delicate band script function as scale contrast.",
+      "transfer_question": "How can a numerical title become a dominant object while a deliberately delicate secondary wordmark controls pacing?",
+      "status": "visual-pass"
     }
   ],
   "documented_rejections": [
