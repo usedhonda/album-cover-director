@@ -1963,6 +1963,23 @@
       "screening_observation": "M+ identifies a purely typographic cover: the black title sits among overlapping Chinese phrases in grey, with strokes deliberately removed but the title remaining decipherable. The altered glyphs and scale hierarchy make language itself the only pictorial system.",
       "transfer_question": "How can deliberate subtraction from a script preserve recognition while making a title feel spatial, unstable, and specific to an experimental musical change?",
       "status": "visual-pass"
+    },
+    {
+      "id": "faye-wong-faye-best",
+      "artist": "Faye Wong",
+      "title": "Faye Best",
+      "year": 1994,
+      "region": "East Asia",
+      "genre": "Cantopop",
+      "scripts": ["Latin", "hand-drawn Latin"],
+      "evidence_ids": ["mplus-cantopop-b-side"],
+      "design_credit": "Wing Shya",
+      "acclaim_scope": "museum design-history exhibition and collection reading",
+      "dominance": "T4",
+      "type_mode": "die-cut hand-drawn title as package aperture",
+      "screening_observation": "M+ describes the external kraft-paper sleeve as carrying die-cut hand-drawn lettering for the title, which reveals the disc inside; paint smudges, pen scratches, and quasi-legible scrawls treat the physical package as a typographic surface. It remains a second-pass item until the front-face title scale is verified independently.",
+      "transfer_question": "When can a title become a physical aperture or reveal, so that the package construction rather than an illustration supplies the album image?",
+      "status": "visual-second-pass"
     }
   ],
   "documented_rejections": [
