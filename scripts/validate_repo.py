@@ -97,6 +97,37 @@ def validate_corpus() -> None:
         require(1940 <= int(work["year"]) <= 2026, f"year outside corpus range in {work['id']}")
 
 
+def validate_typographic_candidates() -> None:
+    ledger = json.loads((ROOT / "research/typographic-candidates.yaml").read_text())
+    require(ledger.get("schema_version") == 1, "typographic candidate schema version mismatch")
+    require(ledger["selection_contract"].get("music_quality_is_not_evidence") is True,
+            "music quality must not count as cover evidence")
+    source_ids = {source["id"] for source in ledger.get("source_registry", [])}
+    require(len(source_ids) == len(ledger.get("source_registry", [])), "candidate source IDs must be unique")
+    candidates = ledger.get("candidates", [])
+    require(len(candidates) >= 18, f"need at least 18 seed candidates, found {len(candidates)}")
+    require(len({candidate["id"] for candidate in candidates}) == len(candidates),
+            "typographic candidate IDs must be unique")
+    require(len({candidate["region"] for candidate in candidates}) >= 6,
+            "seed candidates must cover at least six regions")
+    require(len({candidate["genre"] for candidate in candidates}) >= 10,
+            "seed candidates must cover at least ten genre labels")
+    require(any(candidate["region"] == "East Asia" for candidate in candidates),
+            "seed candidates must include East Asia")
+    require(any(candidate["region"] == "South Asia" for candidate in candidates),
+            "seed candidates must include South Asia")
+    require(any(candidate["region"] == "Africa" for candidate in candidates),
+            "seed candidates must include Africa")
+    for candidate in candidates:
+        require(candidate["dominance"] in {"T4", "T5"},
+                f"{candidate['id']} is below the typography-dominance threshold")
+        require(candidate["evidence_ids"], f"{candidate['id']} has no design-acclaim evidence")
+        unknown = set(candidate["evidence_ids"]) - source_ids
+        require(not unknown, f"{candidate['id']} references unknown evidence: {sorted(unknown)}")
+        require(candidate["status"] in {"screened-pass", "visual-second-pass"},
+                f"{candidate['id']} has invalid screening status")
+
+
 def validate_invocation_cases() -> None:
     cases = json.loads((ROOT / "tests/invocation-cases.json").read_text())
     positive = [case for case in cases if case["expected_trigger"]]
@@ -128,7 +159,14 @@ def validate_public_safety() -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.parse_args()
-    checks = [validate_manifest, validate_skill, validate_corpus, validate_invocation_cases, validate_public_safety]
+    checks = [
+        validate_manifest,
+        validate_skill,
+        validate_corpus,
+        validate_typographic_candidates,
+        validate_invocation_cases,
+        validate_public_safety,
+    ]
     try:
         for check in checks:
             check()
