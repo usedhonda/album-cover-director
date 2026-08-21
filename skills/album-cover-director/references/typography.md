@@ -64,6 +64,23 @@ Define all seven variables before prompting or drawing:
 
 Also specify case, line breaks, alignment, tracking, leading, baseline behavior, optical corrections, language/script handling, and relation to the image.
 
+## Information fields are not automatically wordmarks
+
+A cover can make all of its text into one visual field: handwriting can cover a
+ground, metadata can become a calibration ring, and lyrics can operate as a
+spatial score. Treat this as **type-as-material**, not as a successful title
+system by default. It passes only when the viewer can still find one intended
+title entry point at 128 px through at least one controlled distinction:
+
+- scale, weight, contrast, color, or empty space;
+- a unique baseline, orientation, or placement rule;
+- a repeated title glyph or monogram that survives reduction; or
+- a stated reading route such as edge-to-center, spiral, or vertical column.
+
+If every line has equal visual priority, preserve the field as a texture and
+add a separate exact title lockup. Never rely on a dense information field to
+carry spelling accuracy by itself.
+
 ## Mixed-script titles
 
 Do not force Japanese and Latin glyphs to share identical metrics. Match perceived color, stroke energy, vertical center, and counter openness. Decide which script leads. Test punctuation, prolonged sound marks, diacritics, small kana, and spaces against the exact metadata string.
