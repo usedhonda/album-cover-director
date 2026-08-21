@@ -390,6 +390,13 @@
       "kind": "designer project archive",
       "url": "https://www.thedesignersrepublic.com/autechre",
       "scope": "The Designers Republic archive for its Autechre record artwork"
+    },
+    {
+      "id": "mplus-cantopop-b-side",
+      "authority": "M+, Hong Kong",
+      "kind": "museum design-history exhibition",
+      "url": "https://magazine.mplus.org.hk/imaging-cantopop-design-and-performativity-side-b/",
+      "scope": "M+'s design-history reading of Cantopop sleeves, including Basil Pao's 1987 Tai Chi Forbidden Zone package"
     }
   ],
   "candidates": [
@@ -1921,6 +1928,23 @@
       "type_mode": "oversized Ae monogram as a glitch-field sign",
       "screening_observation": "The oversized Ae monogram is the cover's largest and most stable event; the dispersed calibration marks and low-contrast glitches make its letters read as an electronic identity glyph rather than ordinary artist credit.",
       "transfer_question": "How can a two-letter monogram become the visual engine of a cover while a deliberately degraded information field supplies genre texture without weakening the sign?",
+      "status": "visual-second-pass"
+    },
+    {
+      "id": "tai-chi-forbidden-zone",
+      "artist": "Tai Chi",
+      "title": "Forbidden Zone",
+      "year": 1987,
+      "region": "East Asia",
+      "genre": "Cantopop and pop rock",
+      "scripts": ["Chinese", "calligraphic Chinese"],
+      "evidence_ids": ["mplus-cantopop-b-side"],
+      "design_credit": "Basil Pao",
+      "acclaim_scope": "museum design-history exhibition and collection reading",
+      "dominance": "T4",
+      "type_mode": "full-field handwritten calligraphy as cover texture",
+      "screening_observation": "M+ documents a green cover field fully occupied by handwritten calligraphy carrying the title, band name, song list, and biographical material. The final pass must distinguish that title-bearing field from the package's separate yin-yang image treatment.",
+      "transfer_question": "How can a continuous handwritten information field hold a full sleeve together while preserving a title entry point rather than turning into decorative illegibility?",
       "status": "visual-second-pass"
     }
   ],
