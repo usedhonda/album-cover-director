@@ -4,6 +4,17 @@ $album-cover-director is a Codex skill and plugin bundle for directing distincti
 
 The project is for musicians, track makers, producers, independent labels, and designers. It has no artist-specific identity, no required MCP server, and no required API key.
 
+## See what it makes
+
+|  |  |
+| --- | --- |
+| ![A giant SECRETARY CHI title becomes a navigable office world.](docs/examples/title-map-secretary-chi.png) | ![A tsundere Secretary Chi points a red pen through a high-energy Japanese title field.](docs/examples/tsundere-secretary-chi.png) |
+| **Title map** — the word is the world. | **Kinetic wordmark** — gesture and title are one action. |
+| ![Secretary Chi framed by a giant integrated SECRETARY CHI wordmark.](docs/examples/hero-wordmark-secretary-chi.png) | ![Secretary Chi serving coffee with 社長室の across the top and a giant 朝 at lower left.](docs/examples/japanese-title-shachoshitsu-no-asa.png) |
+| **Hero wordmark** — person and title share one hierarchy. | **Japanese hierarchy** — a lead-in yields to one giant character. |
+
+Every title above is generated within the image itself. It is never repaired with a font overlay, redraw, or post-typesetting.
+
 ## What makes it different
 
 - A work-specific research pipeline for covers acclaimed for visual design, with typography-dominant examples screened independently from music reputation.
@@ -75,19 +86,6 @@ Typography modes:
 - auto;
 - image-native;
 - custom-wordmark.
-
-## Example gallery
-
-These four original examples show the kind of title-image relationship the skill is designed to direct. They are generated demonstrations based on character references owned by this repository's author; they are not included as a template, required style, or third-party cover-art reference.
-
-| Title-image architecture | What it demonstrates |
-| --- | --- |
-| ![A giant SECRETARY CHI title becomes a navigable office world.](docs/examples/title-map-secretary-chi.png) | **Title map.** Letter interiors, counters, and paths are the office world. The title is the square's governing geography. |
-| ![Secretary Chi framed by a giant integrated SECRETARY CHI wordmark.](docs/examples/hero-wordmark-secretary-chi.png) | **Hero wordmark.** One central figure and one enormous title share the same depth, overlap, and visual hierarchy. |
-| ![Secretary Chi serving coffee with 社長室の across the top and a giant 朝 at lower left.](docs/examples/japanese-title-shachoshitsu-no-asa.png) | **Hierarchical Japanese title.** `社長室の` is the lead-in; a single huge `朝` is the image's sunrise-red primary mass. |
-| ![A tsundere Secretary Chi points a red pen through a high-energy Japanese title field.](docs/examples/tsundere-secretary-chi.png) | **Kinetic wordmark.** Gesture, red pen, office fragments, and title strokes form one confrontational typographic action. |
-
-In each example, the exact title is created in the image itself. Do not repair a candidate with a font overlay, redraw, or post-typesetting. If the title is wrong, revise the title architecture and regenerate.
 
 ## Output
 
