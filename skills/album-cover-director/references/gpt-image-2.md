@@ -38,7 +38,7 @@ Edit one variable at a time. State invariants before the requested change: subje
 
 ## Text strategy
 
-Use native generation for short, physically integrated lettering concepts. Inspect accuracy before acceptance. When letter accuracy fails, generate or retain a textless master and move to deterministic post-typesetting; do not waste cycles asking for tiny spelling repairs.
+Generate every artistic candidate with the exact title visibly integrated into the jacket. For short titles, use native generation and inspect every glyph before acceptance. When letter accuracy fails, keep a textless production master only as a working layer and deterministically rebuild the same title-image relationship; do not waste cycles asking for tiny spelling repairs. Never present a textless master, a detached title banner, or a generic caption box as a cover candidate.
 
 ## Required provenance
 
