@@ -292,6 +292,20 @@
       "kind": "museum_collection_selection",
       "url": "https://www.moma.org/explore/inside_out/2015/09/18/do-you-know-your-moma-91815/",
       "scope": "MoMA acquisition context for The Police's Ghost in the Machine cover"
+    },
+    {
+      "id": "cooper-hewitt-defunkt",
+      "authority": "Cooper Hewitt, Smithsonian Design Museum",
+      "kind": "museum_object_close_reading",
+      "url": "https://www.cooperhewitt.org/2016/06/25/a-funky-front-cover/",
+      "scope": "Tibor Kalman's 1980 Defunkt cover, including its reversed multicolor lettering and cropped photograph"
+    },
+    {
+      "id": "design-museum-peter-saville",
+      "authority": "Design Museum",
+      "kind": "designer_profile_and_design_history",
+      "url": "https://designmuseum.org/designers/peter-saville",
+      "scope": "Peter Saville's Factory Records sleeves, including the floppy-disk construction of New Order's Blue Monday"
     }
   ],
   "candidates": [
@@ -1653,6 +1667,40 @@
       "type_mode": "segmented glyph portraits",
       "screening_observation": "Three red seven-segment figures operate simultaneously as abstract faces and a constructed alphabetic sign, with no separate image layer.",
       "transfer_question": "How can a small set of rigid display segments create a memorable identity without relying on literal word readability?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "defunkt-defunkt",
+      "artist": "Defunkt",
+      "title": "Defunkt",
+      "year": 1980,
+      "region": "North America",
+      "genre": "punk jazz and funk",
+      "scripts": ["Latin", "reversed Latin"],
+      "evidence_ids": ["cooper-hewitt-defunkt"],
+      "design_credit": "Tibor Kalman / M&Co",
+      "acclaim_scope": "museum object close reading",
+      "dominance": "T4",
+      "type_mode": "reversed multicolor arc wordmark",
+      "screening_observation": "The reversed multicolor DEFUNKT wordmark is the first fixation and makes the cropped monochrome figure read as a restrained counterweight rather than a portrait cover.",
+      "transfer_question": "How can reversal create an active reading delay while retaining enough word-shape recognition at thumbnail scale?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "new-order-blue-monday",
+      "artist": "New Order",
+      "title": "Blue Monday",
+      "year": 1983,
+      "region": "Europe",
+      "genre": "post-punk and synth-pop",
+      "scripts": ["coded color system", "geometric glyphs"],
+      "evidence_ids": ["design-museum-peter-saville"],
+      "design_credit": "Peter Saville Associates",
+      "acclaim_scope": "design-museum design history",
+      "dominance": "T5",
+      "type_mode": "coded package-object title system",
+      "screening_observation": "The sleeve's floppy-disk construction and coded color index act as the title's visual language; no photographic or illustrative image is required for recognition.",
+      "transfer_question": "When can a release title be carried by a learnable code and package silhouette rather than by spelled-out display type?",
       "status": "visual-pass"
     }
   ],
