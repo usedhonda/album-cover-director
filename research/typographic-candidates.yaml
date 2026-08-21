@@ -229,6 +229,13 @@
       "scope": "Lemi Ghariokwu's Fela Kuti album-cover practice"
     },
     {
+      "id": "fela-official-no-agreement",
+      "authority": "Fela Kuti official catalog",
+      "kind": "official_release_page",
+      "url": "https://felakuti.com/products/142321-no-agreement-1977-shuffering-shmiling-1978",
+      "scope": "Official catalog page with the No Agreement front-cover image, work identity, and original Decca Afrodisia release context"
+    },
+    {
       "id": "best-art-vinyl-2010",
       "authority": "Best Art Vinyl",
       "kind": "cover_specific_award_shortlist_with_design_credits",
@@ -762,14 +769,19 @@
       "region": "Africa",
       "genre": "Afrobeat",
       "scripts": ["Latin"],
-      "evidence_ids": ["cca-lagos-fela-covers"],
+      "evidence_ids": ["cca-lagos-fela-covers", "fela-official-no-agreement"],
       "design_credit": "Lemi Ghariokwu",
       "acclaim_scope": "cover-specific exhibition",
       "dominance": "T4",
       "type_mode": "headline plus semantic text field",
       "screening_observation": "The title and surrounding political phrases make language the conceptual environment, with the central figure acting inside it.",
       "transfer_question": "How can multiple readable phrases create a political chorus without losing the title hierarchy?",
-      "status": "visual-pass"
+      "status": "evidence-complete",
+      "evidence_roles": {
+        "visual": ["fela-official-no-agreement"],
+        "acclaim": ["cca-lagos-fela-covers"],
+        "credit": ["cca-lagos-fela-covers"]
+      }
     },
     {
       "id": "fela-kuti-zombie",
