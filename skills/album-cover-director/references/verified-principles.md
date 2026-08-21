@@ -48,7 +48,7 @@ the title's poor legibility is being mistaken for attitude.
 Use this when the song has pressure, absence, camouflage, fragility, or a
 physical constraint. Let the title be molded, engraved, debossed, transparent,
 or revealed by light. Define what makes it visible at a thumbnail size: edge
-light, shadow, contrast boundary, or a secondary exact post-typeset lockup.
+light, shadow, contrast boundary, and an explicit native reading route.
 
 **Reject when:** material realism makes the title disappear without an intended
 reading route.

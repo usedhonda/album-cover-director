@@ -38,17 +38,13 @@ corpus evidence until the full-size and thumbnail tests agree.
 
 Use when letters must belong physically to the scene: painted on glass, cast as metal, formed by shadows, stitched into cloth, bent into architecture, or damaged by the same process as the image. Require exact text and prohibit all other readable text. Use this mode for conceptual integration, but inspect every glyph.
 
-### `post-typeset`
-
-Use only to recover exact spelling, multilingual shaping, label delivery, or small-size precision after the image-native title has failed. The title architecture is still part of the jacket: establish its material, depth, occlusion, and relation to the dominant geometry before generation, then deterministically rebuild that same design. A textless master is an internal layer, never an evaluated cover. Do not use a quiet header, label, box, or generic caption zone as a shortcut.
-
 ### `custom-wordmark`
 
-Use when the title itself is the image or needs ownable identity. Define the construction system below. A wordmark may be generated as a concept study, but final spelling and spacing must be redrawn or typeset if any letter is unstable.
+Use when the title itself is the image or needs ownable identity. Define the construction system below and generate it as part of the jacket; do not repair unstable letters with a later font layer.
 
 ### `auto`
 
-Choose `image-native` when the title is short enough to inspect; it is the default for a jacket's single approved title. Choose `custom-wordmark` when letters organize the square. Use `post-typeset` only as a precise reconstruction of an already-designed title-image relationship, especially for Japanese/Latin mixed text, long titles, credits, or strict metadata matching.
+Choose `image-native` when the title is short enough to inspect; it is the default for a jacket's single approved title. Choose `custom-wordmark` when letters organize the square. For Japanese/Latin mixed text, long titles, credits, or strict metadata matching, make the title architecture and exact permitted string more explicit in the prompt; never switch to post-typesetting.
 
 ## Wordmark construction specification
 
@@ -86,7 +82,7 @@ busy.
   scripts. Change one construction rule at a time; random distortion makes a
   title less ownable, not more expressive.
 
-For each architecture, make a one-color proof and, if needed, a textless production master separately. Neither substitute is an evaluated jacket candidate: the reviewed result must show the exact title integrated with the image. If either proof fails, return to the skeleton rather than adding effects.
+For each architecture, make a one-color proof if it clarifies the skeleton. The reviewed result must show the exact title natively integrated with the image. If it fails, return to the skeleton and rewrite the prompt rather than adding a later text layer.
 
 ## Information fields are not automatically wordmarks
 
@@ -101,9 +97,9 @@ title entry point at 128 px through at least one controlled distinction:
 - a repeated title glyph or monogram that survives reduction; or
 - a stated reading route such as edge-to-center, spiral, or vertical column.
 
-If every line has equal visual priority, preserve the field as a texture and
-add a separate exact title lockup. Never rely on a dense information field to
-carry spelling accuracy by itself.
+If every line has equal visual priority, preserve the field as texture and
+rewrite the generation prompt so one native title entry point has visual
+priority. Never add a separate title lockup.
 
 ## Mixed-script titles
 
@@ -131,20 +127,6 @@ Mechanical metrics are a starting point. Inspect problematic pairs, punctuation,
 
 Avoid accidental tangencies: a title that nearly touches a face, frame edge, horizon, or object often looks less intentional than either clear separation or a decisive overlap.
 
-## Post-typeset finishing
-
-Keep the image master and type layer separate. Prefer vector or live type until approval. Before raster delivery:
-
-1. confirm the exact metadata string by copy comparison;
-2. resolve missing glyphs and language shaping;
-3. perform optical kerning and baseline correction;
-4. inspect at 100%, 128 px, and 56 px;
-5. convert to outlines only in a duplicate working file when the destination requires it;
-6. preserve an editable source and record the font name, version, license, and modifications;
-7. rasterize once at final dimensions and inspect edge quality.
-
-Do not use a font merely because it is installed. Verify desktop, commercial artwork, embedding, modification, and redistribution rights as applicable. A generated wordmark can still resemble a protected logo; perform a similarity and trademark review before commercial delivery.
-
 ## Image-native prompt block
 
 State:
@@ -170,4 +152,4 @@ Inspect at full size and 128 px:
 - title reads at 128 px;
 - title silhouette and rhythm remain distinctive when the image is hidden.
 
-If any accuracy item fails, do not spend repeated generation cycles repairing individual letters. Return to the selected image's title architecture and rebuild it with exact post-typesetting or a redrawn wordmark. Preserve the intended shadows, embossing, occlusion, and surface deformation; if the result reads as a detached label or overlay, fail the direction and revise the art direction rather than accepting it.
+If any accuracy item fails, reject the candidate. Return to the selected title architecture and rewrite the image-generation prompt with explicit glyph count, reading order, placement, scale, color, and relation to the scene. Never repair letters with post-typesetting, redrawing, or compositing.

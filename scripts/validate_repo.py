@@ -34,6 +34,12 @@ ERA_COUNTS = {
 }
 EAST_ASIA = {"Japan", "South Korea", "China", "Hong Kong", "Taiwan"}
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".tif", ".tiff"}
+DEMO_IMAGES = {
+    "docs/examples/title-map-secretary-chi.png",
+    "docs/examples/hero-wordmark-secretary-chi.png",
+    "docs/examples/japanese-title-shachoshitsu-no-asa.png",
+    "docs/examples/tsundere-secretary-chi.png",
+}
 TEXT_SUFFIXES = {".md", ".yaml", ".yml", ".json", ".jsonl", ".py", ".toml", ".txt"}
 FORBIDDEN = [
     re.compile("/" + "Users" + "/"),
@@ -253,7 +259,7 @@ def validate_forward_cases() -> None:
     }
     volumes = {"quick": 3, "standard": 6, "deep": 12}
     evidence_kinds = {"lyrics", "track-description", "audio"}
-    typography_modes = {"auto", "image-native", "post-typeset", "custom-wordmark"}
+    typography_modes = {"auto", "image-native", "custom-wordmark"}
     names = set()
     covered_modes = set()
     for case in cases:
@@ -285,18 +291,25 @@ def validate_forward_cases() -> None:
 
 def validate_public_safety() -> None:
     image_files = []
+    found_demo_images = set()
     violations = []
     for path in ROOT.rglob("*"):
         if not path.is_file() or ".git" in path.parts:
             continue
         if path.suffix.lower() in IMAGE_SUFFIXES:
-            image_files.append(path.relative_to(ROOT).as_posix())
+            relative = path.relative_to(ROOT).as_posix()
+            if relative in DEMO_IMAGES:
+                found_demo_images.add(relative)
+            else:
+                image_files.append(relative)
         if path.suffix.lower() in TEXT_SUFFIXES or path.name in {"LICENSE"}:
             text = path.read_text(errors="replace")
             for pattern in FORBIDDEN:
                 if pattern.search(text):
                     violations.append(f"{path.relative_to(ROOT)} matches {pattern.pattern}")
-    require(not image_files, f"repository must not contain third-party raster images: {image_files}")
+    require(not image_files, f"repository must not contain undocumented raster images: {image_files}")
+    require(found_demo_images == DEMO_IMAGES,
+            f"demonstration gallery is incomplete: {sorted(DEMO_IMAGES - found_demo_images)}")
     require(not violations, "public-safety violations: " + "; ".join(violations))
 
 
