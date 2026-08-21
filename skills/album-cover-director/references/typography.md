@@ -64,6 +64,31 @@ Define all seven variables before prompting or drawing:
 
 Also specify case, line breaks, alignment, tracking, leading, baseline behavior, optical corrections, language/script handling, and relation to the image.
 
+## Title-image architectures
+
+When the title must organize the square, choose one construction relationship
+before styling individual glyphs. Do not combine these just to make type look
+busy.
+
+- **Aperture wordmark.** The title is a solid mass and color, texture, light, or
+  a secondary scene appears only inside its counters or cut-outs. Use it for a
+  short title with a distinctive silhouette. Keep the outer word shape legible
+  in one color; the contained image may enrich the letters but must not replace
+  their recognition.
+- **Title grid.** Divide a multi-character title into a stated row/column
+  system, then make that system the governing geometry for the whole square.
+  Specify reading order, cell proportion, inter-cell spacing, and where any
+  pictorial layer is permitted to sit. The grid must still read as a title at
+  128 px, not merely as abstract tiles.
+- **Constructed glyph system.** Build each letter or character from a limited
+  repeatable vocabulary such as dots, lines, clipped strokes, or modules. State
+  the minimum recognition cues that may not be removed, especially for complex
+  scripts. Change one construction rule at a time; random distortion makes a
+  title less ownable, not more expressive.
+
+For each architecture, make a one-color proof and a textless master separately.
+If either proof fails, return to the skeleton rather than adding effects.
+
 ## Information fields are not automatically wordmarks
 
 A cover can make all of its text into one visual field: handwriting can cover a
