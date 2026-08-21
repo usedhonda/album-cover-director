@@ -173,6 +173,13 @@
       "scope": "Underworld, Dubnobasswithmyheadman and Aphex Twin, Collapse"
     },
     {
+      "id": "john-warwicker-dubnobasswithmyheadman",
+      "authority": "John Warwicker",
+      "kind": "designer portfolio record",
+      "url": "https://www.johnwarwicker.com/dubnobasswithmyheadman-singles",
+      "scope": "Warwicker's portfolio identifies his art direction and design, with Tomato, for Underworld's Dubnobasswithmyheadman album cover"
+    },
+    {
       "id": "moma-new-alphabet-substance",
       "authority": "The Museum of Modern Art",
       "kind": "museum_typography_close_reading",
@@ -928,14 +935,19 @@
       "region": "Europe",
       "genre": "progressive house and techno",
       "scripts": ["Latin"],
-      "evidence_ids": ["aiga-iconic-electronic"],
-      "design_credit": "Tomato; lettering process initiated by John Warwicker",
+      "evidence_ids": ["aiga-iconic-electronic", "john-warwicker-dubnobasswithmyheadman"],
+      "design_credit": "John Warwicker with Tomato; Tomato included Karl Hyde and Rick Smith",
       "acclaim_scope": "design-museum exhibition close reading",
       "dominance": "T5",
       "type_mode": "fax-distorted typographic collision",
       "screening_observation": "Stretched words, fragments, bars, and black print splurges fuse into a dense monochrome signal rather than captioning an image.",
       "transfer_question": "Which degradations preserve the title's rhythm, and which collapse it into generic grunge?",
-      "status": "visual-pass"
+      "status": "evidence-complete",
+      "evidence_roles": {
+        "visual": ["aiga-iconic-electronic", "john-warwicker-dubnobasswithmyheadman"],
+        "acclaim": ["aiga-iconic-electronic"],
+        "credit": ["john-warwicker-dubnobasswithmyheadman"]
+      }
     },
     {
       "id": "mylo-destroy-rock-and-roll",
