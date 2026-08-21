@@ -376,6 +376,20 @@
       "kind": "museum collection object",
       "url": "https://www.moma.org/collection/works/189091",
       "scope": "Martyn Atkins's 1984 Einstürzende Neubauten sleeve in MoMA's Architecture and Design collection"
+    },
+    {
+      "id": "warp-autechre-incunabula",
+      "authority": "Warp Records",
+      "kind": "official label catalogue",
+      "url": "https://warp.net/releases/20360-incunabula",
+      "scope": "Official Autechre catalogue page for Incunabula, released 29 November 1993"
+    },
+    {
+      "id": "tdr-autechre-incunabula",
+      "authority": "The Designers Republic",
+      "kind": "designer project archive",
+      "url": "https://www.thedesignersrepublic.com/autechre",
+      "scope": "The Designers Republic archive for its Autechre record artwork"
     }
   ],
   "candidates": [
@@ -1890,6 +1904,23 @@
       "type_mode": "rough band-name wordmark with emblematic glyph",
       "screening_observation": "The jagged gold band-name across the black field is the first reading mass; the smaller central figure behaves as an emblem that takes its visual authority from the same distressed mark-making system.",
       "transfer_question": "How can a rough wordmark and a nonverbal emblem share one fracture vocabulary without competing for the title role?",
+      "status": "visual-second-pass"
+    },
+    {
+      "id": "autechre-incunabula",
+      "artist": "Autechre",
+      "title": "Incunabula",
+      "year": 1993,
+      "region": "Europe",
+      "genre": "electronic and IDM",
+      "scripts": ["Latin", "monogrammatic Latin", "calibration glyphs"],
+      "evidence_ids": ["warp-autechre-incunabula", "tdr-autechre-incunabula"],
+      "design_credit": "The Designers Republic",
+      "acclaim_scope": "official label catalogue and designer project archive",
+      "dominance": "T5",
+      "type_mode": "oversized Ae monogram as a glitch-field sign",
+      "screening_observation": "The oversized Ae monogram is the cover's largest and most stable event; the dispersed calibration marks and low-contrast glitches make its letters read as an electronic identity glyph rather than ordinary artist credit.",
+      "transfer_question": "How can a two-letter monogram become the visual engine of a cover while a deliberately degraded information field supplies genre texture without weakening the sign?",
       "status": "visual-second-pass"
     }
   ],
