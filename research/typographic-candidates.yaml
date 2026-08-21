@@ -18,8 +18,13 @@
     "status_lifecycle": {
       "visual-pass": "The square cover was directly inspected and met T4 or T5; credit and source separation may still be incomplete.",
       "visual-second-pass": "The cover is close to the T3/T4 boundary and must be compared again at full size and 56 px.",
-      "evidence-complete": "Visual pass, cover-specific acclaim, designer credit, and distinct source fields are all verified; eligible for the final corpus.",
+      "evidence-complete": "Visual pass, cover-specific acclaim, designer credit, and distinct source fields are all verified through evidence_roles; eligible for the final corpus.",
       "rejected": "Retained only as a documented boundary example."
+    },
+    "final_evidence_contract": {
+      "required_roles": ["visual", "acclaim", "credit"],
+      "minimum_distinct_sources": 2,
+      "rule": "An evidence-complete candidate names at least one registered source for every required role. The roles must collectively cite two or more distinct sources."
     }
   },
   "checkpoint_contract": {

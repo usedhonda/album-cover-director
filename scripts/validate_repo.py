@@ -78,6 +78,12 @@ def validate_corpus() -> None:
         return
     require(corpus.get("research_status") == "final", "production corpus must declare research_status=final")
     require(corpus.get("production_use") is True, "final corpus must enable production use")
+    ledger = json.loads((ROOT / "research/typographic-candidates.yaml").read_text())
+    evidence_complete = {
+        candidate["id"]
+        for candidate in ledger.get("candidates", [])
+        if candidate.get("status") == "evidence-complete"
+    }
     works = corpus.get("works", [])
     require(len(works) == 120, f"expected 120 works, found {len(works)}")
     require(len({work["id"] for work in works}) == 120, "corpus IDs must be unique")
@@ -92,12 +98,15 @@ def validate_corpus() -> None:
         "source_url", "source_kind", "subject", "composition", "typography_role",
         "color_ratio", "materiality", "thumbnail_performance", "genre_anchor",
         "genre_betrayal", "transferable_principle", "primary_pattern", "secondary_techniques",
+        "candidate_id",
     }
     for work in works:
         missing = required - work.keys()
         require(not missing, f"{work.get('id', '?')} missing fields: {sorted(missing)}")
         require(work["primary_pattern"] in PATTERNS, f"unknown pattern in {work['id']}")
         require(1 <= len(work["secondary_techniques"]) <= 2, f"secondary technique count in {work['id']}")
+        require(work["candidate_id"] in evidence_complete,
+                f"final corpus work {work['id']} must reference an evidence-complete candidate")
         parsed = urlparse(work["source_url"])
         require(parsed.scheme == "https" and parsed.netloc, f"invalid source URL in {work['id']}")
         require(1940 <= int(work["year"]) <= 2026, f"year outside corpus range in {work['id']}")
@@ -114,6 +123,12 @@ def validate_typographic_candidates() -> None:
         parsed = urlparse(source["url"])
         require(parsed.scheme == "https" and parsed.netloc, f"invalid candidate source URL: {source['id']}")
     checkpoints = ledger.get("checkpoint_contract", {})
+    evidence_contract = ledger["selection_contract"].get("final_evidence_contract", {})
+    required_evidence_roles = set(evidence_contract.get("required_roles", []))
+    require(required_evidence_roles == {"visual", "acclaim", "credit"},
+            "final evidence contract must require visual, acclaim, and credit roles")
+    minimum_distinct_sources = evidence_contract.get("minimum_distinct_sources")
+    require(minimum_distinct_sources == 2, "final evidence contract must require two sources")
     require(checkpoints.get("candidate_pool_target") == 180, "candidate-pool target must be 180")
     require(checkpoints.get("visual_checkpoints") == [40, 80, 120], "visual checkpoints must be 40/80/120")
     require(checkpoints.get("final_corpus_target") == 120, "final corpus target must be 120")
@@ -159,6 +174,20 @@ def validate_typographic_candidates() -> None:
         require(not unknown, f"{candidate['id']} references unknown evidence: {sorted(unknown)}")
         require(candidate["status"] in {"visual-pass", "visual-second-pass", "evidence-complete"},
                 f"{candidate['id']} has invalid screening status")
+        if candidate["status"] == "evidence-complete":
+            evidence_roles = candidate.get("evidence_roles", {})
+            require(set(evidence_roles) == required_evidence_roles,
+                    f"{candidate['id']} evidence-complete roles must be {sorted(required_evidence_roles)}")
+            cited_sources = set()
+            for role, role_sources in evidence_roles.items():
+                require(isinstance(role_sources, list) and role_sources,
+                        f"{candidate['id']} has no sources for evidence role {role}")
+                unknown_role_sources = set(role_sources) - source_ids
+                require(not unknown_role_sources,
+                        f"{candidate['id']} evidence role {role} references unknown sources: {sorted(unknown_role_sources)}")
+                cited_sources.update(role_sources)
+            require(len(cited_sources) >= minimum_distinct_sources,
+                    f"{candidate['id']} needs at least {minimum_distinct_sources} distinct evidence sources")
 
 
 def validate_invocation_cases() -> None:
