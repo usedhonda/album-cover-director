@@ -2115,13 +2115,18 @@
       "genre": "indie pop and electronic",
       "scripts": ["Latin"],
       "evidence_ids": ["commarts-alagoas", "grammy-alagoas"],
+      "evidence_roles": {
+        "visual": ["commarts-alagoas"],
+        "acclaim": ["grammy-alagoas"],
+        "credit": ["commarts-alagoas"]
+      },
       "design_credit": "Alex Trochut",
       "acclaim_scope": "Communication Arts typography gallery and GRAMMY Best Album Package nominee",
       "dominance": "T5",
       "type_mode": "three-layer acetate system revealing a custom wordmark",
       "screening_observation": "Communication Arts documents three cyan, magenta, and yellow abstract layers whose registration reveals the band's name in a custom black typeface. The wordmark is the image-producing mechanism: no separate illustration has to carry recognition.",
       "transfer_question": "How can several independently plausible color layers produce a precise title only when combined, so that registration becomes part of the release identity?",
-      "status": "visual-pass"
+      "status": "evidence-complete"
     },
     {
       "id": "headache-city-t-tonite",
