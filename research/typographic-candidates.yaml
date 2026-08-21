@@ -404,6 +404,13 @@
       "kind": "museum design-history exhibition",
       "url": "https://www.mplus.org.hk/en/magazine/imaging-cantopop-design-and-performativity-a-side/",
       "scope": "M+ design-history reading of Cantopop sleeves, including Alan Chan's 1983 Silk Road Tour title grid"
+    },
+    {
+      "id": "best-art-vinyl-2013",
+      "authority": "Art Vinyl",
+      "kind": "cover-specific award shortlist with design credits",
+      "url": "https://artvinyl.com/award-year/2013/",
+      "scope": "2013 Best Art Vinyl winners and nominees, including credited artwork for Paul McCartney's New"
     }
   ],
   "candidates": [
@@ -2054,6 +2061,23 @@
       "type_mode": "nine-character title as a 3-by-3 magic-square grid",
       "screening_observation": "M+ describes nine dark-orange Chinese title characters arranged in a right-to-left 3-by-3 grid over the whole cover, with the caravan silhouette restricted to the lower edge. The title grid establishes the cover's organizing geometry while the scene supplies scale and setting.",
       "transfer_question": "How can a multi-character title be converted into a strict square grid that remains an image at thumbnail size, while a low-horizon narrative scene supplies atmosphere?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "paul-mccartney-new",
+      "artist": "Paul McCartney",
+      "title": "New",
+      "year": 2013,
+      "region": "Europe",
+      "genre": "pop rock",
+      "scripts": ["Latin"],
+      "evidence_ids": ["best-art-vinyl-2013"],
+      "design_credit": "Rebecca and Mike (logo and cover concept); YES (consultancy and design); Ben Ib (cover image)",
+      "acclaim_scope": "cover-specific award shortlist with design credits",
+      "dominance": "T5",
+      "type_mode": "single-word black wordmark as an aperture over color",
+      "screening_observation": "The oversized word NEW is the front cover's fixed black mass, with only a blurred, high-chroma field visible through its letter apertures. At small size, the word remains the complete identity and the color functions as material inside the glyphs.",
+      "transfer_question": "How can one short title become an architectural aperture that contains a changing color world, while retaining absolute legibility and a strong silhouette?",
       "status": "visual-pass"
     }
   ],
