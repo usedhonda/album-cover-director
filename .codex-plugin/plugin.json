@@ -1,0 +1,18 @@
+{
+  "name": "album-cover-director",
+  "version": "0.1.0",
+  "description": "Direct distinctive, release-ready album covers from musical meaning through typography, image generation, evaluation, and delivery.",
+  "author": {
+    "name": "usedhonda"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Album Cover Director",
+    "shortDescription": "Direct release-ready album artwork.",
+    "longDescription": "Turns a title plus lyrics, a music description, or audio into structurally distinct cover directions; generates and evaluates artwork; applies a dedicated typography gate; and prepares square delivery assets.",
+    "developerName": "usedhonda",
+    "category": "Creative & Design",
+    "capabilities": ["album-art-direction", "image-generation", "typography", "delivery-validation"],
+    "defaultPrompt": "Use $album-cover-director to develop and deliver a distinctive album cover from this track."
+  }
+}

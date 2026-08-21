@@ -1,0 +1,48 @@
+schema_version: 1
+release:
+  exact_title: ""
+  artist: ""
+  release_type: single
+  destination: streaming
+positioning:
+  intended_audience: ""
+  listening_context: ""
+  shelf_neighbors: []
+  point_of_difference: ""
+  rejection_criteria: []
+evidence:
+  lyrics_or_description: ""
+  audio_traits: []
+  references: []
+  reference_rights: "not supplied"
+interpretation:
+  central_contradiction: ""
+  sensory_qualities: []
+  physical_phenomena: []
+  symbols: []
+constraints:
+  genre: ""
+  artist_system: ""
+  avoid: []
+  allowed_readable_text: []
+  font_rights: "not applicable or not yet verified"
+runtime:
+  volume: standard
+  candidate_count: 6
+  typography_mode: auto
+directions:
+  - id: A
+    primary_pattern: ""
+    secondary_techniques: []
+    genre_anchor: ""
+    genre_betrayal: ""
+  - id: B
+    primary_pattern: ""
+    secondary_techniques: []
+    genre_anchor: ""
+    genre_betrayal: ""
+  - id: C
+    primary_pattern: ""
+    secondary_techniques: []
+    genre_anchor: ""
+    genre_betrayal: ""

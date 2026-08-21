@@ -1,0 +1,7 @@
+interface:
+  display_name: "Album Cover Director"
+  short_description: "Direct distinctive, release-ready album artwork"
+  brand_color: "#191919"
+  default_prompt: "Use $album-cover-director to develop and deliver a distinctive album cover from this track."
+policy:
+  allow_implicit_invocation: true

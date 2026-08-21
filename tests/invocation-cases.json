@@ -1,0 +1,74 @@
+[
+  {
+    "name": "explicit-skill-japanese",
+    "prompt": "$album-cover-director で『夜の余白』のジャケットをstandardで作って。歌詞は以下です。",
+    "expected_trigger": true,
+    "coverage": ["japanese"]
+  },
+  {
+    "name": "natural-japanese-title",
+    "prompt": "新曲『二つの低気圧』の配信用ジャケットを、歌詞から3方向考えて生成して",
+    "expected_trigger": true,
+    "coverage": ["japanese"]
+  },
+  {
+    "name": "english-title",
+    "prompt": "Direct a cover for the single Read The Tape from these lyrics and deliver a 3000px square.",
+    "expected_trigger": true,
+    "coverage": ["english"]
+  },
+  {
+    "name": "mixed-script-title",
+    "prompt": "EPタイトル『透明なSignal』の和欧混植を含むカバーアートを設計して",
+    "expected_trigger": true,
+    "coverage": ["mixed-script"]
+  },
+  {
+    "name": "instrumental-audio",
+    "prompt": "This instrumental has no lyrics. Use the attached audio to build six structurally different album-cover candidates.",
+    "expected_trigger": true,
+    "coverage": ["instrumental"]
+  },
+  {
+    "name": "type-hero",
+    "prompt": "Make the title itself the main album image and construct a custom wordmark, not just a font choice.",
+    "expected_trigger": true,
+    "coverage": ["type-hero"]
+  },
+  {
+    "name": "reference-image",
+    "prompt": "Use my attached rights-cleared portrait as the identity reference for a single cover, while changing the scene and typography.",
+    "expected_trigger": true,
+    "coverage": ["reference-image"]
+  },
+  {
+    "name": "series-system",
+    "prompt": "Continue this artist's existing cover system without repeating the last title position, palette, or scene structure.",
+    "expected_trigger": true,
+    "coverage": ["series-system"]
+  },
+  {
+    "name": "image-edit-negative",
+    "prompt": "Remove the person in the background of this vacation photo.",
+    "expected_trigger": false,
+    "coverage": ["negative"]
+  },
+  {
+    "name": "poster-negative",
+    "prompt": "Make an A3 poster for next week's community meeting.",
+    "expected_trigger": false,
+    "coverage": ["negative"]
+  },
+  {
+    "name": "logo-negative",
+    "prompt": "Design a logo for my accounting company.",
+    "expected_trigger": false,
+    "coverage": ["negative"]
+  },
+  {
+    "name": "generic-generation-negative",
+    "prompt": "Generate a watercolor image of a fox in a forest.",
+    "expected_trigger": false,
+    "coverage": ["negative"]
+  }
+]

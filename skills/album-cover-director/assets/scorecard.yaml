@@ -1,0 +1,42 @@
+schema_version: 1
+scale:
+  minimum: 0
+  maximum: 5
+  passing: 4
+criteria:
+  concept_specificity:
+    weight: 1.5
+    gate: false
+  structural_distinction:
+    weight: 1.5
+    gate: false
+  composition:
+    weight: 1.0
+    gate: false
+  color_and_value:
+    weight: 1.0
+    gate: false
+  material_credibility:
+    weight: 1.0
+    gate: false
+  typography:
+    weight: 1.5
+    gate: true
+  thumbnail_recognition:
+    weight: 1.5
+    gate: false
+  artist_fit:
+    weight: 1.0
+    gate: false
+  rights_and_provenance:
+    weight: 1.0
+    gate: true
+  technical_readiness:
+    weight: 1.0
+    gate: true
+decision:
+  leader: ""
+  runner_up: ""
+  rejected: []
+  refinement_variable: ""
+  refinement_cycles_used: 0

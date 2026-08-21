@@ -1,0 +1,17 @@
+schema_version: 1
+jsonl_record:
+  timestamp: "ISO-8601"
+  release_slug: ""
+  direction_id: A
+  candidate_id: A1
+  operation: generate
+  model_or_tool: gpt-image-2
+  parent_candidate_id: null
+  changed_variable: null
+  prompt_file: prompts/A1.md
+  reference_inputs: []
+  reference_rights: ""
+  requested_size: square
+  output_path: ""
+  sha256: ""
+  notes: ""
