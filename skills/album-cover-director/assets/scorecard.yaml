@@ -22,6 +22,9 @@ criteria:
   typography:
     weight: 1.5
     gate: true
+  title_world_integration:
+    weight: 1.5
+    gate: true
   thumbnail_recognition:
     weight: 1.5
     gate: false

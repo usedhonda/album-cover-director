@@ -34,15 +34,27 @@ directions:
   - id: A
     primary_pattern: ""
     secondary_techniques: []
+    title_system: ""
+    material_vocabulary: []
+    letter_anatomy_mapping: ""
+    title_world_role: ""
     genre_anchor: ""
     genre_betrayal: ""
   - id: B
     primary_pattern: ""
     secondary_techniques: []
+    title_system: ""
+    material_vocabulary: []
+    letter_anatomy_mapping: ""
+    title_world_role: ""
     genre_anchor: ""
     genre_betrayal: ""
   - id: C
     primary_pattern: ""
     secondary_techniques: []
+    title_system: ""
+    material_vocabulary: []
+    letter_anatomy_mapping: ""
+    title_world_role: ""
     genre_anchor: ""
     genre_betrayal: ""

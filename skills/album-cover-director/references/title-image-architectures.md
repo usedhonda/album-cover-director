@@ -93,6 +93,92 @@ detail; a field color that lets the type silhouette dominate.
 **Reject when:** type sits mechanically above and below a framed image, or the
 medallion is so detailed that the title loses first read.
 
+## Material title-world systems
+
+Use these when the title should be the cover's physical artifact or living
+system. They are not texture treatments. The chosen material must determine
+the skeleton, counters, joins, terminals, spacing, and reading route of the
+exact title. A normal font covered with material, or letters placed on a
+material scene, fails every card below.
+
+Before prompting, write five decisions:
+
+1. **Material vocabulary** — the limited physical components that may make letters.
+2. **Anatomy mapping** — which component makes strokes, curves, counters, joins, and terminals.
+3. **World role** — what the title does: routes, plays, grows, contains, or transforms.
+4. **Density plan** — title mass, supporting non-linguistic detail, and deliberately quiet areas.
+5. **Failure test** — why the cover would collapse if either the material or title were removed.
+
+### 6. Route and field system
+
+**Use when:** the track suggests navigation, circulation, data, pressure,
+currents, transit, or collective movement.
+
+**Geometry:** one irregular route system makes the letters. Contours, paths,
+measure lines, knots, and crossings become the title's strokes and joins;
+loops, wells, or bounded fields become counters. Supporting marks use the
+same non-linguistic drawing vocabulary and make the square dense without
+becoming a separate diagram.
+
+**Prompt requirements:** define route components; assign their role in letter
+anatomy; name the reading route; specify asymmetry and density zones; prohibit
+ordinary display text, labels, numbers, and pseudo-writing.
+
+**Reject when:** it is a map or diagram with a title over it, the line field is
+too sparse to make a world, or measurements compete as readable information.
+
+### 7. Constructed artifact
+
+**Use when:** the title can be an object made, handled, repaired, folded,
+assembled, or discovered.
+
+**Geometry:** physical seams, folds, fasteners, cuts, rope, hinges, apertures,
+or layered surfaces construct the exact letters. The artifact's functional
+parts define letter widths, turns, counters, overlaps, and terminals; cropped
+edge objects may support the construction but never become loose decoration.
+
+**Prompt requirements:** identify the artifact and its working parts; assign
+each anatomy role; state the object-level force or use; define cropped support
+objects and a palette neutral point.
+
+**Reject when:** the artifact is merely a backdrop, a conventional wordmark
+sits on it, or props tell the story without changing the letters.
+
+### 8. Playable rule system
+
+**Use when:** the music has strategy, competition, chance, ritual, modular
+rhythm, or a feeling of an invented machine.
+
+**Geometry:** tiles, tracks, bridges, gates, tokens, and move paths form every
+letter. The title is a playable system with an entry, directional changes,
+loops/counters, and a visual outcome; all pieces either form or activate the
+letters.
+
+**Prompt requirements:** name the component vocabulary; map it to anatomy;
+define reading/move order; state how the title spans the square asymmetrically;
+ban instructions, scores, numbers, labels, and box-frame packaging.
+
+**Reject when:** a board sits behind normal text, pieces are scattered as
+decoration, or the title becomes a neat typographic grid without play logic.
+
+### 9. Living specimen system
+
+**Use when:** growth, fragility, memory, healing, decay, collection, or
+ecology is central to the track.
+
+**Geometry:** roots, stems, leaves, petals, seed pods, threads, and pins make
+the title as a single living/preserved structure. Branches define joins,
+enclosures define counters, roots create descenders, and growth direction sets
+the rhythm. Mounting elements must visibly preserve or shape the letters.
+
+**Prompt requirements:** choose botanical/biological components; assign their
+anatomy roles; define growth direction and specimen ground; state value range
+and palette so the system remains legible at thumbnail size; prohibit labels,
+Latin names, and decorative floral borders.
+
+**Reject when:** plants frame conventional text, the result is a generic floral
+arrangement, or darkness erases the material logic.
+
 ## From reference to prompt
 
 When a user supplies a cover reference or a web discovery is considered:

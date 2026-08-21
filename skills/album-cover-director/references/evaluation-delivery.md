@@ -17,9 +17,15 @@ Use `cover-ops.py contact-sheet` to create reproducible sheets. Select a leader 
 
 ## Scoring
 
-Score 0–5 for concept specificity, structural distinction, composition, color/value, material credibility, typography, thumbnail recognition, artist fit, rights/provenance, and technical readiness. Typography, rights/provenance, and technical readiness are gates: a candidate scoring below 4 in any of them cannot be delivered without repair.
+Score 0–5 for concept specificity, structural distinction, composition, color/value, material credibility, typography, title-world integration, thumbnail recognition, artist fit, rights/provenance, and technical readiness. Typography, title-world integration, rights/provenance, and technical readiness are gates: a candidate scoring below 4 in any of them cannot be delivered without repair.
 
 A high total does not excuse an incorrect title, unlicensed reference, extra text, non-square master, or unreadable thumbnail.
+
+For a material title-world, score title-world integration by removing one half
+of the idea in thought: remove the title, then remove the material system. If
+either removal leaves an ordinary scene, a normal wordmark, or a viable cover,
+the candidate fails. The material must visibly determine the title's skeleton,
+counters, joins, terminals, spacing, and role in the image.
 
 ## One-variable refinement
 
