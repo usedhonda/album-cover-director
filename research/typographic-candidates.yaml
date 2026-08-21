@@ -103,6 +103,13 @@
       "scope": "Transparent molded typography for Terence Lam's Camouflage"
     },
     {
+      "id": "yesasia-camouflage",
+      "authority": "YesAsia",
+      "kind": "release_product_page",
+      "url": "https://www.yesasia.com/us/yin-xing-se-cd-calendar-card-hong-kong-version/1132493051-0-0-0-en/info.html",
+      "scope": "Front-cover product gallery and release record for Terence Lam's Camouflage / 隱形色 CD edition"
+    },
+    {
       "id": "grammy-blackstar",
       "authority": "Recording Academy",
       "kind": "recording_package_award",
@@ -829,18 +836,23 @@
       "id": "terence-lam-camouflage",
       "artist": "Terence Lam Ka-him",
       "title": "Camouflage",
-      "year": 2025,
+      "year": 2024,
       "region": "East Asia",
       "genre": "Cantopop",
       "scripts": ["Latin"],
-      "evidence_ids": ["dandad-camouflage"],
+      "evidence_ids": ["dandad-camouflage", "yesasia-camouflage"],
       "design_credit": "STUDIOWMW",
       "acclaim_scope": "cover and package design award",
       "dominance": "T5",
       "type_mode": "transparent molded title as material intervention",
       "screening_observation": "The title is physically present but optically recessive, making invisibility the typographic behavior rather than an image effect.",
       "transfer_question": "How can relief, transparency, shadow, and viewing angle carry a title after the physical package becomes a flat thumbnail?",
-      "status": "visual-pass"
+      "status": "evidence-complete",
+      "evidence_roles": {
+        "visual": ["yesasia-camouflage"],
+        "acclaim": ["dandad-camouflage"],
+        "credit": ["dandad-camouflage"]
+      }
     },
     {
       "id": "the-xx-xx",
