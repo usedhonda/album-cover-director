@@ -355,6 +355,20 @@
       "kind": "official label catalogue",
       "url": "https://www.rhino.com/aod/album-1986-public-image-ltd",
       "scope": "Official catalogue page showing the ALBUM front cover and its generic-package premise"
+    },
+    {
+      "id": "rolling-stone-it-xtc-go2",
+      "authority": "Rolling Stone Italia / ARTE Total Records",
+      "kind": "cover-specific design-history close reading",
+      "url": "https://www.rollingstone.it/cinema-tv/programmi-tv/total-records-la-storia-della-grafica-musicale-cover-per-cover%E2%80%A8-3/438164/",
+      "scope": "Hipgnosis's 1978 XTC Go 2 sleeve as a meta-design made of white typewriter text on black"
+    },
+    {
+      "id": "museoph-dias-de-vinilo",
+      "authority": "Museo de la Historia de la Fotografia / Días de Vinilo exhibition catalogue",
+      "kind": "cover-specific exhibition catalogue",
+      "url": "https://museoph.org/files/exposiciones/diasdevinilo-completo.pdf",
+      "scope": "Exhibition-catalogue discussion of Hipgnosis's Go 2 as conceptual graphic reflection on pop-music circulation"
     }
   ],
   "candidates": [
@@ -1835,6 +1849,23 @@
       "type_mode": "generic-package title as total image",
       "screening_observation": "The enlarged lowercase word ‘album’ is the product, title, and principal graphic mass; the white field and small PiL line only make its supermarket-generic proposition legible.",
       "transfer_question": "How can an intentionally generic title system become specific through format, scale, and a rigorously repeated package grammar rather than decorative styling?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "xtc-go-2",
+      "artist": "XTC",
+      "title": "Go 2",
+      "year": 1978,
+      "region": "Europe",
+      "genre": "new wave and post-punk",
+      "scripts": ["Latin", "typewriter text"],
+      "evidence_ids": ["rolling-stone-it-xtc-go2", "museoph-dias-de-vinilo"],
+      "design_credit": "Hipgnosis (Aubrey Powell and Storm Thorgerson)",
+      "acclaim_scope": "cover-specific exhibition catalogue and design-history close reading",
+      "dominance": "T5",
+      "type_mode": "self-referential continuous copy as anti-cover",
+      "screening_observation": "Dense white typewriter copy on a black field is the complete front image: it explains and performs the commercial purpose of a record cover while making reading the visual event.",
+      "transfer_question": "How can continuous copy become a thumbnail-resilient image through density, contrast, and an idea that unfolds only when the viewer moves closer?",
       "status": "visual-pass"
     }
   ],
