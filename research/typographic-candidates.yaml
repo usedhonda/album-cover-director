@@ -549,6 +549,13 @@
       "kind": "museum collection object and design-history record",
       "url": "https://www.moma.org/collection/works/73582",
       "scope": "Barbara Kruger's 1994 cover for Consolidated, Business of Punishment, documented as a CD-cover insert using her signature black, white, and red text-block system"
+    },
+    {
+      "id": "qagoma-consolidated-business-of-punishment",
+      "authority": "Queensland Art Gallery | Gallery of Modern Art",
+      "kind": "museum_collection_record",
+      "url": "https://www.qagoma.qld.gov.au/stories/a-cool-thing-to-have/",
+      "scope": "Collection record with the 1994 London Records sleeve image and Barbara Kruger cover-artwork attribution for Consolidated's Business of Punishment"
     }
   ],
   "candidates": [
@@ -2342,14 +2349,19 @@
       "region": "North America",
       "genre": "industrial rock and electronic",
       "scripts": ["Latin"],
-      "evidence_ids": ["moma-consolidated-business-of-punishment"],
+      "evidence_ids": ["moma-consolidated-business-of-punishment", "qagoma-consolidated-business-of-punishment"],
       "design_credit": "Barbara Kruger",
       "acclaim_scope": "MoMA collection object and design-history record",
       "dominance": "T5",
       "type_mode": "black-white-red slogan blocks over a halftone image",
       "screening_observation": "The directly inspected MoMA object is organized by Kruger's high-contrast title blocks. The record and artist names occupy the center as the active message layer, while the halftone boxing image supplies pressure and confrontation rather than an independent pictorial identity.",
       "transfer_question": "How can a release title use declarative text blocks as the principal image while avoiding borrowed political-advertising mannerisms or an unreadable slogan wall?",
-      "status": "visual-pass"
+      "status": "evidence-complete",
+      "evidence_roles": {
+        "visual": ["qagoma-consolidated-business-of-punishment"],
+        "acclaim": ["moma-consolidated-business-of-punishment"],
+        "credit": ["moma-consolidated-business-of-punishment", "qagoma-consolidated-business-of-punishment"]
+      }
     }
   ],
   "documented_rejections": [
