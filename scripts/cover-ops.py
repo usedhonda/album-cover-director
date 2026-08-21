@@ -71,7 +71,7 @@ def contact_sheet(paths: list[Path], output: Path) -> None:
     cell = 256
     gap = 20
     label_height = 38
-    rows = ["56 px", "256 px", "grayscale", "blur"]
+    rows = ["56 px", "128 px", "256 px", "grayscale", "blur"]
     width = gap + len(paths) * (cell + gap)
     height = gap + label_height + len(rows) * (cell + label_height + gap)
     sheet = Image.new("RGB", (width, height), (24, 24, 24))
@@ -84,6 +84,7 @@ def contact_sheet(paths: list[Path], output: Path) -> None:
             base = prepare_square(opened, cell)
         variants = [
             prepare_square(base, 56),
+            prepare_square(base, 128),
             base,
             ImageOps.grayscale(base).convert("RGB"),
             base.filter(ImageFilter.GaussianBlur(radius=12)),
@@ -92,9 +93,9 @@ def contact_sheet(paths: list[Path], output: Path) -> None:
             y = gap + label_height + row * (cell + label_height + gap)
             if column == 0:
                 label(draw, (gap, y - 18), row_name)
-            if variant.size == (56, 56):
-                px = x + (cell - 56) // 2
-                py = y + (cell - 56) // 2
+            if variant.size != (cell, cell):
+                px = x + (cell - variant.width) // 2
+                py = y + (cell - variant.height) // 2
                 sheet.paste(variant, (px, py))
             else:
                 sheet.paste(variant, (x, y))

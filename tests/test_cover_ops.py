@@ -48,6 +48,8 @@ class CoverOpsTest(unittest.TestCase):
             sheet = self.run_cli("contact-sheet", str(square), str(wide), "--output", str(root / "sheet.png"))
             self.assertEqual(sheet.returncode, 0, sheet.stderr)
             self.assertTrue((root / "sheet.png").exists())
+            with Image.open(root / "sheet.png") as generated:
+                self.assertEqual(generated.height, 1628)
             rejected = self.run_cli("export", str(wide), "--out-dir", str(root / "bad"))
             self.assertNotEqual(rejected.returncode, 0)
             self.assertIn("must be square", rejected.stderr)
