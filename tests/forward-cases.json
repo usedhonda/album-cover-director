@@ -5,7 +5,7 @@
     "artist": "Example Artist",
     "evidence_kind": "lyrics",
     "mode": "standard",
-    "typography_mode": "post-typeset",
+    "typography_mode": "image-native",
     "expected_candidates": 6,
     "directions": ["Archive / Collage / Found Material", "Landscape / Architecture / Absence", "Typographic Hero / Wordmark"]
   },
@@ -15,7 +15,7 @@
     "artist": "Example Artist",
     "evidence_kind": "lyrics",
     "mode": "standard",
-    "typography_mode": "post-typeset",
+    "typography_mode": "image-native",
     "expected_candidates": 6,
     "directions": ["Abstract Material / Process", "Symbolic Object / Still Life", "Typographic Hero / Wordmark"]
   },
@@ -25,7 +25,7 @@
     "artist": "Example Artist",
     "evidence_kind": "track-description",
     "mode": "standard",
-    "typography_mode": "post-typeset",
+    "typography_mode": "image-native",
     "expected_candidates": 6,
     "directions": ["Minimal Geometry / Color Field", "Archive / Collage / Found Material", "Portrait / Identity"]
   },
@@ -65,7 +65,7 @@
     "artist": "Example Artist",
     "evidence_kind": "track-description",
     "mode": "deep",
-    "typography_mode": "post-typeset",
+    "typography_mode": "image-native",
     "expected_candidates": 12,
     "directions": ["Illustration / Character World", "Diagram / Grid / Data / Repetition", "Package Object / Intervention / Anti-cover"]
   },

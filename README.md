@@ -9,7 +9,7 @@ The project is for musicians, track makers, producers, independent labels, and d
 - A work-specific research pipeline for covers acclaimed for visual design, with typography-dominant examples screened independently from music reputation.
 - Twelve organizing patterns that describe what controls the square, rather than a menu of visual styles.
 - Three-direction divergence: every run must change image structure, not just color or rendering.
-- A title-integrated typography gate: every evaluated candidate is a complete jacket, with deterministic reconstruction only when it preserves the designed title-image relationship.
+- A title-integrated typography gate: every evaluated candidate is a complete jacket; title lettering must be generated as part of the image, never added afterward.
 - Five reusable title-image architectures: map, enclosing contour, kinetic wordmark and evidence field, palimpsest intervention, and emblem orbit.
 - Comparative checks at 56 px, 128 px, 256 px, full size, grayscale, and blur.
 - One-variable edits, at most two cycles, always returning to the selected original after regression.
@@ -74,8 +74,20 @@ Typography modes:
 
 - auto;
 - image-native;
-- post-typeset;
 - custom-wordmark.
+
+## Example gallery
+
+These four original examples show the kind of title-image relationship the skill is designed to direct. They are generated demonstrations based on character references owned by this repository's author; they are not included as a template, required style, or third-party cover-art reference.
+
+| Title-image architecture | What it demonstrates |
+| --- | --- |
+| ![A giant SECRETARY CHI title becomes a navigable office world.](docs/examples/title-map-secretary-chi.png) | **Title map.** Letter interiors, counters, and paths are the office world. The title is the square's governing geography. |
+| ![Secretary Chi framed by a giant integrated SECRETARY CHI wordmark.](docs/examples/hero-wordmark-secretary-chi.png) | **Hero wordmark.** One central figure and one enormous title share the same depth, overlap, and visual hierarchy. |
+| ![Secretary Chi serving coffee with 社長室の across the top and a giant 朝 at lower left.](docs/examples/japanese-title-shachoshitsu-no-asa.png) | **Hierarchical Japanese title.** `社長室の` is the lead-in; a single huge `朝` is the image's sunrise-red primary mass. |
+| ![A tsundere Secretary Chi points a red pen through a high-energy Japanese title field.](docs/examples/tsundere-secretary-chi.png) | **Kinetic wordmark.** Gesture, red pen, office fragments, and title strokes form one confrontational typographic action. |
+
+In each example, the exact title is created in the image itself. Do not repair a candidate with a font overlay, redraw, or post-typesetting. If the title is wrong, revise the title architecture and regenerate.
 
 ## Output
 
@@ -121,13 +133,10 @@ Pillow is the only optional runtime dependency:
 python -m pip install Pillow
 python scripts/cover-ops.py inspect selected-master.png
 python scripts/cover-ops.py contact-sheet candidates/*.png --output comparison.png
-python scripts/cover-ops.py typeset selected-master.png --output typeset-master.png \
-  --text "Exact Release Title" --font /path/to/licensed-font.ttf --font-size 260 \
-  --x 1500 --y 2400 --align center --tracking 8
 python scripts/cover-ops.py export selected-master.png --out-dir delivery
 ~~~
 
-The typeset command applies the exact supplied text character-by-character with deterministic tracking and records the font, placement, and resulting SHA-256. The export command refuses non-square sources and records dimensions, scaling, byte size, and SHA-256.
+The export command refuses non-square sources and records dimensions, scaling, byte size, and SHA-256. `cover-ops.py` intentionally does not add or typeset title text: title typography must be native to the generated cover image.
 
 ## Research and copyright
 

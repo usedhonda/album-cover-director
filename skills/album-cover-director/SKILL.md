@@ -23,7 +23,7 @@ Preserve the exact title string. Ask only when a missing title or artist name wo
 - `quick`: 3 candidates, one per direction.
 - `standard`: 6 candidates, two per direction. Default.
 - `deep`: 12 candidates, four per direction.
-- Typography: `auto`, `image-native`, `post-typeset`, or `custom-wordmark`.
+- Typography: `auto`, `image-native`, or `custom-wordmark`.
 
 Every candidate shown for artistic evaluation is a complete jacket with the exact title visibly integrated into its image. A textless master is an internal production intermediate only: never score, present, or select it as a cover candidate.
 
@@ -41,7 +41,7 @@ If the environment exposes an image-generation tool, use GPT Image 2. If it does
 8. Generate the requested number of title-integrated candidates. Record every run or edit in `run-ledger.jsonl` using `assets/run-ledger.yaml` as the field contract.
 9. Compare all candidates at 56 px, 256 px, full size, grayscale, and blur. Use `scripts/cover-ops.py contact-sheet` when Pillow is available. Score with `assets/scorecard.yaml` and `references/evaluation-delivery.md`.
 10. Select a leader and runner-up. Refine only the leader. Change one variable per edit, for no more than two cycles. If an edit regresses, return to the selected original rather than editing the degraded result.
-11. Apply the typography gate. If spelling, spacing, baseline, mixed-script shaping, or letter integrity fails, stop regenerating individual letters. Rebuild the same title architecture with deterministic typesetting or a redrawn wordmark, composited into the intended physical image surface. A detached title strip, quiet header, generic label, or caption box is a regression, not a fallback. When Pillow is available, use `scripts/cover-ops.py typeset` with an exact copied title string, licensed font path, explicit position, alignment, and tracking; record font or lettering rights.
+11. Apply the typography gate. If spelling, spacing, baseline, mixed-script shaping, or letter integrity fails, reject the candidate and return to its title architecture and prompt. Do not add, redraw, typeset, or composite title text after generation. A detached title strip, quiet header, generic label, caption box, or a font layer is a regression, not a fallback.
 12. Validate rights, exact title, absence of unapproved readable text, square composition, thumbnail recognition, and technical requirements.
 13. Export a 3000 x 3000 PNG and JPG plus a 256 px thumbnail with `scripts/cover-ops.py export`. If the required image library is unavailable, provide the exact export specification and do not claim delivery completion.
 14. Write `cover-report.md` with the selected direction, why it won, typography mode, checks, provenance, unresolved human review, and paths.
@@ -65,7 +65,7 @@ album-cover/<release-slug>/
 
 - Three directions must differ in image-organizing structure, not merely palette or rendering style.
 - The title must be exact. No other readable text is allowed unless explicitly approved.
-- Every evaluated candidate must show the title as part of the jacket image. A title may be physically generated, deterministically composited, or redrawn, but it may not be a detached UI-like panel.
+- Every evaluated candidate must show the title as a native part of the generated jacket image. Never add, redraw, typeset, or composite title text after generation.
 - A custom wordmark must define skeleton, width, weight, counters, terminals, rhythm, and transformation logic; a font name alone is not a design.
 - When title-led composition is selected, use one architecture from `references/title-image-architectures.md`; do not reduce it to a decorative font treatment.
 - The selected cover must communicate its main figure, object, or shape at 56 px.
