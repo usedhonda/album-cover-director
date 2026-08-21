@@ -397,6 +397,13 @@
       "kind": "museum design-history exhibition",
       "url": "https://magazine.mplus.org.hk/imaging-cantopop-design-and-performativity-side-b/",
       "scope": "M+'s design-history reading of Cantopop sleeves, including Basil Pao's 1987 Tai Chi Forbidden Zone package"
+    },
+    {
+      "id": "mplus-cantopop-a-side",
+      "authority": "M+, Hong Kong",
+      "kind": "museum design-history exhibition",
+      "url": "https://www.mplus.org.hk/en/magazine/imaging-cantopop-design-and-performativity-a-side/",
+      "scope": "M+ design-history reading of Cantopop sleeves, including Alan Chan's 1983 Silk Road Tour title grid"
     }
   ],
   "candidates": [
@@ -2030,6 +2037,23 @@
       "type_mode": "alphabet constructed from dots and lines",
       "screening_observation": "AIGA's account of Shedge's children's-record covers describes this title system as alphabets made from dots and lines. The constructed letterforms are the cover's central visual event, not an annotation to illustration.",
       "transfer_question": "How can a rule-based glyph system communicate playfulness through construction, allowing the title to operate as both language and a toy-like image?",
+      "status": "visual-pass"
+    },
+    {
+      "id": "silk-road-tour-music-collection",
+      "artist": "Various artists",
+      "title": "Silk Road Tour: Music Collection",
+      "year": 1983,
+      "region": "East Asia",
+      "genre": "television documentary soundtrack",
+      "scripts": ["Chinese"],
+      "evidence_ids": ["mplus-cantopop-a-side"],
+      "design_credit": "Alan Chan",
+      "acclaim_scope": "museum collection and design-history exhibition reading",
+      "dominance": "T4",
+      "type_mode": "nine-character title as a 3-by-3 magic-square grid",
+      "screening_observation": "M+ describes nine dark-orange Chinese title characters arranged in a right-to-left 3-by-3 grid over the whole cover, with the caravan silhouette restricted to the lower edge. The title grid establishes the cover's organizing geometry while the scene supplies scale and setting.",
+      "transfer_question": "How can a multi-character title be converted into a strict square grid that remains an image at thumbnail size, while a low-horizon narrative scene supplies atmosphere?",
       "status": "visual-pass"
     }
   ],
