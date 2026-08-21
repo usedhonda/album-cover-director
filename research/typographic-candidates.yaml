@@ -313,6 +313,20 @@
       "kind": "cover_specific_design_award",
       "url": "https://www.goldenpin.org.tw/goldenpin/en/winners/2537",
       "scope": "Golden Pin winner documentation for KHOW - Eternal Return, including its lyric spirals, ritual notation, and album-object construction"
+    },
+    {
+      "id": "moma-selecter-too-much-pressure",
+      "authority": "The Museum of Modern Art",
+      "kind": "museum_collection_object",
+      "url": "https://www.moma.org/collection/works/?date_begin=Pre-1850&date_end=2020&direction=fwd&locale=en&page=2&q=album+covers&utf8=%E2%9C%93&with_images=1",
+      "scope": "MoMA collection record naming the 1980 The Selecter cover and its credited creators"
+    },
+    {
+      "id": "moma-bizottsag-kalandra-fel",
+      "authority": "The Museum of Modern Art",
+      "kind": "museum_collection_object",
+      "url": "https://www.moma.org/collection/works/189274",
+      "scope": "András Wahorn's 1983 A.E. Bizottság cover in MoMA's Architecture and Design collection"
     }
   ],
   "candidates": [
@@ -1726,6 +1740,40 @@
       "screening_observation": "Twelve circles of Chinese lyric text and linking nodes create the cover's primary visual field; the octagonal central element functions as punctuation within that reading system.",
       "transfer_question": "How can lyric fragments become a legible spatial score while preserving a single title-level entry point?",
       "status": "visual-pass"
+    },
+    {
+      "id": "the-selecter-too-much-pressure",
+      "artist": "The Selecter",
+      "title": "Too Much Pressure",
+      "year": 1980,
+      "region": "Europe",
+      "genre": "2 Tone ska",
+      "scripts": ["Latin", "checkerboard graphic code"],
+      "evidence_ids": ["moma-selecter-too-much-pressure"],
+      "design_credit": "John Teflon Sims, David Storey, and Rick Mann",
+      "acclaim_scope": "museum collection object",
+      "dominance": "T4",
+      "type_mode": "jagged wordmark within a checkerboard identity frame",
+      "screening_observation": "The checkerboard perimeter and jagged Selecter wordmark create the immediate label-language; the leaning figure supplies the pressure metaphor and therefore requires one final size comparison.",
+      "transfer_question": "How can a repeated border system become a genre signal while allowing a title mark to remain the entry point?",
+      "status": "visual-second-pass"
+    },
+    {
+      "id": "ae-bizottsag-kalandra-fel",
+      "artist": "A.E. Bizottság",
+      "title": "Kalandra Fel!",
+      "year": 1983,
+      "region": "Europe",
+      "genre": "Hungarian new wave and art rock",
+      "scripts": ["Latin", "hand-drawn Latin"],
+      "evidence_ids": ["moma-bizottsag-kalandra-fel"],
+      "design_credit": "András Wahorn",
+      "acclaim_scope": "museum collection object",
+      "dominance": "T4",
+      "type_mode": "hand-drawn wordmark plus color-band title field",
+      "screening_observation": "The loose gold band-name mark, white scripted title, pink strip, and lightning-shaped bridge make lettering and graphic bands the organising reading path around the small documentary image.",
+      "transfer_question": "How can two hand-drawn title levels and a hard color band form a hierarchy without becoming a poster pasted onto a photograph?",
+      "status": "visual-second-pass"
     }
   ],
   "documented_rejections": [
