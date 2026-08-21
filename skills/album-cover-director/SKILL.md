@@ -76,4 +76,3 @@ album-cover/<release-slug>/
 - Genre and era as independent axes: `references/genre-era-codes.md`
 - GPT Image 2 prompting and editing: `references/gpt-image-2.md`
 - Scoring, comparison, rights, and export: `references/evaluation-delivery.md`
-- Research precedent: repository-level `research/corpus.yaml`

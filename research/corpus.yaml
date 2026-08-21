@@ -1,5 +1,8 @@
 {
   "schema_version": 1,
+  "research_status": "superseded-draft",
+  "production_use": false,
+  "replacement": "A work-specific, typography-dominant corpus is being rebuilt before v0.1.0. Do not treat this draft as a production reference.",
   "title": "Album Cover Design Observation Corpus",
   "methodology": {
     "purpose": "Extract transferable organizing principles, not style presets.",

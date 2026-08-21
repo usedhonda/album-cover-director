@@ -6,7 +6,7 @@ The project is for musicians, track makers, producers, independent labels, and d
 
 ## What makes it different
 
-- A 120-cover observation corpus spanning four eras, multiple regions, major and independent contexts, and 24+ Japan/East Asia releases.
+- A work-specific research pipeline for covers acclaimed for visual design, with typography-dominant examples screened independently from music reputation.
 - Twelve organizing patterns that describe what controls the square, rather than a menu of visual styles.
 - Three-direction divergence: every run must change image structure, not just color or rendering.
 - A typography gate with deterministic fallback to post-typesetting.
@@ -127,9 +127,9 @@ The export command refuses non-square sources and records dimensions, scaling, b
 
 ## Research and copyright
 
-[research/corpus.yaml](research/corpus.yaml) contains bibliographic information, source links, and original visual observations. It contains no third-party album-cover images. Color proportions are visual estimates, and unverified designer credits are explicitly marked as uncredited.
+[research/corpus.yaml](research/corpus.yaml) is a superseded draft and is not a production reference. Its replacement is being rebuilt from cover-specific design evidence and direct visual screening before `v0.1.0`. The repository contains no third-party album-cover images.
 
-The research method begins with institutional and label-level context such as [Cooper Hewitt’s Art of Noise](https://www.cooperhewitt.org/exhibition/art-of-noise/) and [Blue Note Records’ visual archive](https://www.bluenote.com/blue-note-wall-art/), then examines individual releases.
+The replacement method requires each admitted work to have cover-specific acclaim evidence, typography dominance at T4 or T5, a direct visual check, and a work-specific transferable principle. Music rankings, sales, and album fame do not count as cover-design evidence.
 
 Reference images supplied during use must be owned, licensed, public-domain, or used only as non-reproduced analytical input. Do not request direct imitation of a living artist.
 
