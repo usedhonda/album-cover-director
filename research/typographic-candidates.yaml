@@ -362,6 +362,13 @@
       "scope": "Visual and verbal analysis of Brazilian rock covers, including Legião Urbana's Dois"
     },
     {
+      "id": "renato-russo-official-dois",
+      "authority": "Renato Russo Oficial",
+      "kind": "official_release_page",
+      "url": "https://renatorusso.com.br/album/dois/",
+      "scope": "Official Legião Urbana release page for Dois with the front-cover image, artist, EMI label, and 1986 year"
+    },
+    {
       "id": "moma-de-la-soul",
       "authority": "The Museum of Modern Art",
       "kind": "museum_collection_and_close_reading",
@@ -1881,14 +1888,19 @@
       "region": "Latin America and Caribbean",
       "genre": "Brazilian rock",
       "scripts": ["Latin"],
-      "evidence_ids": ["usp-brazilian-rock-covers"],
+      "evidence_ids": ["usp-brazilian-rock-covers", "renato-russo-official-dois"],
       "design_credit": "Fernanda Pacheco",
       "acclaim_scope": "design-research close reading",
       "dominance": "T5",
       "type_mode": "minimal engraved title pair",
       "screening_observation": "The restrained field is organized almost entirely by the carefully placed Legião Urbana and Dois lettering; apparent material relief gives the letters their image-like weight.",
       "transfer_question": "How can near-invisible material lettering retain enough contrast and spacing to remain intentional in digital reproduction?",
-      "status": "visual-pass"
+      "status": "evidence-complete",
+      "evidence_roles": {
+        "visual": ["renato-russo-official-dois"],
+        "acclaim": ["usp-brazilian-rock-covers"],
+        "credit": ["usp-brazilian-rock-covers"]
+      }
     },
     {
       "id": "de-la-soul-3-feet-high-and-rising",
