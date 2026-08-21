@@ -40,7 +40,7 @@ Use when letters must belong physically to the scene: painted on glass, cast as 
 
 ### `post-typeset`
 
-Use when exact spelling, multilingual shaping, label delivery, or small-size precision is more important than physical integration. Generate a textless or deliberately cleared master. Preserve a quiet title zone or an intentional collision area, then typeset with a deterministic tool.
+Use only to recover exact spelling, multilingual shaping, label delivery, or small-size precision after the image-native title has failed. The title architecture is still part of the jacket: establish its material, depth, occlusion, and relation to the dominant geometry before generation, then deterministically rebuild that same design. A textless master is an internal layer, never an evaluated cover. Do not use a quiet header, label, box, or generic caption zone as a shortcut.
 
 ### `custom-wordmark`
 
@@ -48,7 +48,7 @@ Use when the title itself is the image or needs ownable identity. Define the con
 
 ### `auto`
 
-Choose `image-native` only when physical integration is concept-critical and the title is short enough to inspect. Choose `custom-wordmark` when letters organize the square. Otherwise default to `post-typeset`, especially for Japanese/Latin mixed text, long titles, credits, or strict metadata matching.
+Choose `image-native` when the title is short enough to inspect; it is the default for a jacket's single approved title. Choose `custom-wordmark` when letters organize the square. Use `post-typeset` only as a precise reconstruction of an already-designed title-image relationship, especially for Japanese/Latin mixed text, long titles, credits, or strict metadata matching.
 
 ## Wordmark construction specification
 
@@ -86,8 +86,7 @@ busy.
   scripts. Change one construction rule at a time; random distortion makes a
   title less ownable, not more expressive.
 
-For each architecture, make a one-color proof and a textless master separately.
-If either proof fails, return to the skeleton rather than adding effects.
+For each architecture, make a one-color proof and, if needed, a textless production master separately. Neither substitute is an evaluated jacket candidate: the reviewed result must show the exact title integrated with the image. If either proof fails, return to the skeleton rather than adding effects.
 
 ## Information fields are not automatically wordmarks
 
@@ -171,4 +170,4 @@ Inspect at full size and 128 px:
 - title reads at 128 px;
 - title silhouette and rhythm remain distinctive when the image is hidden.
 
-If any accuracy item fails, do not spend repeated generation cycles repairing individual letters. Switch to the selected textless master and exact post-typesetting. The image can keep shadows, embossing, empty signage, or surface deformation prepared for the later title.
+If any accuracy item fails, do not spend repeated generation cycles repairing individual letters. Return to the selected image's title architecture and rebuild it with exact post-typesetting or a redrawn wordmark. Preserve the intended shadows, embossing, occlusion, and surface deformation; if the result reads as a detached label or overlay, fail the direction and revise the art direction rather than accepting it.

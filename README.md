@@ -9,7 +9,8 @@ The project is for musicians, track makers, producers, independent labels, and d
 - A work-specific research pipeline for covers acclaimed for visual design, with typography-dominant examples screened independently from music reputation.
 - Twelve organizing patterns that describe what controls the square, rather than a menu of visual styles.
 - Three-direction divergence: every run must change image structure, not just color or rendering.
-- A typography gate with deterministic fallback to post-typesetting.
+- A title-integrated typography gate: every evaluated candidate is a complete jacket, with deterministic reconstruction only when it preserves the designed title-image relationship.
+- Five reusable title-image architectures: map, enclosing contour, kinetic wordmark and evidence field, palimpsest intervention, and emblem orbit.
 - Comparative checks at 56 px, 128 px, 256 px, full size, grayscale, and blur.
 - One-variable edits, at most two cycles, always returning to the selected original after regression.
 - Reproducible 3000 x 3000 PNG/JPG and 256 px thumbnail export.
