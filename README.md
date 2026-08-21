@@ -120,10 +120,13 @@ Pillow is the only optional runtime dependency:
 python -m pip install Pillow
 python scripts/cover-ops.py inspect selected-master.png
 python scripts/cover-ops.py contact-sheet candidates/*.png --output comparison.png
+python scripts/cover-ops.py typeset selected-master.png --output typeset-master.png \
+  --text "Exact Release Title" --font /path/to/licensed-font.ttf --font-size 260 \
+  --x 1500 --y 2400 --align center --tracking 8
 python scripts/cover-ops.py export selected-master.png --out-dir delivery
 ~~~
 
-The export command refuses non-square sources and records dimensions, scaling, byte size, and SHA-256.
+The typeset command applies the exact supplied text character-by-character with deterministic tracking and records the font, placement, and resulting SHA-256. The export command refuses non-square sources and records dimensions, scaling, byte size, and SHA-256.
 
 ## Research and copyright
 

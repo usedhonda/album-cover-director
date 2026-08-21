@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from PIL import Image
+from PIL import Image, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "scripts/cover-ops.py"
@@ -51,6 +51,37 @@ class CoverOpsTest(unittest.TestCase):
             rejected = self.run_cli("export", str(wide), "--out-dir", str(root / "bad"))
             self.assertNotEqual(rejected.returncode, 0)
             self.assertIn("must be square", rejected.stderr)
+
+    def test_typeset_records_exact_text_and_preserves_square_master(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            source = root / "source.png"
+            output = root / "typeset.png"
+            Image.new("RGB", (512, 512), (20, 90, 160)).save(source)
+            font_path = next(
+                (
+                    path for path in (
+                        Path("/System/Library/Fonts/Geneva.ttf"),
+                        Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
+                    ) if path.is_file()
+                ),
+                None,
+            )
+            if font_path is None:
+                self.skipTest("No known TrueType font is installed for the CLI integration test")
+            font = ImageFont.truetype(str(font_path), 24)
+            result = self.run_cli(
+                "typeset", str(source), "--output", str(output),
+                "--text", "Exact Title", "--font", str(font.path),
+                "--font-size", "48", "--x", "256", "--y", "180",
+                "--align", "center", "--tracking", "2",
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+            payload = json.loads(result.stdout)
+            self.assertEqual(payload["typography"]["exact_text"], "Exact Title")
+            self.assertEqual(payload["typography"]["align"], "center")
+            self.assertEqual(payload["output"]["width"], 512)
+            self.assertTrue(output.exists())
 
 
 if __name__ == "__main__":

@@ -50,6 +50,16 @@ Default outputs:
 - selected original master preserved unchanged;
 - SHA-256 and image metadata in `cover-report.md`.
 
+For deterministic post-typesetting, use:
+
+~~~bash
+python scripts/cover-ops.py typeset selected-master.png --output typeset-master.png \
+  --text "Exact Release Title" --font /path/to/licensed-font.ttf --font-size 260 \
+  --x 1500 --y 2400 --align center --tracking 8
+~~~
+
+The command applies the supplied string character-by-character, records its exact value, font file, placement, alignment, tracking, leading, and output checksum. It does not establish font licensing or complex-script shaping correctness by itself; those remain human review gates.
+
 Do not upscale an image that is too small without disclosure. The export utility records source dimensions and whether scaling occurred. Distributor rules vary; confirm the destination's current requirements before consequential submission.
 
 Also inspect:
