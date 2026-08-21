@@ -187,6 +187,13 @@
       "scope": "Wim Crouwel's New Alphabet and Peter Saville Associates' use on Joy Division, Substance"
     },
     {
+      "id": "peter-saville-substance-sleeve-archive",
+      "authority": "Peter Saville",
+      "kind": "designer sleeve archive",
+      "url": "https://petersaville.info/sleeves/1987-1990.html",
+      "scope": "Saville's sleeve archive records the 1988 Substance artwork, its New Alphabet arrangement, and Peter Saville Associates credits"
+    },
+    {
       "id": "creative-bloq-master-of-reality",
       "authority": "Creative Bloq",
       "kind": "design_history_close_reading",
@@ -918,14 +925,19 @@
       "region": "Europe",
       "genre": "post-punk",
       "scripts": ["Latin", "custom digital alphabet"],
-      "evidence_ids": ["moma-new-alphabet-substance"],
+      "evidence_ids": ["moma-new-alphabet-substance", "peter-saville-substance-sleeve-archive"],
       "design_credit": "Peter Saville Associates; letterforms adapted from Wim Crouwel's New Alphabet",
       "acclaim_scope": "museum typography close reading",
       "dominance": "T5",
       "type_mode": "experimental alphabet as complete cover",
       "screening_observation": "The title and band name are rendered as an austere, partially encoded horizontal-line alphabet with no competing image.",
       "transfer_question": "What redundancy lets an unfamiliar alphabet feel intentional before every character is decoded?",
-      "status": "visual-pass"
+      "status": "evidence-complete",
+      "evidence_roles": {
+        "visual": ["moma-new-alphabet-substance", "peter-saville-substance-sleeve-archive"],
+        "acclaim": ["moma-new-alphabet-substance"],
+        "credit": ["peter-saville-substance-sleeve-archive"]
+      }
     },
     {
       "id": "underworld-dubnobasswithmyheadman",
