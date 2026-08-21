@@ -313,6 +313,13 @@
       "scope": "2020 Best Recording Package nominees including Hold That Tiger"
     },
     {
+      "id": "muddy-basin-bandcamp-hold-that-tiger",
+      "authority": "The Muddy Basin Ramblers",
+      "kind": "artist release page",
+      "url": "https://themuddybasinramblers.bandcamp.com/album/hold-that-tiger",
+      "scope": "Artist release page naming Andrew Wong and Fongming Yang of Onion Design Associates and explaining the Taiwanese folk-religion, retro-futurist, and bilingual package construction"
+    },
+    {
       "id": "grammy-recording-package-2025",
       "authority": "Recording Academy",
       "kind": "recording_package_award",
@@ -1782,14 +1789,19 @@
       "region": "East Asia",
       "genre": "roots, blues and folk",
       "scripts": ["Chinese", "Latin", "mixed-script"],
-      "evidence_ids": ["grammy-recording-package-2020"],
+      "evidence_ids": ["grammy-recording-package-2020", "muddy-basin-bandcamp-hold-that-tiger"],
       "design_credit": "Andrew Wong and Fongming Yang",
       "acclaim_scope": "recording-package award nominee",
       "dominance": "T4",
       "type_mode": "talismanic border lettering and illustrated title badge",
       "screening_observation": "The title is carried by a dense talisman-like frame of Chinese symbols, Latin text, and a central illustrated badge that relies on that typography for structure.",
       "transfer_question": "How can a dense border of ritual-like signs stay ordered enough to support a central title image?",
-      "status": "visual-pass"
+      "status": "evidence-complete",
+      "evidence_roles": {
+        "visual": ["muddy-basin-bandcamp-hold-that-tiger"],
+        "acclaim": ["grammy-recording-package-2020"],
+        "credit": ["muddy-basin-bandcamp-hold-that-tiger"]
+      }
     },
     {
       "id": "muddy-basin-ramblers-jug-band-millionaire",
