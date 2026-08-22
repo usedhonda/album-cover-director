@@ -36,6 +36,20 @@ small correction only: preserve composition, drawing, title, material, and
 value structure; do not reimagine the cover with an all-blue, neon, or
 night-time palette.
 
+## Controlled irregularity
+
+When the direction claims a live, physical, documentary, or spatial event,
+do not let the model polish every visible thing to the same intensity. Choose
+one or two irregularities that have a physical cause: uneven exposure, falling
+off light, smoke, a moving body, scratched reflection, crop, occlusion, wear,
+or accidental darkness. Name the cause and where it acts in the frame.
+
+This is not a request for generic grain, blur, dirt, or randomness. Protect
+the intended title reading route, its decisive silhouette, and the one or two
+elements that need recognition. Let surrounding detail become partial only
+where the named cause makes that believable. Do not apply this rule to a
+deliberately pristine graphic, diagrammatic, or product-like direction.
+
 ## Variants
 
 Treat each candidate as an independent generation. Do not use one image and request palette-only variants when the brief requires structural diversity. Log direction ID, candidate ID, prompt, inputs, model, size, quality, output, and human notes.

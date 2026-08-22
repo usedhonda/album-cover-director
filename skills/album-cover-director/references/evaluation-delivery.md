@@ -21,6 +21,14 @@ Score 0–5 for release identity, musical specificity, concept specificity, stru
 
 `release identity` asks whether the square feels like a durable identity for a piece of music rather than a poster, advertisement, editorial illustration, app tile, game splash screen, or generic AI concept image. It needs one dominant identity signal, intentional edge and crop behavior, controlled information density, and a visual reason to exist beyond literal illustration. `musical specificity` asks whether the choices trace to supplied evidence or to a clearly labeled title hypothesis rather than interchangeable genre decoration.
 
+For a live, physical, documentary, or spatial direction, inspect whether
+controlled irregularity has a named cause. Reject the synthetic finish where
+every subject, surface, color, and effect is equally sharp, saturated, and
+available to read. Uneven exposure, smoke, motion, reflection, cropping, wear,
+or occlusion should create selective uncertainty while the title's intended
+reading route and decisive subject remain protected. Do not require this test
+for deliberately pristine graphic, diagrammatic, or product-like directions.
+
 A high total does not excuse an incorrect title, unlicensed reference, extra text, non-square master, or unreadable thumbnail.
 
 For a material title-world, score title-image integration by removing one half
