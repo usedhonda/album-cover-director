@@ -25,24 +25,24 @@ Interpret “use this person/character” as `identity-reference`, “use or edi
 
 Proceed from the title alone when no optional input is supplied. Preserve the exact title string, and do not invent an artist name or private artist settings. The exact title is the only readable cover text allowed by default; an artist name or other text requires explicit approval.
 
-## Project-local artist system and learning
+## Artist-local artist system and learning
 
 Never remember an artist system globally. Resolve artist information in this
 order:
 
 1. artist information or an `artist-system` path explicitly supplied for the current run;
-2. `<project-root>/.album-cover-director/artist-system.md` when present and not explicitly ignored;
+2. `<artist-root>/.album-cover-director/artist-system.md` when present and not explicitly ignored;
 3. no artist information.
 
-Use `scripts/artist-info-state.py resolve --project-root .` to make this
+Use `scripts/artist-info-state.py resolve --artist-root .` to make this
 resolution explicit. An explicit path affects one run only. It does not create
-global memory, and a project-local artist system never affects another project.
+global memory, and an artist-local artist system never affects another artist.
 
 When a user wants ongoing learning, read `references/project-local-learning.md`
 and initialize the workspace with `scripts/project-workspace.py init
---project-root .`. Keep artist settings, feedback, user-supplied learning
+--artist-root .`. Keep artist settings, feedback, user-supplied learning
 images, generated candidates, local benchmark outputs, and learned preferences
-inside that ignored project-local directory. Do not commit or upload it.
+inside that ignored artist-local directory. Do not commit or upload it.
 
 ## Runtime controls
 
@@ -62,8 +62,13 @@ If the environment exposes an image-generation tool, use GPT Image 2. If it does
 ## Workflow
 
 1. Resolve optional lyrics and artist information according to the explicit or
-   project-local rules. When the project-local workspace exists, also read its
+   artist-local rules. When the artist-local workspace exists, also read its
    `learned-preferences.md`; it is local evidence, not a universal rule.
+   When an ongoing artist has no `artist-system.md`, read
+   `references/artist-system-onboarding.md`, create a starter locally, and
+   draft it from available evidence without blocking the cover run. When one
+   exists, preserve user-authored constraints and update it only under that
+   reference's evidence and change-log rules.
    Classify every supplied image as `identity-reference`, `source-asset`, or
    `visual-direction`, and record its rights basis. Create `creative-brief.yaml`
    from the title and whatever optional evidence is available using
@@ -95,11 +100,11 @@ If the environment exposes an image-generation tool, use GPT Image 2. If it does
 11. Apply the typography gate. If spelling, spacing, baseline, mixed-script shaping, or letter integrity fails, reject the candidate and return to its title architecture and prompt. For `material-world`, also reject a candidate when its material could be removed without changing the letter anatomy, when the scene could remain after removing the title, or when it still reads as a product catalogue after removing the title. For `spatial-field`, reject it when the title could be replaced with a flat headline without changing the event, or when variation weakens the locked title hierarchy. For `character-led`, reject it when removing the figure leaves a normal wordmark, or removing the title leaves a conventional character illustration. Do not add, redraw, typeset, or composite title text after generation. A detached title strip, quiet header, generic label, caption box, or a font layer is a regression, not a fallback.
 12. Validate rights, exact title, absence of unapproved readable text, square composition, thumbnail recognition, and technical requirements.
 13. Export a 3000 x 3000 PNG and JPG plus a 256 px thumbnail with `scripts/cover-ops.py export`. If the required image library is unavailable, provide the exact export specification and do not claim delivery completion.
-14. Write `cover-report.md` with the selected direction, why it won, typography mode, checks, provenance, unresolved human review, and paths. When a user gives selection or correction feedback, write a private project-local feedback record using `assets/project-feedback.yaml`. Keep any learning images project-local.
+14. Write `cover-report.md` with the selected direction, why it won, typography mode, checks, provenance, unresolved human review, and paths. When a user gives selection or correction feedback, write a private artist-local feedback record using `assets/project-feedback.yaml`. Keep any trial images artist-local.
 
 ## Skill-learning mode
 
-Ordinary cover runs never become public training data. A reviewed run may improve only that project's private `learned-preferences.md` under the rules in `references/project-local-learning.md`. When the user explicitly asks to improve this public skill, read `references/production-learning.md`, `references/title-behavior-cards.md`, and use `assets/learning-observation.yaml` for controlled, rights-safe trials. Compare winners against rejected candidates, compare one-variable edits against their parents, and validate proposed rules on held-out briefs. Promote only abstract, reproducible design decisions; never promote private lyrics, artist information, reference images, generated images, or one user's taste as a universal rule.
+Ordinary cover runs never become public training data. A reviewed run may improve only that artist's private `learned-preferences.md` under the rules in `references/project-local-learning.md`. When the user explicitly asks to improve this public skill, read `references/production-learning.md`, `references/title-behavior-cards.md`, and use `assets/learning-observation.yaml` for controlled, rights-safe trials. Compare winners against rejected candidates, compare one-variable edits against their parents, and validate proposed rules on held-out briefs. Promote only abstract, reproducible design decisions; never promote private lyrics, artist information, reference images, generated images, or one user's taste as a universal rule.
 
 ## Output contract
 
@@ -147,7 +152,8 @@ album-cover/<release-slug>/
 - Lettering construction and fallback gate: `references/typography.md`
 - Genre and era as independent axes: `references/genre-era-codes.md`
 - GPT Image 2 prompting and editing: `references/gpt-image-2.md`
-- Project-local artist settings, feedback, learning images, and benchmarks: `references/project-local-learning.md`
+- Artist-local settings, feedback, trial images, and benchmarks: `references/project-local-learning.md`
+- First-draft and safe update rules for `artist-system.md`: `references/artist-system-onboarding.md`
 - Complex and mixed-script title architecture: `references/title-complexity.md`
 - Testing and adding reusable title behaviors: `references/title-behavior-cards.md`
 - Scoring, comparison, rights, and export: `references/evaluation-delivery.md`

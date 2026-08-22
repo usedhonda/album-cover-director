@@ -18,7 +18,7 @@ Examples of behavior names are `route-field`, `light-distribution`,
 `gesture-vector`, `terrain-lettering`, and `specimen-growth`. They are not
 styles to copy; each still needs its own world engine and release evidence.
 
-Keep new cards project-local until they pass the public promotion gate in
+Keep new cards artist-local until they pass the public promotion gate in
 `production-learning.md`. A public contribution must never include a user's
 artist system, lyrics, prompts with private content, reference images, or
 generated candidate images.

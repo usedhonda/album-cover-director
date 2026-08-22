@@ -49,7 +49,7 @@ $album-cover-director は、アルバム、EP、シングルのジャケット�
 - 56px、128px、256px、原寸、グレースケール、ぼかしの比較
 - 1回1変数、最大2サイクルの修正
 - 3000 x 3000 PNG/JPGと256pxサムネイルの再現可能な書き出し
-- アーティスト設定、フィードバック、学習用画像、ベンチマークをプロジェクトローカルに閉じた継続学習
+- アーティスト設定、フィードバック、参照画像、試作画像、ベンチマークをアーティスト単位に閉じた継続学習
 
 ## インストール
 
@@ -97,21 +97,37 @@ $album-cover-director
 
 参考画像も任意です。画像を添付するかファイルパスを指定し、同じ人物・キャラクターとして使う、画像そのものを加工して使う、雰囲気だけを参考にする、のいずれかを指定できます。明確な場合はSkillが意図を判定します。同じキャラクターを継続しても、ポーズ、行動、場面、構図、光、色、題字構造は曲ごとに作り直します。実画像そのものを使う場合は、利用権限のある画像だけを対象にします。
 
-継続するアーティストのプロジェクトでは、プロジェクト直下に `.album-cover-director/` を初期化します。そこにある `artist-system.md` はそのプロジェクトでだけ使用します。明示したアーティスト情報パスはその一回だけに使い、Skillはアーティスト設定をグローバルに記憶したり、別プロジェクトへ持ち越したりしません。
+継続するアーティストでは、そのアーティストのルートに `.album-cover-director/` を初期化します。そこにある `artist-system.md` はそのアーティストだけに使用します。明示したアーティスト情報パスはその一回だけに使い、Skillはアーティスト設定をグローバルに記憶したり、別アーティストへ持ち越したりしません。
 
 実行量は quick=3枚、standard=6枚、deep=12枚。実行意図は、初期案を出す `explore`、比較・修正・納品まで行う既定の `production`、プロジェクトローカルで比較実験を記録する `improve-skill` です。文字モードは auto、image-native、custom-wordmark です。題字システムは auto、material-world、spatial-field、character-led から選べます。評価に出す各候補は、正確なタイトルがジャケット画像と一体化した完成候補です。タイトルは画像生成と同時に成立させ、あとからフォント、描き直し、合成で足しません。
 
-## プロジェクトローカル学習
+## アーティスト単位のローカル学習
 
-アーティストまたはリリースのプロジェクト直下で一度だけ初期化します。
+個別リリースのフォルダではなく、アーティストのルートで一度だけ初期化します。
 
 ~~~bash
-python scripts/project-workspace.py init --project-root .
+python scripts/project-workspace.py init --artist-root .
 ~~~
 
-これにより、無視対象の `.album-cover-director/` が作られます。中にはartist system、フィードバック、ユーザーが学習させたい画像の受け皿、生成した比較画像、観察、タイトル精度の小さなベンチマークが入ります。このフォルダの内容をSkillはコミットもアップロードも行いません。
+```text
+<artist-root>/
+├── .album-cover-director/               # 非公開・Git無視
+│   ├── artist-system.md                 # アーティスト全体で保つ連続性
+│   ├── learned-preferences.md           # 繰り返し確認された好みだけ
+│   ├── feedback/                        # リリースごとの採用・不採用記録
+│   ├── reference-images/                # ユーザーが入れる外部参照画像
+│   ├── trial-images/                    # この制作で生まれた候補・比較画像
+│   ├── observations/
+│   └── benchmarks/
+└── album-cover/
+    └── <release-slug>/                  # brief、prompt、master、納品物
+```
 
-候補を採用・不採用にしたら、`feedback/<release-slug>.yaml` に理由を残します。同じ観察が異なる曲・構造で繰り返された場合だけ、そのプロジェクトの `learned-preferences.md` へ昇格します。一度の好みは公開ルールにしません。公開Skillへ一般化するには、独立試行、条件の違い、未使用briefでの確認が必要です。詳細は [project-local-learning.md](skills/album-cover-director/references/project-local-learning.md) を参照してください。
+`reference-images/` はユーザーが持ち込む人物資料、実素材、雰囲気の参照画像です。`trial-images/` はこのSkillが生成・比較した候補です。`.album-cover-director/` の内容をSkillはコミットもアップロードも行いません。
+
+artist systemは必須の記入フォームではありません。最初になければ、曲・アーティスト説明・参照画像からSkillが下書きを作り、利用者は自然文で直せます。既にある場合も、明示ルールは保護し、繰り返しのフィードバックか「アーティスト全体の方針にする」という明示指示があるときだけ更新します。詳細は [artist-system-onboarding.md](skills/album-cover-director/references/artist-system-onboarding.md) を参照してください。
+
+候補を採用・不採用にしたら、`feedback/<release-slug>.yaml` に理由を残します。同じ観察が異なる曲・構造で繰り返された場合だけ、そのアーティストの `learned-preferences.md` へ昇格します。一度の好みは公開ルールにしません。公開Skillへ一般化するには、独立試行、条件の違い、未使用briefでの確認が必要です。詳細は [project-local-learning.md](skills/album-cover-director/references/project-local-learning.md) を参照してください。
 
 長いタイトル、日本語、混植、記号の多いタイトルは、生成前に文字の複雑さを分類します。失敗時は画像内の階層、改行、保護する文字を組み直し、後組版では直しません。詳細は [title-complexity.md](skills/album-cover-director/references/title-complexity.md) を参照してください。
 

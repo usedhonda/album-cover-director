@@ -19,7 +19,7 @@ Use evidence in this order:
 5. verified precedent principles used to explain, not override, production evidence.
 
 Never convert one user's aesthetic preference into a universal rule. Artist-specific continuity belongs in that user's artist-information file.
-Project-local feedback belongs in that project's `.album-cover-director/` workspace; promote it to a public rule only through the gate below.
+Artist-local feedback belongs in that artist's `.album-cover-director/` workspace; promote it to a public rule only through the gate below.
 
 ## Trial matrix
 
@@ -96,7 +96,7 @@ Use stable failure codes so repeated weaknesses become visible:
 ## Learning boundaries
 
 - Do not automatically upload observations or use user work for public research.
-- Do not move project-local feedback, learning images, artist systems, or benchmark outputs into this repository. Public observations must be abstracted and privacy-safe.
-- Do not create global cross-run runtime memory from trial records or artist settings. Reusable learning stays inside the relevant project's `.album-cover-director/` directory.
+- Do not move artist-local feedback, trial images, artist systems, or benchmark outputs into this repository. Public observations must be abstracted and privacy-safe.
+- Do not create global cross-run runtime memory from trial records or artist settings. Reusable learning stays inside the relevant artist's `.album-cover-director/` directory.
 - Do not keep adding precedent examples when the failure is execution quality rather than a missing construction principle.
 - Do not promote a rule based only on aggregate score; a gate failure always wins.

@@ -78,6 +78,12 @@
     "coverage": ["project-local-learning", "series-system"]
   },
   {
+    "name": "artist-system-onboarding",
+    "prompt": "初めてこのアーティストのジャケットを作る。artist-system.mdがないので、曲の説明と参考画像から下書きを作りながら進めて。",
+    "expected_trigger": true,
+    "coverage": ["artist-system-onboarding", "reference-image"]
+  },
+  {
     "name": "image-edit-negative",
     "prompt": "Remove the person in the background of this vacation photo.",
     "expected_trigger": false,

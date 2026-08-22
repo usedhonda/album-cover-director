@@ -103,7 +103,7 @@ Lyrics and artist information are optional. Lyrics may be pasted inline or suppl
 
 Reference images are optional. Attach an image or supply a readable file path, then use it as a recurring person or character identity, as an actual image to edit or incorporate, or only as visual direction. When the request is clear, the skill infers the use mode. A recurring character does not freeze the whole cover: pose, action, setting, composition, light, palette, and title architecture remain release-specific. Direct use of the actual image requires the necessary rights.
 
-For a continuing artist project, initialize `.album-cover-director/` at that project's root. Its `artist-system.md` is used only by that project; an explicit artist-information path is used only for the current run. The skill never remembers an artist system globally or carries it into another project.
+For a continuing artist, initialize `.album-cover-director/` at that artist's root. Its `artist-system.md` is used only for that artist; an explicit artist-information path is used only for the current run. The skill never remembers an artist system globally or carries it into another artist's workspace.
 
 Run volumes:
 
@@ -115,7 +115,7 @@ Run intents:
 
 - explore: directions and candidates for an early choice;
 - production: comparison, refinement, and delivery, the default;
-- improve-skill: a controlled project-local learning trial.
+- improve-skill: a controlled artist-local learning trial.
 
 Typography modes:
 
@@ -130,22 +130,35 @@ Title-system families:
 - spatial-field: a protected title skeleton is distributed and transformed by light, reflection, atmosphere, motion, or architecture;
 - character-led: central figure and title share a single hierarchy.
 
-## Project-local learning
+## Artist-local learning
 
-Initialize once from the artist or release project's root:
+Initialize once from the artist root, not from an individual release folder:
 
 ~~~bash
-python scripts/project-workspace.py init --project-root .
+python scripts/project-workspace.py init --artist-root .
 ~~~
 
-This creates an ignored `.album-cover-director/` directory containing the
-artist system, feedback records, an inbox for user-supplied learning images,
-generated learning images, observations, and a small title-integrity benchmark.
-Nothing in that folder is committed or uploaded by this skill.
+```text
+<artist-root>/
+├── .album-cover-director/               # private and ignored
+│   ├── artist-system.md                 # stable artist-wide continuity
+│   ├── learned-preferences.md           # repeated, bounded observations
+│   ├── feedback/                        # one selection record per release
+│   ├── reference-images/                # user-supplied source references
+│   ├── trial-images/                    # generated candidates and comparisons
+│   ├── observations/
+│   └── benchmarks/
+└── album-cover/
+    └── <release-slug>/                  # brief, prompts, master, delivery
+```
+
+`reference-images/` holds images the user brings in as source material or visual direction. `trial-images/` holds candidates this workflow generated and compared. Nothing in `.album-cover-director/` is committed or uploaded by this skill.
+
+The artist system is optional: users do not need to write it before their first cover. When missing, the skill creates a starter and drafts it from available song, artist, and reference evidence; the user can correct it in plain language. When it exists, the skill preserves explicit rules and only updates artist-wide continuity from repeated feedback or an explicit request. See [artist-system-onboarding.md](skills/album-cover-director/references/artist-system-onboarding.md).
 
 After a user chooses or rejects candidates, record the selection and the reason
 in `feedback/<release-slug>.yaml`. A repeated, bounded observation can become
-that project's `learned-preferences.md`; one-off taste never becomes a global
+that artist's `learned-preferences.md`; one-off taste never becomes a global
 rule. A rule can enter the public skill only after independent, varied trials
 and a held-out brief pass. See [project-local-learning.md](skills/album-cover-director/references/project-local-learning.md).
 

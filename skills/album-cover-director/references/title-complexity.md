@@ -44,4 +44,4 @@ text. Return to the title architecture and change one of these causes:
 4. choose a title behavior whose reading route is less destructive.
 
 Record the failure as `title-integrity` and keep the failed candidate only in
-the project-local learning workspace when it is useful for comparison.
+the artist-local learning workspace when it is useful for comparison.

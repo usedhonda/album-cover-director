@@ -103,19 +103,21 @@ def validate_skill() -> None:
     require("ordinary photo edits" in frontmatter, "negative trigger boundary missing")
     require("The only required input is:" in skill, "title-only input contract missing")
     require("lyrics either inline" in skill, "inline-or-path lyrics contract missing")
-    require("Never remember an artist system globally" in skill, "project-local artist-system contract missing")
-    require("scripts/project-workspace.py init" in skill, "project-local workspace initializer missing")
+    require("Never remember an artist system globally" in skill, "artist-local artist-system contract missing")
+    require("scripts/project-workspace.py init" in skill, "artist-local workspace initializer missing")
     require("references/title-complexity.md" in skill, "title-complexity routing missing")
     require("assets/project-feedback.yaml" in skill, "project feedback contract missing")
     for use_mode in ("identity-reference", "source-asset", "visual-direction"):
         require(use_mode in skill, f"reference-image use mode missing: {use_mode}")
-    require("Keep any learning images project-local" in skill,
+    require("Keep any trial images artist-local" in skill,
             "reference-image non-persistence contract missing")
     for relative in (
         "assets/project-feedback.yaml",
         "assets/title-behavior-card.yaml",
         "assets/project-benchmark.yaml",
         "references/project-local-learning.md",
+        "references/artist-system-onboarding.md",
+        "assets/artist-system-template.md",
         "references/title-complexity.md",
         "references/title-behavior-cards.md",
         "scripts/project-workspace.py",
@@ -313,6 +315,7 @@ def validate_invocation_cases() -> None:
         "japanese", "english", "mixed-script", "instrumental", "type-hero", "reference-image",
         "series-system", "title-only", "lyrics-path", "artist-information-path", "reference-image",
         "identity-reference", "source-asset", "visual-direction", "project-local-learning",
+        "artist-system-onboarding",
     }
     require(required_tags <= tags, f"invocation coverage missing: {sorted(required_tags - tags)}")
 
