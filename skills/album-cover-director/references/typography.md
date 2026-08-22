@@ -40,8 +40,12 @@ Use when letters must belong physically to the scene: painted on glass, cast as 
 
 Before prompting, choose the family in `title-image-architectures.md`:
 `material-world` makes the title's physical anatomy and world inseparable;
+`spatial-field` lets a protected, native letter skeleton be distributed and
+transformed by light, reflection, atmosphere, motion, or architecture;
 `character-led` makes a figure, its action, and the title share one hierarchy.
-Neither family permits ordinary type placed on an otherwise complete scene.
+None permits ordinary type placed on an otherwise complete scene. A
+`spatial-field` may use conventional-looking letters only as scene-native
+reading structure, never as a flat overlay.
 
 ### `custom-wordmark`
 

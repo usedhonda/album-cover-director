@@ -336,7 +336,7 @@ def validate_forward_cases() -> None:
                 f"candidate count does not match mode: {case['name']}")
         require(case["typography_mode"] in typography_modes,
                 f"unsupported typography mode: {case['name']}")
-        require(case["title_system_family"] in {"material-world", "character-led"},
+        require(case["title_system_family"] in {"material-world", "spatial-field", "character-led"},
                 f"unsupported title-system family: {case['name']}")
         require(bool(case["title_system"].strip()),
                 f"title system missing: {case['name']}")
@@ -359,8 +359,8 @@ def validate_forward_cases() -> None:
             "forward cases need custom-wordmark coverage")
     require(any(case["typography_mode"] == "image-native" for case in cases),
             "forward cases need image-native coverage")
-    require(covered_title_families == {"material-world", "character-led"},
-            "forward cases must cover both image-native title-system families")
+    require(covered_title_families == {"material-world", "spatial-field", "character-led"},
+            "forward cases must cover all image-native title-system families")
 
 
 def validate_public_safety() -> None:

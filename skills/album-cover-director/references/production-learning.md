@@ -22,7 +22,7 @@ Never convert one user's aesthetic preference into a universal rule. Artist-spec
 
 ## Trial matrix
 
-Test a proposed rule against deliberately different briefs. Include title-only and evidence-rich cases, short and long titles, Latin and non-Latin scripts, quiet and high-density music, character-led and material-world systems, and at least one case outside the conditions that produced the rule.
+Test a proposed rule against deliberately different briefs. Include title-only and evidence-rich cases, short and long titles, Latin and non-Latin scripts, quiet and high-density music, material-world, spatial-field, and character-led systems, and at least one case outside the conditions that produced the rule.
 
 Use rights-cleared, synthetic, or maintainer-owned inputs. Keep generated trial images outside the public repository. The repository may contain only abstract observations, checksums or local trial IDs, and the resulting decision rule.
 

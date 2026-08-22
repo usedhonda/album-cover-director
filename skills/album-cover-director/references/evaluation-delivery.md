@@ -46,6 +46,12 @@ advertisement, it fails. The material must be evidence of a human act, social
 relation, ritual, memory, weather, spatial pressure, or another world engine
 that the cover needs.
 
+For a spatial-field title system, remove the named light, reflection, smoke,
+motion, weather, or architectural phenomenon in thought. If the title becomes
+a normal flat headline or the scene remains the same event, it fails. The
+phenomenon must distribute and transform the title across the locked reading
+route without weakening its occupied area, silhouette, or value priority.
+
 For a character-led title system, remove the figure and then remove the title
 in thought. If either leaves a conventional wordmark or conventional character
 illustration, it fails. The figure's action, pose, props, and surrounding

@@ -78,6 +78,17 @@
     "directions": ["Illustration / Character World", "Diagram / Grid / Data / Repetition", "Package Object / Intervention / Anti-cover"]
   },
   {
+    "name": "spatial-light-title-field",
+    "title": "Night Rotation",
+    "evidence_kind": "track-description",
+    "mode": "standard",
+    "typography_mode": "image-native",
+    "title_system_family": "spatial-field",
+    "title_system": "spatial-light-and-atmosphere-field",
+    "expected_candidates": 6,
+    "directions": ["Documentary Moment", "Typographic Hero / Wordmark", "Landscape / Architecture / Absence"]
+  },
+  {
     "name": "image-native-short-title",
     "title": "SILT",
     "evidence_kind": "lyrics-inline",

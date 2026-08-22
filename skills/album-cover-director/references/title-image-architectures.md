@@ -12,18 +12,22 @@ are discovered after the title is read.
 
 ## Choose a title-system family first
 
-There are two equal image-native families. Choose one before choosing a card;
+There are three equal image-native families. Choose one before choosing a card;
 both reject ordinary title placement.
 
 - **Material-world:** the title becomes a route, artifact, game, living
   specimen, or other physical system. Its material determines letter anatomy.
+- **Spatial-field:** a title skeleton is distributed and physically transformed
+  by a spatial phenomenon such as light, reflection, smoke, motion, or
+  architecture. A conventional native letter skeleton may establish reading,
+  but it cannot remain a flat overlay.
 - **Character-led:** a central figure's action, setting, and the title share
   one hierarchy. Use this only when a supplied artist system, rights-cleared
   identity reference, or the brief genuinely calls for a figure.
 
 `auto` selects the family from the brief. Do not force a character into a
-material-world brief, and do not turn a character-led brief into a detached
-wordmark.
+material-world brief, do not turn a spatial-field brief into a detached
+headline, and do not turn a character-led brief into a detached wordmark.
 
 ## 1. Title map
 
@@ -199,9 +203,33 @@ Latin names, and decorative floral borders.
 **Reject when:** plants frame conventional text, the result is a generic floral
 arrangement, or darkness erases the material logic.
 
+## Spatial-field title systems
+
+### 10. Spatial light and atmosphere field
+
+**Use when:** light, projection, reflection, smoke, weather, motion, or
+architecture should make the title feel released into a whole environment.
+
+**Geometry:** a large exact title occupies most of the square through a stated
+reading route. Its native skeleton can be conventionally legible, but a named
+phenomenon distributes it across two or more spatial planes: air, wall, floor,
+glass, water, or reflected surfaces. The phenomenon extends or transforms the
+letters while the hierarchy lock preserves their occupied area, silhouette,
+reading route, and value priority.
+
+**Prompt requirements:** name the world engine and causal phenomenon; specify
+the title's occupied area, protected skeleton, reading route, and value
+priority; assign each title portion to a physical plane; state the background
+regions where smoke, motion, darkness, or reflection may vary; and ban every
+other readable mark.
+
+**Reject when:** the title can become a normal flat headline without changing
+the event, the causal phenomenon is decorative rather than structural, or
+atmospheric variation weakens title dominance.
+
 ## Character-led title systems
 
-### 10. Shared-scale hero wordmark
+### 11. Shared-scale hero wordmark
 
 **Use when:** a figure's identity is central and the title must feel as large
 as the person rather than as release metadata.
@@ -216,7 +244,7 @@ title share, contact points, depth order, and protected recognition features.
 **Reject when:** the title is simply behind/above/below a portrait, or the
 figure can be cropped away without changing the title system.
 
-### 11. Gesture and kinetic title field
+### 12. Gesture and kinetic title field
 
 **Use when:** a figure's gesture, attitude, or energy is the track's primary
 force.
@@ -231,7 +259,7 @@ overlap, evidence-field density, and the single title entry point.
 **Reject when:** the gesture points at an otherwise detached word, or the
 supporting field becomes pseudo-writing or extra title text.
 
-### 12. Script hierarchy with a figure
+### 13. Script hierarchy with a figure
 
 **Use when:** a title has parts with intentionally unequal semantic or visual
 weight, especially mixed scripts or a phrase that needs one decisive glyph.

@@ -1,6 +1,6 @@
 # Album Cover Director
 
-$album-cover-director is a Codex skill and plugin bundle for distinctive, release-ready album, EP, and single covers. Its specialty is image-native title design: the exact title either becomes the cover's physical world or shares one visual hierarchy with a central figure. It turns musical evidence into three structurally different directions, generates and compares candidates with GPT Image 2, and prepares 3000 px delivery assets.
+$album-cover-director is a Codex skill and plugin bundle for distinctive, release-ready album, EP, and single covers. Its specialty is image-native title design: the exact title can become a physical world, take over a whole space through light/reflection/atmosphere, or share one visual hierarchy with a central figure. It turns musical evidence into three structurally different directions, generates and compares candidates with GPT Image 2, and prepares 3000 px delivery assets.
 
 The project is for musicians, track makers, producers, independent labels, and designers. It has no artist-specific identity, no required MCP server, and no required API key.
 
@@ -14,8 +14,15 @@ The project is for musicians, track makers, producers, independent labels, and d
 | **Oceanographic system** — contour lines, routes, and soundings determine the title's anatomy. | **Treasure chart** — folds, compass wells, rope, and red routes make a navigable title artifact. |
 | ![ALBUM COVER DIRECTOR becomes a playable board-game machine.](docs/examples/board-game-title-system.png) | ![ALBUM COVER DIRECTOR becomes a pinned botanical specimen.](docs/examples/botanical-specimen-title-system.png) |
 | **Board game** — tiles, tracks, bridges, and game pieces turn title letters into a playable system. | **Botanical specimen** — roots, pressed leaves, petals, pins, and thread grow the letters. |
-| ![ALBUM COVER DIRECTOR becomes a mechanized acoustic system.](docs/examples/mechanized-title-system.png) | ![ALBUM COVER DIRECTOR becomes a rotating club-light field.](docs/examples/rotating-club-title-system.png) |
-| **Mechanized system** — tubes, springs, resonators, and wiring construct a dense acoustic title artifact. | **Rotating light field** — projected letters, smoke, and a small mirror ball turn the whole club into a title environment. |
+![ALBUM COVER DIRECTOR becomes a mechanized acoustic system.](docs/examples/mechanized-title-system.png)
+
+**Mechanized system** — tubes, springs, resonators, and wiring construct a dense acoustic title artifact.
+
+### Titles as spatial events
+
+![ALBUM COVER DIRECTOR becomes a rotating club-light field.](docs/examples/rotating-club-title-system.png)
+
+**Rotating light field** — a small mirror ball, projected letters, smoke, and dancers turn the entire club into one title environment. The letter skeleton stays readable while light, air, and movement distribute it through the image.
 
 ### Character-led title systems
 
@@ -28,16 +35,16 @@ The project is for musicians, track makers, producers, independent labels, and d
 
 Every title above is generated within the image itself. It is never repaired with a font overlay, redraw, or post-typesetting: its material, structure, and image are one design decision.
 
-The gallery demonstrates two equal title-system families. Choose **material-world** when routes, artifacts, games, specimens, or another physical system should form the title's anatomy. Choose **character-led** when a supplied artist system or brief calls for a figure whose pose, action, setting, and title must work as one structure. Neither family permits ordinary type merely placed on a completed scene.
+The gallery demonstrates three equal title-system families. Choose **material-world** when routes, artifacts, games, specimens, or another physical system should form the title's anatomy. Choose **spatial-field** when light, reflection, smoke, motion, weather, or architecture should distribute and transform the title across the full square. Choose **character-led** when a supplied artist system or brief calls for a figure whose pose, action, setting, and title must work as one structure. A spatial field may use a familiar-looking letter skeleton to establish reading, but it must be generated inside the image and physically altered by the scene; it is never a flat overlay.
 
 ## What makes it different
 
 - A work-specific research pipeline for covers acclaimed for visual design, with typography-dominant examples screened independently from music reputation.
-- Two image-native title-system families: material-world and character-led; each has specific construction cards and rejection tests.
+- Three image-native title-system families: material-world, spatial-field, and character-led; each has specific construction cards and rejection tests.
 - Twelve supporting organizing patterns that describe what controls the square, rather than a menu of visual styles.
 - Three-direction divergence: every run must change image structure, not just color or rendering.
 - A title-integrated typography gate: every evaluated candidate is a complete jacket; title lettering must be generated as part of the image, never added afterward.
-- Material title-world cards for route fields, constructed artifacts, playable rule systems, and living specimens; plus character-led hero, gesture, and script-hierarchy systems.
+- Material title-world cards for route fields, constructed artifacts, playable rule systems, and living specimens; a spatial light-and-atmosphere field; plus character-led hero, gesture, and script-hierarchy systems.
 - Hierarchy locks for live or spatial images: title area, silhouette, reading route, and value priority are fixed before controlled irregularity is applied to surrounding light, smoke, motion, reflection, or crop.
 - Comparative checks at 56 px, 128 px, 256 px, full size, grayscale, and blur.
 - One-variable edits, at most two cycles, always returning to the selected original after regression.
@@ -111,6 +118,7 @@ Title-system families:
 
 - auto: chooses from the brief;
 - material-world: title anatomy is made by a physical system;
+- spatial-field: a protected title skeleton is distributed and transformed by light, reflection, atmosphere, motion, or architecture;
 - character-led: central figure and title share a single hierarchy.
 
 ## Output

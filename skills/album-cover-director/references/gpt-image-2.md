@@ -76,7 +76,10 @@ the act, relation, ritual, memory, weather, or spatial pressure that makes the
 material necessary. Then state exactly how the material forms strokes,
 counters, joins, terminals, spacing, and the title's role in that world.
 Explicitly reject product shots, component catalogues, and equipment merely
-arranged into letters. For `character-led`, state the figure's action, the title's shared
+arranged into letters. For `spatial-field`, state the causal phenomenon, title
+hierarchy lock, protected letter skeleton, reading route, and the spatial
+planes that transform the title; ordinary-looking letters are permitted only
+as native scene structure, never as a flat overlay. For `character-led`, state the figure's action, the title's shared
 scale/hierarchy, contact points, and depth order. In either case, explicitly
 forbid ordinary typography placed on a finished scene.
 
