@@ -50,6 +50,8 @@ directions:
     material_vocabulary: []
     letter_anatomy_mapping: ""
     title_world_role: ""
+    world_engine: ""
+    context_layers: []
     central_figure: ""
     character_title_relation: ""
     genre_anchor: ""
@@ -62,6 +64,8 @@ directions:
     material_vocabulary: []
     letter_anatomy_mapping: ""
     title_world_role: ""
+    world_engine: ""
+    context_layers: []
     central_figure: ""
     character_title_relation: ""
     genre_anchor: ""
@@ -74,6 +78,8 @@ directions:
     material_vocabulary: []
     letter_anatomy_mapping: ""
     title_world_role: ""
+    world_engine: ""
+    context_layers: []
     central_figure: ""
     character_title_relation: ""
     genre_anchor: ""

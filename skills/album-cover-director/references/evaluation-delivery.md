@@ -29,6 +29,12 @@ either removal leaves an ordinary scene, a normal wordmark, or a viable cover,
 the candidate fails. The material must visibly determine the title's skeleton,
 counters, joins, terminals, spacing, and role in the image.
 
+Also replace the components in thought with a neatly photographed equivalent
+product. If the cover would still work as a product catalogue or equipment
+advertisement, it fails. The material must be evidence of a human act, social
+relation, ritual, memory, weather, spatial pressure, or another world engine
+that the cover needs.
+
 For a character-led title system, remove the figure and then remove the title
 in thought. If either leaves a conventional wordmark or conventional character
 illustration, it fails. The figure's action, pose, props, and surrounding

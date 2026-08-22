@@ -52,9 +52,12 @@ Edit one variable at a time. State invariants before the requested change: subje
 
 Generate every artistic candidate with the exact title visibly integrated into the jacket. Generate all title lettering in the same image as the scene: never add, redraw, typeset, or composite letters afterward. For complex-script or long titles, state each glyph exactly once, its reading order, placement, relative scale, color hierarchy, and relation to the scene. If letter accuracy fails, reject the candidate and use one of the two allowed refinement cycles to regenerate from a more explicit prompt. Never present a textless master, a detached title banner, generic caption box, or font layer as a cover candidate.
 
-For `material-world`, state the material vocabulary and exactly how it forms
-strokes, counters, joins, terminals, spacing, and the title's role in the
-world. For `character-led`, state the figure's action, the title's shared
+For `material-world`, state the world engine before the component vocabulary:
+the act, relation, ritual, memory, weather, or spatial pressure that makes the
+material necessary. Then state exactly how the material forms strokes,
+counters, joins, terminals, spacing, and the title's role in that world.
+Explicitly reject product shots, component catalogues, and equipment merely
+arranged into letters. For `character-led`, state the figure's action, the title's shared
 scale/hierarchy, contact points, and depth order. In either case, explicitly
 forbid ordinary typography placed on a finished scene.
 

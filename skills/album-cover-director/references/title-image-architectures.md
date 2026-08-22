@@ -116,13 +116,16 @@ the skeleton, counters, joins, terminals, spacing, and reading route of the
 exact title. A normal font covered with material, or letters placed on a
 material scene, fails every card below.
 
-Before prompting, write five decisions:
+Before prompting, write six decisions:
 
-1. **Material vocabulary** — the limited physical components that may make letters.
-2. **Anatomy mapping** — which component makes strokes, curves, counters, joins, and terminals.
-3. **World role** — what the title does: routes, plays, grows, contains, or transforms.
-4. **Density plan** — title mass, supporting non-linguistic detail, and deliberately quiet areas.
-5. **Failure test** — why the cover would collapse if either the material or title were removed.
+1. **World engine** — the human act, social relation, ritual, memory, weather, spatial pressure, or lived condition that gives the material a reason to exist.
+2. **Material vocabulary** — the limited physical components that may make letters.
+3. **Anatomy mapping** — which component makes strokes, curves, counters, joins, and terminals.
+4. **World role** — what the title does: routes, plays, grows, contains, or transforms.
+5. **Density plan** — title mass, supporting non-linguistic detail, and deliberately quiet areas.
+6. **Failure test** — why the cover would collapse if the title, material system, or world engine were removed.
+
+Components are evidence of the world engine, never its substitute. A functional-object inventory, product photograph, or neatly arranged component catalogue fails even if every letter is physically constructed.
 
 ### 6. Route and field system
 
@@ -157,7 +160,8 @@ each anatomy role; state the object-level force or use; define cropped support
 objects and a palette neutral point.
 
 **Reject when:** the artifact is merely a backdrop, a conventional wordmark
-sits on it, or props tell the story without changing the letters.
+sits on it, props tell the story without changing the letters, or the result
+reads as a product catalogue rather than an enacted situation.
 
 ### 8. Playable rule system
 
@@ -174,7 +178,8 @@ define reading/move order; state how the title spans the square asymmetrically;
 ban instructions, scores, numbers, labels, and box-frame packaging.
 
 **Reject when:** a board sits behind normal text, pieces are scattered as
-decoration, or the title becomes a neat typographic grid without play logic.
+decoration, the title becomes a neat typographic grid without play logic, or
+the components describe a game without an actual move, conflict, or ritual.
 
 ### 9. Living specimen system
 
