@@ -71,6 +71,8 @@ Title: Glass Weather
 Mode: standard
 Lyrics: ...
 Artist information: /path/to/artist-information.md
+Reference image: /path/to/character.png
+Image use: keep the character identity, but redesign the scene and composition
 ~~~
 
 Natural language:
@@ -86,7 +88,9 @@ The only required input is:
 
 Lyrics and artist information are optional. Lyrics may be pasted inline or supplied as a readable file path. Artist information may include the artist name, genre, sonic character, points to emphasize, recurring character or identity rules, visual language, palette, typography, avoid list, and references. With no optional input, the skill proceeds from the title alone.
 
-When artist information is supplied by file path, the skill remembers only the most recent readable path in local Codex state and reuses it when the next request omits one. It does not remember the file contents, lyrics, lyrics path, or title. A new path replaces the remembered one; it can also be ignored for one run or forgotten entirely.
+Reference images are optional. Attach an image or supply a readable file path, then use it as a recurring person or character identity, as an actual image to edit or incorporate, or only as visual direction. When the request is clear, the skill infers the use mode. A recurring character does not freeze the whole cover: pose, action, setting, composition, light, palette, and title architecture remain release-specific. Direct use of the actual image requires the necessary rights.
+
+When artist information is supplied by file path, the skill remembers only the most recent readable path in local Codex state and reuses it when the next request omits one. It does not remember the file contents, lyrics, lyrics path, title, supplied images, or image paths. A new artist-information path replaces the remembered one; it can also be ignored for one run or forgotten entirely.
 
 Run volumes:
 

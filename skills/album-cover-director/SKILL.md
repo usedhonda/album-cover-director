@@ -1,6 +1,6 @@
 ---
 name: album-cover-director
-description: Direct album, EP, and single cover artwork from an exact title, with optional lyrics and artist information. Use when a musician, producer, label, or designer wants structurally distinct cover concepts, GPT Image 2 prompts or edits, custom title lettering, comparative image evaluation, or release-ready square delivery files. Trigger for explicit `$album-cover-director` calls and natural-language album-cover requests; do not trigger for ordinary photo edits, posters, flyers, logos unrelated to a release, or generic image generation.
+description: Direct album, EP, and single cover artwork from an exact title, with optional lyrics, artist information, and supplied reference images. Use when a musician, producer, label, or designer wants structurally distinct cover concepts, GPT Image 2 prompts or edits, custom title lettering, comparative image evaluation, or release-ready square delivery files. Trigger for explicit `$album-cover-director` calls and natural-language album-cover requests; do not trigger for ordinary photo edits, posters, flyers, logos unrelated to a release, or generic image generation.
 ---
 
 # Album Cover Director
@@ -13,13 +13,21 @@ The only required input is:
 
 - exact song, album, or release title.
 
-Lyrics and artist information are optional. Accept lyrics either inline in the prompt or from a readable file path. Accept artist information inline or from a readable file path; it may contain the artist name, genre, sonic character, points to emphasize, recurring identity or character rules, visual language, palette, typography, avoid list, references, and series-continuity guidance. Audio, a track description, reference images, destination, and other context are also optional.
+Lyrics and artist information are optional. Accept lyrics either inline in the prompt or from a readable file path. Accept artist information inline or from a readable file path; it may contain the artist name, genre, sonic character, points to emphasize, recurring identity or character rules, visual language, palette, typography, avoid list, references, and series-continuity guidance. Audio, a track description, destination, and other context are also optional.
+
+Supplied images are optional. Accept one or more attached images or readable image file paths and classify each requested use:
+
+- `identity-reference`: keep a recognizable person, character, mascot, costume, or other recurring identity while creating a new song-specific pose, action, setting, composition, light, and title relationship;
+- `source-asset`: directly edit, transform, or incorporate the supplied image itself; use this only when the user asks to use the actual image and has the necessary rights;
+- `visual-direction`: derive non-exclusive traits such as palette balance, material behavior, camera distance, or compositional energy without copying distinctive content.
+
+Interpret “use this person/character” as `identity-reference`, “use or edit this actual image” as `source-asset`, and “use this only as mood/reference” as `visual-direction` when the request is clear. Do not let a recurring identity force the same pose, scene, palette, or title placement across releases. Record the use mode and rights basis in the brief.
 
 Proceed from the title alone when no optional input is supplied. Preserve the exact title string, and do not invent an artist name or private artist settings. The exact title is the only readable cover text allowed by default; an artist name or other text requires explicit approval.
 
 ## Remembered artist-information path
 
-Remember only the most recently supplied, readable artist-information file path. Use `scripts/artist-info-state.py` to store it as `last_artist_information_path` under `$CODEX_HOME/album-cover-director/state.yaml` when `CODEX_HOME` is set, or `~/.codex/album-cover-director/state.yaml` otherwise. Never store the artist-information contents, lyrics, lyrics path, title, references, or generated brief in this state file.
+Remember only the most recently supplied, readable artist-information file path. Use `scripts/artist-info-state.py` to store it as `last_artist_information_path` under `$CODEX_HOME/album-cover-director/state.yaml` when `CODEX_HOME` is set, or `~/.codex/album-cover-director/state.yaml` otherwise. Never store the artist-information contents, lyrics, lyrics path, title, supplied images, image paths, references, or generated brief in this state file.
 
 Resolve artist information in this order:
 
@@ -43,7 +51,7 @@ If the environment exposes an image-generation tool, use GPT Image 2. If it does
 
 ## Workflow
 
-1. Resolve the optional lyrics and artist information according to the input and remembered-path rules. Create `creative-brief.yaml` from the title and whatever optional evidence is available using `assets/art-direction-brief.yaml`.
+1. Resolve the optional lyrics and artist information according to the input and remembered-path rules. Classify every supplied image as `identity-reference`, `source-asset`, or `visual-direction`, and record its rights basis. Create `creative-brief.yaml` from the title and whatever optional evidence is available using `assets/art-direction-brief.yaml`.
 2. Build the interpretation from the available evidence:
    - With lyrics or a description, extract one central contradiction, three sensory qualities, two physical phenomena, and six to ten concrete symbols. Prefer observable nouns, actions, materials, and spatial relations over mood adjectives.
    - With artist information, separate continuity requirements from variables that must change for this release. Treat genre, sonic character, and emphasis as evidence, not as a template selector.
@@ -84,6 +92,7 @@ album-cover/<release-slug>/
 ## Non-negotiable gates
 
 - Three directions must differ in image-organizing structure, not merely palette or rendering style.
+- A supplied identity reference may stabilize who appears, but it must not stabilize the whole cover. Pose, action, setting, camera distance, dominant geometry, light, palette, and title architecture remain release-specific unless explicitly fixed.
 - The selected image must read as a music-release identity, not as a poster, advertisement, editorial illustration, app tile, game splash screen, or generic concept art. Its square must have one dominant identity signal, intentional edge behavior, controlled information density, and a reason to exist beyond illustrating the title literally.
 - The title must be exact. No other readable text is allowed unless explicitly approved.
 - Every evaluated candidate must show the title as a native part of the generated jacket image. Never add, redraw, typeset, or composite title text after generation.

@@ -51,7 +51,19 @@
     "name": "reference-image",
     "prompt": "Use my attached rights-cleared portrait as the identity reference for a single cover, while changing the scene and typography.",
     "expected_trigger": true,
-    "coverage": ["reference-image"]
+    "coverage": ["reference-image", "identity-reference"]
+  },
+  {
+    "name": "source-image-edit",
+    "prompt": "Use this attached image itself as the source asset for the album cover, crop and transform it, and integrate the exact title.",
+    "expected_trigger": true,
+    "coverage": ["reference-image", "source-asset"]
+  },
+  {
+    "name": "visual-direction-only",
+    "prompt": "Use this image only as visual direction for palette and material behavior; do not reproduce its subject or composition.",
+    "expected_trigger": true,
+    "coverage": ["reference-image", "visual-direction"]
   },
   {
     "name": "series-system",

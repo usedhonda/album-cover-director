@@ -4,6 +4,11 @@ inputs:
   lyrics_path: ""
   artist_information_source: none
   artist_information_path: ""
+  reference_images:
+    source: none
+    paths: []
+    use_mode: auto
+    rights_basis: not-supplied
 release:
   exact_title: ""
   artist: ""

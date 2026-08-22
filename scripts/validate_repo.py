@@ -100,6 +100,9 @@ def validate_skill() -> None:
     require("The only required input is:" in skill, "title-only input contract missing")
     require("lyrics either inline" in skill, "inline-or-path lyrics contract missing")
     require("last_artist_information_path" in skill, "artist-information path memory contract missing")
+    for use_mode in ("identity-reference", "source-asset", "visual-direction"):
+        require(use_mode in skill, f"reference-image use mode missing: {use_mode}")
+    require("image paths" in skill, "reference-image non-persistence contract missing")
 
 
 def validate_corpus() -> None:
@@ -290,7 +293,8 @@ def validate_invocation_cases() -> None:
     tags = {tag for case in positive for tag in case["coverage"]}
     required_tags = {
         "japanese", "english", "mixed-script", "instrumental", "type-hero", "reference-image",
-        "series-system", "title-only", "lyrics-path", "artist-information-path",
+        "series-system", "title-only", "lyrics-path", "artist-information-path", "reference-image",
+        "identity-reference", "source-asset", "visual-direction",
     }
     require(required_tags <= tags, f"invocation coverage missing: {sorted(required_tags - tags)}")
 
@@ -305,7 +309,7 @@ def validate_forward_cases() -> None:
     volumes = {"quick": 3, "standard": 6, "deep": 12}
     evidence_kinds = {
         "title-only", "lyrics-inline", "lyrics-path", "track-description", "audio",
-        "artist-information-path",
+        "artist-information-path", "reference-image",
     }
     typography_modes = {"auto", "image-native", "custom-wordmark"}
     names = set()
@@ -321,6 +325,9 @@ def validate_forward_cases() -> None:
             require(bool(case["artist"].strip()), f"optional artist is empty: {case['name']}")
         require(case["evidence_kind"] in evidence_kinds,
                 f"unsupported evidence kind: {case['name']}")
+        if case["evidence_kind"] == "reference-image":
+            require(case.get("reference_image_use") in {"identity-reference", "source-asset", "visual-direction"},
+                    f"reference-image use mode missing: {case['name']}")
         require(case["mode"] in volumes, f"unsupported volume: {case['name']}")
         covered_modes.add(case["mode"])
         require(case["expected_candidates"] == volumes[case["mode"]],
@@ -343,6 +350,8 @@ def validate_forward_cases() -> None:
             "forward cases need lyrics-path coverage")
     require(any(case["evidence_kind"] == "artist-information-path" for case in cases),
             "forward cases need artist-information-path coverage")
+    require(any(case["evidence_kind"] == "reference-image" for case in cases),
+            "forward cases need reference-image coverage")
     require(any(case["evidence_kind"] == "audio" for case in cases), "forward cases need instrumental/audio coverage")
     require(any(case["typography_mode"] == "custom-wordmark" for case in cases),
             "forward cases need custom-wordmark coverage")

@@ -57,7 +57,8 @@
   {
     "name": "rights-cleared-portrait-reference",
     "title": "After the Flash",
-    "evidence_kind": "lyrics-inline",
+    "evidence_kind": "reference-image",
+    "reference_image_use": "identity-reference",
     "mode": "standard",
     "typography_mode": "auto",
     "title_system_family": "character-led",

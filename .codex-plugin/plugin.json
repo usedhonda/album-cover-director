@@ -9,10 +9,10 @@
   "interface": {
     "displayName": "Album Cover Director",
     "shortDescription": "Create image-native title-led album covers.",
-    "longDescription": "Turns an exact title, with optional lyrics and artist information, into cover directions built around material title-worlds or character-led title systems; generates and evaluates artwork; applies dedicated release-identity and title-image gates; and prepares square delivery assets.",
+    "longDescription": "Turns an exact title, with optional lyrics, artist information, and supplied reference images, into cover directions built around material title-worlds or character-led title systems; generates and evaluates artwork; applies dedicated release-identity and title-image gates; and prepares square delivery assets.",
     "developerName": "usedhonda",
     "category": "Creative & Design",
     "capabilities": ["album-art-direction", "image-generation", "typography", "delivery-validation"],
-    "defaultPrompt": "Use $album-cover-director to create three image-native title-system cover directions from this title and any optional lyrics or artist information."
+    "defaultPrompt": "Use $album-cover-director to create three image-native title-system cover directions from this title and any optional lyrics, artist information, or reference images."
   }
 }
