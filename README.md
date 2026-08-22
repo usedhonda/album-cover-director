@@ -20,9 +20,10 @@ The project is for musicians, track makers, producers, independent labels, and d
 
 ### Titles as spatial events
 
-![ALBUM COVER DIRECTOR becomes a rotating club-light field.](docs/examples/rotating-club-title-system.png)
-
-**Rotating light field** — a small mirror ball, projected letters, smoke, and dancers turn the entire club into one title environment. The letter skeleton stays readable while light, air, and movement distribute it through the image.
+|  |  |
+| --- | --- |
+| ![ALBUM COVER DIRECTOR becomes a rotating club-light field.](docs/examples/rotating-club-title-system.png) | ![ALBUM COVER DIRECTOR becomes an ink landscape title field.](docs/examples/ink-landscape-title-field.png) |
+| **Rotating light field** — a small mirror ball, projected letters, smoke, and dancers turn the entire club into one title environment. The letter skeleton stays readable while light, air, and movement distribute it through the image. | **Ink landscape field** — the exact title's brush-letter skeleton spreads through mountains, roofs, bridge rails, riverbanks, mist, and water. |
 
 ### Character-led title systems
 

@@ -1,14 +1,16 @@
 # Generated demonstration gallery
 
-The ten PNG files in this directory are original generated demonstrations
+The eleven PNG files in this directory are original generated demonstrations
 for the public README. They prove three equal image-native title-system families:
 
 - `oceanographic-title-system`, `treasure-chart-title-system`,
   `board-game-title-system`, `botanical-specimen-title-system`, and
   `mechanized-title-system` demonstrate **material-world** construction.
-- `rotating-club-title-system` demonstrates **spatial-field** construction:
-  projected light, smoke, reflection, and movement distribute a protected,
-  native title skeleton across the image. It is not a text overlay.
+- `rotating-club-title-system` and `ink-landscape-title-field` demonstrate
+  **spatial-field** construction. Projected light, smoke, reflection, and
+  movement distribute the rotating club title; brush lettering spreads through
+  the ink landscape's mountains, roofs, bridge rails, mist, and water. Neither
+  is a text overlay.
 - `title-map-secretary-chi`, `hero-wordmark-secretary-chi`,
   `japanese-title-shachoshitsu-no-asa`, and `tsundere-secretary-chi` demonstrate
   **character-led** construction. They use the repository author's own
