@@ -1,0 +1,25 @@
+schema_version: 1
+suite: title-integrity-v1
+status: not-run
+privacy: project-local
+cases:
+  - id: short-latin
+    title: SILT
+    title_profile: compact-single-script
+    evidence_kind: title-only
+    title_system_family: material-world
+  - id: japanese
+    title: 夜の余白
+    title_profile: compact-japanese
+    evidence_kind: lyrics-inline
+    title_system_family: character-led
+  - id: mixed-script
+    title: 透明なSignal
+    title_profile: mixed-script-hierarchy
+    evidence_kind: title-only
+    title_system_family: spatial-field
+  - id: long-title
+    title: A SMALL ROOM FULL OF WEATHER
+    title_profile: multi-unit-hierarchy
+    evidence_kind: track-description
+    title_system_family: material-world

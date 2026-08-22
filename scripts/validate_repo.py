@@ -88,7 +88,7 @@ def validate_anti_concentration(works: list[dict], limits: dict[str, int]) -> No
 def validate_manifest() -> None:
     manifest = json.loads((ROOT / ".codex-plugin/plugin.json").read_text())
     require(manifest["name"] == "album-cover-director", "plugin name mismatch")
-    require(manifest["version"] == "0.1.0", "plugin version mismatch")
+    require(manifest["version"] == "0.2.0", "plugin version mismatch")
     require(manifest.get("skills") == "./skills/", "skills path mismatch")
     require("$album-cover-director" in manifest["interface"]["defaultPrompt"], "default prompt must invoke skill")
 
@@ -103,10 +103,24 @@ def validate_skill() -> None:
     require("ordinary photo edits" in frontmatter, "negative trigger boundary missing")
     require("The only required input is:" in skill, "title-only input contract missing")
     require("lyrics either inline" in skill, "inline-or-path lyrics contract missing")
-    require("last_artist_information_path" in skill, "artist-information path memory contract missing")
+    require("Never remember an artist system globally" in skill, "project-local artist-system contract missing")
+    require("scripts/project-workspace.py init" in skill, "project-local workspace initializer missing")
+    require("references/title-complexity.md" in skill, "title-complexity routing missing")
+    require("assets/project-feedback.yaml" in skill, "project feedback contract missing")
     for use_mode in ("identity-reference", "source-asset", "visual-direction"):
         require(use_mode in skill, f"reference-image use mode missing: {use_mode}")
-    require("image paths" in skill, "reference-image non-persistence contract missing")
+    require("Keep any learning images project-local" in skill,
+            "reference-image non-persistence contract missing")
+    for relative in (
+        "assets/project-feedback.yaml",
+        "assets/title-behavior-card.yaml",
+        "assets/project-benchmark.yaml",
+        "references/project-local-learning.md",
+        "references/title-complexity.md",
+        "references/title-behavior-cards.md",
+        "scripts/project-workspace.py",
+    ):
+        require((ROOT / "skills/album-cover-director" / relative).is_file(), f"project-learning resource missing: {relative}")
 
 
 def validate_corpus() -> None:
@@ -298,7 +312,7 @@ def validate_invocation_cases() -> None:
     required_tags = {
         "japanese", "english", "mixed-script", "instrumental", "type-hero", "reference-image",
         "series-system", "title-only", "lyrics-path", "artist-information-path", "reference-image",
-        "identity-reference", "source-asset", "visual-direction",
+        "identity-reference", "source-asset", "visual-direction", "project-local-learning",
     }
     require(required_tags <= tags, f"invocation coverage missing: {sorted(required_tags - tags)}")
 
@@ -308,7 +322,7 @@ def validate_forward_cases() -> None:
     require(len(cases) >= 8, "need at least eight forward cases")
     required_keys = {
         "name", "title", "evidence_kind", "mode", "typography_mode",
-        "title_system_family", "title_system", "expected_candidates", "directions",
+        "title_system_family", "title_system", "title_complexity_profile", "expected_candidates", "directions",
     }
     volumes = {"quick": 3, "standard": 6, "deep": 12}
     evidence_kinds = {
@@ -316,6 +330,10 @@ def validate_forward_cases() -> None:
         "artist-information-path", "reference-image",
     }
     typography_modes = {"auto", "image-native", "custom-wordmark"}
+    complexity_profiles = {
+        "compact-single-script", "compact-japanese", "multi-unit-hierarchy",
+        "mixed-script-hierarchy", "fragile-glyph-set",
+    }
     names = set()
     covered_modes = set()
     covered_title_families = set()
@@ -342,6 +360,8 @@ def validate_forward_cases() -> None:
                 f"unsupported title-system family: {case['name']}")
         require(bool(case["title_system"].strip()),
                 f"title system missing: {case['name']}")
+        require(case["title_complexity_profile"] in complexity_profiles,
+                f"unsupported title complexity profile: {case['name']}")
         covered_title_families.add(case["title_system_family"])
         require(len(case["directions"]) == 3 and len(set(case["directions"])) == 3,
                 f"forward case must specify three distinct directions: {case['name']}")
@@ -363,6 +383,9 @@ def validate_forward_cases() -> None:
             "forward cases need image-native coverage")
     require(covered_title_families == {"material-world", "spatial-field", "character-led"},
             "forward cases must cover all image-native title-system families")
+    require({"mixed-script-hierarchy", "multi-unit-hierarchy", "fragile-glyph-set"}
+            <= {case["title_complexity_profile"] for case in cases},
+            "forward cases must cover complex title profiles")
 
 
 def validate_public_safety() -> None:

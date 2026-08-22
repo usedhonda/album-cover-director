@@ -1,7 +1,7 @@
 {
   "name": "album-cover-director",
-  "version": "0.1.0",
-  "description": "Create release-ready album covers where the title becomes a physical world or shares one hierarchy with a central figure.",
+  "version": "0.2.0",
+  "description": "Create release-ready album covers where the title becomes a physical world, spatial event, or one hierarchy with a central figure.",
   "author": {
     "name": "usedhonda"
   },
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "Album Cover Director",
     "shortDescription": "Create image-native title-led album covers.",
-    "longDescription": "Turns an exact title, with optional lyrics, artist information, and supplied reference images, into cover directions built around material title-worlds or character-led title systems; generates and evaluates artwork; applies dedicated release-identity and title-image gates; and prepares square delivery assets.",
+    "longDescription": "Turns an exact title, with optional lyrics, project-local artist information, and supplied reference images, into cover directions built around material title-worlds, spatial fields, or character-led title systems; generates and evaluates artwork; applies dedicated release-identity and title-image gates; and prepares square delivery assets.",
     "developerName": "usedhonda",
     "category": "Creative & Design",
     "capabilities": ["album-art-direction", "image-generation", "typography", "delivery-validation"],

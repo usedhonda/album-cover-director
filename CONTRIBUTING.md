@@ -1,8 +1,8 @@
 # Contributing
 
 Contributions should improve reusable image-native title systems rather than
-add artist-specific preferences. A contribution may strengthen either
-material-world or character-led work, but must not reintroduce ordinary title
+add artist-specific preferences. A contribution may strengthen material-world,
+spatial-field, or character-led work, but must not reintroduce ordinary title
 placement.
 
 ## Corpus changes
@@ -18,6 +18,15 @@ placement.
 - Keep SKILL.md as the workflow router and place detailed guidance in references/.
 - Preserve exact-title, title-image integration, provenance, and technical delivery gates.
 - Keep material-world anatomy and character-led figure/title hierarchy explicit.
+- Add a reusable title behavior, not a genre look or a copy of a reference. Use
+  `assets/title-behavior-card.yaml` and include its world engine, construction
+  logic, protected title properties, rejection tests, and private trial IDs.
+- Keep user `.album-cover-director/` workspaces private. Never include artist
+  systems, feedback, learning images, generated candidates, benchmark outputs,
+  private prompts, or lyrics in a contribution.
+- Public rule changes require the promotion gate in `references/production-learning.md`:
+  three independent trials, varied conditions, a held-out brief, and an explicit
+  boundary. One accepted image is an observation, not a universal rule.
 - Do not add external MCP or API-key requirements without a separate design discussion.
 
 ## Checks

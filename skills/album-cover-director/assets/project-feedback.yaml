@@ -1,0 +1,25 @@
+schema_version: 1
+privacy: project-local
+feedback:
+  release_slug: ""
+  reviewed_at: "ISO-8601"
+  selected_candidate_id: ""
+  rejected_candidate_ids: []
+  user_observations: []
+  failure_codes: []
+  preferred_title_system_family: ""
+  preference_scope: one-release
+  source_image_paths: []
+  learning_image_paths: []
+  proposed_local_preference:
+    statement: ""
+    evidence_release_slugs: []
+    applies_when: []
+    reject_when: []
+    promotion_status: observation-only
+  privacy:
+    contains_lyrics: false
+    contains_artist_information: false
+    contains_reference_images: false
+    contains_generated_images: false
+    keep_project_local: true

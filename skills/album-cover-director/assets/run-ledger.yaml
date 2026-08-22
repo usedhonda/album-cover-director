@@ -6,6 +6,9 @@ jsonl_record:
   candidate_id: A1
   operation: generate
   model_or_tool: gpt-image-2
+  skill_version: ""
+  title_complexity_profile: ""
+  project_local_workspace: ""
   parent_candidate_id: null
   changed_variable: null
   prompt_file: prompts/A1.md

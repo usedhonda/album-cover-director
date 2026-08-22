@@ -1,0 +1,18 @@
+schema_version: 1
+card:
+  id: ""
+  title_behavior: ""
+  use_when: []
+  do_not_use_when: []
+  title_system_family: auto
+  world_engine: ""
+  construction_logic: []
+  protected_title_properties:
+    occupied_area: ""
+    silhouette: ""
+    reading_route: ""
+    value_priority: ""
+  prompt_requirements: []
+  rejection_tests: []
+  private_trial_ids: []
+  rights_safe: false

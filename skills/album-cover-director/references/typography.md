@@ -53,7 +53,7 @@ Use when the title itself is the image or needs ownable identity. Define the con
 
 ### `auto`
 
-Choose `image-native` when the title is short enough to inspect; it is the default for a jacket's single approved title. Choose `custom-wordmark` when letters organize the square. For Japanese/Latin mixed text, long titles, credits, or strict metadata matching, make the title architecture and exact permitted string more explicit in the prompt; never switch to post-typesetting.
+Choose `image-native` when the title is short enough to inspect; it is the default for a jacket's single approved title. Choose `custom-wordmark` when letters organize the square. For Japanese/Latin mixed text, long titles, credits, or strict metadata matching, read `title-complexity.md` before choosing the architecture. Make the exact permitted string, hierarchy, and protected glyphs explicit in the prompt; never switch to post-typesetting.
 
 ## Wordmark construction specification
 

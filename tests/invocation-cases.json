@@ -72,6 +72,12 @@
     "coverage": ["series-system"]
   },
   {
+    "name": "project-local-learning",
+    "prompt": "このプロジェクトの.album-cover-directorにあるartist systemと過去のフィードバックを使い、新曲の候補を作って。採用結果もローカルに学習として残して。",
+    "expected_trigger": true,
+    "coverage": ["project-local-learning", "series-system"]
+  },
+  {
     "name": "image-edit-negative",
     "prompt": "Remove the person in the background of this vacation photo.",
     "expected_trigger": false,

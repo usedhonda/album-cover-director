@@ -1,6 +1,6 @@
 # Controlled production learning
 
-Use this mode only when the user explicitly asks to improve Album Cover Director. Ordinary cover requests remain private production work and are not training data.
+Use this mode only when the user explicitly asks to improve Album Cover Director. Ordinary cover requests remain private production work and are not public training data. Read `project-local-learning.md` first when the evidence came from a user's project.
 
 ## Why this complements precedent research
 
@@ -19,6 +19,7 @@ Use evidence in this order:
 5. verified precedent principles used to explain, not override, production evidence.
 
 Never convert one user's aesthetic preference into a universal rule. Artist-specific continuity belongs in that user's artist-information file.
+Project-local feedback belongs in that project's `.album-cover-director/` workspace; promote it to a public rule only through the gate below.
 
 ## Trial matrix
 
@@ -89,10 +90,13 @@ Use stable failure codes so repeated weaknesses become visible:
 - `series-repetition`: recent covers repeat four or more structural axes;
 - `unapproved-text`: readable text beyond the approved title;
 - `rights-or-provenance`: reference or identity use cannot be cleared.
+- `title-complexity-mismatch`: the chosen title behavior or transformation made an exact long, mixed-script, or fragile title less reliable.
+- `local-preference-overreach`: a one-release or artist-specific preference was treated as a public rule.
 
 ## Learning boundaries
 
 - Do not automatically upload observations or use user work for public research.
-- Do not create cross-run runtime memory from trial records. The only automatic persisted runtime value is the last artist-information file path.
+- Do not move project-local feedback, learning images, artist systems, or benchmark outputs into this repository. Public observations must be abstracted and privacy-safe.
+- Do not create global cross-run runtime memory from trial records or artist settings. Reusable learning stays inside the relevant project's `.album-cover-director/` directory.
 - Do not keep adding precedent examples when the failure is execution quality rather than a missing construction principle.
 - Do not promote a rule based only on aggregate score; a gate failure always wins.

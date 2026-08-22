@@ -25,20 +25,30 @@ Interpret “use this person/character” as `identity-reference`, “use or edi
 
 Proceed from the title alone when no optional input is supplied. Preserve the exact title string, and do not invent an artist name or private artist settings. The exact title is the only readable cover text allowed by default; an artist name or other text requires explicit approval.
 
-## Remembered artist-information path
+## Project-local artist system and learning
 
-Remember only the most recently supplied, readable artist-information file path. Use `scripts/artist-info-state.py` to store it as `last_artist_information_path` under `$CODEX_HOME/album-cover-director/state.yaml` when `CODEX_HOME` is set, or `~/.codex/album-cover-director/state.yaml` otherwise. Never store the artist-information contents, lyrics, lyrics path, title, supplied images, image paths, references, or generated brief in this state file.
+Never remember an artist system globally. Resolve artist information in this
+order:
 
-Resolve artist information in this order:
-
-1. an artist-information file path explicitly supplied for the current run;
-2. the remembered path, when it still exists and is readable;
+1. artist information or an `artist-system` path explicitly supplied for the current run;
+2. `<project-root>/.album-cover-director/artist-system.md` when present and not explicitly ignored;
 3. no artist information.
 
-When a new readable artist-information path is supplied, replace the remembered path. Inline artist information applies only to the current run and is not persisted. If the remembered path is missing or unreadable, continue from the remaining inputs without blocking and report that the remembered artist information was not used. Honor an explicit request to ignore it for one run or forget it entirely.
+Use `scripts/artist-info-state.py resolve --project-root .` to make this
+resolution explicit. An explicit path affects one run only. It does not create
+global memory, and a project-local artist system never affects another project.
+
+When a user wants ongoing learning, read `references/project-local-learning.md`
+and initialize the workspace with `scripts/project-workspace.py init
+--project-root .`. Keep artist settings, feedback, user-supplied learning
+images, generated candidates, local benchmark outputs, and learned preferences
+inside that ignored project-local directory. Do not commit or upload it.
 
 ## Runtime controls
 
+- Run intent: `explore` creates directions and candidates for choice;
+  `production` includes comparison, refinement, and delivery; `improve-skill`
+  records a controlled local learning trial. Default is `production`.
 - `quick`: 3 candidates, one per direction.
 - `standard`: 6 candidates, two per direction. Default.
 - `deep`: 12 candidates, four per direction.
@@ -51,7 +61,13 @@ If the environment exposes an image-generation tool, use GPT Image 2. If it does
 
 ## Workflow
 
-1. Resolve the optional lyrics and artist information according to the input and remembered-path rules. Classify every supplied image as `identity-reference`, `source-asset`, or `visual-direction`, and record its rights basis. Create `creative-brief.yaml` from the title and whatever optional evidence is available using `assets/art-direction-brief.yaml`.
+1. Resolve optional lyrics and artist information according to the explicit or
+   project-local rules. When the project-local workspace exists, also read its
+   `learned-preferences.md`; it is local evidence, not a universal rule.
+   Classify every supplied image as `identity-reference`, `source-asset`, or
+   `visual-direction`, and record its rights basis. Create `creative-brief.yaml`
+   from the title and whatever optional evidence is available using
+   `assets/art-direction-brief.yaml`.
 2. Build the interpretation from the available evidence:
    - With lyrics or a description, extract one central contradiction, three sensory qualities, two physical phenomena, and six to ten concrete symbols. Prefer observable nouns, actions, materials, and spatial relations over mood adjectives.
    - With artist information, separate continuity requirements from variables that must change for this release. Treat genre, sonic character, and emphasis as evidence, not as a template selector.
@@ -61,7 +77,17 @@ If the environment exposes an image-generation tool, use GPT Image 2. If it does
 3. Read `references/design-patterns.md` and `references/title-image-architectures.md`. Choose three different primary patterns and a title-system family for each direction. `auto` chooses `material-world` when a physical system must form title anatomy; `spatial-field` when light, reflection, atmosphere, motion, or architecture should distribute a title across the whole square; and `character-led` when a supplied artist system, rights-cleared identity reference, or brief calls for a central figure. Give each one or two secondary techniques. Keep one genre anchor and betray one genre expectation in every direction.
 4. Read `references/verified-principles.md` only to solve a specific lettering or composition problem. Use at most one primary and one supporting principle. Do not research new covers during a production run; an unmatched brief is not a research failure.
 5. Separate genre, era, color, material, and rendering method from the primary pattern. Do not let genre select a template by itself. When a direction claims a live, physical, documentary, or spatial world, write a hierarchy lock before choosing controlled irregularity: name the title's occupied area, silhouette, reading route, brightness/value priority, and any protected subject. Then name only the background regions and physically caused variations that may become uneven through exposure, occlusion, crop, motion, wear, or chance. Do not apply artificial degradation to a graphic, diagrammatic, or deliberately pristine direction.
-6. Read `references/typography.md`. Choose the title-system family before the typography mode, then define the title's structural role, occupied area, reading route, relation to the central motif, and permitted occlusion before prompting. For `material-world`, define the world engine, material vocabulary, mapping from material to skeleton/counters/joins/terminals, and the title's role in that world. For `spatial-field`, define the causal phenomenon, the hierarchy lock, the title skeleton, and how floor, wall, smoke, reflection, or air extends it without becoming an overlay. For `character-led`, define the central figure's action, the title's shared hierarchy, and the physical or gestural connection between them.
+6. Read `references/typography.md` and `references/title-complexity.md`.
+   Choose the title-system family before the typography mode, classify the
+   exact title's complexity, then define its structural role, occupied area,
+   reading route, relation to the central motif, and permitted occlusion before
+   prompting. For `material-world`, define the world engine, material
+   vocabulary, mapping from material to skeleton/counters/joins/terminals, and
+   the title's role in that world. For `spatial-field`, define the causal
+   phenomenon, the hierarchy lock, the title skeleton, and how floor, wall,
+   smoke, reflection, or air extends it without becoming an overlay. For
+   `character-led`, define the central figure's action, the title's shared
+   hierarchy, and the physical or gestural connection between them.
 7. Write `directions.md` and one prompt per candidate. Each prompt must state composition, depth, palette proportions, material behavior, title treatment, exact allowed text, and exclusions. The title's surface, depth, occlusion, and connection to the dominant image geometry are mandatory. For `material-world`, forbid normal fonts, wordmarks, letters merely placed on a scene, and a clean catalog of components that does not enact the world engine. For `spatial-field`, a legible conventional letter skeleton may establish the reading route only when it is generated in the scene and physically transformed by the named phenomenon; forbid a detached headline, caption, or flat overlay. For `character-led`, forbid a figure with a detached title header, footer, label, or caption. Use `references/gpt-image-2.md` for model-specific execution.
 8. Generate the requested number of title-integrated candidates. Record every run or edit in `run-ledger.jsonl` using `assets/run-ledger.yaml` as the field contract.
 9. Compare all candidates at 56 px, 128 px, 256 px, full size, grayscale, and blur. Use `scripts/cover-ops.py contact-sheet` when Pillow is available. Score with `assets/scorecard.yaml` and `references/evaluation-delivery.md`. Reject work that reads primarily as a poster, advertisement, editorial illustration, app tile, game splash screen, or generic AI concept image rather than a durable music-release identity.
@@ -69,11 +95,11 @@ If the environment exposes an image-generation tool, use GPT Image 2. If it does
 11. Apply the typography gate. If spelling, spacing, baseline, mixed-script shaping, or letter integrity fails, reject the candidate and return to its title architecture and prompt. For `material-world`, also reject a candidate when its material could be removed without changing the letter anatomy, when the scene could remain after removing the title, or when it still reads as a product catalogue after removing the title. For `spatial-field`, reject it when the title could be replaced with a flat headline without changing the event, or when variation weakens the locked title hierarchy. For `character-led`, reject it when removing the figure leaves a normal wordmark, or removing the title leaves a conventional character illustration. Do not add, redraw, typeset, or composite title text after generation. A detached title strip, quiet header, generic label, caption box, or a font layer is a regression, not a fallback.
 12. Validate rights, exact title, absence of unapproved readable text, square composition, thumbnail recognition, and technical requirements.
 13. Export a 3000 x 3000 PNG and JPG plus a 256 px thumbnail with `scripts/cover-ops.py export`. If the required image library is unavailable, provide the exact export specification and do not claim delivery completion.
-14. Write `cover-report.md` with the selected direction, why it won, typography mode, checks, provenance, unresolved human review, and paths.
+14. Write `cover-report.md` with the selected direction, why it won, typography mode, checks, provenance, unresolved human review, and paths. When a user gives selection or correction feedback, write a private project-local feedback record using `assets/project-feedback.yaml`. Keep any learning images project-local.
 
 ## Skill-learning mode
 
-Ordinary cover runs do not become training data and do not create cross-run memory beyond the artist-information path above. When the user explicitly asks to improve this skill, read `references/production-learning.md` and use `assets/learning-observation.yaml` for controlled, rights-safe trials. Compare winners against rejected candidates, compare one-variable edits against their parents, and validate proposed rules on held-out briefs. Promote only abstract, reproducible design decisions; never promote private lyrics, artist information, reference images, generated images, or one user's taste as a universal rule.
+Ordinary cover runs never become public training data. A reviewed run may improve only that project's private `learned-preferences.md` under the rules in `references/project-local-learning.md`. When the user explicitly asks to improve this public skill, read `references/production-learning.md`, `references/title-behavior-cards.md`, and use `assets/learning-observation.yaml` for controlled, rights-safe trials. Compare winners against rejected candidates, compare one-variable edits against their parents, and validate proposed rules on held-out briefs. Promote only abstract, reproducible design decisions; never promote private lyrics, artist information, reference images, generated images, or one user's taste as a universal rule.
 
 ## Output contract
 
@@ -97,6 +123,9 @@ album-cover/<release-slug>/
 - The selected image must read as a music-release identity, not as a poster, advertisement, editorial illustration, app tile, game splash screen, or generic concept art. Its square must have one dominant identity signal, intentional edge behavior, controlled information density, and a reason to exist beyond illustrating the title literally.
 - For a live, physical, documentary, or spatial direction, reserve unevenness for a named visual cause such as exposure, motion, smoke, reflection, wear, crop, or occlusion. Lock the title's occupied area, silhouette, reading route, and value priority before varying anything else. Reject a scene in which every face, surface, color, and effect is equally polished, bright, and legible; do not let controlled irregularity reduce title dominance.
 - The title must be exact. No other readable text is allowed unless explicitly approved.
+- Classify the title's complexity before generation. If it fails, change the
+  native title architecture, hierarchy, or protected glyph treatment; never
+  fall back to post-typesetting, redraw, or compositing.
 - Every evaluated candidate must show the title as a native part of the generated jacket image. Never add, redraw, typeset, or composite title text after generation.
 - A custom wordmark must define skeleton, width, weight, counters, terminals, rhythm, and transformation logic; a font name alone is not a design.
 - When title-led composition is selected, use one architecture from `references/title-image-architectures.md`; do not reduce it to a decorative font treatment.
@@ -118,5 +147,8 @@ album-cover/<release-slug>/
 - Lettering construction and fallback gate: `references/typography.md`
 - Genre and era as independent axes: `references/genre-era-codes.md`
 - GPT Image 2 prompting and editing: `references/gpt-image-2.md`
+- Project-local artist settings, feedback, learning images, and benchmarks: `references/project-local-learning.md`
+- Complex and mixed-script title architecture: `references/title-complexity.md`
+- Testing and adding reusable title behaviors: `references/title-behavior-cards.md`
 - Scoring, comparison, rights, and export: `references/evaluation-delivery.md`
 - Controlled production learning and rule-promotion gates: `references/production-learning.md`

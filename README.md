@@ -51,6 +51,7 @@ The gallery demonstrates three equal title-system families. Choose **material-wo
 - Comparative checks at 56 px, 128 px, 256 px, full size, grayscale, and blur.
 - One-variable edits, at most two cycles, always returning to the selected original after regression.
 - Reproducible 3000 x 3000 PNG/JPG and 256 px thumbnail export.
+- Project-local artist systems, feedback, learning images, and benchmarks that improve future covers without publishing user work.
 
 ## Install
 
@@ -102,13 +103,19 @@ Lyrics and artist information are optional. Lyrics may be pasted inline or suppl
 
 Reference images are optional. Attach an image or supply a readable file path, then use it as a recurring person or character identity, as an actual image to edit or incorporate, or only as visual direction. When the request is clear, the skill infers the use mode. A recurring character does not freeze the whole cover: pose, action, setting, composition, light, palette, and title architecture remain release-specific. Direct use of the actual image requires the necessary rights.
 
-When artist information is supplied by file path, the skill remembers only the most recent readable path in local Codex state and reuses it when the next request omits one. It does not remember the file contents, lyrics, lyrics path, title, supplied images, or image paths. A new artist-information path replaces the remembered one; it can also be ignored for one run or forgotten entirely.
+For a continuing artist project, initialize `.album-cover-director/` at that project's root. Its `artist-system.md` is used only by that project; an explicit artist-information path is used only for the current run. The skill never remembers an artist system globally or carries it into another project.
 
 Run volumes:
 
 - quick: 3 candidates;
 - standard: 6 candidates, default;
 - deep: 12 candidates.
+
+Run intents:
+
+- explore: directions and candidates for an early choice;
+- production: comparison, refinement, and delivery, the default;
+- improve-skill: a controlled project-local learning trial.
 
 Typography modes:
 
@@ -122,6 +129,30 @@ Title-system families:
 - material-world: title anatomy is made by a physical system;
 - spatial-field: a protected title skeleton is distributed and transformed by light, reflection, atmosphere, motion, or architecture;
 - character-led: central figure and title share a single hierarchy.
+
+## Project-local learning
+
+Initialize once from the artist or release project's root:
+
+~~~bash
+python scripts/project-workspace.py init --project-root .
+~~~
+
+This creates an ignored `.album-cover-director/` directory containing the
+artist system, feedback records, an inbox for user-supplied learning images,
+generated learning images, observations, and a small title-integrity benchmark.
+Nothing in that folder is committed or uploaded by this skill.
+
+After a user chooses or rejects candidates, record the selection and the reason
+in `feedback/<release-slug>.yaml`. A repeated, bounded observation can become
+that project's `learned-preferences.md`; one-off taste never becomes a global
+rule. A rule can enter the public skill only after independent, varied trials
+and a held-out brief pass. See [project-local-learning.md](skills/album-cover-director/references/project-local-learning.md).
+
+For complex Japanese, mixed-script, long, or punctuation-heavy titles, the
+skill classifies the title before generation and changes its native hierarchy,
+line break, or protected glyph treatment if it fails. It never repairs text
+with later typesetting. See [title-complexity.md](skills/album-cover-director/references/title-complexity.md).
 
 ## Output
 

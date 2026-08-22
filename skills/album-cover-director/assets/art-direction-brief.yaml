@@ -4,6 +4,8 @@ inputs:
   lyrics_path: ""
   artist_information_source: none
   artist_information_path: ""
+  project_local_workspace: ""
+  learned_preferences_path: ""
   reference_images:
     source: none
     paths: []
@@ -37,10 +39,12 @@ constraints:
   allowed_readable_text: []
   font_rights: "not applicable or not yet verified"
 runtime:
+  intent: production
   volume: standard
   candidate_count: 6
   typography_mode: auto
   title_system_family: auto
+  title_complexity_profile: ""
 directions:
   - id: A
     primary_pattern: ""
