@@ -52,8 +52,16 @@ directions:
     title_world_role: ""
     world_engine: ""
     context_layers: []
-    controlled_irregularity: []
-    protected_clarity: []
+    hierarchy_lock:
+      title_occupied_area: ""
+      title_silhouette: ""
+      title_reading_route: ""
+      title_value_priority: ""
+      protected_subjects: []
+    controlled_irregularity:
+      cause: ""
+      variable_regions: []
+      permitted_variations: []
     central_figure: ""
     character_title_relation: ""
     genre_anchor: ""
@@ -68,8 +76,16 @@ directions:
     title_world_role: ""
     world_engine: ""
     context_layers: []
-    controlled_irregularity: []
-    protected_clarity: []
+    hierarchy_lock:
+      title_occupied_area: ""
+      title_silhouette: ""
+      title_reading_route: ""
+      title_value_priority: ""
+      protected_subjects: []
+    controlled_irregularity:
+      cause: ""
+      variable_regions: []
+      permitted_variations: []
     central_figure: ""
     character_title_relation: ""
     genre_anchor: ""
@@ -84,8 +100,16 @@ directions:
     title_world_role: ""
     world_engine: ""
     context_layers: []
-    controlled_irregularity: []
-    protected_clarity: []
+    hierarchy_lock:
+      title_occupied_area: ""
+      title_silhouette: ""
+      title_reading_route: ""
+      title_value_priority: ""
+      protected_subjects: []
+    controlled_irregularity:
+      cause: ""
+      variable_regions: []
+      permitted_variations: []
     central_figure: ""
     character_title_relation: ""
     genre_anchor: ""

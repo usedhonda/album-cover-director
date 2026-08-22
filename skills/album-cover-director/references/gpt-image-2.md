@@ -39,16 +39,21 @@ night-time palette.
 ## Controlled irregularity
 
 When the direction claims a live, physical, documentary, or spatial event,
-do not let the model polish every visible thing to the same intensity. Choose
-one or two irregularities that have a physical cause: uneven exposure, falling
-off light, smoke, a moving body, scratched reflection, crop, occlusion, wear,
-or accidental darkness. Name the cause and where it acts in the frame.
+write a hierarchy lock before requesting any irregularity. Lock the title's
+occupied area, silhouette, reading route, and value priority, along with any
+subject whose recognition is essential. Then choose one or two irregularities
+that have a physical cause: uneven exposure, falling-off light, smoke, a
+moving body, scratched reflection, crop, occlusion, wear, or accidental
+darkness. Name the cause, the background region where it acts, and the one
+specific variation it permits.
 
-This is not a request for generic grain, blur, dirt, or randomness. Protect
-the intended title reading route, its decisive silhouette, and the one or two
-elements that need recognition. Let surrounding detail become partial only
-where the named cause makes that believable. Do not apply this rule to a
-deliberately pristine graphic, diagrammatic, or product-like direction.
+This is not a request for generic grain, blur, dirt, or randomness. Do not
+apply smoke, motion blur, dimming, gaps, or distortion to the locked title
+silhouette unless a small, named title-edge effect is explicitly required; it
+may never alter the title's reading route, occupied area, or dominance. Let
+surrounding detail become partial only where the named cause makes that
+believable. Do not apply this rule to a deliberately pristine graphic,
+diagrammatic, or product-like direction.
 
 ## Variants
 
