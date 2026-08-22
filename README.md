@@ -68,10 +68,9 @@ Explicit:
 ~~~text
 $album-cover-director
 Title: Glass Weather
-Artist: Example Artist
 Mode: standard
 Lyrics: ...
-Avoid: neon city, centered face
+Artist information: /path/to/artist-information.md
 ~~~
 
 Natural language:
@@ -81,13 +80,13 @@ Direct six structurally different cover candidates for my new single.
 Use the attached audio, make the title exact, and deliver a 3000px square.
 ~~~
 
-Required input:
+The only required input is:
 
-- exact release title;
-- artist name;
-- lyrics, a track description, or audio.
+- an exact song, album, or release title.
 
-Optional input includes genre, sonic traits, rights-cleared reference images, an existing artist system, an avoid list, destination, run volume, and typography mode.
+Lyrics and artist information are optional. Lyrics may be pasted inline or supplied as a readable file path. Artist information may include the artist name, genre, sonic character, points to emphasize, recurring character or identity rules, visual language, palette, typography, avoid list, and references. With no optional input, the skill proceeds from the title alone.
+
+When artist information is supplied by file path, the skill remembers only the most recent readable path in local Codex state and reuses it when the next request omits one. It does not remember the file contents, lyrics, lyrics path, or title. A new path replaces the remembered one; it can also be ignored for one run or forgotten entirely.
 
 Run volumes:
 
@@ -163,6 +162,8 @@ The export command refuses non-square sources and records dimensions, scaling, b
 The replacement method requires each admitted work to have cover-specific acclaim evidence, typography dominance at T4 or T5, a direct visual check, and a work-specific transferable principle. Every final record must also name its country, label, and at least two candidate-verified evidence-source IDs. Validation rejects a final corpus if one designer supplies more than three works, one label more than six, one country more than sixteen, one genre more than eighteen, or one source supports more than twelve works. Music rankings, sales, and album fame do not count as cover-design evidence. Future expansion is failure-driven: add research only when repeated real cover runs reveal a missing construction rule, not to enumerate music genres.
 
 [genre-diverse-title-intake.md](research/genre-diverse-title-intake.md) is a separate, capped six-item discovery intake. Its links and observations are not production rules until a private cover trial proves a distinct title-image relationship.
+
+[typography-led-genre-intake.yaml](research/typography-led-genre-intake.yaml) is a cross-genre visual intake selected through image search and direct screening. It stores no third-party images: only release metadata, source pages, observations about how type organizes the square, and transfer questions. Candidates remain discovery-only until production comparisons and held-out briefs reproduce the result.
 
 Reference images supplied during use must be owned, licensed, public-domain, or used only as non-reproduced analytical input. Do not request direct imitation of a living artist.
 

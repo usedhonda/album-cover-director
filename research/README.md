@@ -9,3 +9,10 @@ specific unresolved construction problem.
 
 The repository contains observations and source links only; it contains no
 third-party album-cover images.
+
+[`typography-led-genre-intake.yaml`](typography-led-genre-intake.yaml) is the
+current image-search discovery intake. It visually screens title-led covers
+across major genres and records source pages, structural observations, and
+transfer questions without storing the images. Its candidates remain
+discovery-only until controlled private trials satisfy the promotion gate in
+`skills/album-cover-director/references/production-learning.md`.

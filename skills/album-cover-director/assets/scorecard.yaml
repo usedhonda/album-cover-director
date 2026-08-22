@@ -4,6 +4,12 @@ scale:
   maximum: 5
   passing: 4
 criteria:
+  release_identity:
+    weight: 1.5
+    gate: true
+  musical_specificity:
+    weight: 1.5
+    gate: false
   concept_specificity:
     weight: 1.5
     gate: false

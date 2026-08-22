@@ -17,7 +17,9 @@ Use `cover-ops.py contact-sheet` to create reproducible sheets. Select a leader 
 
 ## Scoring
 
-Score 0–5 for concept specificity, structural distinction, composition, color/value, material credibility, typography, title-image integration, thumbnail recognition, artist fit, rights/provenance, and technical readiness. Typography, title-image integration, rights/provenance, and technical readiness are gates: a candidate scoring below 4 in any of them cannot be delivered without repair.
+Score 0–5 for release identity, musical specificity, concept specificity, structural distinction, composition, color/value, material credibility, typography, title-image integration, thumbnail recognition, artist fit, rights/provenance, and technical readiness. Release identity, typography, title-image integration, rights/provenance, and technical readiness are gates: a candidate scoring below 4 in any of them cannot be delivered without repair.
+
+`release identity` asks whether the square feels like a durable identity for a piece of music rather than a poster, advertisement, editorial illustration, app tile, game splash screen, or generic AI concept image. It needs one dominant identity signal, intentional edge and crop behavior, controlled information density, and a visual reason to exist beyond literal illustration. `musical specificity` asks whether the choices trace to supplied evidence or to a clearly labeled title hypothesis rather than interchangeable genre decoration.
 
 A high total does not excuse an incorrect title, unlicensed reference, extra text, non-square master, or unreadable thumbnail.
 

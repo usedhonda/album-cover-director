@@ -1,0 +1,41 @@
+schema_version: 1
+observation:
+  trial_id: ""
+  comparison_id: ""
+  tested_decision: ""
+  evidence_profile:
+    title_script: ""
+    title_length: ""
+    evidence_kind: title-only
+    title_system_family: ""
+  winner_candidate_id: ""
+  rejected_candidate_id: ""
+  decisive_observations: []
+  score_deltas:
+    release_identity: 0
+    musical_specificity: 0
+    structural_distinction: 0
+    typography: 0
+    title_image_integration: 0
+    thumbnail_recognition: 0
+  objective_failures: []
+  edit_pair:
+    parent_candidate_id: null
+    child_candidate_id: null
+    changed_variable: null
+  proposed_rule:
+    statement: ""
+    applies_when: []
+    reject_when: []
+  validation:
+    independent_release_trials: 0
+    materially_different_conditions: 0
+    held_out_trial_id: null
+    held_out_result: not-run
+    promotion_status: observation-only
+  privacy:
+    contains_lyrics: false
+    contains_artist_information: false
+    contains_reference_images: false
+    contains_generated_images: false
+    rights_safe: false

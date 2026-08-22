@@ -97,6 +97,9 @@ def validate_skill() -> None:
     require("name: album-cover-director" in frontmatter, "skill name mismatch")
     require("description:" in frontmatter, "skill description missing")
     require("ordinary photo edits" in frontmatter, "negative trigger boundary missing")
+    require("The only required input is:" in skill, "title-only input contract missing")
+    require("lyrics either inline" in skill, "inline-or-path lyrics contract missing")
+    require("last_artist_information_path" in skill, "artist-information path memory contract missing")
 
 
 def validate_corpus() -> None:
@@ -243,6 +246,41 @@ def validate_typographic_candidates() -> None:
                     f"{candidate['id']} needs at least {minimum_distinct_sources} distinct evidence sources")
 
 
+def validate_typography_genre_intake() -> None:
+    intake = json.loads((ROOT / "research/typography-led-genre-intake.yaml").read_text())
+    require(intake.get("schema_version") == 1, "typography genre intake schema version mismatch")
+    require(intake.get("research_status") == "visual-discovery",
+            "typography genre intake must remain visual-discovery")
+    require(intake.get("production_use") is False,
+            "typography genre intake must not be a production reference")
+    require(intake.get("image_storage") is False,
+            "typography genre intake must not store third-party images")
+    contract = intake.get("selection_contract", {})
+    candidates = intake.get("candidates", [])
+    require(len(candidates) >= contract.get("minimum_candidates", 20),
+            "typography genre intake has too few candidates")
+    require(len({candidate["genre_group"] for candidate in candidates}) >= contract.get("minimum_genre_groups", 8),
+            "typography genre intake has too few genre groups")
+    require(len({candidate["id"] for candidate in candidates}) == len(candidates),
+            "typography genre intake IDs must be unique")
+    required = {
+        "id", "genre_group", "artist", "title", "year", "source_url", "source_kind",
+        "visual_observation", "typography_role", "transferable_question", "screening_status",
+    }
+    for candidate in candidates:
+        missing = required - candidate.keys()
+        require(not missing, f"typography intake candidate missing fields: {sorted(missing)}")
+        require(candidate["screening_status"] == "visual-pass-private-trial-needed",
+                f"typography intake candidate has invalid status: {candidate['id']}")
+        require(1940 <= int(candidate["year"]) <= 2026,
+                f"typography intake year outside range: {candidate['id']}")
+        parsed = urlparse(candidate["source_url"])
+        require(parsed.scheme == "https" and parsed.netloc,
+                f"typography intake source URL invalid: {candidate['id']}")
+        require("image_url" not in candidate,
+                f"typography intake must not retain image URL: {candidate['id']}")
+
+
 def validate_invocation_cases() -> None:
     cases = json.loads((ROOT / "tests/invocation-cases.json").read_text())
     positive = [case for case in cases if case["expected_trigger"]]
@@ -250,7 +288,10 @@ def validate_invocation_cases() -> None:
     require(len(positive) >= 8, "need at least eight positive invocation cases")
     require(len(negative) >= 3, "need at least three negative invocation cases")
     tags = {tag for case in positive for tag in case["coverage"]}
-    required_tags = {"japanese", "english", "mixed-script", "instrumental", "type-hero", "reference-image", "series-system"}
+    required_tags = {
+        "japanese", "english", "mixed-script", "instrumental", "type-hero", "reference-image",
+        "series-system", "title-only", "lyrics-path", "artist-information-path",
+    }
     require(required_tags <= tags, f"invocation coverage missing: {sorted(required_tags - tags)}")
 
 
@@ -258,11 +299,14 @@ def validate_forward_cases() -> None:
     cases = json.loads((ROOT / "tests/forward-cases.json").read_text())
     require(len(cases) >= 8, "need at least eight forward cases")
     required_keys = {
-        "name", "title", "artist", "evidence_kind", "mode", "typography_mode",
+        "name", "title", "evidence_kind", "mode", "typography_mode",
         "title_system_family", "title_system", "expected_candidates", "directions",
     }
     volumes = {"quick": 3, "standard": 6, "deep": 12}
-    evidence_kinds = {"lyrics", "track-description", "audio"}
+    evidence_kinds = {
+        "title-only", "lyrics-inline", "lyrics-path", "track-description", "audio",
+        "artist-information-path",
+    }
     typography_modes = {"auto", "image-native", "custom-wordmark"}
     names = set()
     covered_modes = set()
@@ -272,8 +316,9 @@ def validate_forward_cases() -> None:
         require(not missing, f"forward case missing fields: {sorted(missing)}")
         require(case["name"] not in names, f"duplicate forward case name: {case['name']}")
         names.add(case["name"])
-        require(bool(case["title"].strip()) and bool(case["artist"].strip()),
-                f"forward case title/artist missing: {case['name']}")
+        require(bool(case["title"].strip()), f"forward case title missing: {case['name']}")
+        if "artist" in case:
+            require(bool(case["artist"].strip()), f"optional artist is empty: {case['name']}")
         require(case["evidence_kind"] in evidence_kinds,
                 f"unsupported evidence kind: {case['name']}")
         require(case["mode"] in volumes, f"unsupported volume: {case['name']}")
@@ -292,6 +337,12 @@ def validate_forward_cases() -> None:
         require(set(case["directions"]) <= PATTERNS,
                 f"forward case uses unknown pattern: {case['name']}")
     require(covered_modes == set(volumes), "forward cases must cover quick, standard, and deep")
+    require(any(case["evidence_kind"] == "title-only" for case in cases),
+            "forward cases need title-only coverage")
+    require(any(case["evidence_kind"] == "lyrics-path" for case in cases),
+            "forward cases need lyrics-path coverage")
+    require(any(case["evidence_kind"] == "artist-information-path" for case in cases),
+            "forward cases need artist-information-path coverage")
     require(any(case["evidence_kind"] == "audio" for case in cases), "forward cases need instrumental/audio coverage")
     require(any(case["typography_mode"] == "custom-wordmark" for case in cases),
             "forward cases need custom-wordmark coverage")
@@ -333,6 +384,7 @@ def main() -> int:
         validate_skill,
         validate_corpus,
         validate_typographic_candidates,
+        validate_typography_genre_intake,
         validate_invocation_cases,
         validate_forward_cases,
         validate_public_safety,

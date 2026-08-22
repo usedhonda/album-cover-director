@@ -2,8 +2,7 @@
   {
     "name": "japanese-lyrics-standard",
     "title": "夜の余白",
-    "artist": "Example Artist",
-    "evidence_kind": "lyrics",
+    "evidence_kind": "lyrics-inline",
     "mode": "standard",
     "typography_mode": "image-native",
     "title_system_family": "material-world",
@@ -14,8 +13,7 @@
   {
     "name": "english-lyrics-standard",
     "title": "Read The Tape",
-    "artist": "Example Artist",
-    "evidence_kind": "lyrics",
+    "evidence_kind": "lyrics-path",
     "mode": "standard",
     "typography_mode": "image-native",
     "title_system_family": "material-world",
@@ -26,8 +24,7 @@
   {
     "name": "mixed-script-title",
     "title": "透明なSignal",
-    "artist": "Example Artist",
-    "evidence_kind": "track-description",
+    "evidence_kind": "title-only",
     "mode": "standard",
     "typography_mode": "image-native",
     "title_system_family": "character-led",
@@ -38,7 +35,6 @@
   {
     "name": "instrumental-audio",
     "title": "Tidal Vector",
-    "artist": "Example Artist",
     "evidence_kind": "audio",
     "mode": "standard",
     "typography_mode": "auto",
@@ -50,7 +46,6 @@
   {
     "name": "type-hero-custom-wordmark",
     "title": "PULSE//VOID",
-    "artist": "Example Artist",
     "evidence_kind": "track-description",
     "mode": "quick",
     "typography_mode": "custom-wordmark",
@@ -62,8 +57,7 @@
   {
     "name": "rights-cleared-portrait-reference",
     "title": "After the Flash",
-    "artist": "Example Artist",
-    "evidence_kind": "lyrics",
+    "evidence_kind": "lyrics-inline",
     "mode": "standard",
     "typography_mode": "auto",
     "title_system_family": "character-led",
@@ -74,8 +68,7 @@
   {
     "name": "existing-series-system",
     "title": "Fourth Window",
-    "artist": "Example Artist",
-    "evidence_kind": "track-description",
+    "evidence_kind": "artist-information-path",
     "mode": "deep",
     "typography_mode": "image-native",
     "title_system_family": "character-led",
@@ -86,8 +79,7 @@
   {
     "name": "image-native-short-title",
     "title": "SILT",
-    "artist": "Example Artist",
-    "evidence_kind": "lyrics",
+    "evidence_kind": "lyrics-inline",
     "mode": "quick",
     "typography_mode": "image-native",
     "title_system_family": "material-world",

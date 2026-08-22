@@ -1,22 +1,33 @@
 ---
 name: album-cover-director
-description: Direct album, EP, and single cover artwork from a precise title plus lyrics, a music description, or audio. Use when a musician, producer, label, or designer wants structurally distinct cover concepts, GPT Image 2 prompts or edits, custom title lettering, comparative image evaluation, or release-ready square delivery files. Trigger for explicit `$album-cover-director` calls and natural-language album-cover requests; do not trigger for ordinary photo edits, posters, flyers, logos unrelated to a release, or generic image generation.
+description: Direct album, EP, and single cover artwork from an exact title, with optional lyrics and artist information. Use when a musician, producer, label, or designer wants structurally distinct cover concepts, GPT Image 2 prompts or edits, custom title lettering, comparative image evaluation, or release-ready square delivery files. Trigger for explicit `$album-cover-director` calls and natural-language album-cover requests; do not trigger for ordinary photo edits, posters, flyers, logos unrelated to a release, or generic image generation.
 ---
 
 # Album Cover Director
 
 Treat an album cover as a compact visual system, not a decorated illustration. Move from musical meaning to three structurally different directions, then generate, compare, refine, and deliver with typography as an independent quality gate. Its core specialty is image-native title systems: either the title becomes a physical world, or a character, gesture, and title share one image structure.
 
-## Required input
+## Input contract
 
-Collect or infer:
+The only required input is:
 
-- exact release title;
-- artist name;
-- at least one of lyrics, a track description, or audio;
-- optional genre, sonic traits, reference images, artist system, avoid list, and destination.
+- exact song, album, or release title.
 
-Preserve the exact title string. Ask only when a missing title or artist name would make the deliverable ambiguous. Never invent private artist settings or publish supplied reference images.
+Lyrics and artist information are optional. Accept lyrics either inline in the prompt or from a readable file path. Accept artist information inline or from a readable file path; it may contain the artist name, genre, sonic character, points to emphasize, recurring identity or character rules, visual language, palette, typography, avoid list, references, and series-continuity guidance. Audio, a track description, reference images, destination, and other context are also optional.
+
+Proceed from the title alone when no optional input is supplied. Preserve the exact title string, and do not invent an artist name or private artist settings. The exact title is the only readable cover text allowed by default; an artist name or other text requires explicit approval.
+
+## Remembered artist-information path
+
+Remember only the most recently supplied, readable artist-information file path. Use `scripts/artist-info-state.py` to store it as `last_artist_information_path` under `$CODEX_HOME/album-cover-director/state.yaml` when `CODEX_HOME` is set, or `~/.codex/album-cover-director/state.yaml` otherwise. Never store the artist-information contents, lyrics, lyrics path, title, references, or generated brief in this state file.
+
+Resolve artist information in this order:
+
+1. an artist-information file path explicitly supplied for the current run;
+2. the remembered path, when it still exists and is readable;
+3. no artist information.
+
+When a new readable artist-information path is supplied, replace the remembered path. Inline artist information applies only to the current run and is not persisted. If the remembered path is missing or unreadable, continue from the remaining inputs without blocking and report that the remembered artist information was not used. Honor an explicit request to ignore it for one run or forget it entirely.
 
 ## Runtime controls
 
@@ -32,20 +43,28 @@ If the environment exposes an image-generation tool, use GPT Image 2. If it does
 
 ## Workflow
 
-1. Create `creative-brief.yaml` from the title, artist, intended audience, listening context, shelf neighbors, musical evidence, and constraints using `assets/art-direction-brief.yaml`. Name the release's point of difference and rejection criteria.
-2. Extract one central contradiction, three sensory qualities, two physical phenomena, and six to ten concrete symbols. Prefer observable nouns, actions, materials, and spatial relations over mood adjectives.
+1. Resolve the optional lyrics and artist information according to the input and remembered-path rules. Create `creative-brief.yaml` from the title and whatever optional evidence is available using `assets/art-direction-brief.yaml`.
+2. Build the interpretation from the available evidence:
+   - With lyrics or a description, extract one central contradiction, three sensory qualities, two physical phenomena, and six to ten concrete symbols. Prefer observable nouns, actions, materials, and spatial relations over mood adjectives.
+   - With artist information, separate continuity requirements from variables that must change for this release. Treat genre, sonic character, and emphasis as evidence, not as a template selector.
+   - With the title alone, write three clearly labeled hypotheses: a literal reading, a metaphorical tension, and a formal reading based on the title's sound, script, length, or geometry. Select one hypothesis per direction and do not present inferred story details as facts about the music.
+   Name the release's point of difference and rejection criteria from this evidence. Lack of optional input is never a reason to stop.
 3. Read `references/design-patterns.md` and `references/title-image-architectures.md`. Choose three different primary patterns and a title-system family for each direction. `auto` chooses `material-world` when the title can become a physical system; it chooses `character-led` when a supplied artist system, rights-cleared identity reference, or brief calls for a central figure. Give each one or two secondary techniques. Keep one genre anchor and betray one genre expectation in every direction.
 4. Read `references/verified-principles.md` only to solve a specific lettering or composition problem. Use at most one primary and one supporting principle. Do not research new covers during a production run; an unmatched brief is not a research failure.
 5. Separate genre, era, color, material, and rendering method from the primary pattern. Do not let genre select a template by itself.
 6. Read `references/typography.md`. Choose the title-system family before the typography mode, then define the title's structural role, occupied area, reading route, relation to the central motif, and permitted occlusion before prompting. For `material-world`, define the material vocabulary, mapping from material to skeleton/counters/joins/terminals, and the title's role in that world. For `character-led`, define the central figure's action, the title's shared hierarchy, and the physical or gestural connection between them.
 7. Write `directions.md` and one prompt per candidate. Each prompt must state composition, depth, palette proportions, material behavior, title treatment, exact allowed text, and exclusions. The title's surface, depth, occlusion, and connection to the dominant image geometry are mandatory. For `material-world`, forbid normal fonts, wordmarks, and letters merely placed on a scene. For `character-led`, forbid a figure with a detached title header, footer, label, or caption. Use `references/gpt-image-2.md` for model-specific execution.
 8. Generate the requested number of title-integrated candidates. Record every run or edit in `run-ledger.jsonl` using `assets/run-ledger.yaml` as the field contract.
-9. Compare all candidates at 56 px, 256 px, full size, grayscale, and blur. Use `scripts/cover-ops.py contact-sheet` when Pillow is available. Score with `assets/scorecard.yaml` and `references/evaluation-delivery.md`.
+9. Compare all candidates at 56 px, 128 px, 256 px, full size, grayscale, and blur. Use `scripts/cover-ops.py contact-sheet` when Pillow is available. Score with `assets/scorecard.yaml` and `references/evaluation-delivery.md`. Reject work that reads primarily as a poster, advertisement, editorial illustration, app tile, game splash screen, or generic AI concept image rather than a durable music-release identity.
 10. Select a leader and runner-up. Refine only the leader. Change one variable per edit, for no more than two cycles. If an edit regresses, return to the selected original rather than editing the degraded result.
 11. Apply the typography gate. If spelling, spacing, baseline, mixed-script shaping, or letter integrity fails, reject the candidate and return to its title architecture and prompt. For `material-world`, also reject a candidate when its material could be removed without changing the letter anatomy, or when the scene could remain after removing the title. For `character-led`, reject it when removing the figure leaves a normal wordmark, or removing the title leaves a conventional character illustration. Do not add, redraw, typeset, or composite title text after generation. A detached title strip, quiet header, generic label, caption box, or a font layer is a regression, not a fallback.
 12. Validate rights, exact title, absence of unapproved readable text, square composition, thumbnail recognition, and technical requirements.
 13. Export a 3000 x 3000 PNG and JPG plus a 256 px thumbnail with `scripts/cover-ops.py export`. If the required image library is unavailable, provide the exact export specification and do not claim delivery completion.
 14. Write `cover-report.md` with the selected direction, why it won, typography mode, checks, provenance, unresolved human review, and paths.
+
+## Skill-learning mode
+
+Ordinary cover runs do not become training data and do not create cross-run memory beyond the artist-information path above. When the user explicitly asks to improve this skill, read `references/production-learning.md` and use `assets/learning-observation.yaml` for controlled, rights-safe trials. Compare winners against rejected candidates, compare one-variable edits against their parents, and validate proposed rules on held-out briefs. Promote only abstract, reproducible design decisions; never promote private lyrics, artist information, reference images, generated images, or one user's taste as a universal rule.
 
 ## Output contract
 
@@ -65,6 +84,7 @@ album-cover/<release-slug>/
 ## Non-negotiable gates
 
 - Three directions must differ in image-organizing structure, not merely palette or rendering style.
+- The selected image must read as a music-release identity, not as a poster, advertisement, editorial illustration, app tile, game splash screen, or generic concept art. Its square must have one dominant identity signal, intentional edge behavior, controlled information density, and a reason to exist beyond illustrating the title literally.
 - The title must be exact. No other readable text is allowed unless explicitly approved.
 - Every evaluated candidate must show the title as a native part of the generated jacket image. Never add, redraw, typeset, or composite title text after generation.
 - A custom wordmark must define skeleton, width, weight, counters, terminals, rhythm, and transformation logic; a font name alone is not a design.
@@ -86,3 +106,4 @@ album-cover/<release-slug>/
 - Genre and era as independent axes: `references/genre-era-codes.md`
 - GPT Image 2 prompting and editing: `references/gpt-image-2.md`
 - Scoring, comparison, rights, and export: `references/evaluation-delivery.md`
+- Controlled production learning and rule-promotion gates: `references/production-learning.md`

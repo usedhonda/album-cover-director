@@ -12,6 +12,18 @@
     "coverage": ["japanese"]
   },
   {
+    "name": "title-only-minimum",
+    "prompt": "$album-cover-director 作品名は『GLASS WEATHER』。これだけでジャケットを作って。",
+    "expected_trigger": true,
+    "coverage": ["title-only"]
+  },
+  {
+    "name": "lyrics-and-artist-info-paths",
+    "prompt": "Read The Tapeのジャケットを作って。歌詞はlyrics.txt、アーティスト情報はartist.mdを使って。",
+    "expected_trigger": true,
+    "coverage": ["lyrics-path", "artist-information-path"]
+  },
+  {
     "name": "english-title",
     "prompt": "Direct a cover for the single Read The Tape from these lyrics and deliver a 3000px square.",
     "expected_trigger": true,

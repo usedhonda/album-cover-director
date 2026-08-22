@@ -1,4 +1,9 @@
 schema_version: 1
+inputs:
+  lyrics_source: none
+  lyrics_path: ""
+  artist_information_source: none
+  artist_information_path: ""
 release:
   exact_title: ""
   artist: ""
