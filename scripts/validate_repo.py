@@ -43,6 +43,8 @@ DEMO_IMAGES = {
     "docs/examples/treasure-chart-title-system.png",
     "docs/examples/board-game-title-system.png",
     "docs/examples/botanical-specimen-title-system.png",
+    "docs/examples/mechanized-title-system.png",
+    "docs/examples/rotating-club-title-system.png",
 }
 TEXT_SUFFIXES = {".md", ".yaml", ".yml", ".json", ".jsonl", ".py", ".toml", ".txt"}
 FORBIDDEN = [

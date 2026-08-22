@@ -14,6 +14,8 @@ The project is for musicians, track makers, producers, independent labels, and d
 | **Oceanographic system** — contour lines, routes, and soundings determine the title's anatomy. | **Treasure chart** — folds, compass wells, rope, and red routes make a navigable title artifact. |
 | ![ALBUM COVER DIRECTOR becomes a playable board-game machine.](docs/examples/board-game-title-system.png) | ![ALBUM COVER DIRECTOR becomes a pinned botanical specimen.](docs/examples/botanical-specimen-title-system.png) |
 | **Board game** — tiles, tracks, bridges, and game pieces turn title letters into a playable system. | **Botanical specimen** — roots, pressed leaves, petals, pins, and thread grow the letters. |
+| ![ALBUM COVER DIRECTOR becomes a mechanized acoustic system.](docs/examples/mechanized-title-system.png) | ![ALBUM COVER DIRECTOR becomes a rotating club-light field.](docs/examples/rotating-club-title-system.png) |
+| **Mechanized system** — tubes, springs, resonators, and wiring construct a dense acoustic title artifact. | **Rotating light field** — projected letters, smoke, and a small mirror ball turn the whole club into a title environment. |
 
 ### Character-led title systems
 
@@ -36,6 +38,7 @@ The gallery demonstrates two equal title-system families. Choose **material-worl
 - Three-direction divergence: every run must change image structure, not just color or rendering.
 - A title-integrated typography gate: every evaluated candidate is a complete jacket; title lettering must be generated as part of the image, never added afterward.
 - Material title-world cards for route fields, constructed artifacts, playable rule systems, and living specimens; plus character-led hero, gesture, and script-hierarchy systems.
+- Hierarchy locks for live or spatial images: title area, silhouette, reading route, and value priority are fixed before controlled irregularity is applied to surrounding light, smoke, motion, reflection, or crop.
 - Comparative checks at 56 px, 128 px, 256 px, full size, grayscale, and blur.
 - One-variable edits, at most two cycles, always returning to the selected original after regression.
 - Reproducible 3000 x 3000 PNG/JPG and 256 px thumbnail export.
