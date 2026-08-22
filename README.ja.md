@@ -22,7 +22,7 @@ $album-cover-director は、アルバム、EP、シングルのジャケット�
 
 |  |  |
 | --- | --- |
-| ![ALBUM COVER DIRECTORが回転するクラブ光の空間になる。](docs/examples/rotating-club-title-system.png) | ![ALBUM COVER DIRECTORが水墨景観の題字フィールドになる。](docs/examples/ink-landscape-title-field.png) |
+| <img src="docs/examples/rotating-club-title-system.png" alt="ALBUM COVER DIRECTORが回転するクラブ光の空間になる。" width="560" height="560"> | <img src="docs/examples/ink-landscape-title-field.png" alt="ALBUM COVER DIRECTORが水墨景観の題字フィールドになる。" width="560" height="560"> |
 | **回転する光のフィールド** — 小さなミラーボール、投影文字、スモーク、ダンサーがクラブ全体を一つの題字空間にする。文字の骨格は読ませたまま、光・空気・動きが画面の中へ題字を拡散する。 | **水墨景観のフィールド** — 太い筆の英字骨格が、山、屋根、橋、川、霧、水面へ広がる。 |
 
 ### キャラクターと題字を一体化する4型
