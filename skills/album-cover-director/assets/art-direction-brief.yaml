@@ -36,6 +36,13 @@ constraints:
   genre: ""
   artist_system: ""
   avoid: []
+  color_script:
+    palette_temperature: "release-derived neutral by default"
+    neutral_anchor: ""
+    warm_cast_is_intentional: false
+    warm_cause: ""
+    warm_regions: []
+    exclude_unmotivated_warm_cast: true
   allowed_readable_text: []
   font_rights: "not applicable or not yet verified"
 runtime:

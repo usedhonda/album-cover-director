@@ -27,14 +27,20 @@ Use concrete visual nouns and verbs. Do not send the model an essay about the so
 ## Palette-temperature guard
 
 GPT Image 2 can drift toward parchment, sepia, brass, amber, or warm-yellow
-light when the brief does not explicitly control the neutral point. Do not
-make a cool palette the new default: derive the color script from the release.
-When a warm cast is unwanted, state the intended paper/skin/white neutral,
-name the dominant and accent colors, and explicitly exclude the unwanted warm
-cast. For a selected image that is otherwise correct, treat temperature as a
-small correction only: preserve composition, drawing, title, material, and
-value structure; do not reimagine the cover with an all-blue, neon, or
-night-time palette.
+light when the brief does not explicitly control the neutral point. Treat this
+as a default quality risk, not an artist preference. Every direction must name
+its intended neutral, dominant and accent colors, and palette temperature.
+
+Default to neutral or release-derived temperature and explicitly exclude an
+unmotivated yellow, parchment, sepia, brass, amber, or golden cast. This is not
+a default cool-blue look: use the release's actual color script. Warmth is
+allowed only when the brief intentionally calls for it—such as sunset,
+candlelight, sodium vapor, gold, autumn foliage, or a warm-print process. In
+that case name the physical cause, the warm regions, and the intended neutral
+anchor so warmth does not contaminate the whole square. For a selected image
+that is otherwise correct, treat temperature as a small correction only:
+preserve composition, drawing, title, material, and value structure; do not
+reimagine the cover with an all-blue, neon, or night-time palette.
 
 ## Controlled irregularity
 

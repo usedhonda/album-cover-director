@@ -108,6 +108,11 @@ def validate_skill() -> None:
     require("references/title-complexity.md" in skill, "title-complexity routing missing")
     require("assets/project-feedback.yaml" in skill, "project feedback contract missing")
     require("references/community-contributions.md" in skill, "community contribution routing missing")
+    require("Default to excluding unmotivated yellow" in skill,
+            "default warm-cast quality gate missing")
+    gpt_image = (ROOT / "skills/album-cover-director/references/gpt-image-2.md").read_text()
+    require("default quality risk" in gpt_image and "Default to neutral" in gpt_image,
+            "GPT Image temperature risk must be a default guard")
     for use_mode in ("identity-reference", "source-asset", "visual-direction"):
         require(use_mode in skill, f"reference-image use mode missing: {use_mode}")
     require("Keep all of it artist-local" in skill,

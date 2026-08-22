@@ -34,6 +34,13 @@ deliberately pristine graphic, diagrammatic, or product-like directions.
 
 A high total does not excuse an incorrect title, unlicensed reference, extra text, non-square master, or unreadable thumbnail.
 
+For color/value, inspect temperature as well as hue balance. Reject a
+whole-image warm-yellow, parchment, sepia, brass, amber, or golden cast unless
+the brief named a physical or production cause, its bounded warm regions, and a
+neutral anchor. Do not solve a temperature failure by blindly turning the cover
+blue; preserve the selected composition and use the intended release color
+script.
+
 For a material title-world, score title-image integration by removing one half
 of the idea in thought: remove the title, then remove the material system. If
 either removal leaves an ordinary scene, a normal wordmark, or a viable cover,
