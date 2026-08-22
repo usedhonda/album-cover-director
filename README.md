@@ -52,6 +52,7 @@ The gallery demonstrates three equal title-system families. Choose **material-wo
 - One-variable edits, at most two cycles, always returning to the selected original after regression.
 - Reproducible 3000 x 3000 PNG/JPG and 256 px thumbnail export.
 - Artist-local systems and automatic feedback history that improve future covers without publishing user work.
+- A private-to-public contribution path that lets any artist turn a validated local title insight into a reviewable community card without exposing their work.
 
 ## Install
 
@@ -161,6 +162,21 @@ After a user chooses or rejects candidates, the skill automatically writes
 after it recurs across three releases; one-off taste never becomes a global
 rule. A rule can enter the public skill only after independent, varied trials
 and a held-out brief pass. See [project-local-learning.md](skills/album-cover-director/references/project-local-learning.md).
+
+## Share a local discovery
+
+Any user can become a contributor without publishing their artist workspace.
+When they say, “share this lesson with the community,” the skill turns the
+private success/failure contrast into an abstract `title-behavior-card` draft.
+The draft contains a construction rule, boundary, rejection tests, and an
+evidence summary—but never the song title, artist system, lyrics, prompt,
+feedback wording, images, paths, or local trial IDs.
+
+It remains below that release's private `feedback/` folder until reviewed.
+Preparing a draft performs no upload and creates no GitHub Issue, branch, or
+pull request. A later explicit request is required to publish it. See
+[community-contributions.md](skills/album-cover-director/references/community-contributions.md) and
+[CONTRIBUTING.md](CONTRIBUTING.md).
 
 For complex Japanese, mixed-script, long, or punctuation-heavy titles, the
 skill classifies the title before generation and changes its native hierarchy,

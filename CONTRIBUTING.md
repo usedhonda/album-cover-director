@@ -5,6 +5,20 @@ add artist-specific preferences. A contribution may strengthen material-world,
 spatial-field, or character-led work, but must not reintroduce ordinary title
 placement.
 
+## Share a local lesson
+
+You do not need to be a repository developer to contribute. If a private cover
+run revealed a reusable title-design principle, ask the skill to share that
+lesson. It creates a local, privacy-safe draft under the relevant release's
+`.album-cover-director/feedback/` folder. Review it before sharing; this step
+does not upload files or create a GitHub object.
+
+The public draft has only two files: `title-behavior-card.yaml` and a review
+note. Copy those files into an issue or pull request after you confirm that the
+card is abstract, rights-safe, and does not contain names, titles, lyrics,
+prompts, images, local paths, or artist-specific feedback. See
+[`community-contributions.md`](skills/album-cover-director/references/community-contributions.md).
+
 ## Corpus changes
 
 - Add bibliographic information, source links, and original observations only.
@@ -20,7 +34,8 @@ placement.
 - Keep material-world anatomy and character-led figure/title hierarchy explicit.
 - Add a reusable title behavior, not a genre look or a copy of a reference. Use
   `assets/title-behavior-card.yaml` and include its world engine, construction
-  logic, protected title properties, rejection tests, and private trial IDs.
+  logic, protected title properties, rejection tests, and privacy-safe evidence
+  summary.
 - Keep user `.album-cover-director/` workspaces private. Never include artist
   systems, feedback, learning images, generated candidates, benchmark outputs,
   private prompts, or lyrics in a contribution.

@@ -107,6 +107,13 @@ If the environment exposes an image-generation tool, use GPT Image 2. If it does
 
 Ordinary cover runs never become public training data. A reviewed run may improve only that artist's private `feedback/learned-preferences.md` under the rules in `references/project-local-learning.md`. When the user explicitly asks to improve this public skill, read `references/production-learning.md`, `references/title-behavior-cards.md`, and use `assets/learning-observation.yaml` for controlled, rights-safe trials. Compare winners against rejected candidates, compare one-variable edits against their parents, and validate proposed rules on held-out briefs. Promote only abstract, reproducible design decisions; never promote private lyrics, artist information, reference images, generated images, or one user's taste as a universal rule.
 
+When a user explicitly says that a local lesson should be shared with the Album
+Cover Director community, read `references/community-contributions.md`. Draft
+one abstract title behavior card, then call `scripts/contribution-draft.py
+prepare` to keep the draft under that release's private feedback folder. Show
+the draft and evidence status to the user. Never upload it or create a GitHub
+Issue, branch, or pull request without a later explicit request.
+
 ## Output contract
 
 ```text
@@ -160,3 +167,4 @@ album-cover/<release-slug>/
 - Testing and adding reusable title behaviors: `references/title-behavior-cards.md`
 - Scoring, comparison, rights, and export: `references/evaluation-delivery.md`
 - Controlled production learning and rule-promotion gates: `references/production-learning.md`
+- Turn a local lesson into a reviewable community draft: `references/community-contributions.md`

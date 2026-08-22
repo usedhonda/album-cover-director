@@ -12,7 +12,8 @@ Use `assets/title-behavior-card.yaml` for a proposed card. A valid card names:
 3. the protected title properties: occupied area, silhouette, reading route,
    and value priority;
 4. when it helps and when it should be rejected;
-5. private, rights-safe trials that tested it under different conditions.
+5. a privacy-safe evidence summary: trial count, condition categories, and
+   held-out-brief result, without local trial IDs.
 
 Examples of behavior names are `route-field`, `light-distribution`,
 `gesture-vector`, `terrain-lettering`, and `specimen-growth`. They are not

@@ -14,5 +14,8 @@ card:
     value_priority: ""
   prompt_requirements: []
   rejection_tests: []
-  private_trial_ids: []
+  evidence_summary:
+    private_trial_count: 0
+    condition_categories: []
+    held_out_brief_passed: false
   rights_safe: false

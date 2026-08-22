@@ -49,7 +49,8 @@ $album-cover-director は、アルバム、EP、シングルのジャケット�
 - 56px、128px、256px、原寸、グレースケール、ぼかしの比較
 - 1回1変数、最大2サイクルの修正
 - 3000 x 3000 PNG/JPGと256pxサムネイルの再現可能な書き出し
-- アーティスト設定、フィードバック、参照画像、試作画像、ベンチマークをアーティスト単位に閉じた継続学習
+- アーティスト設定とフィードバックをアーティスト単位に閉じた継続学習
+- ローカルの発見を私的な制作物を出さずにコミュニティ向けカードへ変換する、一般利用者のための貢献導線
 
 ## インストール
 
@@ -127,6 +128,12 @@ python scripts/project-workspace.py init --artist-root .
 artist systemは必須の記入フォームではありません。最初になければ、曲・アーティスト説明・参照画像からSkillが下書きを作り、利用者は自然文で直せます。既にある場合も、明示ルールは保護し、繰り返しのフィードバックか「アーティスト全体の方針にする」という明示指示があるときだけ更新します。詳細は [artist-system-onboarding.md](skills/album-cover-director/references/artist-system-onboarding.md) を参照してください。
 
 候補を採用・不採用にしたら、Skillが `feedback/<release-slug>/feedback.json` と画像履歴を自動保存し、`feedback/learned-preferences.md` を更新します。同じ好みが3つのリリースで繰り返された場合だけ、要約へ昇格します。一度の好みは公開ルールにしません。公開Skillへ一般化するには、独立試行、条件の違い、未使用briefでの確認が必要です。詳細は [project-local-learning.md](skills/album-cover-director/references/project-local-learning.md) を参照してください。
+
+## ローカルの発見を共有する
+
+リポジトリ開発者でなくても貢献できます。「この学びをコミュニティへ共有したい」と言えば、Skillが私的な成功・失敗の対比を、抽象的な `title-behavior-card` の下書きへ変換します。下書きに入るのは構成原理、適用境界、却下テスト、証拠の要約だけです。曲名、artist system、歌詞、プロンプト、フィードバック原文、画像、ローカルパス、非公開試行IDは入りません。
+
+下書きはレビューされるまで、そのリリースの非公開 `feedback/` フォルダ内に留まります。下書きの作成はアップロード、GitHub Issue、ブランチ、PRを一切作りません。公開には、その後の明示指示が必要です。詳細は [community-contributions.md](skills/album-cover-director/references/community-contributions.md) と [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
 
 長いタイトル、日本語、混植、記号の多いタイトルは、生成前に文字の複雑さを分類します。失敗時は画像内の階層、改行、保護する文字を組み直し、後組版では直しません。詳細は [title-complexity.md](skills/album-cover-director/references/title-complexity.md) を参照してください。
 

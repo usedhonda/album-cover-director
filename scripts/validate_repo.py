@@ -107,6 +107,7 @@ def validate_skill() -> None:
     require("scripts/project-workspace.py init" in skill, "artist-local workspace initializer missing")
     require("references/title-complexity.md" in skill, "title-complexity routing missing")
     require("assets/project-feedback.yaml" in skill, "project feedback contract missing")
+    require("references/community-contributions.md" in skill, "community contribution routing missing")
     for use_mode in ("identity-reference", "source-asset", "visual-direction"):
         require(use_mode in skill, f"reference-image use mode missing: {use_mode}")
     require("Keep all of it artist-local" in skill,
@@ -122,6 +123,8 @@ def validate_skill() -> None:
         "references/title-complexity.md",
         "references/title-behavior-cards.md",
         "scripts/project-workspace.py",
+        "scripts/contribution-draft.py",
+        "references/community-contributions.md",
     ):
         require((ROOT / "skills/album-cover-director" / relative).is_file(), f"project-learning resource missing: {relative}")
 
