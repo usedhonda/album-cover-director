@@ -23,7 +23,7 @@ Read the existing system before creating directions. Preserve its explicit
 constraints. Compare it with artist-local feedback and learned preferences:
 
 - a one-release correction remains in that release's feedback record;
-- a repeated observation becomes `learned-preferences.md` first;
+- a repeated observation becomes `feedback/learned-preferences.md` first;
 - update `artist-system.md` only when the user explicitly identifies the rule
   as artist-wide, or when repeated evidence makes it a stable continuity rule.
 

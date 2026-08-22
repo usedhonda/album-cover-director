@@ -51,7 +51,7 @@ The gallery demonstrates three equal title-system families. Choose **material-wo
 - Comparative checks at 56 px, 128 px, 256 px, full size, grayscale, and blur.
 - One-variable edits, at most two cycles, always returning to the selected original after regression.
 - Reproducible 3000 x 3000 PNG/JPG and 256 px thumbnail export.
-- Project-local artist systems, feedback, learning images, and benchmarks that improve future covers without publishing user work.
+- Artist-local systems and automatic feedback history that improve future covers without publishing user work.
 
 ## Install
 
@@ -142,23 +142,23 @@ python scripts/project-workspace.py init --artist-root .
 <artist-root>/
 ├── .album-cover-director/               # private and ignored
 │   ├── artist-system.md                 # stable artist-wide continuity
-│   ├── learned-preferences.md           # repeated, bounded observations
-│   ├── feedback/                        # one selection record per release
-│   ├── reference-images/                # user-supplied source references
-│   ├── trial-images/                    # generated candidates and comparisons
-│   ├── observations/
-│   └── benchmarks/
+│   └── feedback/
+│       ├── learned-preferences.md       # automatic repeated-preference summary
+│       └── <release-slug>/
+│           ├── feedback.json            # selection, corrections, score context
+│           └── images/                  # all reviewed candidates and references
 └── album-cover/
     └── <release-slug>/                  # brief, prompts, master, delivery
 ```
 
-`reference-images/` holds images the user brings in as source material or visual direction. `trial-images/` holds candidates this workflow generated and compared. Nothing in `.album-cover-director/` is committed or uploaded by this skill.
+Every reviewed image—generated candidate, accepted master, rejected candidate, or supplied reference—is copied automatically into that release's `feedback/<release-slug>/images/`. The user never has to sort reference and trial images into separate folders. Nothing in `.album-cover-director/` is committed or uploaded by this skill.
 
 The artist system is optional: users do not need to write it before their first cover. When missing, the skill creates a starter and drafts it from available song, artist, and reference evidence; the user can correct it in plain language. When it exists, the skill preserves explicit rules and only updates artist-wide continuity from repeated feedback or an explicit request. See [artist-system-onboarding.md](skills/album-cover-director/references/artist-system-onboarding.md).
 
-After a user chooses or rejects candidates, record the selection and the reason
-in `feedback/<release-slug>.yaml`. A repeated, bounded observation can become
-that artist's `learned-preferences.md`; one-off taste never becomes a global
+After a user chooses or rejects candidates, the skill automatically writes
+`feedback/<release-slug>/feedback.json`, saves its images, and refreshes
+`feedback/learned-preferences.md`. A preference appears in that summary only
+after it recurs across three releases; one-off taste never becomes a global
 rule. A rule can enter the public skill only after independent, varied trials
 and a held-out brief pass. See [project-local-learning.md](skills/album-cover-director/references/project-local-learning.md).
 

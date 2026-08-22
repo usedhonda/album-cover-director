@@ -80,8 +80,7 @@ class ArtistLocalArtistInfoTest(unittest.TestCase):
             self.assertEqual(payload["status"], "initialized")
             self.assertEqual((local / ".gitignore").read_text(encoding="utf-8"), "*\n!.gitignore\n")
             for relative in (
-                "artist-system.md", "learned-preferences.md", "feedback/README.md",
-                "trial-images", "reference-images", "observations", "benchmarks/title-integrity-v1.yaml",
+                "artist-system.md", "feedback", "feedback/learned-preferences.md",
             ):
                 self.assertTrue((local / relative).exists(), relative)
 

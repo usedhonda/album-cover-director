@@ -9,12 +9,10 @@ from pathlib import Path
 
 
 LOCAL_DIR = ".album-cover-director"
-DIRECTORIES = ("feedback", "trial-images", "reference-images", "observations", "benchmarks")
+DIRECTORIES = ("feedback",)
 TEMPLATES = {
     "artist-system.md": """# Artist system\n\n## Identity in one sentence\n\nWrite a working description of the artist's musical and visual point of view. It may be incomplete at first.\n\n## What should remain recognisable\n\n- Recurring identity, character, or viewpoint:\n- Emotional or sonic territory:\n- Title-design behavior worth preserving:\n\n## What must vary release to release\n\n- Scene, action, camera, and dominant geometry:\n- Palette, light, and material:\n- Title-system family or title behavior:\n\n## Avoid\n\n-\n\n## Evidence and change log\n\nRecord only repeated, artist-wide observations. Link each entry to local feedback release slugs and state when it should not apply.\n""",
-    "learned-preferences.md": """# Learned preferences\n\nPrivate, artist-local observations promoted from repeated feedback.\nEach entry must name its evidence and boundary; do not copy a one-off preference here.\n""",
-    "feedback/README.md": """# Feedback records\n\nOne YAML record per reviewed release. Use the skill's `assets/project-feedback.yaml` contract.\n""",
-    "benchmarks/title-integrity-v1.yaml": """schema_version: 1\nsuite: title-integrity-v1\nstatus: not-run\nprivacy: artist-local\ncases:\n  - id: short-latin\n    title: SILT\n    title_profile: compact-single-script\n  - id: japanese\n    title: 夜の余白\n    title_profile: compact-japanese\n  - id: mixed-script\n    title: 透明なSignal\n    title_profile: mixed-script-hierarchy\n  - id: long-title\n    title: A SMALL ROOM FULL OF WEATHER\n    title_profile: multi-unit-hierarchy\n""",
+    "feedback/learned-preferences.md": """# Learned preferences\n\nPrivate, artist-local observations promoted from repeated feedback.\nEach entry must name its evidence and boundary; do not copy a one-off preference here.\n""",
 }
 
 
@@ -30,12 +28,8 @@ def local_paths(root: Path) -> dict[str, str]:
     return {
         "root": str(local),
         "artist_system": str(local / "artist-system.md"),
-        "learned_preferences": str(local / "learned-preferences.md"),
+        "learned_preferences": str(local / "feedback/learned-preferences.md"),
         "feedback": str(local / "feedback"),
-        "trial_images": str(local / "trial-images"),
-        "reference_images": str(local / "reference-images"),
-        "observations": str(local / "observations"),
-        "benchmarks": str(local / "benchmarks"),
     }
 
 

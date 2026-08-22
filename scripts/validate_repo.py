@@ -109,7 +109,7 @@ def validate_skill() -> None:
     require("assets/project-feedback.yaml" in skill, "project feedback contract missing")
     for use_mode in ("identity-reference", "source-asset", "visual-direction"):
         require(use_mode in skill, f"reference-image use mode missing: {use_mode}")
-    require("Keep any trial images artist-local" in skill,
+    require("Keep all of it artist-local" in skill,
             "reference-image non-persistence contract missing")
     for relative in (
         "assets/project-feedback.yaml",
@@ -118,6 +118,7 @@ def validate_skill() -> None:
         "references/project-local-learning.md",
         "references/artist-system-onboarding.md",
         "assets/artist-system-template.md",
+        "scripts/feedback-store.py",
         "references/title-complexity.md",
         "references/title-behavior-cards.md",
         "scripts/project-workspace.py",

@@ -9,8 +9,7 @@ feedback:
   failure_codes: []
   preferred_title_system_family: ""
   preference_scope: one-release
-  source_image_paths: []
-  learning_image_paths: []
+  saved_image_paths: []
   proposed_local_preference:
     statement: ""
     evidence_release_slugs: []
@@ -22,4 +21,4 @@ feedback:
     contains_artist_information: false
     contains_reference_images: false
     contains_generated_images: false
-    keep_project_local: true
+    keep_artist_local: true

@@ -96,7 +96,7 @@ Use stable failure codes so repeated weaknesses become visible:
 ## Learning boundaries
 
 - Do not automatically upload observations or use user work for public research.
-- Do not move artist-local feedback, trial images, artist systems, or benchmark outputs into this repository. Public observations must be abstracted and privacy-safe.
+- Do not move artist-local feedback, image history, artist systems, or internal evaluation outputs into this repository. Public observations must be abstracted and privacy-safe.
 - Do not create global cross-run runtime memory from trial records or artist settings. Reusable learning stays inside the relevant artist's `.album-cover-director/` directory.
 - Do not keep adding precedent examples when the failure is execution quality rather than a missing construction principle.
 - Do not promote a rule based only on aggregate score; a gate failure always wins.

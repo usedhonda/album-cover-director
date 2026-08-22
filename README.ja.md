@@ -113,21 +113,20 @@ python scripts/project-workspace.py init --artist-root .
 <artist-root>/
 ├── .album-cover-director/               # 非公開・Git無視
 │   ├── artist-system.md                 # アーティスト全体で保つ連続性
-│   ├── learned-preferences.md           # 繰り返し確認された好みだけ
-│   ├── feedback/                        # リリースごとの採用・不採用記録
-│   ├── reference-images/                # ユーザーが入れる外部参照画像
-│   ├── trial-images/                    # この制作で生まれた候補・比較画像
-│   ├── observations/
-│   └── benchmarks/
+│   └── feedback/
+│       ├── learned-preferences.md       # 繰り返しの好みを自動集約
+│       └── <release-slug>/
+│           ├── feedback.json            # 採用・修正・評価の記録
+│           └── images/                  # 全候補・参照入力を自動保存
 └── album-cover/
     └── <release-slug>/                  # brief、prompt、master、納品物
 ```
 
-`reference-images/` はユーザーが持ち込む人物資料、実素材、雰囲気の参照画像です。`trial-images/` はこのSkillが生成・比較した候補です。`.album-cover-director/` の内容をSkillはコミットもアップロードも行いません。
+生成候補、採用案、不採用案、持ち込んだ参照画像など、評価に使った画像はすべて `feedback/<release-slug>/images/` に自動コピーします。利用者が参照画像と試作画像を仕分ける必要はありません。`.album-cover-director/` の内容をSkillはコミットもアップロードも行いません。
 
 artist systemは必須の記入フォームではありません。最初になければ、曲・アーティスト説明・参照画像からSkillが下書きを作り、利用者は自然文で直せます。既にある場合も、明示ルールは保護し、繰り返しのフィードバックか「アーティスト全体の方針にする」という明示指示があるときだけ更新します。詳細は [artist-system-onboarding.md](skills/album-cover-director/references/artist-system-onboarding.md) を参照してください。
 
-候補を採用・不採用にしたら、`feedback/<release-slug>.yaml` に理由を残します。同じ観察が異なる曲・構造で繰り返された場合だけ、そのアーティストの `learned-preferences.md` へ昇格します。一度の好みは公開ルールにしません。公開Skillへ一般化するには、独立試行、条件の違い、未使用briefでの確認が必要です。詳細は [project-local-learning.md](skills/album-cover-director/references/project-local-learning.md) を参照してください。
+候補を採用・不採用にしたら、Skillが `feedback/<release-slug>/feedback.json` と画像履歴を自動保存し、`feedback/learned-preferences.md` を更新します。同じ好みが3つのリリースで繰り返された場合だけ、要約へ昇格します。一度の好みは公開ルールにしません。公開Skillへ一般化するには、独立試行、条件の違い、未使用briefでの確認が必要です。詳細は [project-local-learning.md](skills/album-cover-director/references/project-local-learning.md) を参照してください。
 
 長いタイトル、日本語、混植、記号の多いタイトルは、生成前に文字の複雑さを分類します。失敗時は画像内の階層、改行、保護する文字を組み直し、後組版では直しません。詳細は [title-complexity.md](skills/album-cover-director/references/title-complexity.md) を参照してください。
 
