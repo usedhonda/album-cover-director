@@ -47,7 +47,9 @@ DEMO_IMAGES = {
     "docs/examples/rotating-club-title-system.png",
     "docs/examples/ink-landscape-title-field.png",
     "docs/examples/spatial-field-pair.png",
-    "docs/examples/ledger-faces-three-directions.png",
+    "docs/examples/ledger-faces-material-world.png",
+    "docs/examples/ledger-faces-character-led.png",
+    "docs/examples/ledger-faces-spatial-field.png",
 }
 TEXT_SUFFIXES = {".md", ".yaml", ".yml", ".json", ".jsonl", ".py", ".toml", ".txt"}
 FORBIDDEN = [

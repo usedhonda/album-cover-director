@@ -41,15 +41,21 @@ The gallery demonstrates three equal title-system families. Choose **material-wo
 
 ### What an actual release looks like
 
-![Three covers for the working title Ledger Faces, built as a material world, a character-led hierarchy, and a spatial field.](docs/examples/ledger-faces-three-directions.png)
-
 **Working title: "Ledger Faces."** Same song, same figure, same exact title. Only the image-organizing structure changes. These are not color variants.
 
-- **Left — material-world.** A continuous blue ledger stroke crosses behind the shoulder, through the hand, and in front of one thigh; the pen draws the final terminal.
-- **Center — character-led.** Repeated face profiles fill the counters of the giant title while the living figure steps out through the counter of the letter `a`.
-- **Right — spatial-field.** Station scanner light projects the title across wall, figure, and floor; one blocked beam returns as a reflection in the gate glass.
+![Ledger Faces built from a continuous blue ledger stroke.](docs/examples/ledger-faces-material-world.png)
 
-That is the three families applied to one release at once. Every run proposes in this shape, compares the candidates, selects one, and finishes it to 3000 px.
+**Material-world** — a continuous blue ledger stroke crosses behind the shoulder, through the hand, and in front of one thigh; the pen draws the final terminal.
+
+![Ledger Faces with counters filled by repeated face profiles.](docs/examples/ledger-faces-character-led.png)
+
+**Character-led** — repeated face profiles fill the counters of the giant title while the living figure steps out through the counter of the letter `a`.
+
+![Ledger Faces projected across a station wall and floor by scanner light.](docs/examples/ledger-faces-spatial-field.png)
+
+**Spatial-field** — station scanner light projects the title across wall, figure, and floor; one blocked beam returns as a reflection in the gate glass.
+
+Those are the three families applied to a single release. Every run proposes in this shape, compares the candidates, selects one, and finishes it to 3000 px.
 
 ## What makes it different
 
