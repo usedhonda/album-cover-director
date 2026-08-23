@@ -1,5 +1,11 @@
 # GPT Image 2 execution
 
+## Contents
+
+- Prompting contract
+- Editing and iteration
+- Safety and title checks
+
 This file isolates model-specific behavior so the design grammar can survive future model changes.
 
 ## Model role

@@ -227,10 +227,12 @@ Pillow is the only optional runtime dependency:
 python -m pip install Pillow
 python scripts/cover-ops.py inspect selected-master.png
 python scripts/cover-ops.py contact-sheet candidates/*.png --output comparison.png
+python scripts/cover-ops.py preflight selected-master.png --expected-title "Exact Title"
+python scripts/cover-ops.py compare candidates/*.png
 python scripts/cover-ops.py export selected-master.png --out-dir delivery
 ~~~
 
-The export command refuses non-square sources and records dimensions, scaling, byte size, and SHA-256. `cover-ops.py` intentionally does not add or typeset title text: title typography must be native to the generated cover image.
+The export command refuses non-square sources and records dimensions, scaling, byte size, and SHA-256. `cover-ops.py` intentionally does not add or typeset title text: title typography must be native to the generated cover image. The same utility is bundled in the installed skill at `skills/album-cover-director/scripts/cover-ops.py`; the repository path above is a contributor compatibility wrapper.
 
 ## Research and copyright
 

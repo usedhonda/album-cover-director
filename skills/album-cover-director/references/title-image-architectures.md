@@ -1,5 +1,12 @@
 # Title-image architectures
 
+## Contents
+
+- Family selection
+- Material worlds
+- Spatial fields
+- Character-led systems
+
 Use this reference before writing a cover prompt when the release title should
 be the image's organizing force. An architecture is a relationship between the
 exact title and the image, not a font style or a genre preset. Choose one per

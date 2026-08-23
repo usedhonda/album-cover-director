@@ -1,5 +1,11 @@
 # Typography and custom wordmarks
 
+## Contents
+
+- Reading hierarchy
+- Image-native construction
+- Failure recovery
+
 Typography is a separate design system and acceptance gate. Font selection is one input, never the whole solution.
 
 ## Research screening: when typography truly controls the cover

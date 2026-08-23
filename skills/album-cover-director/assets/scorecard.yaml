@@ -49,3 +49,13 @@ decision:
   rejected: []
   refinement_variable: ""
   refinement_cycles_used: 0
+objective_preflight:
+  image_is_square: null
+  minimum_dimension_met: null
+  color_mode_supported: null
+  readable_text_status: human_required
+  allowed_text_confirmed: null
+art_direction_evaluation:
+  confidence: low
+  user_validated: false
+  observations: []

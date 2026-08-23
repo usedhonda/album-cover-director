@@ -92,6 +92,12 @@ def record(args: argparse.Namespace) -> dict[str, object]:
         "failure_codes": args.failure_code,
         "saved_image_paths": save_images(args.image, release_dir / "images", local),
         "preference": preference_from(args),
+        "runtime": {
+            "model_family": args.model_family,
+            "model_id": args.model_id,
+            "host_surface": args.host_surface,
+        },
+        "user_validated": args.user_validated,
     }
     document["events"].append(event)
     write_json(path, document)
@@ -178,6 +184,10 @@ def main() -> int:
     record_parser.add_argument("--preference-statement")
     record_parser.add_argument("--applies-when", action="append", default=[])
     record_parser.add_argument("--reject-when", action="append", default=[])
+    record_parser.add_argument("--model-family", default="")
+    record_parser.add_argument("--model-id", default="")
+    record_parser.add_argument("--host-surface", default="")
+    record_parser.add_argument("--user-validated", action="store_true")
     refresh_parser = subparsers.add_parser("refresh")
     refresh_parser.add_argument("--artist-root", default=".")
     args = parser.parse_args()

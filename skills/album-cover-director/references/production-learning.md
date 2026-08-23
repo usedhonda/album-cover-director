@@ -1,5 +1,11 @@
 # Controlled production learning
 
+## Contents
+
+- Controlled observations
+- Rule-promotion gates
+- Privacy boundary
+
 Use this mode only when the user explicitly asks to improve Album Cover Director. Ordinary cover requests remain private production work and are not public training data. Read `project-local-learning.md` first when the evidence came from a user's project.
 
 ## Why this complements precedent research

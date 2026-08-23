@@ -1,5 +1,11 @@
 # Evaluation and delivery
 
+## Contents
+
+- Evaluation sequence
+- Delivery requirements
+- Rights and provenance
+
 Selection is comparative. Never score one candidate in isolation while ignoring the alternatives.
 
 ## Viewing conditions

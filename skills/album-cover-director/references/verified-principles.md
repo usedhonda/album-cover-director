@@ -1,5 +1,11 @@
 # Bounded verified typography principles
 
+## Contents
+
+- Evidence boundary
+- Composition principles
+- Title integration
+
 This is the current teaching set for the skill. It is deliberately bounded: it
 turns already verified research into decisions that can improve a cover run.
 It is not a genre catalogue, a style menu, or a reason to research more covers

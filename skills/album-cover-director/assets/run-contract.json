@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "release": {
+    "exact_title": "",
+    "allowed_readable_text": []
+  },
+  "constraints": {
+    "title_must_be_image_native": true,
+    "post_typesetting_allowed": false
+  },
+  "rights": {
+    "reference_basis": "not-supplied"
+  },
+  "runtime": {
+    "model_or_tool": "gpt-image-2",
+    "host_surface": "",
+    "model_id": "",
+    "skill_version": ""
+  },
+  "directions": [
+    {
+      "id": "A",
+      "primary_pattern": "",
+      "title_system_family": "",
+      "title_system": "",
+      "prompt_path": "",
+      "world_engine": "",
+      "title_anatomy": "",
+      "character_title_relation": ""
+    }
+  ],
+  "candidates": []
+}

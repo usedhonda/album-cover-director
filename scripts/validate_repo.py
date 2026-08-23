@@ -107,6 +107,8 @@ def validate_skill() -> None:
     require("scripts/project-workspace.py init" in skill, "artist-local workspace initializer missing")
     require("references/title-complexity.md" in skill, "title-complexity routing missing")
     require("assets/project-feedback.yaml" in skill, "project feedback contract missing")
+    require("assets/run-contract.json" in skill, "run contract routing missing")
+    require("references/runtime-adapters.md" in skill, "runtime adapter routing missing")
     require("references/community-contributions.md" in skill, "community contribution routing missing")
     require("Default to excluding unmotivated yellow" in skill,
             "default warm-cast quality gate missing")
@@ -145,8 +147,18 @@ def validate_skill() -> None:
         "scripts/project-workspace.py",
         "scripts/contribution-draft.py",
         "references/community-contributions.md",
+        "assets/run-contract.json",
+        "scripts/cover-ops.py",
+        "scripts/prompt-preflight.py",
+        "scripts/action-router.py",
+        "scripts/handoff-manifest.py",
+        "scripts/learning-state.py",
+        "references/runtime-adapters.md",
     ):
         require((ROOT / "skills/album-cover-director" / relative).is_file(), f"project-learning resource missing: {relative}")
+    for reference in (ROOT / "skills/album-cover-director/references").glob("*.md"):
+        if len(reference.read_text().splitlines()) > 100:
+            require("## Contents" in reference.read_text(), f"long reference needs Contents: {reference.name}")
 
 
 def validate_corpus() -> None:
@@ -420,7 +432,7 @@ def validate_public_safety() -> None:
     found_demo_images = set()
     violations = []
     for path in ROOT.rglob("*"):
-        if not path.is_file() or ".git" in path.parts:
+        if not path.is_file() or ".git" in path.parts or ".local" in path.parts:
             continue
         if path.suffix.lower() in IMAGE_SUFFIXES:
             relative = path.relative_to(ROOT).as_posix()
