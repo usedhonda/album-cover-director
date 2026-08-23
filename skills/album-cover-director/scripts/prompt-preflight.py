@@ -9,6 +9,7 @@ from pathlib import Path
 
 
 FAMILIES = {"material-world", "spatial-field", "character-led"}
+PATTERNS = {"Portrait / Identity", "Documentary Moment", "Narrative Tableau", "Symbolic Object / Still Life", "Typographic Hero / Wordmark", "Minimal Geometry / Color Field", "Abstract Material / Process", "Archive / Collage / Found Material", "Illustration / Character World", "Landscape / Architecture / Absence", "Diagram / Grid / Data / Repetition", "Package Object / Intervention / Anti-cover"}
 
 
 def failure(code: str, path: str, message: str) -> dict[str, str]:
@@ -38,26 +39,35 @@ def validate(contract: object) -> list[dict[str, str]]:
     rights = contract.get("rights")
     if not isinstance(rights, dict) or not isinstance(rights.get("reference_basis"), str) or not rights["reference_basis"].strip():
         failures.append(failure("rights-basis-required", "rights.reference_basis", "Record the reference or asset rights basis."))
+    runtime = contract.get("runtime")
+    for key in ("model_family", "model_id", "host_surface", "skill_version"):
+        if not isinstance(runtime, dict) or not isinstance(runtime.get(key), str) or not runtime[key].strip():
+            failures.append(failure("runtime-identity-required", f"runtime.{key}", "Record the runtime identity."))
+    capability = runtime.get("capability_profile") if isinstance(runtime, dict) else None
+    if not isinstance(capability, dict) or not isinstance(capability.get("source_minimum_dimension"), int) or capability["source_minimum_dimension"] <= 0:
+        failures.append(failure("source-capability-required", "runtime.capability_profile.source_minimum_dimension", "Record a positive source minimum dimension."))
     directions = contract.get("directions")
     if not isinstance(directions, list) or len(directions) != 3:
         failures.append(failure("three-directions-required", "directions", "Exactly three structurally distinct directions are required."))
         return failures
-    patterns: set[str] = set()
+    patterns: set[str] = set(); direction_ids: set[str] = set()
     for index, direction in enumerate(directions):
         base = f"directions[{index}]"
         if not isinstance(direction, dict):
             failures.append(failure("direction-invalid", base, "Each direction must be an object.")); continue
-        pattern, family = direction.get("primary_pattern"), direction.get("title_system_family")
-        if not isinstance(pattern, str) or not pattern.strip(): failures.append(failure("primary-pattern-required", f"{base}.primary_pattern", "Provide one primary pattern."))
+        direction_id, pattern, family = direction.get("id"), direction.get("primary_pattern"), direction.get("title_system_family")
+        if not isinstance(direction_id, str) or not direction_id.strip(): failures.append(failure("direction-id-required", f"{base}.id", "Each direction needs an ID."))
+        elif direction_id in direction_ids: failures.append(failure("direction-id-duplicate", f"{base}.id", "Direction IDs must differ."))
+        else: direction_ids.add(direction_id)
+        if pattern not in PATTERNS: failures.append(failure("primary-pattern-invalid", f"{base}.primary_pattern", "Use a defined primary pattern."))
         elif pattern in patterns: failures.append(failure("primary-pattern-duplicate", f"{base}.primary_pattern", "Primary patterns must differ."))
         else: patterns.add(pattern)
         if family not in FAMILIES: failures.append(failure("title-family-invalid", f"{base}.title_system_family", "Use material-world, spatial-field, or character-led.")); continue
-        if family == "material-world" and not (direction.get("world_engine") and direction.get("title_anatomy")):
-            failures.append(failure("material-direction-incomplete", base, "Material directions require world_engine and title_anatomy."))
-        if family == "spatial-field" and not direction.get("world_engine"):
-            failures.append(failure("spatial-direction-incomplete", base, "Spatial directions require world_engine."))
-        if family == "character-led" and not direction.get("character_title_relation"):
-            failures.append(failure("character-direction-incomplete", base, "Character directions require character_title_relation."))
+        for key in ("title_system", "prompt_path"):
+            if not isinstance(direction.get(key), str) or not direction[key].strip(): failures.append(failure("direction-field-required", f"{base}.{key}", "Record the direction design and prompt path."))
+        required = {"material-world": ("world_engine", "material_vocabulary", "title_anatomy", "world_role"), "spatial-field": ("causal_phenomenon", "hierarchy_lock", "title_skeleton", "spatial_extension"), "character-led": ("central_action", "shared_hierarchy", "character_title_relation")}[family]
+        for key in required:
+            if not isinstance(direction.get(key), str) or not direction[key].strip(): failures.append(failure(f"{family}-direction-incomplete", f"{base}.{key}", "Required family-specific design field is missing."))
     return failures
 
 

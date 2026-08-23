@@ -122,7 +122,7 @@ def render_preferences(local: Path) -> dict[str, object]:
     grouped: dict[str, list[tuple[str, dict[str, object]]]] = defaultdict(list)
     for release_slug, event in feedback_events(local):
         preference = event.get("preference")
-        if isinstance(preference, dict) and isinstance(preference.get("key"), str):
+        if event.get("user_validated") is True and isinstance(preference, dict) and isinstance(preference.get("key"), str):
             grouped[preference["key"]].append((release_slug, preference))
 
     promoted = []

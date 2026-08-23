@@ -98,16 +98,27 @@ def compare_images(paths: list[Path], threshold: int) -> int:
     return 0
 
 
-def preflight_image(path: Path, minimum_size: int, expected_title: str) -> int:
+def preflight_image(path: Path, minimum_size: int, expected_title: str, exact_size: bool = False) -> int:
     record = image_record(path)
     failures = []
     if not record["square"]: failures.append("non-square")
-    if record["width"] < minimum_size: failures.append("below-minimum-size")
+    if (record["width"] != minimum_size if exact_size else record["width"] < minimum_size): failures.append("wrong-delivery-size" if exact_size else "below-minimum-size")
     if record["mode"] not in {"RGB", "RGBA"}: failures.append("unsupported-color-mode")
     print(json.dumps({"image": record, "objective_failures": failures,
                       "text_verification": {"status": "human_required", "expected_title": expected_title,
                                             "reason": "OCR is not configured for this skill"}}, ensure_ascii=False, indent=2))
     return 2 if failures else 0
+
+
+def source_preflight(path: Path, contract_path: Path) -> int:
+    try:
+        contract = json.loads(contract_path.read_text(encoding="utf-8"))
+        runtime = contract["runtime"]
+        minimum = runtime["capability_profile"]["source_minimum_dimension"]
+        expected_title = contract["release"]["exact_title"]
+    except (OSError, KeyError, TypeError, json.JSONDecodeError) as exc:
+        print(json.dumps({"status": "fail", "objective_failures": ["contract-capability-unreadable"], "detail": str(exc)})); return 2
+    return preflight_image(path, minimum, expected_title)
 
 
 def export_cover(source: Path, out_dir: Path, size: int, jpg_quality: int) -> None:
@@ -131,7 +142,9 @@ def parser() -> argparse.ArgumentParser:
     inspect = commands.add_parser("inspect", help="Print image metadata and checksum"); inspect.add_argument("images", nargs="+", type=Path)
     sheet = commands.add_parser("contact-sheet", help="Create comparison sheet"); sheet.add_argument("images", nargs="+", type=Path); sheet.add_argument("--output", required=True, type=Path)
     export = commands.add_parser("export", help="Write distributor-ready square assets"); export.add_argument("source", type=Path); export.add_argument("--out-dir", required=True, type=Path); export.add_argument("--size", type=int, default=3000); export.add_argument("--jpg-quality", type=int, default=95)
-    preflight = commands.add_parser("preflight", help="Check objective image requirements"); preflight.add_argument("image", type=Path); preflight.add_argument("--minimum-size", type=int, default=3000); preflight.add_argument("--expected-title", default="")
+    preflight = commands.add_parser("preflight", help="Legacy generic objective image check"); preflight.add_argument("image", type=Path); preflight.add_argument("--minimum-size", type=int, default=3000); preflight.add_argument("--expected-title", default="")
+    source = commands.add_parser("preflight-source", help="Check a generated source against its run contract"); source.add_argument("image", type=Path); source.add_argument("--contract", required=True, type=Path)
+    delivery = commands.add_parser("preflight-delivery", help="Check a 3000px delivery asset"); delivery.add_argument("image", type=Path); delivery.add_argument("--expected-title", default="")
     compare = commands.add_parser("compare", help="Warn about visually similar candidates"); compare.add_argument("images", nargs="+", type=Path); compare.add_argument("--warning-threshold", type=int, default=8)
     return root
 
@@ -142,6 +155,8 @@ def main() -> int:
     if args.command == "contact-sheet": contact_sheet(args.images, args.output); return 0
     if args.command == "compare": return compare_images(args.images, args.warning_threshold)
     if args.command == "preflight": return preflight_image(args.image, args.minimum_size, args.expected_title)
+    if args.command == "preflight-source": return source_preflight(args.image, args.contract)
+    if args.command == "preflight-delivery": return preflight_image(args.image, 3000, args.expected_title, exact_size=True)
     if args.command == "export":
         if args.size <= 0 or not 1 <= args.jpg_quality <= 100: raise SystemExit("--size must be positive and --jpg-quality must be 1..100")
         export_cover(args.source, args.out_dir, args.size, args.jpg_quality); return 0

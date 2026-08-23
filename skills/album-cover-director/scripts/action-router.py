@@ -13,10 +13,10 @@ PIVOT = {"release-format-confusion", "literal-title-illustration", "generic-genr
 
 def route(code: str, cycles: int, batch_failures: int, edit_regressed: bool, reference_stalled: bool) -> dict[str, str]:
     if edit_regressed: return {"action": "return-to-parent", "reason": "The selected edit regressed from its parent."}
+    if cycles >= 2: return {"action": "promote-runner-up", "reason": "The refinement budget is exhausted."}
     if code in TITLE_ARCHITECTURE: return {"action": "rebuild-title-architecture", "reason": "Title/image integration needs a structural rebuild, not an overlay."}
     if reference_stalled: return {"action": "reference-assisted", "reason": "Reference evidence is insufficient for the current direction."}
     if code in PIVOT: return {"action": "pivot-direction", "reason": "The failure affects the direction premise."}
-    if cycles >= 2: return {"action": "promote-runner-up", "reason": "The refinement budget is exhausted."}
     if batch_failures >= 2: return {"action": "regenerate-prompt", "reason": "Multiple candidates share the failure signal."}
     return {"action": "edit-local", "reason": "One bounded local correction remains available."}
 

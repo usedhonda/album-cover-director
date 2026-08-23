@@ -33,6 +33,7 @@ class FeedbackStoreTest(unittest.TestCase):
                     "--applies-when", "the song does not call for warmth",
                     "--reject-when", "warm light is musically motivated",
                     "--image", str(image),
+                    "--user-validated",
                 )
                 self.assertEqual(result.returncode, 0, result.stderr)
 

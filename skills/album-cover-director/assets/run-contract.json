@@ -1,21 +1,17 @@
 {
   "schema_version": 1,
-  "release": {
-    "exact_title": "",
-    "allowed_readable_text": []
-  },
+  "release": {"exact_title": "", "allowed_readable_text": []},
   "constraints": {
     "title_must_be_image_native": true,
     "post_typesetting_allowed": false
   },
-  "rights": {
-    "reference_basis": "not-supplied"
-  },
+  "rights": {"reference_basis": "not-supplied"},
   "runtime": {
-    "model_or_tool": "gpt-image-2",
+    "model_family": "gpt-image",
+    "model_id": "gpt-image-2",
     "host_surface": "",
-    "model_id": "",
-    "skill_version": ""
+    "skill_version": "",
+    "capability_profile": {"source_minimum_dimension": 2048, "source_maximum_dimension": 2880, "source_dimension_multiple": 16, "delivery_dimension": 3000}
   },
   "directions": [
     {
@@ -24,9 +20,17 @@
       "title_system_family": "",
       "title_system": "",
       "prompt_path": "",
-      "world_engine": "",
-      "title_anatomy": "",
-      "character_title_relation": ""
+      "world_engine": "", "material_vocabulary": "", "title_anatomy": "", "world_role": "",
+      "causal_phenomenon": "", "hierarchy_lock": "", "title_skeleton": "", "spatial_extension": "",
+      "central_action": "", "shared_hierarchy": "", "character_title_relation": ""
+    },
+    {
+      "id": "B", "primary_pattern": "", "title_system_family": "", "title_system": "", "prompt_path": "",
+      "world_engine": "", "material_vocabulary": "", "title_anatomy": "", "world_role": "", "causal_phenomenon": "", "hierarchy_lock": "", "title_skeleton": "", "spatial_extension": "", "central_action": "", "shared_hierarchy": "", "character_title_relation": ""
+    },
+    {
+      "id": "C", "primary_pattern": "", "title_system_family": "", "title_system": "", "prompt_path": "",
+      "world_engine": "", "material_vocabulary": "", "title_anatomy": "", "world_role": "", "causal_phenomenon": "", "hierarchy_lock": "", "title_skeleton": "", "spatial_extension": "", "central_action": "", "shared_hierarchy": "", "character_title_relation": ""
     }
   ],
   "candidates": []
