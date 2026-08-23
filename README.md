@@ -6,18 +6,6 @@ The project is for musicians, track makers, producers, independent labels, and d
 
 ## See what it makes
 
-### One release, three structures
-
-![Three covers for the working title Ledger Faces, built as a material world, a character-led hierarchy, and a spatial field.](docs/examples/ledger-faces-three-directions.png)
-
-**Working title: "Ledger Faces."** Same song, same figure, same exact title. Only the image-organizing structure changes. These are not color variants.
-
-- **Left — material-world.** A continuous blue ledger stroke crosses behind the shoulder, through the hand, and in front of one thigh; the pen draws the final terminal.
-- **Center — character-led.** Repeated face profiles fill the counters of the giant title while the living figure steps out through the counter of the letter `a`.
-- **Right — spatial-field.** Station scanner light projects the title across wall, figure, and floor; one blocked beam returns as a reflection in the gate glass.
-
-Every run proposes in this shape. The galleries below show what each family can build.
-
 ### Titles as physical worlds
 
 |  |  |
@@ -50,6 +38,18 @@ Every run proposes in this shape. The galleries below show what each family can 
 Every title above is generated within the image itself. It is never repaired with a font overlay, redraw, or post-typesetting: its material, structure, and image are one design decision.
 
 The gallery demonstrates three equal title-system families. Choose **material-world** when routes, artifacts, games, specimens, or another physical system should form the title's anatomy. Choose **spatial-field** when light, reflection, smoke, motion, weather, or architecture should distribute and transform the title across the full square. Choose **character-led** when a supplied artist system or brief calls for a figure whose pose, action, setting, and title must work as one structure. A spatial field may use a familiar-looking letter skeleton to establish reading, but it must be generated inside the image and physically altered by the scene; it is never a flat overlay.
+
+### What an actual release looks like
+
+![Three covers for the working title Ledger Faces, built as a material world, a character-led hierarchy, and a spatial field.](docs/examples/ledger-faces-three-directions.png)
+
+**Working title: "Ledger Faces."** Same song, same figure, same exact title. Only the image-organizing structure changes. These are not color variants.
+
+- **Left — material-world.** A continuous blue ledger stroke crosses behind the shoulder, through the hand, and in front of one thigh; the pen draws the final terminal.
+- **Center — character-led.** Repeated face profiles fill the counters of the giant title while the living figure steps out through the counter of the letter `a`.
+- **Right — spatial-field.** Station scanner light projects the title across wall, figure, and floor; one blocked beam returns as a reflection in the gate glass.
+
+That is the three families applied to one release at once. Every run proposes in this shape, compares the candidates, selects one, and finishes it to 3000 px.
 
 ## What makes it different
 
