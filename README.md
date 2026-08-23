@@ -43,13 +43,13 @@ The gallery demonstrates three equal title-system families. Choose **material-wo
 
 **Working title: "Ledger Faces."** Same song, same figure, same exact title. Only the image-organizing structure changes. These are not color variants.
 
-![Ledger Faces built from a continuous blue ledger stroke.](docs/examples/ledger-faces-material-world.png)
-
-**Material-world** — a continuous blue ledger stroke crosses behind the shoulder, through the hand, and in front of one thigh; the pen draws the final terminal.
-
 ![Ledger Faces with counters filled by repeated face profiles.](docs/examples/ledger-faces-character-led.png)
 
 **Character-led** — repeated face profiles fill the counters of the giant title while the living figure steps out through the counter of the letter `a`.
+
+![Ledger Faces built from a continuous blue ledger stroke.](docs/examples/ledger-faces-material-world.png)
+
+**Material-world** — a continuous blue ledger stroke crosses behind the shoulder, through the hand, and in front of one thigh; the pen draws the final terminal.
 
 ![Ledger Faces projected across a station wall and floor by scanner light.](docs/examples/ledger-faces-spatial-field.png)
 

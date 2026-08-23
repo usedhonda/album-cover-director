@@ -43,13 +43,13 @@ $album-cover-director は、アルバム、EP、シングルのジャケット�
 
 **仮タイトル「Ledger Faces」** — 同じ曲、同じ人物、同じ題字。振っているのは画面の組み立て方だけです。色違いではありません。
 
-![Ledger Faces が契約書の青い筆記線になるジャケット。](docs/examples/ledger-faces-material-world.png)
-
-**物質タイトル世界** — 契約書の青い筆記線が、肩の後ろから手を通って脚の前へ抜ける。最後の一画を万年筆が書く。
-
 ![Ledger Faces の抜き穴が複製された横顔で埋まるジャケット。](docs/examples/ledger-faces-character-led.png)
 
 **キャラクター主導** — 巨大な文字の抜き穴が、複製された横顔で埋まる。生身の一人が `a` の穴から踏み出す。
+
+![Ledger Faces が契約書の青い筆記線になるジャケット。](docs/examples/ledger-faces-material-world.png)
+
+**物質タイトル世界** — 契約書の青い筆記線が、肩の後ろから手を通って脚の前へ抜ける。最後の一画を万年筆が書く。
 
 ![Ledger Faces が改札のスキャナ光として壁と床へ投影されるジャケット。](docs/examples/ledger-faces-spatial-field.png)
 
