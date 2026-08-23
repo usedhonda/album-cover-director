@@ -188,6 +188,7 @@ with later typesetting. See [title-complexity.md](skills/album-cover-director/re
 ~~~text
 album-cover/<release-slug>/
 ├── creative-brief.yaml
+├── run-contract.json
 ├── directions.md
 ├── prompts/
 ├── run-ledger.jsonl
@@ -195,10 +196,11 @@ album-cover/<release-slug>/
 ├── delivery/cover-3000.png
 ├── delivery/cover-3000.jpg
 ├── delivery/thumbnail-256.png
+├── handoff-manifest.json
 └── cover-report.md
 ~~~
 
-If image generation or Pillow is unavailable, the skill returns the finished brief, directions, prompts, and exact export specification, but does not claim that delivery is complete.
+`run-contract.json` records the approved release, runtime, rights basis, directions, and candidate lineage. `handoff-manifest.json` is written only after the selected source, delivery files, and structured human text review have been recorded. If image generation or Pillow is unavailable, the skill returns the finished brief, directions, prompts, and exact export specification, but does not claim that delivery is complete.
 
 ## Pattern system
 
@@ -227,12 +229,13 @@ Pillow is the only optional runtime dependency:
 python -m pip install Pillow
 python scripts/cover-ops.py inspect selected-master.png
 python scripts/cover-ops.py contact-sheet candidates/*.png --output comparison.png
-python scripts/cover-ops.py preflight selected-master.png --expected-title "Exact Title"
+python scripts/cover-ops.py preflight-source selected-master.png --contract run-contract.json
 python scripts/cover-ops.py compare candidates/*.png
 python scripts/cover-ops.py export selected-master.png --out-dir delivery
+python scripts/cover-ops.py preflight-delivery delivery/cover-3000.png --expected-title "Exact Title"
 ~~~
 
-The export command refuses non-square sources and records dimensions, scaling, byte size, and SHA-256. `cover-ops.py` intentionally does not add or typeset title text: title typography must be native to the generated cover image. The same utility is bundled in the installed skill at `skills/album-cover-director/scripts/cover-ops.py`; the repository path above is a contributor compatibility wrapper.
+Run the source preflight before export: it checks the native candidate against the recorded contract without treating a source image as a finished distributor asset. Export writes the 3000 px delivery files; then run delivery preflight on each final asset. Both stages record objective image facts, while a human records exact-title and unapproved-readable-text results in the handoff manifest. `cover-ops.py` intentionally does not add or typeset title text: title typography must be native to the generated cover image. The same utility is bundled in the installed skill at `skills/album-cover-director/scripts/cover-ops.py`; the repository path above is a contributor compatibility wrapper.
 
 ## Research and copyright
 

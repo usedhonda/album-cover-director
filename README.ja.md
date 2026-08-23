@@ -161,6 +161,7 @@ custom-wordmark ではフォント名だけを指定しません。骨格、幅�
 ~~~text
 album-cover/<release-slug>/
 ├── creative-brief.yaml
+├── run-contract.json
 ├── directions.md
 ├── prompts/
 ├── run-ledger.jsonl
@@ -168,10 +169,11 @@ album-cover/<release-slug>/
 ├── delivery/cover-3000.png
 ├── delivery/cover-3000.jpg
 ├── delivery/thumbnail-256.png
+├── handoff-manifest.json
 └── cover-report.md
 ~~~
 
-画像生成環境またはPillowがない場合、完成したbrief、方向案、prompt、正確な書き出し仕様までは返しますが、「納品完了」とは表示しません。
+`run-contract.json` には承認した作品情報、実行環境、利用権限の根拠、方向案、候補の系譜を記録します。`handoff-manifest.json` は、選択した元画像、納品ファイル、構造化した人間による文字確認を記録できた後だけ作成します。画像生成環境またはPillowがない場合、完成したbrief、方向案、prompt、正確な書き出し仕様までは返しますが、「納品完了」とは表示しません。
 
 ## 研究と著作権
 
