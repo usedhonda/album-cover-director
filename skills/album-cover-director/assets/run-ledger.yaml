@@ -15,6 +15,9 @@ jsonl_record:
   reference_inputs: []
   reference_rights: ""
   requested_size: square
+  moderation_setting: "host-default or API value"
+  moderation_stage: null
+  moderation_categories: []
   output_path: ""
   sha256: ""
   notes: ""

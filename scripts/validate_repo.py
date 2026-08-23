@@ -113,6 +113,21 @@ def validate_skill() -> None:
     gpt_image = (ROOT / "skills/album-cover-director/references/gpt-image-2.md").read_text()
     require("default quality risk" in gpt_image and "Default to neutral" in gpt_image,
             "GPT Image temperature risk must be a default guard")
+    require("## Adult sensual editorial requests" in skill,
+            "adult sensual editorial route missing from skill")
+    for requirement in (
+        "self-directed expression and\nmovement",
+        "eye-level non-local framing",
+        "body-part-focused crops",
+    ):
+        require(requirement in skill, f"adult sensual editorial safety requirement missing: {requirement}")
+    for requirement in (
+        "## Adult sensual editorial requests",
+        "It converts an ambiguous desired effect into art direction",
+        "The exact title\nmust remain generated within the image",
+        "Do not retry an unchanged request",
+    ):
+        require(requirement in gpt_image, f"adult sensual editorial execution requirement missing: {requirement}")
     for use_mode in ("identity-reference", "source-asset", "visual-direction"):
         require(use_mode in skill, f"reference-image use mode missing: {use_mode}")
     require("Keep all of it artist-local" in skill,
@@ -324,7 +339,7 @@ def validate_invocation_cases() -> None:
         "japanese", "english", "mixed-script", "instrumental", "type-hero", "reference-image",
         "series-system", "title-only", "lyrics-path", "artist-information-path", "reference-image",
         "identity-reference", "source-asset", "visual-direction", "project-local-learning",
-        "artist-system-onboarding",
+        "artist-system-onboarding", "adult-sensual-editorial",
     }
     require(required_tags <= tags, f"invocation coverage missing: {sorted(required_tags - tags)}")
 

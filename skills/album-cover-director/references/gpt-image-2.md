@@ -24,6 +24,55 @@ Write prompts in this order:
 
 Use concrete visual nouns and verbs. Do not send the model an essay about the song. Translate interpretation into observable image decisions.
 
+## Adult sensual editorial requests
+
+Use this section only when the user explicitly asks for a person-led cover to
+feel sexy, sensual, glamorous, alluring, provocative, or similarly adult and
+non-explicit. It converts an ambiguous desired effect into art direction; it is
+not a safety workaround and does not apply to ordinary portraits by default.
+
+### Interpret the request
+
+State the legitimate cover context first, then use these variables instead of
+repeating the ambiguous adjective:
+
+1. **Subject and rights**: a fictional person with a stated adult age, or a
+   rights-cleared reference with documented consent for the requested use.
+   Do not assign a gender unless the brief does.
+2. **Agency and action**: self-possessed gaze, controlled posture, a stage
+   action, dance movement, or another intentional gesture; never vulnerability,
+   incapacity, surveillance, or surprise as the source of allure.
+3. **Wardrobe and silhouette**: name opaque, conventional fashion or stagewear,
+   its material, and how tailoring or movement makes the silhouette legible.
+4. **Composition**: use an eye-level frame with balanced attention to face,
+   garment, title, and setting. Avoid intimate, voyeuristic, or body-part-led
+   crops.
+5. **Light, color, and space**: make allure come from a named lighting setup,
+   texture, palette relationship, and a public or professional setting such as
+   a stage, soundstage, foyer, or editorial set.
+
+Keep the existing prompt order and title-system requirements. The exact title
+must remain generated within the image and share a hierarchy with the subject;
+do not reserve detached text space or add typography afterward.
+
+### Boundaries and recovery
+
+Include one short, concrete boundary statement when it resolves a real
+ambiguity: adult subject, fully clothed opaque wardrobe, non-nude,
+non-explicit, and no real-person sexualization. Prefer positive wardrobe and
+composition details over a long negative list.
+
+Reject a concept that combines youth cues, private or voyeuristic settings,
+unaware or incapacitated subjects, transparent or displaced clothing, or
+body-part emphasis. Redesign the scene rather than substituting euphemisms.
+
+If the host exposes a moderation error, record whether it identifies the input
+or output and change the relevant condition: clarify adult status and rights,
+replace ambiguous clothing or setting, widen a crop, restore agency, or make
+the intended source of allure explicit. Do not retry an unchanged request. An
+API `moderation` setting is host-specific and never disables policy or replaces
+this design check.
+
 ## Palette-temperature guard
 
 GPT Image 2 can drift toward parchment, sepia, brass, amber, or warm-yellow

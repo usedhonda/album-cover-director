@@ -48,6 +48,12 @@
     "coverage": ["type-hero"]
   },
   {
+    "name": "adult-sensual-editorial",
+    "prompt": "大人の色気がある新曲のジャケットを作って。露出ではなく、舞台衣装、視線、照明、タイトルとの一体感で表現して。",
+    "expected_trigger": true,
+    "coverage": ["japanese", "adult-sensual-editorial", "character-led"]
+  },
+  {
     "name": "reference-image",
     "prompt": "Use my attached rights-cleared portrait as the identity reference for a single cover, while changing the scene and typography.",
     "expected_trigger": true,

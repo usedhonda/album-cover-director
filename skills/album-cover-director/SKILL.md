@@ -59,6 +59,27 @@ Every candidate shown for artistic evaluation is a complete jacket with the exac
 
 If the environment exposes an image-generation tool, use GPT Image 2. If it does not, finish the brief, directions, prompts, and delivery specification, but state clearly that images and final delivery were not produced.
 
+## Adult sensual editorial requests
+
+Apply this route only when a user explicitly asks for a person-led cover to feel
+sexy, sensual, glamorous, alluring, provocative, or similarly adult and
+non-explicit. Read `references/gpt-image-2.md` before prompting. Do not treat
+those words as a request for evasive wording or as sufficient art direction.
+
+Translate the requested quality into a clear adult context, a fictional subject
+with a specific adult age or rights-cleared reference, self-directed expression and
+movement, concrete conventional or stage wardrobe, eye-level non-local framing,
+and the lighting, material, color, and spatial conditions that create the
+intended tension. Keep the title image-native and in the same hierarchy as the
+person and scene.
+
+Never use this route to sexualize a real person without documented consent and
+rights, or to create youth cues, nudity, explicit sexual activity, fetish
+framing, voyeuristic or incapacitated situations, or body-part-focused crops.
+When a request is blocked or produces an unsuitable result, redesign the
+specific ambiguous condition; do not retry the same request unchanged or try to
+evade safety controls.
+
 ## Workflow
 
 1. Resolve optional lyrics and artist information according to the explicit or
