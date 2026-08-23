@@ -6,6 +6,18 @@ The project is for musicians, track makers, producers, independent labels, and d
 
 ## See what it makes
 
+### One release, three structures
+
+![Three covers for the working title Ledger Faces, built as a material world, a character-led hierarchy, and a spatial field.](docs/examples/ledger-faces-three-directions.png)
+
+**Working title: "Ledger Faces."** Same song, same figure, same exact title. Only the image-organizing structure changes. These are not color variants.
+
+- **Left — material-world.** A continuous blue ledger stroke crosses behind the shoulder, through the hand, and in front of one thigh; the pen draws the final terminal.
+- **Center — character-led.** Repeated face profiles fill the counters of the giant title while the living figure steps out through the counter of the letter `a`.
+- **Right — spatial-field.** Station scanner light projects the title across wall, figure, and floor; one blocked beam returns as a reflection in the gate glass.
+
+Every run proposes in this shape. The galleries below show what each family can build.
+
 ### Titles as physical worlds
 
 |  |  |
