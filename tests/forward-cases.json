@@ -9,7 +9,12 @@
     "title_system": "route-field",
     "title_complexity_profile": "compact-japanese",
     "expected_candidates": 6,
-    "directions": ["Archive / Collage / Found Material", "Landscape / Architecture / Absence", "Typographic Hero / Wordmark"]
+    "directions": [
+      "Archive / Collage / Found Material",
+      "Landscape / Architecture / Absence",
+      "Typographic Hero / Wordmark"
+    ],
+    "workflow": "direct"
   },
   {
     "name": "english-lyrics-standard",
@@ -21,7 +26,12 @@
     "title_system": "constructed-artifact",
     "title_complexity_profile": "multi-unit-hierarchy",
     "expected_candidates": 6,
-    "directions": ["Abstract Material / Process", "Symbolic Object / Still Life", "Typographic Hero / Wordmark"]
+    "directions": [
+      "Abstract Material / Process",
+      "Symbolic Object / Still Life",
+      "Typographic Hero / Wordmark"
+    ],
+    "workflow": "direct"
   },
   {
     "name": "mixed-script-title",
@@ -33,7 +43,12 @@
     "title_system": "script-hierarchy-with-a-figure",
     "title_complexity_profile": "mixed-script-hierarchy",
     "expected_candidates": 6,
-    "directions": ["Minimal Geometry / Color Field", "Archive / Collage / Found Material", "Portrait / Identity"]
+    "directions": [
+      "Minimal Geometry / Color Field",
+      "Archive / Collage / Found Material",
+      "Portrait / Identity"
+    ],
+    "workflow": "direct"
   },
   {
     "name": "instrumental-audio",
@@ -45,7 +60,12 @@
     "title_system": "route-field",
     "title_complexity_profile": "compact-single-script",
     "expected_candidates": 6,
-    "directions": ["Diagram / Grid / Data / Repetition", "Abstract Material / Process", "Landscape / Architecture / Absence"]
+    "directions": [
+      "Diagram / Grid / Data / Repetition",
+      "Abstract Material / Process",
+      "Landscape / Architecture / Absence"
+    ],
+    "workflow": "direct"
   },
   {
     "name": "type-hero-custom-wordmark",
@@ -57,7 +77,12 @@
     "title_system": "playable-rule-system",
     "title_complexity_profile": "fragile-glyph-set",
     "expected_candidates": 3,
-    "directions": ["Typographic Hero / Wordmark", "Package Object / Intervention / Anti-cover", "Minimal Geometry / Color Field"]
+    "directions": [
+      "Typographic Hero / Wordmark",
+      "Package Object / Intervention / Anti-cover",
+      "Minimal Geometry / Color Field"
+    ],
+    "workflow": "direct"
   },
   {
     "name": "rights-cleared-portrait-reference",
@@ -70,7 +95,12 @@
     "title_system": "shared-scale-hero-wordmark",
     "title_complexity_profile": "multi-unit-hierarchy",
     "expected_candidates": 6,
-    "directions": ["Portrait / Identity", "Documentary Moment", "Symbolic Object / Still Life"]
+    "directions": [
+      "Portrait / Identity",
+      "Documentary Moment",
+      "Symbolic Object / Still Life"
+    ],
+    "workflow": "direct"
   },
   {
     "name": "existing-series-system",
@@ -82,7 +112,12 @@
     "title_system": "gesture-and-kinetic-title-field",
     "title_complexity_profile": "compact-single-script",
     "expected_candidates": 12,
-    "directions": ["Illustration / Character World", "Diagram / Grid / Data / Repetition", "Package Object / Intervention / Anti-cover"]
+    "directions": [
+      "Illustration / Character World",
+      "Diagram / Grid / Data / Repetition",
+      "Package Object / Intervention / Anti-cover"
+    ],
+    "workflow": "direct"
   },
   {
     "name": "spatial-light-title-field",
@@ -94,7 +129,12 @@
     "title_system": "spatial-light-and-atmosphere-field",
     "title_complexity_profile": "compact-single-script",
     "expected_candidates": 6,
-    "directions": ["Documentary Moment", "Typographic Hero / Wordmark", "Landscape / Architecture / Absence"]
+    "directions": [
+      "Documentary Moment",
+      "Typographic Hero / Wordmark",
+      "Landscape / Architecture / Absence"
+    ],
+    "workflow": "direct"
   },
   {
     "name": "image-native-short-title",
@@ -106,6 +146,89 @@
     "title_system": "living-specimen-system",
     "title_complexity_profile": "compact-single-script",
     "expected_candidates": 3,
-    "directions": ["Symbolic Object / Still Life", "Abstract Material / Process", "Narrative Tableau"]
+    "directions": [
+      "Symbolic Object / Still Life",
+      "Abstract Material / Process",
+      "Narrative Tableau"
+    ],
+    "workflow": "direct"
+  },
+  {
+    "name": "lyrics-album-concept-board",
+    "title": "窓の外の私",
+    "evidence_kind": "lyrics-inline",
+    "mode": "standard",
+    "typography_mode": "image-native",
+    "title_system_family": "graphic-field",
+    "title_system": "figure-ground-title-field",
+    "title_complexity_profile": "compact-japanese",
+    "expected_candidates": 12,
+    "workflow": "concept-first",
+    "stage": "concept-preview",
+    "album_title": "留守番する街",
+    "directions": [
+      "Minimal Geometry / Color Field",
+      "Landscape / Architecture / Absence",
+      "Typographic Hero / Wordmark",
+      "Symbolic Object / Still Life",
+      "Abstract Material / Process",
+      "Documentary Moment",
+      "Narrative Tableau",
+      "Archive / Collage / Found Material",
+      "Illustration / Character World",
+      "Diagram / Grid / Data / Repetition",
+      "Package Object / Intervention / Anti-cover",
+      "Minimal Geometry / Color Field"
+    ]
+  },
+  {
+    "name": "title-only-concept-quick",
+    "title": "LOOP//帰還",
+    "evidence_kind": "title-only",
+    "mode": "quick",
+    "typography_mode": "custom-wordmark",
+    "title_system_family": "graphic-field",
+    "title_system": "collision-and-interruption-field",
+    "title_complexity_profile": "fragile-glyph-set",
+    "expected_candidates": 4,
+    "workflow": "concept-first",
+    "stage": "concept-preview",
+    "directions": [
+      "Minimal Geometry / Color Field",
+      "Typographic Hero / Wordmark",
+      "Diagram / Grid / Data / Repetition",
+      "Package Object / Intervention / Anti-cover"
+    ]
+  },
+  {
+    "name": "broad-concept-deep",
+    "title": "No Fixed Address",
+    "evidence_kind": "track-description",
+    "mode": "deep",
+    "typography_mode": "auto",
+    "title_system_family": "spatial-field",
+    "title_system": "spatial-light-and-atmosphere-field",
+    "title_complexity_profile": "multi-unit-hierarchy",
+    "expected_candidates": 16,
+    "workflow": "concept-first",
+    "stage": "concept-preview",
+    "directions": [
+      "Minimal Geometry / Color Field",
+      "Landscape / Architecture / Absence",
+      "Typographic Hero / Wordmark",
+      "Symbolic Object / Still Life",
+      "Abstract Material / Process",
+      "Documentary Moment",
+      "Narrative Tableau",
+      "Archive / Collage / Found Material",
+      "Illustration / Character World",
+      "Diagram / Grid / Data / Repetition",
+      "Package Object / Intervention / Anti-cover",
+      "Portrait / Identity",
+      "Minimal Geometry / Color Field",
+      "Landscape / Architecture / Absence",
+      "Typographic Hero / Wordmark",
+      "Symbolic Object / Still Life"
+    ]
   }
 ]

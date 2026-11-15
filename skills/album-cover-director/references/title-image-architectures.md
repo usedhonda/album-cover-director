@@ -6,6 +6,7 @@
 - Material worlds
 - Spatial fields
 - Character-led systems
+- Graphic fields
 
 Use this reference before writing a cover prompt when the release title should
 be the image's organizing force. An architecture is a relationship between the
@@ -13,14 +14,15 @@ exact title and the image, not a font style or a genre preset. Choose one per
 direction. Do not reproduce a reference cover's lettering, palette, motifs, or
 layout.
 
-Every reviewed candidate must contain the exact title once. The title is the
+Every production candidate must contain the exact title once; concept previews
+are prompted with that same exact title and disclose any unresolved glyph issue. The title is the
 largest or most structurally decisive visual form, while song-derived details
 are discovered after the title is read.
 
 ## Choose a title-system family first
 
-There are three equal image-native families. Choose one before choosing a card;
-both reject ordinary title placement.
+There are four equal image-native families. Choose the mechanism that serves
+the interpretation; none permits a detached title caption.
 
 - **Material-world:** the title becomes a route, artifact, game, living
   specimen, or other physical system. Its material determines letter anatomy.
@@ -30,11 +32,17 @@ both reject ordinary title placement.
   but it cannot remain a flat overlay.
 - **Character-led:** a central figure's action, setting, and the title share
   one hierarchy. Use this only when a supplied artist system, rights-cleared
-  identity reference, or the brief genuinely calls for a figure.
+  identity reference, or the brief calls for a figure.
+- **Graphic-field:** the native title and a flat rule of positive/negative shape,
+  edge, overlap, or rhythm organize the square together. It needs no simulated
+  physical world, perspective, patina, or central figure.
 
 `auto` selects the family from the brief. Do not force a character into a
 material-world brief, do not turn a spatial-field brief into a detached
 headline, and do not turn a character-led brief into a detached wordmark.
+Preserve a graphic-field brief's flatness rather than adding physical depth.
+Use `impact-recipes.md` for exploratory mechanisms across these families;
+those recipes remain hypotheses until demonstrated in actual cover trials.
 
 ## 1. Title map
 
@@ -46,7 +54,7 @@ square. Its counters, loops, and strokes become a map of spaces; motifs grow
 from, pass through, or inhabit those spaces.
 
 **Prompt requirements:** exact title; title share of square; one continuous
-line or constructed skeleton; 6–12 lyric motifs with locations inside, on, or
+line or constructed skeleton; only the lyric-derived relations needed, with locations inside, on, or
 outside named letter areas; title silhouette as the 56px signal.
 
 **Reject when:** motifs are stickers around ordinary display type, or detail
@@ -281,6 +289,48 @@ figure action/contact, script-specific shaping, and empty-space plan.
 **Reject when:** hierarchy becomes a header plus ordinary illustration, or a
 dominant glyph is merely enlarged without changing the image structure.
 
+## Graphic fields
+
+### 14. Figure/ground title field
+
+**Use when:** presence/absence, mutual dependence, divided belonging, or a
+second reading can be carried by a flat shape relationship.
+
+**Geometry:** title strokes and counters share boundaries with one other mass
+or void. Name which regions read as figure and which read as ground, and how
+the interpretation changes when that reading reverses. Keep the exact title
+readable without adding a separate typeset copy.
+
+**Prompt requirements:** `graphic_rule`, `title_shape`, `figure_ground`, and
+`reading_route`; two or three bounded colors, occupied/empty area, protected
+counter shapes, and edge behavior. Generate the lettering and graphics in the
+same image. Flatness is intentional, not an unfinished material rendering.
+
+**Reject when:** the second reading exists only in the explanation, the title
+is an ordinary caption over an independent symbol, or finishing adds shadows,
+material depth, a figure, or unrelated decoration that destroys the idea.
+
+### 15. Collision and interruption field
+
+**Use when:** opposition, pressure, syncopation, rupture, or one exception to a
+rule is the release's defining relation.
+
+**Geometry:** a flat repeat, boundary, overlap, or compressed mass is altered
+by the native title. The letters make the rule change; they are not labels
+explaining it. Protect recognisable glyph structure while changing rhythm,
+scale relationships, counters, or the surrounding field.
+
+**Prompt requirements:** the unbroken rule, its single meaningful interruption,
+exact title, positive/negative area, reading route, and the 56 px dominant
+shape. State what must remain flat and what may vary in production.
+
+**Reject when:** arbitrary misregistration, random glyph distortion, a
+separate headline, or uniform decorative texture substitutes for the rule.
+
+These two cards define a new production vocabulary, not an empirically
+validated GPT Image success claim. Record trials under production-learning
+before promoting detailed construction heuristics to verified principles.
+
 ## From reference to prompt
 
 When a user supplies a cover reference or a web discovery is considered:
@@ -291,6 +341,6 @@ When a user supplies a cover reference or a web discovery is considered:
 3. Write the prompt from the selected architecture's requirements.
 4. Record the source link and the derived relationship, but never store the
    reference raster in the repository.
-5. Add a new architecture only when it cannot be expressed by an existing
-   card and it yields a distinct, successful title-image relationship in a
-   real cover run.
+5. Add a verified architecture only when an existing card cannot express it
+   and real cover trials demonstrate a distinct, successful relationship.
+   Clearly label untested exploration recipes separately.

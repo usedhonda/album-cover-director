@@ -91,7 +91,7 @@ def validate_anti_concentration(works: list[dict], limits: dict[str, int]) -> No
 def validate_manifest() -> None:
     manifest = json.loads((ROOT / ".codex-plugin/plugin.json").read_text())
     require(manifest["name"] == "album-cover-director", "plugin name mismatch")
-    require(manifest["version"] == "0.2.0", "plugin version mismatch")
+    require(manifest["version"] == "0.3.0", "plugin version mismatch")
     require(manifest.get("skills") == "./skills/", "skills path mismatch")
     require("$album-cover-director" in manifest["interface"]["defaultPrompt"], "default prompt must invoke skill")
 
@@ -103,6 +103,10 @@ def validate_skill() -> None:
     frontmatter = match.group(1)
     require("name: album-cover-director" in frontmatter, "skill name mismatch")
     require("description:" in frontmatter, "skill description missing")
+    version = json.loads((ROOT / ".codex-plugin/plugin.json").read_text())["version"]
+    require(f"Skill version: {version}" in skill, "standalone skill version must match plugin")
+    template = json.loads((ROOT / "skills/album-cover-director/assets/run-contract.json").read_text())
+    require(template["runtime"]["skill_version"] == version, "run template version must match plugin")
     require("ordinary photo edits" in frontmatter, "negative trigger boundary missing")
     require("The only required input is:" in skill, "title-only input contract missing")
     require("lyrics either inline" in skill, "inline-or-path lyrics contract missing")
@@ -157,6 +161,11 @@ def validate_skill() -> None:
         "scripts/handoff-manifest.py",
         "scripts/learning-state.py",
         "references/runtime-adapters.md",
+        "references/concept-exploration.md",
+        "references/impact-recipes.md",
+        "scripts/concept_contract.py",
+        "scripts/concept-board.py",
+        "scripts/concept-selection.py",
     ):
         require((ROOT / "skills/album-cover-director" / relative).is_file(), f"project-learning resource missing: {relative}")
     for reference in (ROOT / "skills/album-cover-director/references").glob("*.md"):
@@ -367,6 +376,7 @@ def validate_forward_cases() -> None:
         "title_system_family", "title_system", "title_complexity_profile", "expected_candidates", "directions",
     }
     volumes = {"quick": 3, "standard": 6, "deep": 12}
+    preview_volumes = {"quick": 4, "standard": 12, "deep": 16}
     evidence_kinds = {
         "title-only", "lyrics-inline", "lyrics-path", "track-description", "audio",
         "artist-information-path", "reference-image",
@@ -394,19 +404,27 @@ def validate_forward_cases() -> None:
                     f"reference-image use mode missing: {case['name']}")
         require(case["mode"] in volumes, f"unsupported volume: {case['name']}")
         covered_modes.add(case["mode"])
-        require(case["expected_candidates"] == volumes[case["mode"]],
+        workflow = case.get("workflow", "direct")
+        require(workflow in {"direct", "concept-first"}, f"unknown workflow: {case['name']}")
+        expected_volume = preview_volumes if workflow == "concept-first" else volumes
+        require(case["expected_candidates"] == expected_volume[case["mode"]],
                 f"candidate count does not match mode: {case['name']}")
         require(case["typography_mode"] in typography_modes,
                 f"unsupported typography mode: {case['name']}")
-        require(case["title_system_family"] in {"material-world", "spatial-field", "character-led"},
+        require(case["title_system_family"] in {"material-world", "spatial-field", "character-led", "graphic-field"},
                 f"unsupported title-system family: {case['name']}")
         require(bool(case["title_system"].strip()),
                 f"title system missing: {case['name']}")
         require(case["title_complexity_profile"] in complexity_profiles,
                 f"unsupported title complexity profile: {case['name']}")
         covered_title_families.add(case["title_system_family"])
-        require(len(case["directions"]) == 3 and len(set(case["directions"])) == 3,
-                f"forward case must specify three distinct directions: {case['name']}")
+        if workflow == "direct":
+            require(len(case["directions"]) == 3 and len(set(case["directions"])) == 3,
+                    f"legacy forward case must specify three distinct patterns: {case['name']}")
+        else:
+            require(case.get("stage") == "concept-preview", f"preview stage missing: {case['name']}")
+            require(len(case["directions"]) == case["expected_candidates"],
+                    f"preview directions must be distinct ideas, not three repeated renders: {case['name']}")
         require(set(case["directions"]) <= PATTERNS,
                 f"forward case uses unknown pattern: {case['name']}")
     require(covered_modes == set(volumes), "forward cases must cover quick, standard, and deep")
@@ -423,7 +441,7 @@ def validate_forward_cases() -> None:
             "forward cases need custom-wordmark coverage")
     require(any(case["typography_mode"] == "image-native" for case in cases),
             "forward cases need image-native coverage")
-    require(covered_title_families == {"material-world", "spatial-field", "character-led"},
+    require(covered_title_families == {"material-world", "spatial-field", "character-led", "graphic-field"},
             "forward cases must cover all image-native title-system families")
     require({"mixed-script-hierarchy", "multi-unit-hierarchy", "fragile-glyph-set"}
             <= {case["title_complexity_profile"] for case in cases},

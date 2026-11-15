@@ -1,18 +1,53 @@
-# GPT Image 2 execution
+# GPT Image execution
 
 ## Contents
 
+- Model and host controls
 - Prompting contract
-- Editing and iteration
+- Editing and selection continuity
 - Safety and title checks
+- Optional formats and sources
 
 This file isolates model-specific behavior so the design grammar can survive future model changes.
 
 ## Model role
 
-Use `gpt-image-2` for generation and edits when available. It supports image generation, image editing, and high-fidelity image inputs. Use the current tool or API surface exposed by the host; do not require an external MCP server or API key from the user.
+Use the image tool already exposed by the host; do not require an external MCP
+server, an API key, or a new application. Keep this reference filename for
+compatibility with existing skill links.
 
-Official model reference: <https://developers.openai.com/api/docs/models/gpt-image-2>
+Official guidance checked **2026-11-15**: GPT-Image-2.6 Flare and Sunburst were
+released on 2026-11-04. When the host actually offers model selection, consider
+`gpt-image-2.6-flare` for concept exploration and
+`gpt-image-2.6-sunburst` for detailed production or precise edits. These are
+workflow starting points, not a promise that switching models improves a
+selected cover. Preserve the chosen composition when moving between stages.
+
+If the host does not expose model identity or selection, use its available
+image tool and record the actual model as `unknown-not-exposed`. A preferred
+model in the brief is only a request; never report it as the model used without
+host evidence. Record exposed controls, requested values, and reported values
+separately. See `runtime-adapters.md`.
+
+## Model and host controls
+
+Apply a parameter only when the current host exposes it for the selected model.
+Natural-language requests for detail or careful editing are not evidence that a
+hidden API parameter was set.
+
+| Control | Use when exposed |
+| --- | --- |
+| `quality` | Choose rendering fidelity for the task. Inspect the result; a higher setting is not a new art direction. |
+| `complexity` | For 2.6, choose `low`, `medium`, or `high` independently of quality. Start with `low` for a focused correction; compare medium/high for dense lettering or many spatial constraints. The documented API default is high when omitted; do not infer a hidden host's value from that default. |
+| `background` | Request `opaque` for a complete static cover. Use transparency only for an explicitly requested intermediate or asset; still verify the final cover's pixels. |
+| `input_fidelity` | Omit for GPT-Image-2.6. Do not carry a legacy high-fidelity parameter into an unsupported request. |
+| `markup` | If the host exposes Image API markup, use a transparent PNG matching the first source image's dimensions after orientation. Mark the intended region and describe the change in words. Do not combine it with `mask`. |
+
+Markup or a mask is edit guidance, not a promise of pixel-exact preservation.
+If neither control exists, describe the region and the invariants in the prompt
+and inspect the entire result. Keep model settings out of the artistic prompt
+when they are explicit tool fields. Measure any latency and cost on the actual
+host; do not copy advertised times or another project's bill into the run.
 
 ## Prompt order
 
@@ -21,10 +56,10 @@ Write prompts in this order:
 1. output type: square album cover;
 2. primary pattern and visual thesis;
 3. subject/action and spatial composition;
-4. foreground, midground, background, light, and dominant geometry;
+4. foreground/midground/background and light for spatial work, or flat fields, edges, figure/ground, and dominant geometry for graphic work;
 5. palette with approximate area proportions;
-6. physical medium and production process;
-7. title-system family, image-native architecture, exact title, glyph count, reading order, material or character connection, position, color hierarchy, and line break;
+6. physical medium/process or the deliberately flat graphic rule;
+7. title-system family, image-native architecture, exact title, glyph count, reading order, material, spatial, character, or graphic relationship, position, color hierarchy, and line break;
 8. thumbnail priority;
 9. exclusions and rights-safe constraints.
 
@@ -81,7 +116,7 @@ this design check.
 
 ## Palette-temperature guard
 
-GPT Image 2 can drift toward parchment, sepia, brass, amber, or warm-yellow
+Image output can drift toward parchment, sepia, brass, amber, or warm-yellow
 light when the brief does not explicitly control the neutral point. Treat this
 as a default quality risk, not an artist preference. Every direction must name
 its intended neutral, dominant and accent colors, and palette temperature.
@@ -118,19 +153,50 @@ diagrammatic, or product-like direction.
 
 ## Variants
 
-Treat each candidate as an independent generation. Do not use one image and request palette-only variants when the brief requires structural diversity. Log direction ID, candidate ID, prompt, inputs, model, size, quality, output, and human notes.
+Generate independent candidates during `concept-preview`. Do not use one image
+and request palette-only variants when the brief requires structural diversity.
+Every preview is still a complete cover with the exact image-native title.
+Record its interpretation, visual mechanism, composition signature, prompt,
+actual source file, and SHA-256; a contact-sheet thumbnail is not that source.
+
+After selection, use the selected preview as the parent of a
+`production-candidate`. Record `preview_candidate_id` and the selected source
+path/SHA-256 before editing. Check that the source still matches its recorded
+hash. Keep title silhouette, occupied area, reading route, negative space,
+figure role, camera, medium, palette relationships, and the selected visual
+mechanism as invariants. Raise fidelity or correct a named defect while keeping
+those invariants. Do not automatically center the title, smooth deliberate
+texture, add a scenic background, or make a flat graphic more photographic in
+the name of polish.
+
+If the host cannot edit the selected source, retain the concept and clearly
+report the production limitation. Do not substitute an unrelated new
+generation and label it a refinement of the selected image.
 
 ## Reference images
 
-Use only user-provided or rights-cleared images. Describe what each reference controls: identity, pose, garment, composition, material, or palette. Do not ask for a direct replica. Preserve critical identity with high-fidelity input when the host supports it, while changing only the scoped variables.
+Use only user-provided or rights-cleared images. Describe what each reference
+controls: identity, pose, garment, composition, material, or palette. Do not ask
+for a direct replica. Supply the actual reference image through the host's
+supported image input, state the identity traits to preserve, and change only
+the scoped variables. Do not equate identity preservation with an
+`input_fidelity` setting that the current model does not support.
 
 ## Edits
 
-Edit one variable at a time. State invariants before the requested change: subject identity, crop, title string, title position, palette, and background. Permit at most two refinement cycles. If the result regresses, return to the selected original file instead of using the latest edit as the next input.
+Edit one variable at a time. State invariants before the requested change:
+subject identity, crop, title string and anatomy, title position and scale,
+palette, medium, negative space, and background. Carry the selected preview's
+visual mechanism and `preserve_in_production` list into every edit. Permit at
+most two refinement cycles. Compare each result with the selected original at
+full size and thumbnail size; improved detail does not excuse a weaker concept.
+If the result regresses, return to the selected original file instead of using
+the latest edit as the next input. Do not silently replace the selected parent
+or recompute its stored hash to accept a different file.
 
 ## Text strategy
 
-Generate every artistic candidate with the exact title visibly integrated into the jacket. Generate all title lettering in the same image as the scene: never add, redraw, typeset, or composite letters afterward. For complex-script or long titles, state each glyph exactly once, its reading order, placement, relative scale, color hierarchy, and relation to the scene. If letter accuracy fails, reject the candidate and use one of the two allowed refinement cycles to regenerate from a more explicit prompt. Never present a textless master, a detached title banner, generic caption box, or font layer as a cover candidate.
+Generate every artistic candidate with the exact title visibly integrated into the jacket. Generate all title lettering in the same image as the scene: never add, redraw, typeset, or composite letters afterward. For complex-script or long titles, state each glyph exactly once, its reading order, placement, relative scale, color hierarchy, and relation to the scene. For production, failed lettering requires a native architecture repair within the two-cycle refinement budget. For concept previews, disclose a limited glyph issue only when the concept and intended title mechanism remain clear; do not claim a completed cover. Exploration replacements use their own budget. Never present a textless master, a detached title banner, generic caption box, or font layer as a cover candidate.
 
 For `material-world`, state the world engine before the component vocabulary:
 the act, relation, ritual, memory, weather, or spatial pressure that makes the
@@ -141,9 +207,44 @@ arranged into letters. For `spatial-field`, state the causal phenomenon, title
 hierarchy lock, protected letter skeleton, reading route, and the spatial
 planes that transform the title; ordinary-looking letters are permitted only
 as native scene structure, never as a flat overlay. For `character-led`, state the figure's action, the title's shared
-scale/hierarchy, contact points, and depth order. In either case, explicitly
+scale/hierarchy, contact points, and depth order. In each case, explicitly
 forbid ordinary typography placed on a finished scene.
+
+For `graphic-field`, state the flat positive and negative masses, figure-ground
+relationship, title skeleton, color-area balance, and reading route. Generate
+the exact title as part of the same image's graphic structure. Preserve the
+deliberate flatness, crop, empty areas, and shape collisions; do not translate
+them into a photographed object, a three-dimensional material scene, or a
+character merely to make the design appear more elaborate.
+
+## Optional formats
+
+The default deliverable remains a static square cover. The 2.6 API documents
+SVG and animated GIF output, but this skill does not implement an SVG/GIF
+production or delivery pipeline. Consider either only for an explicit advanced
+request after checking the actual host's controls and access. GIF availability
+can depend on preview access; SVG uses a separate authoring model. Do not claim
+these are available because the underlying image family supports them, and do
+not use them to bypass the image-native title rule.
 
 ## Required provenance
 
-Record the model identifier or host tool, date, prompt, reference-image ownership statement, edit parent, and delivery transformations. Never imply that an ungenerated prompt is a completed cover.
+Record the model identifier or host tool, date, prompt, reference-image ownership
+statement, edit parent, and delivery transformations. Use
+`assets/run-ledger.yaml` for stage, interpretation, visual mechanism, selected
+source, invariants, actual settings, and output evidence. Leave unreported cost
+or latency empty and explain their absence; never estimate an observed result.
+Never imply that an ungenerated prompt is a completed cover.
+
+## Official sources
+
+Checked **2026-11-15**. The workflow above is this skill's production policy;
+the linked pages establish model capabilities and parameter contracts.
+
+- Release date: <https://developers.openai.com/api/docs/changelog>
+- Flare role: <https://developers.openai.com/api/docs/models/gpt-image-2.6-flare>
+- Sunburst role: <https://developers.openai.com/api/docs/models/gpt-image-2.6-sunburst>
+- Complexity, markup, and limitations: <https://developers.openai.com/api/docs/guides/image-generation>
+- Input-fidelity compatibility and edit fields: <https://developers.openai.com/api/reference/resources/images/methods/edit>
+- Output formats and their access requirements: <https://developers.openai.com/api/reference/resources/images/methods/generate>
+- Prompt specificity and preservation across edits: <https://developers.openai.com/api/docs/guides/image-prompting>

@@ -1,37 +1,90 @@
 {
-  "schema_version": 1,
-  "release": {"exact_title": "", "allowed_readable_text": []},
+  "schema_version": 2,
+  "stage": "concept-preview",
+  "release": {
+    "exact_title": "",
+    "allowed_readable_text": [],
+    "release_type": "single",
+    "song_title": "",
+    "album_title": "",
+    "album_context": ""
+  },
   "constraints": {
     "title_must_be_image_native": true,
     "post_typesetting_allowed": false
   },
-  "rights": {"reference_basis": "not-supplied"},
+  "rights": {
+    "reference_basis": "not-supplied"
+  },
   "runtime": {
     "model_family": "gpt-image",
-    "model_id": "gpt-image-2",
+    "model_id": "",
     "host_surface": "",
-    "skill_version": "",
-    "capability_profile": {"source_minimum_dimension": 2048, "source_maximum_dimension": 2880, "source_dimension_multiple": 16, "delivery_dimension": 3000}
+    "skill_version": "0.3.0",
+    "capability_profile": {
+      "preview_minimum_dimension": 1024,
+      "source_minimum_dimension": 2048,
+      "delivery_dimension": 3000
+    }
   },
+  "exploration": {
+    "recommended_direction_count": 12,
+    "maximum_preview_candidates": 24,
+    "redo_count": 0
+  },
+  "interpretations": [
+    {
+      "id": "I01",
+      "summary": "",
+      "evidence": [
+        {
+          "source": "title",
+          "anchor": ""
+        }
+      ]
+    }
+  ],
   "directions": [
     {
-      "id": "A",
+      "id": "D01",
+      "name": "",
+      "interpretation_id": "I01",
       "primary_pattern": "",
       "title_system_family": "",
       "title_system": "",
-      "prompt_path": "",
-      "world_engine": "", "material_vocabulary": "", "title_anatomy": "", "world_role": "",
-      "causal_phenomenon": "", "hierarchy_lock": "", "title_skeleton": "", "spatial_extension": "",
-      "central_action": "", "shared_hierarchy": "", "character_title_relation": ""
-    },
-    {
-      "id": "B", "primary_pattern": "", "title_system_family": "", "title_system": "", "prompt_path": "",
-      "world_engine": "", "material_vocabulary": "", "title_anatomy": "", "world_role": "", "causal_phenomenon": "", "hierarchy_lock": "", "title_skeleton": "", "spatial_extension": "", "central_action": "", "shared_hierarchy": "", "character_title_relation": ""
-    },
-    {
-      "id": "C", "primary_pattern": "", "title_system_family": "", "title_system": "", "prompt_path": "",
-      "world_engine": "", "material_vocabulary": "", "title_anatomy": "", "world_role": "", "causal_phenomenon": "", "hierarchy_lock": "", "title_skeleton": "", "spatial_extension": "", "central_action": "", "shared_hierarchy": "", "character_title_relation": ""
+      "prompt_path": "prompts/D01-preview.md",
+      "visual_mechanism": "",
+      "preserve_in_production": [],
+      "planned_signature": {
+        "title_placement": "",
+        "title_scale": "",
+        "figure_role": "",
+        "camera": "",
+        "layout": "",
+        "medium": ""
+      },
+      "world_engine": "",
+      "material_vocabulary": "",
+      "title_anatomy": "",
+      "world_role": "",
+      "causal_phenomenon": "",
+      "hierarchy_lock": "",
+      "title_skeleton": "",
+      "spatial_extension": "",
+      "central_action": "",
+      "shared_hierarchy": "",
+      "character_title_relation": "",
+      "graphic_rule": "",
+      "title_shape": "",
+      "figure_ground": "",
+      "reading_route": ""
     }
   ],
-  "candidates": []
+  "candidates": [],
+  "diversity_review": {
+    "status": "pending",
+    "reviewed_candidates": [],
+    "compared_axes": [],
+    "summary": ""
+  }
 }

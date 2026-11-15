@@ -42,13 +42,16 @@ corpus evidence until the full-size and thumbnail tests agree.
 
 ### `image-native`
 
-Use when letters must belong physically to the scene: painted on glass, cast as metal, formed by shadows, stitched into cloth, bent into architecture, or damaged by the same process as the image. Require exact text and prohibit all other readable text. Use this mode for conceptual integration, but inspect every glyph.
+Use when letters belong to the generated image, whether as a flat graphic rule
+or physically within a scene: painted on glass, cast as metal, formed by shadows, stitched into cloth, bent into architecture, or damaged by the same process as the image. Require exact text and prohibit all other readable text. Use this mode for conceptual integration, but inspect every glyph.
 
 Before prompting, choose the family in `title-image-architectures.md`:
 `material-world` makes the title's physical anatomy and world inseparable;
 `spatial-field` lets a protected, native letter skeleton be distributed and
 transformed by light, reflection, atmosphere, motion, or architecture;
-`character-led` makes a figure, its action, and the title share one hierarchy.
+`character-led` makes a figure, its action, and the title share one hierarchy;
+`graphic-field` makes title shape, figure/ground, and a flat organizing rule
+inseparable without requiring a physical scene.
 None permits ordinary type placed on an otherwise complete scene. A
 `spatial-field` may use conventional-looking letters only as scene-native
 reading structure, never as a flat overlay.

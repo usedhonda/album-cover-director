@@ -1,7 +1,7 @@
 interface:
   display_name: "Album Cover Director"
-  short_description: "Create image-native title-led album covers"
+  short_description: "Explore bold cover ideas and finish your choice"
   brand_color: "#191919"
-  default_prompt: "Use $album-cover-director to create three image-native title-system cover directions from this title and any optional lyrics, artist-local system, or reference images."
+  default_prompt: "Use $album-cover-director to explore twelve bold, structurally different cover ideas from this title and any optional lyrics, album context, artist-local system, or reference images. Show a labeled thumbnail board, then finish the selected concept."
 policy:
   allow_implicit_invocation: true

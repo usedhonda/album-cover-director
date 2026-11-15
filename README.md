@@ -1,8 +1,35 @@
 # Album Cover Director
 
-$album-cover-director is a Codex skill and plugin bundle for distinctive, release-ready album, EP, and single covers. Its specialty is image-native title design: the exact title can become a physical world, take over a whole space through light/reflection/atmosphere, or share one visual hierarchy with a central figure. It turns musical evidence into three structurally different directions, generates and compares candidates with GPT Image 2, and prepares 3000 px delivery assets.
+$album-cover-director is a Codex skill and plugin bundle for distinctive album, EP, and single covers. It reads the exact release title, lyrics, and album context; starts with a labeled board of bold, structurally different thumbnail concepts; then finishes the selected idea with image-native title design and 3000 px delivery assets.
 
 The project is for musicians, track makers, producers, independent labels, and designers. It has no artist-specific identity, no required MCP server, and no required API key.
+
+## Explore widely, then finish the choice
+
+The default first pass is **12 different ideas**, each shown as a small image
+with an ID, short name, and the meaning it picks up from the music. `deep`
+opens that to 16. The goal is to make the first board interesting enough to
+choose from without having to ask for “more” first.
+
+The skill builds competing readings from lyrics, song title, and album context,
+then varies the mechanism, composition, camera, scale, and medium. Its new
+[24 exploration recipes](skills/album-cover-director/references/impact-recipes.md)
+include figure/ground reversal, anamorphic alignment, impossible return paths,
+two-color collisions, monumental absence, and a single impossible everyday
+event. These are ideas to test, not claims of guaranteed model performance.
+
+Choose “C07,” select multiple IDs, or describe a scoped combination such as
+“C02's structure with C09's atmosphere.” The selected preview, checksum,
+evidence, and composition invariants carry into production. The new
+**graphic-field** family preserves deliberate flatness and strong positive /
+negative shape, alongside the existing material, spatial, and character-led
+families.
+
+The generated images are inspected together before presentation. The board
+utility requires a recorded, checksum-bound visual review; it cannot judge
+semantic diversity itself. Initial previews are labeled as concepts with
+unverified lettering/detail. The final image still passes the full native-title,
+source, and delivery checks. Board labels sit outside the artwork.
 
 ## See what it makes
 
@@ -55,15 +82,18 @@ The gallery demonstrates three equal title-system families. Choose **material-wo
 
 **Spatial-field** — station scanner light projects the title across wall, figure, and floor; one blocked beam returns as a reflection in the gate glass.
 
-Those are the three families applied to a single release. Every run proposes in this shape, compares the candidates, selects one, and finishes it to 3000 px.
+These existing examples show three families applied to one release. New runs
+explore a wider board first, including graphic-field concepts when appropriate,
+then finish the selected idea. The gallery is not a benchmark of the new
+recipes or GPT Image 2.6.
 
 ## What makes it different
 
 - A work-specific research pipeline for covers acclaimed for visual design, with typography-dominant examples screened independently from music reputation.
-- Three image-native title-system families: material-world, spatial-field, and character-led; each has specific construction cards and rejection tests.
+- Four image-native title-system families: material-world, spatial-field, character-led, and graphic-field, with construction cards and rejection tests.
 - Twelve supporting organizing patterns that describe what controls the square, rather than a menu of visual styles.
-- Three-direction divergence: every run must change image structure, not just color or rendering.
-- A title-integrated typography gate: every evaluated candidate is a complete jacket; title lettering must be generated as part of the image, never added afterward.
+- Concept-first exploration: 4/12/16 distinct ideas for quick/standard/deep, with evidence-linked interpretations and a compact thumbnail board.
+- Separate concept-preview and production-candidate stages: final title lettering must be correct and generated within the artwork, never added afterward.
 - Material title-world cards for route fields, constructed artifacts, playable rule systems, and living specimens; a spatial light-and-atmosphere field; plus character-led hero, gesture, and script-hierarchy systems.
 - Hierarchy locks for live or spatial images: title area, silhouette, reading route, and value priority are fixed before controlled irregularity is applied to surrounding light, smoke, motion, reflection, or crop.
 - Comparative checks at 56 px, 128 px, 256 px, full size, grayscale, and blur.
@@ -110,15 +140,15 @@ Image use: keep the character identity, but redesign the scene and composition
 Natural language:
 
 ~~~text
-Direct six structurally different cover candidates for my new single.
-Use the attached audio, make the title exact, and deliver a 3000px square.
+Explore twelve bold cover ideas for my new single using these lyrics and album context.
+Show small labeled thumbnails first, then finish my selected idea as a 3000px square.
 ~~~
 
 The only required input is:
 
 - an exact song, album, or release title.
 
-Lyrics and artist information are optional. Lyrics may be pasted inline or supplied as a readable file path. Artist information may include the artist name, genre, sonic character, points to emphasize, recurring character or identity rules, visual language, palette, typography, avoid list, and references. With no optional input, the skill proceeds from the title alone.
+Lyrics and artist information are optional. Lyrics may be pasted inline or supplied as a readable file path. Artist information may include the artist name, genre, sonic character, points to emphasize, recurring character or identity rules, visual language, palette, typography, avoid list, and references. With no optional input, the skill proceeds from clearly labeled title-based hypotheses. Song and album names supplied as context do not automatically become additional readable cover text.
 
 Reference images are optional. Attach an image or supply a readable file path, then use it as a recurring person or character identity, as an actual image to edit or incorporate, or only as visual direction. When the request is clear, the skill infers the use mode. A recurring character does not freeze the whole cover: pose, action, setting, composition, light, palette, and title architecture remain release-specific. Direct use of the actual image requires the necessary rights.
 
@@ -126,15 +156,25 @@ For a continuing artist, initialize `.album-cover-director/` at that artist's ro
 
 Run volumes:
 
-- quick: 3 candidates;
-- standard: 6 candidates, default;
-- deep: 12 candidates.
+| Volume | Initial distinct concepts | Production candidates per selected concept |
+| --- | ---: | ---: |
+| quick | 4 | 1 |
+| standard (default) | 12 | 2 |
+| deep | 16 | 2 |
+
+Explicit counts and budgets override these defaults. A request for direct
+production, or an existing selected concept, can skip the board. Legacy
+three-direction runs retain their 3/6/12 candidate budgets and v1 contracts.
 
 Run intents:
 
-- explore: directions and candidates for an early choice;
-- production: comparison, refinement, and delivery, the default;
+- explore: create the concept board for an early choice;
+- production: concept exploration, selection, refinement, and delivery (default);
 - improve-skill: a controlled artist-local learning trial.
+
+If you delegate selection to the skill, it chooses from the inspected board
+and continues. Otherwise, select by ID before full production. See
+[concept-exploration.md](skills/album-cover-director/references/concept-exploration.md).
 
 Typography modes:
 
@@ -147,7 +187,8 @@ Title-system families:
 - auto: chooses from the brief;
 - material-world: title anatomy is made by a physical system;
 - spatial-field: a protected title skeleton is distributed and transformed by light, reflection, atmosphere, motion, or architecture;
-- character-led: central figure and title share a single hierarchy.
+- character-led: central figure and title share a single hierarchy;
+- graphic-field: native title shape and a flat rule of figure/ground, edge, overlap, or rhythm organize the square together.
 
 ## Artist-local learning
 
@@ -206,7 +247,9 @@ with later typesetting. See [title-complexity.md](skills/album-cover-director/re
 ~~~text
 album-cover/<release-slug>/
 ├── creative-brief.yaml
-├── run-contract.json
+├── run-contract.json                  # concept-preview
+├── concept-board.html
+├── production-contract.json           # selected concepts
 ├── directions.md
 ├── prompts/
 ├── run-ledger.jsonl
@@ -218,7 +261,7 @@ album-cover/<release-slug>/
 └── cover-report.md
 ~~~
 
-`run-contract.json` records the approved release, runtime, rights basis, directions, and candidate lineage. `handoff-manifest.json` is written only after the selected source, delivery files, and structured human text review have been recorded. If image generation or Pillow is unavailable, the skill returns the finished brief, directions, prompts, and exact export specification, but does not claim that delivery is complete.
+`run-contract.json` records the release, evidence-linked interpretations, runtime, rights basis, preview directions, candidate lineage, and visual review. `concept-board.html` embeds the actual thumbnails and external labels; no web service is required to open it. `production-contract.json` retains selected preview source paths/checksums and starts a separate production candidate set. `handoff-manifest.json` is written only after the selected source, delivery files, and structured human text review have been recorded. If image generation or Pillow is unavailable, the skill returns the finished brief, directions, prompts, and exact export specification, but does not claim that delivery is complete.
 
 ## Pattern system
 
@@ -239,6 +282,36 @@ The twelve primary patterns are:
 
 Genre, era, palette, material, and rendering method are separate axes. A direction keeps one genre anchor and betrays one expected code.
 
+## Board and selection utilities
+
+From the repository root, after generating the preview images and completing
+`run-contract.json`:
+
+~~~bash
+python skills/album-cover-director/scripts/prompt-preflight.py --contract run-contract.json
+python skills/album-cover-director/scripts/concept-board.py --contract run-contract.json --output draft-board.html --draft
+# Inspect the actual images and record diversity_review before presentation.
+python skills/album-cover-director/scripts/concept-board.py --contract run-contract.json --output concept-board.html
+python skills/album-cover-director/scripts/concept-selection.py --contract run-contract.json --candidate C07 --reason "The figure/ground reversal expresses the song's tension" --output production-contract.json
+~~~
+
+Repeat `--candidate` for multiple independent selections. For one primary and
+one donor, use `--candidate C02 --donor C09 --donor-trait "lighting:soft side light"`;
+only color, lighting, and texture can be donated, while the primary structure
+is preserved. Paths in a contract
+resolve relative to that contract. The board has a responsive four-column
+layout, supports Japanese labels, embeds resized previews, and never draws
+labels onto or modifies the source artwork. `--draft` creates an internal
+inspection board; normal presentation requires a matching visual-review
+record for every source image. Selection carries the chosen images forward;
+these utilities do not call an image API or blend images themselves.
+
+Current GPT Image guidance is [host-aware](skills/album-cover-director/references/runtime-adapters.md):
+use 2.6 Flare / Sunburst options only when the host exposes them, record actual
+settings, and preserve the selected composition during refinement. No API key
+or new server is required. SVG and GIF are not part of this static-cover
+implementation.
+
 ## Image utility
 
 Pillow is the only optional runtime dependency:
@@ -247,7 +320,7 @@ Pillow is the only optional runtime dependency:
 python -m pip install Pillow
 python scripts/cover-ops.py inspect selected-master.png
 python scripts/cover-ops.py contact-sheet candidates/*.png --output comparison.png
-python scripts/cover-ops.py preflight-source selected-master.png --contract run-contract.json
+python scripts/cover-ops.py preflight-source selected-master.png --contract production-contract.json
 python scripts/cover-ops.py compare candidates/*.png
 python scripts/cover-ops.py export selected-master.png --out-dir delivery
 python scripts/cover-ops.py preflight-delivery delivery/cover-3000.png --expected-title "Exact Title"

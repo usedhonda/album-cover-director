@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 scale:
   minimum: 0
   maximum: 5
@@ -15,7 +15,12 @@ criteria:
     gate: false
   structural_distinction:
     weight: 1.5
-    gate: false
+    gate: true
+    scope: cross-direction-set
+  selected_mechanism_retained:
+    weight: 1.5
+    gate: true
+    scope: production-from-preview
   composition:
     weight: 1.0
     gate: false
