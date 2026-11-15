@@ -5,7 +5,9 @@
 - Preview versus production
 - Evaluation sequence
 - Set-level presentation gate
+- Letter-level interaction and optical coverage
 - Projected-title test
+- Letter-level interaction and optical coverage
 - Projected-title test
 - Delivery requirements
 - Rights and provenance
@@ -130,6 +132,22 @@ route. Do not add physical texture or perspective as a generic quality upgrade.
 For an optical mechanism, inspect its declared viewing condition and actual
 relationship under the checks in `impact-recipes.md`. An attractive broken
 reflection or an arbitrary malformed stair is not a successful illusion.
+
+## Letter-level interaction and optical coverage
+
+A dimensional support is not automatically a dimensional title system. A figure
+touching a thick plaque with printed text can still leave ordinary lettering
+and an independent figure. Inspect strokes/counters, contact, depth order,
+occlusion and spatial transformation themselves. Reject the detached-lettering
+failure, not illustration as a medium or restrained lighting as a style.
+
+For a broad exploration that has not explicitly excluded optical work, identify
+at least one actually working optical candidate before calling the exploration
+complete. Record its viewing condition and visible result in the existing
+checksum-bound diversity review. Use `impact-recipes.md` checks; a mechanism
+mentioned only in the prompt does not count. If it fails within the authorized
+budget, report that missing requirement honestly. Do not label the full request
+satisfied just because the remaining ordinary covers differ from one another.
 
 ## Projected-title test
 

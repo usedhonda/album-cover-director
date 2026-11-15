@@ -65,7 +65,7 @@ runtime:
   preview_count: 12
   production_variants_per_selection: 2
   typography_mode: auto
-  title_system_family: auto
+  title_system_family: auto # Original three families; graphic-field only for an explicit flat brief/selection.
   title_complexity_profile: ""
 # Duplicate this direction block for genuinely different concepts, normally 12.
 directions:
@@ -84,9 +84,9 @@ directions:
       camera: ""
       layout: ""
       medium: ""
-    preserve_in_production: []
+    preserve_in_production: [] # Include letter-level contact/depth/occlusion and any working optical relation.
     thumbnail_hook: ""
-    illusion_viewing_condition: "" # When applicable.
+    illusion_viewing_condition: "" # Include a working optical idea in a broad board unless the user excludes it.
     illusion_failure_observation: ""
     world_engine: ""
     material_vocabulary: []

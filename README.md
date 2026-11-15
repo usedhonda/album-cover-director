@@ -20,10 +20,12 @@ event. These are ideas to test, not claims of guaranteed model performance.
 
 Choose “C07,” select multiple IDs, or describe a scoped combination such as
 “C02's structure with C09's atmosphere.” The selected preview, checksum,
-evidence, and composition invariants carry into production. The new
-**graphic-field** family preserves deliberate flatness and strong positive /
-negative shape, alongside the existing material, spatial, and character-led
-families.
+evidence, and composition invariants carry into production. The original material, spatial, and character-led families remain the default:
+lettering itself participates in the world through anatomy, action, contact,
+occlusion and depth. A broad first board includes a visibly working optical
+idea unless excluded by the user; naming an illusion in a prompt is not enough.
+**graphic-field** remains an option for explicitly requested or selected flat
+work, rather than replacing those strengths with poster layouts.
 
 The generated images are inspected together before presentation. The board
 utility requires a recorded, checksum-bound visual review; it cannot judge

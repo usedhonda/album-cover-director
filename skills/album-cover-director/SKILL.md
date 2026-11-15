@@ -7,7 +7,7 @@ description: Direct album, EP, and single cover artwork from an exact title, wit
 
 Skill version: 0.3.0
 
-Turn musical meaning into a broad first board of striking, structurally different cover ideas. Let the user choose by a small labeled thumbnail, then carry the chosen mechanism into full production. Do not reserve the strongest ideas for a later “more.” The specialty is image-native title systems: material worlds, spatial phenomena, character-led action, and flat graphic fields. Preserve exact title typography as a final quality gate.
+Turn musical meaning into a broad first board of striking, structurally different cover ideas. Let the user choose by a small labeled thumbnail, then carry the chosen mechanism into full production. Do not reserve the strongest ideas for a later “more.” The specialty remains image-native title systems: material worlds, spatial phenomena, and character-led action where lettering and the world visibly transform one another. Broad exploration expands ideas within this strength; it does not replace it with flat poster layouts. Deliberately flat graphic fields are an explicitly requested or selected alternative, not the default. Preserve exact title typography as a final quality gate.
 
 ## Input contract
 
@@ -62,7 +62,7 @@ inside that ignored artist-local directory. Do not commit or upload it.
   board. Legacy three-direction runs retain their 3/6/12 candidate budgets.
 - Typography: `auto`, `image-native`, or `custom-wordmark`.
 - Title-system family: `auto`, `material-world`, `spatial-field`,
-  `character-led`, or `graphic-field`. Default is `auto`.
+  `character-led`, or `graphic-field`. Default is `auto`, which starts from the original three families. Use `graphic-field` only when the user or supplied artist/visual brief explicitly calls for flat graphic work, or the user selects such a concept; generic requests for variety or impact do not imply flatness.
 
 Use explicit stages: `concept-preview` selects the idea; `production-candidate`
 must pass the full quality gates. Both are prompted with the exact native title.
@@ -120,10 +120,14 @@ music facts. State what makes this release different and what would feel generic
 Read `references/impact-recipes.md`, `references/design-patterns.md`, and
 `references/title-image-architectures.md`. Privately sketch roughly twice the
 requested count, then retain the strongest, most distinct ideas. Default to a
-12-direction first board. Include bold mechanisms from the first pass: optical
-reversal, impossible spatial relations, forceful flat shapes, unexpected scale,
-severe negative space, or an ordinary scene with one impossible event, when
-supported by the music. More detail is not automatically more impact.
+12-direction first board. Develop lettering intertwined with materials, space,
+and character action through different viewpoints, depth relations and world
+engines. Include optical reversal, anamorphic alignment, a reflection
+that completes the title, or a specific impossible spatial join from the first
+pass, not only after a request for more. Unless the user rules optical work out,
+a broad exploratory board must contain at least one visibly working optical
+concept supported by a reading of the music. A recipe name is not delivery of
+that concept. More detail is not automatically more impact.
 
 Give each direction an ID, short name, `interpretation_id`, `visual_mechanism`,
 `planned_signature`, and `preserve_in_production` list. Record title placement
@@ -147,6 +151,15 @@ value hierarchy, and relation to the dominant shape. Select a family:
 - `graphic-field`: positive/negative shape, edge, rhythm, or a flat color rule
   makes the title part of the image's structure; no simulated physical world
   or person is needed.
+
+For the original three families, specify what forms the letters themselves,
+where figure/material/light crosses or transforms a stroke or counter, and the
+foreground/midground/background or overlapping planes that make that relation
+visible. Thickness, contact shadows and occlusion must explain the action, not
+just decorate it. A thick plaque with ordinary printed letters, touched by a
+figure, is not equivalent to the figure interacting with letter anatomy.
+Do not reduce dimensionality to bevels, photorealism or a 3D render style;
+illustration, maps, ink and diagrams can carry rich intertwined depth too.
 
 For live or spatial scenes, lock title hierarchy before allowing physically
 caused exposure, occlusion, wear, motion, or crop elsewhere. For intentionally
@@ -172,7 +185,7 @@ for one image containing the whole grid. Record stage, prompt, runtime,
 references, source dimensions, and result in `run-ledger.jsonl` using
 `assets/run-ledger.yaml`. Add each output and any visible lettering issue to
 `candidates`. An initial preview may have a disclosed glyph issue, but must
-show the intended title mechanism and a readable concept.
+show the intended title mechanism and a readable concept. Small display size or preview speed is not permission to omit title-world interaction, spatial depth, or the optical mechanism until production.
 
 ### 5. Inspect and present the board
 
@@ -183,6 +196,14 @@ medium, and the relationship that makes the title part of the image. Apply the s
 visually convergent ideas before presentation. Different prompts, names,
 materials, or perceptual hashes do not prove diversity. Record rejected candidate IDs, the observed
 failure and next structural change, not just a new label. For legacy direct-production sets, use `composition-convergence`; concept-preview redos remain separate from production edits. Stay within the authorized generation budget; report an incomplete set if it cannot pass. Never replace an adopted source without an explicit edit request.
+
+Unless the user excluded optical ideas, identify a candidate with a visibly
+working optical relationship before passing the board and record what the viewer actually sees at its declared viewing
+condition. Also inspect the original families for letter-level interaction,
+not merely a figure beside a thick sign. If the optical idea collapsed, revise
+it within the authorized budget; if none succeeds, explicitly report that
+requested exploration is incomplete. Do not mark coverage complete because the
+prompts mention an illusion, and do not substitute a flat poster to fill a slot.
 
 Complete the checksum-bound `diversity_review` after inspection, then render
 `concept-board.html` without `--draft`. Present the compact thumbnail grid,
@@ -207,7 +228,7 @@ primary `preview_candidate_id` on each resulting production candidate.
 Switch to `stage: production-candidate`, apply the source-resolution capability
 for the actual runtime, preflight the production contract, and generate the
 selected idea(s) at production quality. Keep the exact reason for selection:
-flat stays flat, negative space stays spacious, and an illusion keeps its
+intertwined depth, stroke interactions, contact/occlusion and spatial transformation stay intact; explicitly selected flat work stays flat, negative space stays spacious, and an illusion keeps its
 viewing relationship. Do not polish the work into a conventional centered
 hero, add objects, or make the title a separate headline.
 

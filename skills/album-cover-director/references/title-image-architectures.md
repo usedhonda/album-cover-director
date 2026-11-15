@@ -21,8 +21,11 @@ are discovered after the title is read.
 
 ## Choose a title-system family first
 
-There are four equal image-native families. Choose the mechanism that serves
-the interpretation; none permits a detached title caption.
+The original three image-native families are the default strengths. Choose
+the material, spatial, or character mechanism that serves the interpretation;
+none permits a detached title caption. Graphic-field remains available for an
+explicitly flat brief or a user-selected flat concept, not an automatic fourth
+share of every board. Do not flatten the other three to make exploration easy.
 
 - **Material-world:** the title becomes a route, artifact, game, living
   specimen, or other physical system. Its material determines letter anatomy.
@@ -37,7 +40,7 @@ the interpretation; none permits a detached title caption.
   edge, overlap, or rhythm organize the square together. It needs no simulated
   physical world, perspective, patina, or central figure.
 
-`auto` selects the family from the brief. Do not force a character into a
+`auto` selects among the original three families from the brief unless flat graphic work is explicitly requested by the user or supplied visual brief. Do not force a character into a
 material-world brief, do not turn a spatial-field brief into a detached
 headline, and do not turn a character-led brief into a detached wordmark.
 Preserve a graphic-field brief's flatness rather than adding physical depth.

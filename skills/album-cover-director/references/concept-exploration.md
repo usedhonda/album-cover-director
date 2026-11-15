@@ -12,7 +12,12 @@
 Use this workflow for a new release or a request for more variety. A direction
 is an idea with its own meaning and visual mechanism; four renders of one
 direction are four variants, not four ideas. The board is a choice of concepts,
-not a claim that each thumbnail is ready for distribution.
+not a claim that each thumbnail is ready for distribution. Breadth must retain
+the original material-world, spatial-field and character-led strengths: the
+letters participate in the world instead of decorating a finished scene.
+`auto` starts from these three families. Flat `graphic-field` concepts require
+an explicit user or supplied visual-brief direction, or an explicit selection;
+requests for novelty, boldness or many ideas alone do not choose flat design.
 
 ## Evidence and competing readings
 
@@ -78,10 +83,12 @@ select for both musical specificity and difference. Use
 `references/impact-recipes.md` to change the mechanism, not only the surface.
 Do not fill the first board with safe literal scenes and reserve the strongest
 ideas for “more.” Include multiple immediately striking ideas from the start:
-optical reversal, unexpected scale, forceful flat geometry, a single impossible
-event, or severe negative space, as the evidence supports. Restraint can be
+optical reversal, anamorphic alignment, reflection-completed lettering, unexpected scale, a single specific impossible spatial event, or severe negative space, as the evidence supports. Restraint can be
 bold; adding detail, saturation, smoke, chrome, or cinematic lighting is not
-the default way to increase impact.
+the default way to increase impact. Unless the user excludes optical ideas,
+include at least one working optical concept in the first broad exploration,
+not just a recipe with that name. Do not trade title/world interaction for a
+simple poster merely to make all requested slots different.
 
 Record `planned_signature` for each direction: `title_placement`,
 `title_scale`, `figure_role`, `camera`, `layout`, and `medium`. Aim to change
@@ -108,7 +115,11 @@ Prompt each preview as one square cover, with the exact allowed title natively
 integrated. Request opaque output unless transparency is intentional. Never
 ask the image model for a sheet of 12 finished covers: shared palettes,
 cross-panel labels, and uncertain individual outputs make selection and
-source preservation harder. Assemble independently generated files into the
+source preservation harder. Specify visible letter anatomy, contact points,
+plane crossings, occlusion and depth for material/spatial/character concepts.
+A normal title printed on a dimensional sign is not letter-level integration.
+Preview quality may reduce fine finish, not erase the mechanism or postpone
+its optical relationship to production. Assemble independently generated files into the
 board afterward. Preview size/quality follow the available host; a 256 px
 displayed thumbnail does not imply a 256 px generation request.
 
@@ -146,6 +157,18 @@ and the next structural change in the ledger. Preserve requested identity,
 but vary its action, scale, crop, or presence when allowed. Bound internal
 replacement work to the available generation budget; if only fewer distinct
 concepts are ready, show that smaller set and explain the shortfall.
+
+Before passing the board, inspect both concept quality and coverage. Identify
+which candidate actually demonstrates the optical idea, its intended viewing
+condition, and the visible result (two readings, aligned fragments, reflection
+completion, a specific impossible join, or a near/far change). Inspect the
+result at that condition as well as normal thumbnails. Record the observation
+in `diversity_review.summary` and the relevant candidate's `observation`.
+Prompts, labels and merely broken geometry do not count. If the mechanism
+fails, revise it within budget; if none succeeds, report the missing optical
+idea and an incomplete exploration rather than claiming the full brief passed.
+For material/spatial/character concepts, record where lettering itself and the
+world interact, not only where the figure touches a sign carrying the title.
 
 Record `diversity_review` only after visual inspection: `status: passed`,
 `compared_axes`, `summary`, and one `reviewed_candidates` entry per image with
