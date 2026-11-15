@@ -7,7 +7,7 @@ description: Direct album, EP, and single cover artwork from an exact title, wit
 
 Skill version: 0.3.0
 
-Turn musical meaning into a broad first board of striking, structurally different cover ideas. Let the user choose by a small labeled thumbnail, then carry the chosen mechanism into full production. Do not reserve the strongest ideas for a later “more.” The specialty remains image-native title systems: material worlds, spatial phenomena, and character-led action where lettering and the world visibly transform one another. Broad exploration expands ideas within this strength; it does not replace it with flat poster layouts. Deliberately flat graphic fields are an explicitly requested or selected alternative, not the default. Preserve exact title typography as a final quality gate.
+Turn musical meaning into a broad first board of striking, structurally different cover ideas. Let the user choose by a small labeled thumbnail, then carry the chosen mechanism into full production. Do not reserve the strongest ideas for a later “more.” Explore material, spatial, character-led, graphic and optical ideas freely according to the music. Every concept must show how the title and image form one mechanism, rather than a finished illustration with a headline. Preserve exact title typography as a final quality gate.
 
 ## Input contract
 
@@ -62,7 +62,7 @@ inside that ignored artist-local directory. Do not commit or upload it.
   board. Legacy three-direction runs retain their 3/6/12 candidate budgets.
 - Typography: `auto`, `image-native`, or `custom-wordmark`.
 - Title-system family: `auto`, `material-world`, `spatial-field`,
-  `character-led`, or `graphic-field`. Default is `auto`, which starts from the original three families. Use `graphic-field` only when the user or supplied artist/visual brief explicitly calls for flat graphic work, or the user selects such a concept; generic requests for variety or impact do not imply flatness.
+  `character-led`, or `graphic-field`. Default is `auto`: choose freely across all supported families according to the concept. Do not restrict exploration to a preferred subset or assign fixed family quotas.
 
 Use explicit stages: `concept-preview` selects the idea; `production-candidate`
 must pass the full quality gates. Both are prompted with the exact native title.
@@ -118,16 +118,30 @@ music facts. State what makes this release different and what would feel generic
 ### 2. Diverge before polishing
 
 Read `references/impact-recipes.md`, `references/design-patterns.md`, and
-`references/title-image-architectures.md`. Privately sketch roughly twice the
-requested count, then retain the strongest, most distinct ideas. Default to a
-12-direction first board. Develop lettering intertwined with materials, space,
-and character action through different viewpoints, depth relations and world
-engines. Include optical reversal, anamorphic alignment, a reflection
+`references/title-image-architectures.md`. Plan the requested concepts in one
+compact table before spending image-generation calls. Default to a
+12-direction first board. Vary actions, viewpoints, depth, graphic relationships
+and visual mechanisms without narrowing the available styles. Include optical reversal, anamorphic alignment, a reflection
 that completes the title, or a specific impossible spatial join from the first
 pass, not only after a request for more. Unless the user rules optical work out,
 a broad exploratory board must contain at least one visibly working optical
 concept supported by a reading of the music. A recipe name is not delivery of
 that concept. More detail is not automatically more impact.
+
+For all planned directions, record the musical reading, visual mechanism,
+composition, title/image relationship and one sentence distinguishing it from
+its closest other idea. Reuse the existing interpretation/signature fields in
+`directions.md`; do not add a parallel schema. Compare across the whole set,
+not only adjacent slots. If the mechanism and organizing relationship are the
+same, merge/rewrite before generation; different color, material, costume or
+rendering style alone does not make a different idea. Twelve means twelve
+choices of cover concept, not twelve treatments of one composition.
+
+Each must work as an album jacket: one memorable identity in a small square,
+musical meaning rather than promotional copy, and title/image integration.
+An optical trick is a means to that identity, not a puzzle demonstration or
+an advertisement. Do not add slogans, poster framing or informational clutter
+to make a concept appear more distinct.
 
 Give each direction an ID, short name, `interpretation_id`, `visual_mechanism`,
 `planned_signature`, and `preserve_in_production` list. Record title placement
@@ -152,7 +166,7 @@ value hierarchy, and relation to the dominant shape. Select a family:
   makes the title part of the image's structure; no simulated physical world
   or person is needed.
 
-For the original three families, specify what forms the letters themselves,
+For a concept involving physical or spatial interaction, specify what forms the letters themselves,
 where figure/material/light crosses or transforms a stroke or counter, and the
 foreground/midground/background or overlapping planes that make that relation
 visible. Thickness, contact shadows and occlusion must explain the action, not
@@ -180,7 +194,12 @@ golden casts. If warmth is intentional, name its cause, bounded regions, and
 neutral anchor. Do not invent an illumination requirement for a flat graphic
 palette. Use `references/gpt-image-2.md` for host-aware execution.
 
-Generate each concept independently, preserving its source file. Do not ask
+Generate each concept independently, preserving its source file. Start with
+a small tranche of the planned count (up to three of the most structurally
+different ideas) and inspect them together. If they converge, change the
+remaining concepts' organizing mechanisms before spending calls on the rest;
+do not generate twelve convergent images and only then notice. These are part
+of the requested count, not extra test images, and require no user checkpoint. Do not ask
 for one image containing the whole grid. Record stage, prompt, runtime,
 references, source dimensions, and result in `run-ledger.jsonl` using
 `assets/run-ledger.yaml`. Add each output and any visible lettering issue to
@@ -199,7 +218,7 @@ failure and next structural change, not just a new label. For legacy direct-prod
 
 Unless the user excluded optical ideas, identify a candidate with a visibly
 working optical relationship before passing the board and record what the viewer actually sees at its declared viewing
-condition. Also inspect the original families for letter-level interaction,
+condition. Also inspect physical or spatial concepts for letter-level interaction,
 not merely a figure beside a thick sign. If the optical idea collapsed, revise
 it within the authorized budget; if none succeeds, explicitly report that
 requested exploration is incomplete. Do not mark coverage complete because the
@@ -228,7 +247,7 @@ primary `preview_candidate_id` on each resulting production candidate.
 Switch to `stage: production-candidate`, apply the source-resolution capability
 for the actual runtime, preflight the production contract, and generate the
 selected idea(s) at production quality. Keep the exact reason for selection:
-intertwined depth, stroke interactions, contact/occlusion and spatial transformation stay intact; explicitly selected flat work stays flat, negative space stays spacious, and an illusion keeps its
+intertwined depth, stroke interactions, contact/occlusion and spatial transformation stay intact; flat work stays flat, negative space stays spacious, and an illusion keeps its
 viewing relationship. Do not polish the work into a conventional centered
 hero, add objects, or make the title a separate headline.
 

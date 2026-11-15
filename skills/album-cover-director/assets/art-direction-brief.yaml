@@ -65,7 +65,7 @@ runtime:
   preview_count: 12
   production_variants_per_selection: 2
   typography_mode: auto
-  title_system_family: auto # Original three families; graphic-field only for an explicit flat brief/selection.
+  title_system_family: auto # Choose across all supported families according to the concept.
   title_complexity_profile: ""
 # Duplicate this direction block for genuinely different concepts, normally 12.
 directions:

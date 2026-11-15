@@ -16,10 +16,9 @@ to apply in order. Start with a reading of the supplied music, then choose a
 mechanism that makes it visible. Use one decisive operation per concept.
 Do not combine all recipes in one image or turn each into the same centered
 three-dimensional word with a figure beside it. This rejects repetitive staging,
-not dimensional lettering itself. Keep the original three families' letter/world
-interaction as the default; vary the spatial action, viewpoint and mechanism.
-Flat-only recipes require an explicitly flat user or supplied visual brief,
-or a user-selected flat concept. They are not the default route to boldness.
+not dimensional lettering itself. Flat, dimensional and optical mechanisms are
+all available; choose the one that expresses the reading and vary the actual
+relationship between title and image, rather than defaulting to one style.
 Unless excluded by the user, the first broad board must contain a visibly
 working optical idea. An O-series label with an ordinary result is insufficient.
 

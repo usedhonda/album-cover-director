@@ -12,12 +12,10 @@
 Use this workflow for a new release or a request for more variety. A direction
 is an idea with its own meaning and visual mechanism; four renders of one
 direction are four variants, not four ideas. The board is a choice of concepts,
-not a claim that each thumbnail is ready for distribution. Breadth must retain
-the original material-world, spatial-field and character-led strengths: the
-letters participate in the world instead of decorating a finished scene.
-`auto` starts from these three families. Flat `graphic-field` concepts require
-an explicit user or supplied visual-brief direction, or an explicit selection;
-requests for novelty, boldness or many ideas alone do not choose flat design.
+not a claim that each thumbnail is ready for distribution. Keep exploration broad: material, spatial, character-led, graphic and optical
+ideas are available without a separate style-permission step. Choose the
+mechanism from the music, not a preferred family. The title must participate in
+that mechanism instead of decorating a finished scene.
 
 ## Evidence and competing readings
 
@@ -78,8 +76,12 @@ across rounds. The legacy direct-production route can still use three
 directions with 3/6/12 total candidates; use it only when requested or when an
 existing choice makes exploration unnecessary.
 
-Before rendering, privately draft roughly twice as many ideas as needed and
-select for both musical specificity and difference. Use
+Before rendering, write one compact plan for the requested count in
+`directions.md`: musical reading, visual mechanism, composition, title/image
+relationship and the closest other concept with a one-line explanation of the
+difference. Use the existing interpretation and signature records rather than
+another classification or schema. Select for musical specificity and actual
+choice between designs, not sheer volume of drafts. Use
 `references/impact-recipes.md` to change the mechanism, not only the surface.
 Do not fill the first board with safe literal scenes and reserve the strongest
 ideas for “more.” Include multiple immediately striking ideas from the start:
@@ -92,8 +94,10 @@ simple poster merely to make all requested slots different.
 
 Record `planned_signature` for each direction: `title_placement`,
 `title_scale`, `figure_role`, `camera`, `layout`, and `medium`. Aim to change
-at least two consequential axes between neighboring concepts, including the
-mechanism or dominant geometry. Similar broad patterns are allowed when the
+at least two consequential axes across the whole set, including the mechanism
+or dominant geometry. Compare each idea to its closest match, not only its
+neighbors. A new color, material, garment or style does not rescue an identical
+organizing relationship. Merge or rewrite duplicate ideas before generation. Similar broad patterns are allowed when the
 actual structures differ. Do not allocate an equal number to every family or
 force a character into every image.
 
@@ -110,6 +114,11 @@ Create a schema-v2 `run-contract.json` with `stage: concept-preview` from
 `assets/run-contract.json`. Complete its evidence, directions, and runtime,
 then run `prompt-preflight.py`. The required fields are agent working notes,
 not a questionnaire for the user.
+
+An album jacket is the end use: a memorable musical identity in a small
+square, not a promotional poster, an illustrated synopsis, or an optical-test
+sheet. Keep one dominant signal and a title/image relationship particular to
+the release. Do not make difference by adding copy, frames or clutter.
 
 Prompt each preview as one square cover, with the exact allowed title natively
 integrated. Request opaque output unless transparency is intentional. Never
@@ -128,6 +137,14 @@ quality, then spend final-resolution work on selected ideas. When controls
 are not exposed, use the available image tool and record what is known.
 Do not promise exact API model selection, cost, latency, or batch concurrency
 from a prompt-only host. Consult `references/gpt-image-2.md`.
+
+Generate up to three of the most structurally different planned concepts
+first, within the requested count. Inspect actual composition and title/image
+relationships together before generating the remaining candidates. If distinct
+plans converge in rendering, change the remaining mechanisms/prompts rather
+than paying for the same composition twelve times. This is an internal batch
+check, not extra test generations or a new user-approval step. Retain count and
+budget limits, and report a shortfall rather than silently spending more.
 
 Each candidate records a stable ID, direction ID, and local `output_path`.
 Mark visible title issues in `preview_notes`. A promising composition may be

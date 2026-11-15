@@ -4,7 +4,7 @@
 
 - Model and host controls
 - Prompting contract
-- Preserve the core title-world construction
+- Make the chosen title mechanism visible
 - Editing and selection continuity
 - Safety and title checks
 - Optional formats and sources
@@ -61,10 +61,10 @@ title necessary. Inspect crop, detail and lettering after each authorized edit.
 The repository's `research/gpt-image-2-5-migration.md` retains the historical
 2.5 investigation; it does not override the current host guidance above.
 
-## Preserve the core title-world construction
+## Make the chosen title mechanism visible
 
-In auto exploration, start with material-world, spatial-field, or character-led
-construction. Name the letter strokes/counters being made or transformed,
+Choose the construction from the concept, not a fixed family preference.
+For physical or spatial interaction, name the letter strokes/counters being made or transformed,
 contact points, overlapping planes, occlusion, and the physical/spatial action.
 For example, a figure threads a material through a letter counter, bends its
 stroke, or interrupts light whose missing stroke reappears in reflection.
@@ -77,8 +77,9 @@ For an optical concept, describe the exact viewing relation and expected second
 reading, alignment, shadow/reflection or impossible join. Then inspect whether
 it actually happened; a beautiful ordinary image does not satisfy that request.
 Small preview size must not erase these mechanisms. Keep selected depth,
-contact and optical relations as production/edit invariants. Use flat-only
-prompt instructions only for explicitly requested or selected graphic work.
+contact and optical relations as production/edit invariants. For a graphic concept, describe the flat title/shape relationship directly;
+do not impose spatial instructions on it. Neither approach needs a separate
+mode or permission step.
 
 ## Prompt order
 

@@ -16,7 +16,7 @@ Selection is comparative. Never score one candidate in isolation while ignoring 
 
 ## Preview versus production
 
-A `concept-preview` board is for choosing meaning and mechanism. Inspect its
+A `concept-preview` board is for choosing an album-jacket identity, meaning and mechanism, not poster styles or optical demonstrations. Each thumbnail needs one memorable square-scale signal tied to the music. Inspect its
 actual images for visual diversity before presentation, record the image
 checksums and observations, and label unresolved lettering issues. Use
 `concept-exploration.md` for that gate. Structural distinction is a gate on

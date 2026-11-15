@@ -20,12 +20,13 @@ event. These are ideas to test, not claims of guaranteed model performance.
 
 Choose “C07,” select multiple IDs, or describe a scoped combination such as
 “C02's structure with C09's atmosphere.” The selected preview, checksum,
-evidence, and composition invariants carry into production. The original material, spatial, and character-led families remain the default:
-lettering itself participates in the world through anatomy, action, contact,
-occlusion and depth. A broad first board includes a visibly working optical
+evidence, and composition invariants carry into production. Explore material, spatial, character-led, graphic and optical ideas within
+the same workflow. Choose from the music, not a fixed style preference.
+The title must visibly participate in each concept; physical/spatial ideas
+need real letter-level action, contact, occlusion and depth. A broad first board includes a visibly working optical
 idea unless excluded by the user; naming an illusion in a prompt is not enough.
-**graphic-field** remains an option for explicitly requested or selected flat
-work, rather than replacing those strengths with poster layouts.
+Flat and dimensional work remain equally available; neither replaces the
+other, and neither permits an unrelated headline on a finished illustration.
 
 The generated images are inspected together before presentation. The board
 utility requires a recorded, checksum-bound visual review; it cannot judge
