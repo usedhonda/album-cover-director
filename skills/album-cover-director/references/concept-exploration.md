@@ -76,30 +76,27 @@ across rounds. The legacy direct-production route can still use three
 directions with 3/6/12 total candidates; use it only when requested or when an
 existing choice makes exploration unnecessary.
 
-Before rendering, write one compact plan for the requested count in
-`directions.md`: musical reading, visual mechanism, composition, title/image
-relationship and the closest other concept with a one-line explanation of the
-difference. Use the existing interpretation and signature records rather than
-another classification or schema. Select for musical specificity and actual
-choice between designs, not sheer volume of drafts. Use
-`references/impact-recipes.md` to change the mechanism, not only the surface.
+Before rendering, give each planned idea one line in `directions.md`:
+**what the music contributes → who/what leads and what happens → how square
+composition and title relate**. Hide color, material and drawing style when
+comparing the whole set. If the subject relationship and visible event stay
+the same, rewrite that idea rather than generating another treatment. Reuse
+the existing interpretation/signature notes; no parallel classification or
+multi-axis score table. Use `impact-recipes.md` to change the event, not only
+the surface.
 Do not fill the first board with safe literal scenes and reserve the strongest
 ideas for “more.” Include multiple immediately striking ideas from the start:
 optical reversal, anamorphic alignment, reflection-completed lettering, unexpected scale, a single specific impossible spatial event, or severe negative space, as the evidence supports. Restraint can be
 bold; adding detail, saturation, smoke, chrome, or cinematic lighting is not
 the default way to increase impact. Unless the user excludes optical ideas,
-include at least one working optical concept in the first broad exploration,
-not just a recipe with that name. Do not trade title/world interaction for a
+plan at least one optical concept with a concrete change of reading or alignment
+in the first broad exploration. Call it an illusion only when the actual image
+shows that relationship, not just a recipe with that name. Do not trade title/world interaction for a
 simple poster merely to make all requested slots different.
 
-Record `planned_signature` for each direction: `title_placement`,
-`title_scale`, `figure_role`, `camera`, `layout`, and `medium`. Aim to change
-at least two consequential axes across the whole set, including the mechanism
-or dominant geometry. Compare each idea to its closest match, not only its
-neighbors. A new color, material, garment or style does not rescue an identical
-organizing relationship. Merge or rewrite duplicate ideas before generation. Similar broad patterns are allowed when the
-actual structures differ. Do not allocate an equal number to every family or
-force a character into every image.
+Use the existing `planned_signature` fields to retain the chosen composition,
+not as a numerical difference score. Broad patterns may repeat when the actual
+image events differ. No family quotas or compulsory character in every image.
 
 For “もっと,” first identify the weak axis: too conventional a mechanism,
 weak thumbnail impact, weak connection to the song, or repeated composition.
@@ -138,13 +135,10 @@ are not exposed, use the available image tool and record what is known.
 Do not promise exact API model selection, cost, latency, or batch concurrency
 from a prompt-only host. Consult `references/gpt-image-2.md`.
 
-Generate up to three of the most structurally different planned concepts
-first, within the requested count. Inspect actual composition and title/image
-relationships together before generating the remaining candidates. If distinct
-plans converge in rendering, change the remaining mechanisms/prompts rather
-than paying for the same composition twelve times. This is an internal batch
-check, not extra test generations or a new user-approval step. Retain count and
-budget limits, and report a shortfall rather than silently spending more.
+During generation, notice whether compositions start converging and adjust
+remaining ideas before spending more calls. Keep this a light observation in
+the same run, not a fixed pilot batch or a per-image scoring/review loop. Stay
+within count and budget; do not buy extra test images or silently spend more.
 
 Each candidate records a stable ID, direction ID, and local `output_path`.
 Mark visible title issues in `preview_notes`. A promising composition may be
@@ -155,7 +149,9 @@ not a useful cover preview. Do not repair either with an external title layer.
 ## Visual diversity before presentation
 
 Inspect actual generated images together at thumbnail scale before presenting
-the board. A JSON validator, prompt difference, family name, or perceptual
+the board, first looking only at the squares without labels or explanations.
+Replace only the weaker member of a similar pair, keeping the distinct ideas.
+A JSON validator, prompt difference, family name, or perceptual
 hash cannot certify semantic diversity. Use a draft board for inspection:
 
 ```bash

@@ -128,20 +128,19 @@ a broad exploratory board must contain at least one visibly working optical
 concept supported by a reading of the music. A recipe name is not delivery of
 that concept. More detail is not automatically more impact.
 
-For all planned directions, record the musical reading, visual mechanism,
-composition, title/image relationship and one sentence distinguishing it from
-its closest other idea. Reuse the existing interpretation/signature fields in
-`directions.md`; do not add a parallel schema. Compare across the whole set,
-not only adjacent slots. If the mechanism and organizing relationship are the
-same, merge/rewrite before generation; different color, material, costume or
-rendering style alone does not make a different idea. Twelve means twelve
-choices of cover concept, not twelve treatments of one composition.
+In `directions.md`, give each idea one line: **what it takes from the music
+→ who/what leads and what happens → how square composition and title relate**.
+Compare the set with color, material and rendering style hidden. If the same
+subject relationship or image event remains, rewrite that idea before spending
+a generation call. Twelve means twelve cover concepts, not twelve treatments.
+Reuse existing contract notes; no new taxonomy, score table or review loop.
 
-Each must work as an album jacket: one memorable identity in a small square,
-musical meaning rather than promotional copy, and title/image integration.
-An optical trick is a means to that identity, not a puzzle demonstration or
-an advertisement. Do not add slogans, poster framing or informational clutter
-to make a concept appear more distinct.
+Make the musical reading one visible event whose subject and mechanism read
+at small square size as an album jacket, not a poster or puzzle demonstration.
+Where lettering participates, make it act on or be acted on by objects, people,
+light or depth; do not stop at a pasted sign. Flat work remains equally valid.
+For the optical idea, specify the intended change of reading before generation;
+call it an illusion only when that relationship is visible in the actual image.
 
 Give each direction an ID, short name, `interpretation_id`, `visual_mechanism`,
 `planned_signature`, and `preserve_in_production` list. Record title placement
@@ -194,12 +193,10 @@ golden casts. If warmth is intentional, name its cause, bounded regions, and
 neutral anchor. Do not invent an illumination requirement for a flat graphic
 palette. Use `references/gpt-image-2.md` for host-aware execution.
 
-Generate each concept independently, preserving its source file. Start with
-a small tranche of the planned count (up to three of the most structurally
-different ideas) and inspect them together. If they converge, change the
-remaining concepts' organizing mechanisms before spending calls on the rest;
-do not generate twelve convergent images and only then notice. These are part
-of the requested count, not extra test images, and require no user checkpoint. Do not ask
+Generate each concept independently, preserving its source file. Notice early
+if actual compositions start to converge and adjust the remaining ideas before
+spending calls on them. This is a light check during the same run, not a fixed
+pilot batch, extra test images or a per-image scoring loop. Do not ask
 for one image containing the whole grid. Record stage, prompt, runtime,
 references, source dimensions, and result in `run-ledger.jsonl` using
 `assets/run-ledger.yaml`. Add each output and any visible lettering issue to
@@ -209,8 +206,9 @@ show the intended title mechanism and a readable concept. Small display size or 
 ### 5. Inspect and present the board
 
 Use `scripts/concept-board.py --contract run-contract.json --output
-draft-board.html --draft` for internal visual inspection. Compare the actual
-images as a set: silhouette, title zone/scale, figure role, camera, geometry,
+draft-board.html --draft` for internal visual inspection. First compare the
+actual squares without reading their labels or explanations. Replace only the
+weaker member of a similar pair, preserving genuinely distinct ideas. Inspect: silhouette, title zone/scale, figure role, camera, geometry,
 medium, and the relationship that makes the title part of the image. Apply the set-level visual presentation gate in `references/evaluation-delivery.md`. Replace
 visually convergent ideas before presentation. Different prompts, names,
 materials, or perceptual hashes do not prove diversity. Record rejected candidate IDs, the observed

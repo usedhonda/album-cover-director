@@ -47,8 +47,9 @@ a leader and runner-up when alternatives exist, and write why the rest lost.
 
 ## Set-level presentation gate
 
-Compare actual images at 56, 128, and 256 px before presenting different
-directions. Record title zone/scale, figure scale/action or absence, camera,
+Compare actual image squares at 56, 128, and 256 px without relying on
+labels or explanations before presenting different directions. Replace the
+weaker member of a similar pair rather than regenerating the whole set. Record title zone/scale, figure scale/action or absence, camera,
 and dominant geometry, plus rejected candidate IDs, observed failure and next
 structural change. Different labels, materials and palettes are not proof.
 Preserve legitimate type-led covers where action and lettering depend on one
