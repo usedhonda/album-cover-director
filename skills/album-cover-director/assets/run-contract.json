@@ -18,7 +18,7 @@
   },
   "runtime": {
     "model_family": "gpt-image",
-    "model_id": "",
+    "model_id": "unknown-not-exposed",
     "host_surface": "",
     "skill_version": "0.3.0",
     "capability_profile": {

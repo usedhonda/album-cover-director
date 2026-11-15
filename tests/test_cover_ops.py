@@ -96,7 +96,7 @@ class CoverOpsTest(unittest.TestCase):
             preview = self.run_cli("preflight-source", str(source), "--contract", str(contract))
             self.assertEqual(preview.returncode, 0, preview.stdout + preview.stderr)
             payload = json.loads(preview.stdout)
-            self.assertEqual(payload["text_verification"]["status"], "human_required")
+            self.assertEqual(payload["text_verification"]["status"], "visual_review_required")
             self.assertEqual(payload["text_verification"]["expected_title"], "Moon Signal")
 
             data["stage"] = "production-candidate"
@@ -158,7 +158,7 @@ class CoverOpsTest(unittest.TestCase):
 
     def test_source_preflight_rejects_changed_selected_preview(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
-            root = Path(raw)
+            root = Path(raw).resolve()
             preview = root / "preview.png"
             Image.new("RGB", (512, 512), "black").save(preview)
             data = self.stage_contract(preview)

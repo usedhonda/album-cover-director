@@ -105,8 +105,8 @@ def preflight_image(path: Path, minimum_size: int, expected_title: str, exact_si
     if (record["width"] != minimum_size if exact_size else record["width"] < minimum_size): failures.append("wrong-delivery-size" if exact_size else "below-minimum-size")
     if record["mode"] not in {"RGB", "RGBA"}: failures.append("unsupported-color-mode")
     print(json.dumps({"image": record, "objective_failures": failures,
-                      "text_verification": {"status": "human_required", "expected_title": expected_title,
-                                            "reason": "OCR is not configured for this skill"}}, ensure_ascii=False, indent=2))
+                      "text_verification": {"status": "visual_review_required", "expected_title": expected_title,
+                                            "reason": "Agent or human must inspect exact text; objective image checks do not verify lettering"}}, ensure_ascii=False, indent=2))
     return 2 if failures else 0
 
 

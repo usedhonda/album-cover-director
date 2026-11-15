@@ -4,6 +4,9 @@
 
 - Preview versus production
 - Evaluation sequence
+- Set-level presentation gate
+- Projected-title test
+- Projected-title test
 - Delivery requirements
 - Rights and provenance
 
@@ -39,6 +42,35 @@ Compare every candidate under six conditions:
 Use `cover-ops.py contact-sheet` to create reproducible production inspection
 sheets. Use `concept-board.py` for the earlier compact selection grid. Select
 a leader and runner-up when alternatives exist, and write why the rest lost.
+
+## Set-level presentation gate
+
+Compare actual images at 56, 128, and 256 px before presenting different
+directions. Record title zone/scale, figure scale/action or absence, camera,
+and dominant geometry, plus rejected candidate IDs, observed failure and next
+structural change. Different labels, materials and palettes are not proof.
+Preserve legitimate type-led covers where action and lettering depend on one
+another. A figure beside a complete title backdrop is not causal integration.
+
+For schema version 2, the checksum-bound `diversity_review` in the run contract
+is the authoritative presentation record; follow `concept-exploration.md`.
+Compare all requested directions, not a fixed three. Refinements of the same
+selected concept need not invent new compositions. Copy rejection history into
+`cover-report.md` so a new pass does not repeat the same weak mechanism.
+
+For legacy direct-production sets, use `set_presentation_gate` in the scorecard:
+a score of at least 4, observations for every representative, and no unresolved
+cross-direction convergence are required. Route `composition-convergence` to a
+direction pivot; if the existing change budget is exhausted, report an incomplete
+set rather than promoting a rejected runner-up. For concept previews, exploration
+redos remain separate from production edits, but neither route authorizes extra
+generation beyond the user's count/budget. After adoption, never replace or
+repair the selected source without an explicit edit request.
+
+Acceptance examples: differently named directions all rendered as a large upper
+title behind a waist-up figure fail. A top-down title-world, a wide light-field
+event, and a close character/title action may pass when their actual structures
+differ. Large type itself is not a reason to fail a genuinely integrated cover.
 
 ## Scoring
 
@@ -99,6 +131,17 @@ For an optical mechanism, inspect its declared viewing condition and actual
 relationship under the checks in `impact-recipes.md`. An attractive broken
 reflection or an arbitrary malformed stair is not a successful illusion.
 
+## Projected-title test
+
+Native generation is necessary, not sufficient, for title-image integration.
+Mentally remove lettering projected behind a figure, mounted on a sign, or
+placed as an adjacent headline. If a complete conventional portrait remains
+and the lettering only supplies a backdrop, reject it as detached decoration.
+Inspect actual contact, occlusion, depth order and action: does the figure or
+spatial event create, carry, obscure, reveal or transform the title? Preserve
+legitimate type-led covers where that dependency is visible. Do not reject
+large lettering or projection merely because it uses those techniques.
+
 ## One-variable refinement
 
 Before an edit, write:
@@ -132,7 +175,7 @@ Default delivery outputs:
 - 256 x 256 PNG thumbnail;
 - selected original master preserved unchanged;
 - selected-source checksum, export checksums, and image metadata in `cover-report.md` and `handoff-manifest.json`;
-- source-to-export lineage and structured human text verification in `handoff-manifest.json`.
+- source-to-export lineage and structured agent or human visual text verification in `handoff-manifest.json`.
 
 Title integrity is judged only in the native generated image. If the string is missing, duplicated, fused, substituted, or unreadable, reject the candidate and regenerate from a more explicit title-image prompt; do not repair it with a font layer or compositing.
 
@@ -143,7 +186,7 @@ Also inspect:
 - RGB color mode and the destination's accepted profile;
 - unintended alpha or transparent pixels;
 - edge halos after compositing;
-- a human review that records the exact-title result and any unapproved readable marks;
+- an agent or human visual review that records the exact-title result and any unapproved readable marks;
 - safe placement under platform crops and UI overlays;
 - a one-color and low-contrast preview;
 - version identifier, selected-source checksum, export checksums, and parent/edit lineage.
@@ -152,4 +195,4 @@ For print editions, treat CMYK conversion, total ink, proofing, bleed, trim, spi
 
 ## Completion language
 
-Say `delivery complete` only when the image files exist, delivery preflight passes, and `handoff-manifest.json` contains source-to-export lineage plus structured human text verification. If generation, typography, human rights review, text verification, or export is unavailable, name the missing gate and deliver the completed brief/prompt/specification without overstating status.
+Say `delivery complete` only when the image files exist, delivery preflight passes, and `handoff-manifest.json` contains source-to-export lineage plus structured agent or human visual text verification. If generation, typography, human rights review, text verification, or export is unavailable, name the missing gate and deliver the completed brief/prompt/specification without overstating status.

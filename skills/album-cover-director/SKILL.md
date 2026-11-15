@@ -69,7 +69,7 @@ must pass the full quality gates. Both are prompted with the exact native title.
 Clearly disclose any preview lettering issue; previews are not vetted delivery
 assets. A textless master remains an internal intermediate, never a cover choice.
 
-Use the available image-generation tool. Read `references/runtime-adapters.md`
+Use the built-in image-generation tool already exposed by the host; do not switch to an API without an explicit request. Read `references/runtime-adapters.md`
 and `references/gpt-image-2.md` for current GPT Image execution; do not claim an
 unexposed model or API control was used. If no image tool exists, finish the
 interpretations, directions, prompts, and delivery specification, and state that
@@ -179,10 +179,10 @@ show the intended title mechanism and a readable concept.
 Use `scripts/concept-board.py --contract run-contract.json --output
 draft-board.html --draft` for internal visual inspection. Compare the actual
 images as a set: silhouette, title zone/scale, figure role, camera, geometry,
-medium, and the relationship that makes the title part of the image. Replace
+medium, and the relationship that makes the title part of the image. Apply the set-level visual presentation gate in `references/evaluation-delivery.md`. Replace
 visually convergent ideas before presentation. Different prompts, names,
-materials, or perceptual hashes do not prove diversity. Record the observed
-failure and next structural change, not just a new label.
+materials, or perceptual hashes do not prove diversity. Record rejected candidate IDs, the observed
+failure and next structural change, not just a new label. For legacy direct-production sets, use `composition-convergence`; concept-preview redos remain separate from production edits. Stay within the authorized generation budget; report an incomplete set if it cannot pass. Never replace an adopted source without an explicit edit request.
 
 Complete the checksum-bound `diversity_review` after inspection, then render
 `concept-board.html` without `--draft`. Present the compact thumbnail grid,
@@ -320,3 +320,9 @@ album-cover/<release-slug>/
 - Controlled production learning and rule-promotion gates: `references/production-learning.md`
 - Runtime identity and portable contract boundary: `references/runtime-adapters.md`
 - Turn a local lesson into a reviewable community draft: `references/community-contributions.md`
+
+## Selected asset and verification authority
+
+Inspect supplied identity references before generation. Register candidate ID, source checksum and presentation order before showing candidates. A user's selection freezes that exact source; interpret “last” using actual presentation order. Do not generate a repair, replacement or alternate after adoption unless the user explicitly requests that edit. Technical export does not authorize creative changes.
+
+Use `handoff-manifest.py --text-status passed --text-reviewer agent --text-evidence "<observed text and inspection evidence>"` for an actual agent visual review, with the existing exact-title and extra-text flags. Record failures honestly. Aesthetic exceptions explicitly accepted by the user remain exceptions, never a passed check; distributor format/rights requirements still apply. A lower native source resolution is an honest quality limitation, separate from final delivery dimensions. Set the capability profile from the actual generator before production, never invent a 2048px native requirement or regenerate an adopted source solely to reach it. Report any upscaling and inspect the delivered image.

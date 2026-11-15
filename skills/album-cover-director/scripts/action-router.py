@@ -12,6 +12,10 @@ PIVOT = {"release-format-confusion", "literal-title-illustration", "generic-genr
 
 
 def route(code: str, cycles: int, batch_failures: int, edit_regressed: bool, reference_stalled: bool, stage: str = "production-candidate") -> dict[str, str]:
+    if code == "composition-convergence" and stage == "production-candidate":
+        if cycles >= 2:
+            return {"action": "report-incomplete-set", "reason": "The visual presentation gate failed and the available change budget is exhausted; do not promote a rejected candidate."}
+        return {"action": "pivot-direction", "reason": "Observed candidate compositions converge; change the organizing geometry, not only palette or material."}
     if edit_regressed: return {"action": "return-to-parent", "reason": "The selected edit regressed from its parent."}
     if stage == "concept-preview":
         if code in TITLE_ARCHITECTURE: return {"action": "rebuild-title-architecture", "reason": "Rebuild the preview's title mechanism before production."}

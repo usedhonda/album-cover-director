@@ -116,11 +116,21 @@ def validate_skill() -> None:
     require("assets/project-feedback.yaml" in skill, "project feedback contract missing")
     require("assets/run-contract.json" in skill, "run contract routing missing")
     require("references/runtime-adapters.md" in skill, "runtime adapter routing missing")
+    evaluation = (ROOT / "skills/album-cover-director/references/evaluation-delivery.md").read_text()
+    scorecard = (ROOT / "skills/album-cover-director/assets/scorecard.yaml").read_text()
+    require("set-level visual presentation gate" in skill and "composition-convergence" in skill,
+            "generated-set presentation gate routing missing")
+    require("## Set-level presentation gate" in evaluation and "## Projected-title test" in evaluation,
+            "visual diversity and projected-title evaluation contract missing")
+    require(re.search(r"  structural_distinction:\n    weight: [^\n]+\n    gate: true\n    scope: cross-direction-set", scorecard) is not None,
+            "structural distinction must be a set-level gate")
+    require("set_presentation_gate:" in scorecard and "rejected_candidates:" in scorecard,
+            "visual presentation decision and rejection evidence fields missing")
     require("references/community-contributions.md" in skill, "community contribution routing missing")
     require("Default to excluding unmotivated yellow" in skill,
             "default warm-cast quality gate missing")
     gpt_image = (ROOT / "skills/album-cover-director/references/gpt-image-2.md").read_text()
-    require("default quality risk" in gpt_image and "Default to neutral" in gpt_image,
+    require("existing quality guard" in gpt_image and "Default to neutral" in gpt_image,
             "GPT Image temperature risk must be a default guard")
     require("## Adult sensual editorial requests" in skill,
             "adult sensual editorial route missing from skill")

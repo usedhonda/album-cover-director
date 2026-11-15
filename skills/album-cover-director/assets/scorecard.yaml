@@ -64,3 +64,12 @@ art_direction_evaluation:
   confidence: low
   user_validated: false
   observations: []
+set_presentation_gate: # Legacy direct-production sets; v2 previews use contract.diversity_review
+  status: unreviewed # unreviewed, pass, fail; visual judgment, not schema proof
+  structural_distinction_score: null # 0-5; pass requires at least 4
+  compared_candidate_ids: []
+  thumbnail_sizes: [56, 128, 256]
+  candidate_observations: [] # each: candidate_id, direction_id, title_zone, title_scale, figure_scale, figure_action, camera, dominant_geometry
+  convergent_groups: [] # groups of candidate IDs from different directions sharing composition grammar
+  rejected_candidates: [] # each: candidate_id, observed_failure, next_direction_change
+  decision_reason: ""

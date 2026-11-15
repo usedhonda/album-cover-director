@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import json
 import os
 import tempfile
@@ -39,11 +40,21 @@ def main() -> int:
     parser.add_argument("--selected-candidate", required=True)
     parser.add_argument("--delivery-dir", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
-    parser.add_argument("--human-text-status", choices=("passed", "failed", "unresolved"), required=True)
+    parser.add_argument("--human-text-status", choices=("passed", "failed", "unresolved"))
+    parser.add_argument("--text-status", choices=("passed", "failed", "unresolved"))
+    parser.add_argument("--text-reviewer", choices=("agent", "human"), default="human")
+    parser.add_argument("--text-evidence")
     parser.add_argument("--exact-title-confirmed", action="store_true")
     parser.add_argument("--extra-readable-text-absent", action="store_true")
     parser.add_argument("--observed-readable-text", action="append", default=[])
     args = parser.parse_args()
+    status = args.text_status or args.human_text_status
+    if not status:
+        parser.error("--text-status or --human-text-status is required")
+    if args.text_status and args.human_text_status and args.text_status != args.human_text_status:
+        parser.error("conflicting text statuses")
+    if args.text_reviewer == "agent" and (not args.text_evidence or not args.text_evidence.strip()):
+        parser.error("agent visual inspection requires --text-evidence")
     try:
         contract = json.loads(args.contract.read_text(encoding="utf-8"))
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
@@ -108,13 +119,17 @@ def main() -> int:
         and all(value in allowed for value in args.observed_readable_text)
     )
     human = {
-        "status": args.human_text_status,
+        "status": status,
+        "reviewer": args.text_reviewer,
+        "checked_at": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "evidence": args.text_evidence,
+        "source_sha256": source_record["sha256"],
         "exact_title_confirmed": args.exact_title_confirmed,
         "extra_readable_text_absent": args.extra_readable_text_absent,
         "observed_readable_text": args.observed_readable_text,
         "observed_text_matches_contract": observed_matches,
     }
-    complete = args.human_text_status == "passed" and args.exact_title_confirmed and args.extra_readable_text_absent and observed_matches
+    complete = status == "passed" and args.exact_title_confirmed and args.extra_readable_text_absent and observed_matches
     selected = {"id": candidate["id"], "direction": directions[candidate["direction_id"]], "source": source_record}
     if "preview_candidate_id" in candidate:
         selected["preview_candidate_id"] = candidate["preview_candidate_id"]
@@ -126,7 +141,8 @@ def main() -> int:
         "source_contract": {"path": str(args.contract.resolve()), "sha256": checksum(args.contract)},
         "selected_candidate": selected,
         "delivery_assets": assets,
-        "human_text_verification": human,
+        "text_verification": human,
+        "human_text_verification": human if args.text_reviewer == "human" else None,
         "delivery_complete": complete,
     }
     if "selection" in contract:

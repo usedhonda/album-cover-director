@@ -46,11 +46,19 @@ class ProductionContractTests(unittest.TestCase):
         budget = command("action-router.py", "--failure-code", "thumbnail-collapse", "--cycles-used", "2")
         self.assertEqual(json.loads(budget.stdout)["action"], "promote-runner-up")
 
+    def test_composition_convergence_requires_pivot_or_incomplete_set(self):
+        for cycles, expected in ((0, "pivot-direction"), (1, "pivot-direction"), (2, "report-incomplete-set"), (3, "report-incomplete-set")):
+            with self.subTest(cycles=cycles):
+                result = command("action-router.py", "--failure-code", "composition-convergence", "--cycles-used", str(cycles), "--batch-failure-count", "3", "--reference-stalled", "--edit-regressed")
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertEqual(json.loads(result.stdout)["action"], expected)
+
     def test_image_preflight_and_similarity_are_objective_only(self):
         with tempfile.TemporaryDirectory() as directory:
             image = Path(directory) / "cover.png"; Image.new("RGB", (3000, 3000), "black").save(image)
             checked = command("cover-ops.py", "preflight", str(image), "--expected-title", "Moon Signal")
-            self.assertEqual(checked.returncode, 0); self.assertIn("human_required", checked.stdout)
+            self.assertEqual(checked.returncode, 0)
+            self.assertEqual(json.loads(checked.stdout)["text_verification"]["status"], "visual_review_required")
             duplicate = Path(directory) / "duplicate.png"; duplicate.write_bytes(image.read_bytes())
             comparison = command("cover-ops.py", "compare", str(image), str(duplicate))
             self.assertEqual(comparison.returncode, 0); self.assertIn('"warning": true', comparison.stdout)
@@ -65,6 +73,16 @@ class ProductionContractTests(unittest.TestCase):
             self.assertEqual(command("cover-ops.py", "preflight-delivery", str(delivery / "cover-3000.png"), "--expected-title", "Moon Signal").returncode, 0)
             manifest = root / "handoff-manifest.json"; completed = command("handoff-manifest.py", "--contract", str(contract_path), "--selected-candidate", "A1", "--delivery-dir", str(delivery), "--output", str(manifest), "--human-text-status", "passed", "--exact-title-confirmed", "--extra-readable-text-absent")
             self.assertEqual(completed.returncode, 0, completed.stderr); self.assertTrue(json.loads(manifest.read_text())["delivery_complete"])
+
+            agent_args = ("handoff-manifest.py", "--contract", str(contract_path), "--selected-candidate", "A1", "--delivery-dir", str(delivery), "--output", str(manifest), "--text-status", "passed", "--text-reviewer", "agent", "--exact-title-confirmed", "--extra-readable-text-absent")
+            missing_evidence = command(*agent_args)
+            self.assertEqual(missing_evidence.returncode, 2)
+            reviewed = command(*agent_args, "--text-evidence", "Fictional pipeline fixture; not a live cover text verification.")
+            self.assertEqual(reviewed.returncode, 0, reviewed.stderr)
+            recorded = json.loads(manifest.read_text())
+            self.assertEqual(recorded["text_verification"]["reviewer"], "agent")
+            self.assertEqual(recorded["text_verification"]["source_sha256"], recorded["selected_candidate"]["source"]["sha256"])
+            self.assertIsNone(recorded["human_text_verification"])
 
     def test_skill_package_runs_after_copy(self):
         with tempfile.TemporaryDirectory() as directory:

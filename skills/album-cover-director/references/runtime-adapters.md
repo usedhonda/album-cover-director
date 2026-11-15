@@ -77,7 +77,8 @@ requirements take precedence; if the host cannot meet one, report that gap.
   minimums belong in the capability profile; do not pretend a host can meet them
   merely because the template requests them.
 - `cover-ops.py preflight` verifies objective image properties; readable text
-  remains a human check because this skill does not use OCR.
+  requires an agent or human visual check, with source checksum and evidence;
+  objective preflight does not verify text and this skill does not use OCR.
 - `handoff-manifest.py` records the selected production candidate and its
   delivery evidence. A preview or prompt-only result is not final delivery.
 

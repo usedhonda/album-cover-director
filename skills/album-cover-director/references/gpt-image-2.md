@@ -49,6 +49,17 @@ and inspect the entire result. Keep model settings out of the artistic prompt
 when they are explicit tool fields. Measure any latency and cost on the actual
 host; do not copy advertised times or another project's bill into the run.
 
+## Prompt clarity retained from earlier runs
+
+Quote the exact title once, then specify its reading order and line breaks.
+Remove stale title spellings, text/reference contradictions, and decorative
+story details that do not support the chosen composition. Assign every reference
+a specific role. Describe visible frame occupancy, contact and depth rather than
+relying on camera labels alone; show the action or graphic rule that makes the
+title necessary. Inspect crop, detail and lettering after each authorized edit.
+The repository's `research/gpt-image-2-5-migration.md` retains the historical
+2.5 investigation; it does not override the current host guidance above.
+
 ## Prompt order
 
 Write prompts in this order:
@@ -56,7 +67,7 @@ Write prompts in this order:
 1. output type: square album cover;
 2. primary pattern and visual thesis;
 3. subject/action and spatial composition;
-4. foreground/midground/background and light for spatial work, or flat fields, edges, figure/ground, and dominant geometry for graphic work;
+4. visible frame occupancy, contact points, depth order, foreground/midground/background and light for spatial work, or flat fields, edges, figure/ground, and dominant geometry for graphic work;
 5. palette with approximate area proportions;
 6. physical medium/process or the deliberately flat graphic rule;
 7. title-system family, image-native architecture, exact title, glyph count, reading order, material, spatial, character, or graphic relationship, position, color hierarchy, and line break;
@@ -114,11 +125,11 @@ the intended source of allure explicit. Do not retry an unchanged request. An
 API `moderation` setting is host-specific and never disables policy or replaces
 this design check.
 
-## Palette-temperature guard
+## Palette-temperature guard (existing quality guard)
 
 Image output can drift toward parchment, sepia, brass, amber, or warm-yellow
 light when the brief does not explicitly control the neutral point. Treat this
-as a default quality risk, not an artist preference. Every direction must name
+as an existing quality guard, not a demonstrated universal model bias or an artist preference. Every direction must name
 its intended neutral, dominant and accent colors, and palette temperature.
 
 Default to neutral or release-derived temperature and explicitly exclude an
