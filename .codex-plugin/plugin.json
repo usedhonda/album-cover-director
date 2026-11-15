@@ -1,18 +1,24 @@
 {
   "name": "album-cover-director",
-  "version": "0.2.0",
-  "description": "Create release-ready album covers where the title becomes a physical world, spatial event, or one hierarchy with a central figure.",
+  "version": "0.3.0",
+  "description": "Explore bold, meaning-led cover concepts in labeled thumbnail boards, then finish selected image-native title designs.",
   "author": {
     "name": "usedhonda"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "Album Cover Director",
-    "shortDescription": "Create image-native title-led album covers.",
-    "longDescription": "Turns an exact title, with optional lyrics, artist-local information, and supplied reference images, into cover directions built around material title-worlds, spatial fields, or character-led title systems; generates and evaluates artwork; applies dedicated release-identity and title-image gates; and prepares square delivery assets.",
+    "shortDescription": "Explore bold cover ideas, then finish your choice.",
+    "longDescription": "Reads an exact release title with optional lyrics, song and album context, artist information, and reference images; explores distinct visual mechanisms in a labeled thumbnail board; preserves the selected concept through image-native production and 3000 px delivery.",
     "developerName": "usedhonda",
     "category": "Creative & Design",
-    "capabilities": ["album-art-direction", "image-generation", "typography", "delivery-validation"],
-    "defaultPrompt": "Use $album-cover-director to create three image-native title-system cover directions from this title and any optional lyrics, artist information, or reference images."
+    "capabilities": [
+      "album-art-direction",
+      "concept-exploration",
+      "image-generation",
+      "typography",
+      "delivery-validation"
+    ],
+    "defaultPrompt": "Use $album-cover-director to explore twelve bold, structurally different cover ideas from this title and any optional lyrics, album context, artist information, or reference images. Show a labeled thumbnail board, then finish the selected concept."
   }
 }

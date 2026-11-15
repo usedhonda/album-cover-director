@@ -1,4 +1,5 @@
-schema_version: 1
+schema_version: 2
+stage: concept-preview
 inputs:
   lyrics_source: none
   lyrics_path: ""
@@ -12,7 +13,12 @@ inputs:
     use_mode: auto
     rights_basis: not-supplied
 release:
-  exact_title: ""
+  exact_title: "" # The exact string displayed on this release.
+  allowed_readable_text: [] # Context titles and board labels are not added automatically.
+  song_title: ""
+  album_title: ""
+  album_context: ""
+  track_position: ""
   artist: ""
   release_type: single
   destination: streaming
@@ -27,11 +33,19 @@ evidence:
   audio_traits: []
   references: []
   reference_rights: "not supplied"
-interpretation:
-  central_contradiction: ""
-  sensory_qualities: []
-  physical_phenomena: []
-  symbols: []
+# Expand to several competing readings; these are agent notes, not required user fields.
+interpretations:
+  - id: I01
+    summary: ""
+    hypothesis: false # True for an inferred title-only reading.
+    evidence:
+      - source: title # title, song-title, album-title, lyrics, description, audio
+        anchor: "" # Supplied phrase/verse/feature, or a short located paraphrase.
+    relationship_or_change: ""
+    central_contradiction: ""
+    sensory_qualities: []
+    physical_phenomena: []
+    possible_operations: []
 constraints:
   genre: ""
   artist_system: ""
@@ -43,25 +57,41 @@ constraints:
     warm_cause: ""
     warm_regions: []
     exclude_unmotivated_warm_cast: true
-  allowed_readable_text: []
   font_rights: "not applicable or not yet verified"
 runtime:
   intent: production
+  workflow: concept-first
   volume: standard
-  candidate_count: 6
+  preview_count: 12
+  production_variants_per_selection: 2
   typography_mode: auto
   title_system_family: auto
   title_complexity_profile: ""
+# Duplicate this direction block for genuinely different concepts, normally 12.
 directions:
-  - id: A
+  - id: D01
+    name: ""
+    interpretation_id: I01
+    visual_mechanism: ""
     primary_pattern: ""
     secondary_techniques: []
     title_system_family: ""
     title_system: ""
+    planned_signature:
+      title_placement: ""
+      title_scale: ""
+      figure_role: ""
+      camera: ""
+      layout: ""
+      medium: ""
+    preserve_in_production: []
+    thumbnail_hook: ""
+    illusion_viewing_condition: "" # When applicable.
+    illusion_failure_observation: ""
+    world_engine: ""
     material_vocabulary: []
     letter_anatomy_mapping: ""
     title_world_role: ""
-    world_engine: ""
     context_layers: []
     hierarchy_lock:
       title_occupied_area: ""
@@ -75,53 +105,14 @@ directions:
       permitted_variations: []
     central_figure: ""
     character_title_relation: ""
+    graphic_rule: ""
+    title_shape: ""
+    figure_ground: ""
+    reading_route: ""
     genre_anchor: ""
     genre_betrayal: ""
-  - id: B
-    primary_pattern: ""
-    secondary_techniques: []
-    title_system_family: ""
-    title_system: ""
-    material_vocabulary: []
-    letter_anatomy_mapping: ""
-    title_world_role: ""
-    world_engine: ""
-    context_layers: []
-    hierarchy_lock:
-      title_occupied_area: ""
-      title_silhouette: ""
-      title_reading_route: ""
-      title_value_priority: ""
-      protected_subjects: []
-    controlled_irregularity:
-      cause: ""
-      variable_regions: []
-      permitted_variations: []
-    central_figure: ""
-    character_title_relation: ""
-    genre_anchor: ""
-    genre_betrayal: ""
-  - id: C
-    primary_pattern: ""
-    secondary_techniques: []
-    title_system_family: ""
-    title_system: ""
-    material_vocabulary: []
-    letter_anatomy_mapping: ""
-    title_world_role: ""
-    world_engine: ""
-    context_layers: []
-    hierarchy_lock:
-      title_occupied_area: ""
-      title_silhouette: ""
-      title_reading_route: ""
-      title_value_priority: ""
-      protected_subjects: []
-    controlled_irregularity:
-      cause: ""
-      variable_regions: []
-      permitted_variations: []
-    central_figure: ""
-    character_title_relation: ""
-    genre_anchor: ""
-    genre_betrayal: ""
+selection:
+  selected_candidate_ids: []
+  reason: ""
+  primary_composition_id: ""
+  donor_traits: [] # For an explicitly requested combination, name each scoped contribution.

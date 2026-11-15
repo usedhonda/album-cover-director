@@ -141,7 +141,7 @@ def parser() -> argparse.ArgumentParser:
     prepare_parser.add_argument("--release-slug", required=True)
     prepare_parser.add_argument("--card-id", required=True)
     prepare_parser.add_argument("--title-behavior", required=True)
-    prepare_parser.add_argument("--title-system-family", choices=("material-world", "spatial-field", "character-led"), required=True)
+    prepare_parser.add_argument("--title-system-family", choices=("material-world", "spatial-field", "character-led", "graphic-field"), required=True)
     prepare_parser.add_argument("--world-engine", required=True)
     prepare_parser.add_argument("--use-when", action="append", default=[])
     prepare_parser.add_argument("--do-not-use-when", action="append", default=[])

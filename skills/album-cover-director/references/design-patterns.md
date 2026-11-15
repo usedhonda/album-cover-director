@@ -1,11 +1,13 @@
 # Supporting image patterns
 
-The title-system family is the first decision for this skill. This reference is
-the second decision: **what else organizes the square?** A pattern is not a
+Start from the musical interpretation and visual mechanism, then choose a
+title-system family. This reference asks: **what else organizes the square?** A pattern is not a
 genre, era, visual style, rendering engine, or preset. Choose one pattern and
-one or two secondary techniques. Three initial directions must use three
-different patterns, but none may detach the title from its material world,
-spatial field, or character-led hierarchy.
+one or two secondary techniques. Different concepts may share a broad pattern
+when their actual mechanisms and dominant geometry differ. None may detach
+the title from its material world, spatial field, character-led hierarchy,
+or flat graphic rule. Use `concept-exploration.md` to inspect the actual
+generated set before presentation; labels cannot establish visual diversity.
 
 ## 1. Portrait / Identity
 
@@ -61,13 +63,21 @@ For each direction record:
 
 1. primary pattern;
 2. one or two secondary techniques;
-3. one genre anchor that preserves recognition;
-4. one genre expectation that is deliberately betrayed;
+3. one genre anchor that preserves recognition, when supplied or evidenced;
+4. one evidenced genre expectation that is deliberately betrayed;
 5. foreground, subject interaction, midground, background, light, and geometry;
 6. color proportions, not just color names;
 7. material or production logic;
-8. title role and fallback typography mode;
+8. native title role and protected reading structure;
 9. what remains recognizable at 56 px;
 10. why this could belong only to this release.
 
-Reject directions that differ only by color, camera angle, or rendering style. Replace them until their organizing structures differ.
+If genre is unknown, record `not-supplied` for the anchor and `not-applicable`
+for the expectation; do not invent musical facts or block a title-only run.
+
+Reject directions that differ only by color, camera angle, or rendering style.
+Record title zone/scale, figure role, camera, layout, and medium as the planned
+signature; compare those against the rendered images. Replace convergent
+concepts by changing their mechanism or dominant geometry. A shared pattern
+name does not invalidate genuinely different images, and different names do
+not excuse visually identical structures.

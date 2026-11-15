@@ -2,11 +2,28 @@
 
 ## Contents
 
+- Preview versus production
 - Evaluation sequence
 - Delivery requirements
 - Rights and provenance
 
 Selection is comparative. Never score one candidate in isolation while ignoring the alternatives.
+
+## Preview versus production
+
+A `concept-preview` board is for choosing meaning and mechanism. Inspect its
+actual images for visual diversity before presentation, record the image
+checksums and observations, and label unresolved lettering issues. Use
+`concept-exploration.md` for that gate. Structural distinction is a gate on
+sets of different directions, not a weighted score that polish can compensate
+for. Variants refining one selected direction intentionally retain its structure;
+do not demand a new composition from each refinement.
+
+The scoring and full typography gates below apply to `production-candidate`.
+A preview must not be exported and called finished just because its size is
+large enough. Production must retain the selected preview's mechanism,
+composition invariants, evidence, and source lineage. A new polished image
+that loses the selected idea is a regression. Compare to the selected source.
 
 ## Viewing conditions
 
@@ -19,11 +36,13 @@ Compare every candidate under six conditions:
 5. grayscale: value hierarchy independent of hue;
 6. blur: dominant masses, focal competition, and visual center.
 
-Use `cover-ops.py contact-sheet` to create reproducible sheets. Select a leader and runner-up, and write why the rest lost.
+Use `cover-ops.py contact-sheet` to create reproducible production inspection
+sheets. Use `concept-board.py` for the earlier compact selection grid. Select
+a leader and runner-up when alternatives exist, and write why the rest lost.
 
 ## Scoring
 
-Score 0–5 for release identity, musical specificity, concept specificity, structural distinction, composition, color/value, material credibility, typography, title-image integration, thumbnail recognition, artist fit, rights/provenance, and technical readiness. Release identity, typography, title-image integration, rights/provenance, and technical readiness are gates: a candidate scoring below 4 in any of them cannot be delivered without repair.
+Score 0–5 for release identity, musical specificity, concept specificity, structural distinction, composition, color/value, material credibility, typography, title-image integration, thumbnail recognition, artist fit, rights/provenance, and technical readiness. Release identity, typography, title-image integration, rights/provenance, and technical readiness are gates: a candidate scoring below 4 in any of them cannot be delivered without repair. For sets spanning different directions, structural distinction also gates presentation. For production from a preview, retention of the selected mechanism is a gate.
 
 `release identity` asks whether the square feels like a durable identity for a piece of music rather than a poster, advertisement, editorial illustration, app tile, game splash screen, or generic AI concept image. It needs one dominant identity signal, intentional edge and crop behavior, controlled information density, and a visual reason to exist beyond literal illustration. `musical specificity` asks whether the choices trace to supplied evidence or to a clearly labeled title hypothesis rather than interchangeable genre decoration.
 
@@ -70,6 +89,16 @@ in thought. If either leaves a conventional wordmark or conventional character
 illustration, it fails. The figure's action, pose, props, and surrounding
 world must visibly make the title's hierarchy, shape, or reading route work.
 
+For a graphic-field title system, remove the title shape in thought. If the
+flat rule, figure/ground relationship, and image identity survive unchanged,
+it is an independent graphic with a caption and fails. Inspect the intended
+flatness, negative-space ratio, boundary behavior, and protected reading
+route. Do not add physical texture or perspective as a generic quality upgrade.
+
+For an optical mechanism, inspect its declared viewing condition and actual
+relationship under the checks in `impact-recipes.md`. An attractive broken
+reflection or an arbitrary malformed stair is not a successful illusion.
+
 ## One-variable refinement
 
 Before an edit, write:
@@ -79,7 +108,9 @@ Before an edit, write:
 - all invariants;
 - the acceptance observation.
 
-Compare the edit against the selected original, not only against memory. Stop after two cycles.
+Compare the edit against the selected original, not only against memory. Stop
+after two production refinement cycles. Exploration replacements use a separate
+budget; an additional concept board is not another edit of the production image.
 
 ## Rights and text checklist
 

@@ -114,9 +114,37 @@ def source_preflight(path: Path, contract_path: Path) -> int:
     try:
         contract = json.loads(contract_path.read_text(encoding="utf-8"))
         runtime = contract["runtime"]
-        minimum = runtime["capability_profile"]["source_minimum_dimension"]
         expected_title = contract["release"]["exact_title"]
-    except (OSError, KeyError, TypeError, json.JSONDecodeError) as exc:
+        version = contract.get("schema_version", 1)
+        minimum_key = "source_minimum_dimension"
+        if type(version) is not int or version != 1:
+            # The root compatibility wrapper uses runpy, so sibling modules
+            # must also resolve when this file is not the CLI entry point.
+            scripts_dir = str(Path(__file__).resolve().parent)
+            if scripts_dir not in sys.path:
+                sys.path.insert(0, scripts_dir)
+            from concept_contract import PREVIEW, failure, positive_integer, resolve_asset, validate, validate_selection_sources
+
+            failures = validate(contract)
+            if not failures:
+                failures.extend(validate_selection_sources(contract))
+                matching_candidates = [
+                    candidate for candidate in contract["candidates"]
+                    if resolve_asset(contract_path, candidate["output_path"]) == path.resolve()
+                ]
+                if not matching_candidates:
+                    failures.append(failure("source-candidate-unregistered", "candidates", "Register this generated source in the current stage before checking it."))
+                elif len(matching_candidates) > 1:
+                    failures.append(failure("source-candidate-ambiguous", "candidates", "A source image must identify exactly one candidate."))
+                if contract["stage"] == PREVIEW:
+                    minimum_key = "preview_minimum_dimension"
+                    if not positive_integer(runtime["capability_profile"].get(minimum_key)):
+                        failures.append(failure("preview-capability-required", f"runtime.capability_profile.{minimum_key}", "Declare a positive preview minimum dimension."))
+            if failures:
+                print(json.dumps({"status": "fail", "objective_failures": [item["code"] for item in failures], "failures": failures}, ensure_ascii=False, indent=2))
+                return 2
+        minimum = runtime["capability_profile"][minimum_key]
+    except (OSError, KeyError, TypeError, ValueError, RuntimeError) as exc:
         print(json.dumps({"status": "fail", "objective_failures": ["contract-capability-unreadable"], "detail": str(exc)})); return 2
     return preflight_image(path, minimum, expected_title)
 

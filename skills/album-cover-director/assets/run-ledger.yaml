@@ -1,23 +1,66 @@
-schema_version: 1
+schema_version: 2
 jsonl_record:
   timestamp: "ISO-8601"
   release_slug: ""
-  direction_id: A
-  candidate_id: A1
+  stage: concept-preview # concept-preview | production-candidate
+  direction_id: D01
+  interpretation_id: ""
+  visual_mechanism: ""
+  preserve_in_production: []
+  planned_signature:
+    title_placement: ""
+    title_scale: ""
+    figure_role: ""
+    camera: ""
+    layout: ""
+    medium: ""
+  candidate_id: C01
   operation: generate
-  model_or_tool: gpt-image-2
-  skill_version: ""
+  model_or_tool: "" # Actual host tool name; never an assumed model ID.
+  runtime:
+    host_surface: ""
+    requested_model_id: null # Only if sent through an exposed model field.
+    model_id: unknown-not-exposed # Replace only with host-confirmed identity.
+    exposed_controls: [] # Optional controls actually exposed by this host.
+    requested_settings: {} # Only submitted fields, e.g. quality/complexity/size.
+    reported_settings:
+      quality: unknown-not-exposed
+      complexity: unknown-not-exposed
+      size: unknown-not-exposed
+      background: unknown-not-exposed
+  skill_version: "0.3.0"
   title_complexity_profile: ""
   project_local_workspace: ""
   parent_candidate_id: null
+  preview_candidate_id: null # Required for production derived from a preview selection.
+  selected_source: # Copy the selected preview's evidence; never hash a replacement.
+    candidate_id: null
+    direction_id: null
+    source_path: null # Absolute original preview path, not a contact-sheet crop.
+    source_sha256: null # Compute from the actual file; do not invent a digest.
+    reason: null
   changed_variable: null
-  prompt_file: prompts/A1.md
+  refinement_cycle: 0
+  prompt_file: prompts/D01-preview.md
   reference_inputs: []
   reference_rights: ""
   requested_size: square
-  moderation_setting: "host-default or API value"
+  moderation_setting: unknown-not-exposed
   moderation_stage: null
   moderation_categories: []
+  markup_source: null # Only if markup is supported; preserve source-size alignment.
+  mask_source: null # Do not combine a mask with markup.
   output_path: ""
   sha256: ""
+  observed_output:
+    width: null
+    height: null
+    has_transparency: null
+  latency_seconds: null # Measured call duration only; optional.
+  cost: # Optional actual host-reported billing; never fill with advertised estimates.
+    amount: null
+    currency: null
+    evidence: null
+  usage: null # Host-reported token usage, when available.
+  measurement_notes: ""
   notes: ""
