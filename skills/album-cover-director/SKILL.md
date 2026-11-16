@@ -196,7 +196,14 @@ flat or pristine work, preserve its graphic clarity. The title must be largest
 Start `run-contract.json` from `assets/run-contract.json` with schema version 2
 and `stage: concept-preview`. Complete release text, evidence, runtime, rights,
 and the chosen directions. Run `scripts/prompt-preflight.py --contract
-run-contract.json`. Write `directions.md` and one prompt per concept. Define
+run-contract.json`. Write `directions.md` and one prompt per concept. Build each
+prompt from release-wide invariants and its own direction: shared text may
+contain the exact title, rights, identity traits and explicit user-wide
+constraints, but never copy another candidate's composition, palette, subject
+placement, typography layout or scene into it. Supply the current direction's
+visual decisions only in that candidate's section. Before sending, check the
+assembled prompt and reference roles for contradictions and leaked scene details;
+do not impose a shared composition unless the user requested one. Define
 composition, depth or flatness, palette proportions, material or graphic rule,
 native title treatment, exact allowed text, and exclusions.
 
