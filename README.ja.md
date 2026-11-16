@@ -235,6 +235,12 @@ GPT Image 2.6の実行指針も更新しています。Flare / Sunburstの指定
 
 ## 研究と著作権
 
+### GPT Image / ImageGenの最近の根拠
+
+[2026-11-16調査レポート](research/gpt-image-2-6-evidence-2026-11-16.md)に、公式の2.6仕様と、11月4–16日のReddit・OpenAI Forum・実制作の一次報告を整理しました。[出典台帳](research/gpt-image-2-6-evidence-2026-11-16.json)には公開・観察・確認日、モデルと利用経路、設定、件数、取得範囲、商業性、限界を記録しています。[PR #8レビュー](research/reviews/pr-8-2026-11-16.md)では、指示の整合性と未検証の画像品質を区別しました。制作では必要に応じて[短い確認指針](skills/album-cover-director/references/image-quality-observations.md)を使い、既存の確認工程と予算内で判断します。
+
+### ジャケットの先行事例
+
 [research/corpus.yaml](research/corpus.yaml) は置換予定の旧ドラフトであり、制作時の正本ではありません。現在の限定教材セットは、根拠完備候補から抽出した [verified-principles.md](skills/album-cover-director/references/verified-principles.md) にあります。これは今の制作判断を良くするためのもので、制作中に前例収集を続ける理由にはしません。第三者のジャケット画像は収録しません。
 
 新コーパスの採用条件は、ジャケット固有の評価根拠、文字支配度T4/T5、実物視覚確認、作品固有の転用原理です。名盤順位、売上、音楽的知名度はジャケット評価の根拠にしません。将来の拡張は、実際のカバー制作で同じ不足が繰り返し確認された場合だけに行い、音楽ジャンルの網羅を目的にしません。

@@ -76,6 +76,9 @@ interpretations, directions, prompts, and delivery specification, and state that
 images and delivery were not produced. Do not present text cards as generated
 visual previews.
 
+When diagnosing weak impact, convergent concepts, or lost edit continuity, use
+`references/image-quality-observations.md` during the existing inspection.
+
 ## Adult sensual editorial requests
 
 Apply this route only when a user explicitly asks for a person-led cover to feel
