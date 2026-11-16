@@ -128,6 +128,18 @@ a broad exploratory board must contain at least one visibly working optical
 concept supported by a reading of the music. A recipe name is not delivery of
 that concept. More detail is not automatically more impact.
 
+For each idea, connect the music's specific conflict or change to the visual
+rule that expresses it and to how the exact title's letterforms make that
+rule work. Name the actual stroke, counter, occlusion, reflection or spatial
+relationship when relevant, rather than saying merely "integrated". Different
+meanings do not establish different compositions: if the same subject,
+title and negative-space hierarchy dominates, change the image's organizing
+rule, viewpoint, depth, or role of the lettering before generation. For an
+optical idea, specify where to look, what changes in perception, and the
+intended thumbnail size; claim success only if that effect is visible there
+without an explanatory label. Ordinary headlines that could replace the title
+without affecting the image's meaning, spatial relationship or reading fail.
+
 In `directions.md`, give each idea one line: **what it takes from the music
 → who/what leads and what happens → how square composition and title relate**.
 Compare the set with color, material and rendering style hidden. If the same
