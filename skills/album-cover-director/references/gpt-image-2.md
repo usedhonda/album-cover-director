@@ -4,6 +4,7 @@
 
 - Model and host controls
 - Prompting contract
+- Separate shared and direction-specific instructions
 - Make the chosen title mechanism visible
 - Editing and selection continuity
 - Safety and title checks
@@ -81,6 +82,18 @@ Small preview size must not erase these mechanisms. Keep selected depth,
 contact and optical relations as production/edit invariants. For a graphic concept, describe the flat title/shape relationship directly;
 do not impose spatial instructions on it. Neither approach needs a separate
 mode or permission step.
+
+## Separate shared and direction-specific instructions
+
+Write the common block from release-wide requirements only: exact title, rights,
+identity/reference role and constraints explicitly shared by the user. Put
+visual mechanism, composition, camera, pose, title layout, medium and palette
+in the individual direction. Do not use a complete previous candidate as a
+common block: it can silently carry its scene into every new prompt. Before
+each call, inspect the assembled prompt and referenced image roles together;
+remove stale or conflicting candidate-specific instructions, while preserving
+any composition or palette the user explicitly locked across the set.
+Record the actual assembled prompt and reference used for that candidate.
 
 ## Prompt order
 
@@ -271,10 +284,10 @@ Never imply that an ungenerated prompt is a completed cover.
 
 ## Recent behavioral evidence
 
-Use [image-quality-observations.md](image-quality-observations.md) when a concrete
-quality problem needs diagnosis. It translates recent reports into observable
-questions while keeping model specifications, author reports and this skill's
-production policy distinct. It adds no generation budget or test batch.
+[Image-quality observations](image-quality-observations.md) is an optional
+diagnostic reference for concrete production problems, as described in the
+skill's existing inspection step. For dated evidence and its limits, see the
+[research index](../../../research/README.md).
 
 ## Official sources
 

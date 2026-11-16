@@ -76,6 +76,20 @@ across rounds. The legacy direct-production route can still use three
 directions with 3/6/12 total candidates; use it only when requested or when an
 existing choice makes exploration unnecessary.
 
+For each idea, connect a specific conflict, change or other cue from the music
+to the visual rule that expresses it and to how the exact title makes that
+rule work. A title-only interpretation is a hypothesis, not a lyric claim. Name the actual stroke, counter, occlusion, reflection or spatial
+relationship when relevant, rather than saying merely "integrated". In a
+flat design, the title can instead determine weight, negative space or
+reading order. Different
+meanings do not establish different compositions: if the same subject,
+title and negative-space hierarchy dominates, change the image's organizing
+rule, viewpoint, depth, or role of the lettering before generation. For an
+optical idea, specify where to look, what changes in perception, and the
+intended thumbnail size; claim success only if that effect is visible there
+without an explanatory label. Ordinary headlines that could replace the title
+without affecting the image's meaning, spatial relationship or reading fail.
+
 Before rendering, give each planned idea one line in `directions.md`:
 **what the music contributes → who/what leads and what happens → how square
 composition and title relate**. Hide color, material and drawing style when

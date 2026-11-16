@@ -76,9 +76,6 @@ interpretations, directions, prompts, and delivery specification, and state that
 images and delivery were not produced. Do not present text cards as generated
 visual previews.
 
-When diagnosing weak impact, convergent concepts, or lost edit continuity, use
-`references/image-quality-observations.md` during the existing inspection.
-
 ## Adult sensual editorial requests
 
 Apply this route only when a user explicitly asks for a person-led cover to feel
@@ -130,6 +127,11 @@ pass, not only after a request for more. Unless the user rules optical work out,
 a broad exploratory board must contain at least one visibly working optical
 concept supported by a reading of the music. A recipe name is not delivery of
 that concept. More detail is not automatically more impact.
+
+Give each idea its own visible rule drawn from supplied music evidence or a
+labeled hypothesis. Make the exact title matter to that rule, including in
+flat work. Judge a proposed illusion only at its intended viewing size,
+without relying on the label. See `references/concept-exploration.md`.
 
 In `directions.md`, give each idea one line: **what it takes from the music
 → who/what leads and what happens → how square composition and title relate**.
@@ -187,7 +189,10 @@ flat or pristine work, preserve its graphic clarity. The title must be largest
 Start `run-contract.json` from `assets/run-contract.json` with schema version 2
 and `stage: concept-preview`. Complete release text, evidence, runtime, rights,
 and the chosen directions. Run `scripts/prompt-preflight.py --contract
-run-contract.json`. Write `directions.md` and one prompt per concept. Define
+run-contract.json`. Write `directions.md` and one prompt per concept. Keep
+release-wide constraints separate from candidate-specific visual decisions;
+check the assembled prompt and reference roles once before sending. See
+[shared and direction-specific instructions](references/gpt-image-2.md#separate-shared-and-direction-specific-instructions). Define
 composition, depth or flatness, palette proportions, material or graphic rule,
 native title treatment, exact allowed text, and exclusions.
 
@@ -224,6 +229,10 @@ not merely a figure beside a thick sign. If the optical idea collapsed, revise
 it within the authorized budget; if none succeeds, explicitly report that
 requested exploration is incomplete. Do not mark coverage complete because the
 prompts mention an illusion, and do not substitute a flat poster to fill a slot.
+
+If you find a concrete problem such as weak impact, convergent concepts or
+lost edit continuity, consult `references/image-quality-observations.md`
+during this inspection. It adds no scoring, experiment or generation budget.
 
 Complete the checksum-bound `diversity_review` after inspection, then render
 `concept-board.html` without `--draft`. Present the compact thumbnail grid,
