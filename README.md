@@ -333,6 +333,20 @@ Run the source preflight before export: it checks the native candidate against t
 
 ## Research and copyright
 
+### Current image-model evidence
+
+The [2026-11-16 GPT Image / ImageGen report](research/gpt-image-2-6-evidence-2026-11-16.md)
+(Japanese) covers official 2.6 guidance and first-hand reports published or updated
+on November 4–16, including Reddit and the OpenAI forum. The
+[source ledger](research/gpt-image-2-6-evidence-2026-11-16.json) records dates, model
+and host attribution, settings, sample sizes, access limits and commercial interest.
+The [PR #8 review](research/reviews/pr-8-2026-11-16.md) distinguishes instruction
+correctness from unverified image outcomes. Use the short
+[quality observation reference](skills/album-cover-director/references/image-quality-observations.md)
+for a specific production problem; no extra image test batch is required.
+
+### Cover precedent research
+
 [research/corpus.yaml](research/corpus.yaml) is a superseded draft and is not a production reference. The current bounded teaching set is distilled in [verified-principles.md](skills/album-cover-director/references/verified-principles.md) from the evidence-complete entries in [typographic-candidates.yaml](research/typographic-candidates.yaml). It exists to improve cover decisions now; it is not a reason to keep collecting precedents during a cover run. The repository contains no third-party album-cover images.
 
 The replacement method requires each admitted work to have cover-specific acclaim evidence, typography dominance at T4 or T5, a direct visual check, and a work-specific transferable principle. Every final record must also name its country, label, and at least two candidate-verified evidence-source IDs. Validation rejects a final corpus if one designer supplies more than three works, one label more than six, one country more than sixteen, one genre more than eighteen, or one source supports more than twelve works. Music rankings, sales, and album fame do not count as cover-design evidence. Future expansion is failure-driven: add research only when repeated real cover runs reveal a missing construction rule, not to enumerate music genres.

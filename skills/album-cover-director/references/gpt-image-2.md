@@ -9,6 +9,7 @@
 - Editing and selection continuity
 - Safety and title checks
 - Optional formats and sources
+- Recent behavioral evidence
 
 This file isolates model-specific behavior so the design grammar can survive future model changes.
 
@@ -280,6 +281,13 @@ statement, edit parent, and delivery transformations. Use
 source, invariants, actual settings, and output evidence. Leave unreported cost
 or latency empty and explain their absence; never estimate an observed result.
 Never imply that an ungenerated prompt is a completed cover.
+
+## Recent behavioral evidence
+
+[Image-quality observations](image-quality-observations.md) is an optional
+diagnostic reference for concrete production problems, as described in the
+skill's existing inspection step. For dated evidence and its limits, see the
+[research index](../../../research/README.md).
 
 ## Official sources
 

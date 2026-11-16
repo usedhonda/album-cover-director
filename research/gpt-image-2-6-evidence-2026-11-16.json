@@ -1,0 +1,490 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-16",
+  "community_window": {
+    "from": "2026-11-04",
+    "through": "2026-11-16"
+  },
+  "images_independently_inspected": false,
+  "new_images_generated": 0,
+  "scope_note": "Official documentation establishes current API or product capabilities. Community entries are dated author reports, not independently reproduced model tests. Publication, update, observation and retrieval dates are distinct. Unknown backend variants and settings remain unknown. This snapshot does not prove improved image quality after PR #8.",
+  "sources": [
+    {
+      "id": "O01",
+      "title": "OpenAI API changelog",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "kind": "official_documentation",
+      "published_on": null,
+      "updated_on": null,
+      "observation_dates": [
+        "2026-11-04"
+      ],
+      "date_basis": "Release entry dated 2026-11-04; page publication and update dates not established.",
+      "checked_on": "2026-11-16",
+      "access_method": "Live official page opened during this review.",
+      "models_reported": [
+        "gpt-image-2.6-sunburst",
+        "gpt-image-2.6-flare"
+      ],
+      "surface": "OpenAI API",
+      "settings_reported": null,
+      "sample": null,
+      "observation": "The November 4 release entry introduces GPT Image 2.6 Sunburst and Flare, adjustable complexity, SVG and GIF output, and markup-guided edits. It anchors the research window; individual endpoint support still requires the current model-specific reference.",
+      "limitations": "The release entry is not a benchmark or proof of host availability.",
+      "commercial_interest": "Model provider documentation.",
+      "status": "current_documentation"
+    },
+    {
+      "id": "O02",
+      "title": "GPT Image 2.6 Sunburst model documentation",
+      "url": "https://developers.openai.com/api/docs/models/gpt-image-2.6-sunburst",
+      "kind": "official_documentation",
+      "published_on": null,
+      "updated_on": null,
+      "observation_dates": [],
+      "date_basis": "Live model documentation checked on the review date; publication and update dates not established.",
+      "checked_on": "2026-11-16",
+      "access_method": "Live official page opened during this review.",
+      "models_reported": [
+        "gpt-image-2.6-sunburst"
+      ],
+      "surface": "OpenAI API",
+      "settings_reported": null,
+      "sample": null,
+      "observation": "The model page identifies Sunburst as the GPT Image 2.6 option for detailed visual work and provides model-specific capabilities and endpoint information. These API specifications establish available controls, not an aesthetic ranking or the identity of an undisclosed hosted backend.",
+      "limitations": "API model documentation does not identify a ChatGPT or other host's hidden variant.",
+      "commercial_interest": "Model provider documentation.",
+      "status": "current_documentation"
+    },
+    {
+      "id": "O03",
+      "title": "GPT Image 2.6 Flare model documentation",
+      "url": "https://developers.openai.com/api/docs/models/gpt-image-2.6-flare",
+      "kind": "official_documentation",
+      "published_on": null,
+      "updated_on": null,
+      "observation_dates": [],
+      "date_basis": "Live model documentation checked on the review date; publication and update dates not established.",
+      "checked_on": "2026-11-16",
+      "access_method": "Live official page opened during this review.",
+      "models_reported": [
+        "gpt-image-2.6-flare"
+      ],
+      "surface": "OpenAI API",
+      "settings_reported": null,
+      "sample": null,
+      "observation": "The model page identifies Flare as the GPT Image 2.6 option for fast iteration and provides model-specific capabilities and endpoint information. Its positioning motivates workload comparisons; it does not guarantee faster responses or sufficient quality in every hosting environment.",
+      "limitations": "Positioning is not a task-specific latency or quality guarantee.",
+      "commercial_interest": "Model provider documentation.",
+      "status": "current_documentation"
+    },
+    {
+      "id": "O04",
+      "title": "Image prompting guide",
+      "url": "https://developers.openai.com/api/docs/guides/image-prompting",
+      "kind": "official_documentation",
+      "published_on": null,
+      "updated_on": null,
+      "observation_dates": [],
+      "date_basis": "Live guide checked on the review date; publication and update dates not established.",
+      "checked_on": "2026-11-16",
+      "access_method": "Live official page opened during this review.",
+      "models_reported": [
+        "gpt-image-2.6-sunburst",
+        "gpt-image-2.6-flare"
+      ],
+      "surface": "OpenAI API guidance",
+      "settings_reported": null,
+      "sample": null,
+      "observation": "The guide separates quality from complexity, recommends explicit composition and exact text, and distinguishes editing changes from preserved requirements. It recommends comparing models with matched prompts, references, dimensions and quality, while warning that higher complexity can introduce unwanted changes.",
+      "limitations": "Read the selected model section. Retained 2.5 examples do not establish 2.6 behavior; guidance is not a success guarantee.",
+      "commercial_interest": "Model provider documentation.",
+      "status": "current_documentation"
+    },
+    {
+      "id": "O05",
+      "title": "Image generation guide",
+      "url": "https://developers.openai.com/api/docs/guides/image-generation",
+      "kind": "official_documentation",
+      "published_on": null,
+      "updated_on": null,
+      "observation_dates": [],
+      "date_basis": "Live guide checked on the review date; publication and update dates not established.",
+      "checked_on": "2026-11-16",
+      "access_method": "Live official page opened during this review.",
+      "models_reported": [
+        "model-specific GPT Image families; inspect the selected section"
+      ],
+      "surface": "OpenAI API",
+      "settings_reported": null,
+      "sample": null,
+      "observation": "The guide describes generation and editing workflows, request controls and output handling across image models. Use its selected-model instructions to establish capability, then check the actual endpoint and returned file rather than inferring support from an adjacent example or product name.",
+      "limitations": "Some examples retain 2.5 model IDs. Do not transfer their parameters or endpoint support to 2.6.",
+      "commercial_interest": "Model provider documentation.",
+      "status": "current_documentation"
+    },
+    {
+      "id": "O06",
+      "title": "Images in ChatGPT",
+      "url": "https://help.openai.com/en/articles/11084440-images-in-chatgpt",
+      "kind": "official_documentation",
+      "published_on": null,
+      "updated_on": null,
+      "observation_dates": [],
+      "date_basis": "Live help article checked on the review date; publication and update dates not established.",
+      "checked_on": "2026-11-16",
+      "access_method": "Live official page opened during this review.",
+      "models_reported": null,
+      "surface": "ChatGPT product",
+      "settings_reported": null,
+      "sample": null,
+      "observation": "The help article describes the ChatGPT image creation and editing experience. Product controls and availability are host-level information; they do not identify an undisclosed API variant or prove that a particular image tool exposes every control documented for the API.",
+      "limitations": "Host features are not equivalent to callable tool parameters; backend variant may remain unknown.",
+      "commercial_interest": "Model provider documentation.",
+      "status": "current_documentation"
+    },
+    {
+      "id": "O07",
+      "title": "Images API: generate",
+      "url": "https://developers.openai.com/api/reference/resources/images/methods/generate",
+      "kind": "official_documentation",
+      "published_on": null,
+      "updated_on": null,
+      "observation_dates": [],
+      "date_basis": "Live endpoint reference checked on the review date; publication and update dates not established.",
+      "checked_on": "2026-11-16",
+      "access_method": "Live official page opened during this review.",
+      "models_reported": [
+        "model-specific request schema"
+      ],
+      "surface": "OpenAI Images API",
+      "settings_reported": null,
+      "sample": null,
+      "observation": "The generation endpoint reference defines request fields and model-dependent options for creating images. Treat quality, complexity, dimensions, background and output format as actual API controls only where supported, and inspect the response instead of assuming prompt wording set those fields.",
+      "limitations": "A field listed in a shared schema may have model restrictions. Host wrappers can expose fewer controls.",
+      "commercial_interest": "Model provider documentation.",
+      "status": "current_documentation"
+    },
+    {
+      "id": "O08",
+      "title": "Images API: edit",
+      "url": "https://developers.openai.com/api/reference/resources/images/methods/edit",
+      "kind": "official_documentation",
+      "published_on": null,
+      "updated_on": null,
+      "observation_dates": [],
+      "date_basis": "Live endpoint reference checked on the review date; publication and update dates not established.",
+      "checked_on": "2026-11-16",
+      "access_method": "Live official page opened during this review.",
+      "models_reported": [
+        "model-specific request schema"
+      ],
+      "surface": "OpenAI Images API",
+      "settings_reported": null,
+      "sample": null,
+      "observation": "The edit endpoint reference documents source-image inputs and supported editing controls, including model-dependent restrictions. It establishes how to submit a request, while preservation of lettering, identity, composition and untouched regions must still be assessed in the returned image.",
+      "limitations": "Accepted edit parameters do not guarantee pixel-identical preservation or successful artistic continuity.",
+      "commercial_interest": "Model provider documentation.",
+      "status": "current_documentation"
+    },
+    {
+      "id": "C01",
+      "title": "Nyle Content Studio: GPT Image 2.6 comparison",
+      "url": "https://note.com/content_studio/n/ndd9ab49a6dea",
+      "kind": "author_report",
+      "published_on": "2026-11-05",
+      "updated_on": null,
+      "observation_dates": [],
+      "date_basis": "Explicit publication date; experiment dates not separately specified.",
+      "checked_on": "2026-11-16",
+      "access_method": "Full original article text retrieved.",
+      "models_reported": [
+        "gpt-image-2.5-sunburst",
+        "gpt-image-2.6-sunburst",
+        "gpt-image-2.6-flare"
+      ],
+      "surface": "Nyle Content Studio/API evaluation",
+      "settings_reported": "Same prompts and dimensions; medium quality.",
+      "sample": "170+ generations across tasks; mostly 1–2 runs per condition; approximately 150 requested phrases; 30 images in the transparency subset.",
+      "observation": "Nyle reports accurate Japanese copy across its small comparisons, including zero errors for 2.6 Sunburst among roughly 150 requested phrases. Tiny pixel-art lettering remained weak, some Flare text edits failed, and six of thirty tested images had unrequested transparency.",
+      "limitations": "AI judged anonymized outputs; authors checked key errors. Approximate phrase denominator and small samples do not establish reliability rates.",
+      "commercial_interest": "Vendor evaluation with free-trial promotion.",
+      "status": "small_sample_author_report"
+    },
+    {
+      "id": "C02",
+      "title": "Reddit: Sunburst versus Flare, 28 generations",
+      "url": "https://www.reddit.com/r/generativeAI/comments/1xpu988/gpt_image_26_flare_vs_sunburst_same_prompts_28/",
+      "kind": "author_report",
+      "published_on": "2026-11-07",
+      "updated_on": null,
+      "observation_dates": [],
+      "date_basis": "Absolute publication date in indexed original post; experiment date unspecified.",
+      "checked_on": "2026-11-16",
+      "access_method": "Substantial search-indexed original body; direct open unavailable.",
+      "models_reported": [
+        "GPT Image 2.6 Sunburst, author-declared",
+        "GPT Image 2.6 Flare, author-declared"
+      ],
+      "surface": "Author-operated website; backend gateway unspecified",
+      "settings_reported": "2K; default quality and complexity values unspecified.",
+      "sample": "20 stills: 5 prompts × 2 runs × 2 models. 8 edit outputs: 2 steps × 2 runs × 2 models.",
+      "observation": "The author reports correct text in nineteen of twenty stills, yet flat-lay and low-angle requests each failed in four associated attempts. Two edits preserved product identity, but retained studio lighting that did not fit the new dusk scene.",
+      "limitations": "Two runs per cell, unknown default parameters and uninspected gallery. Text results do not establish Japanese-title performance; camera failures are task-specific.",
+      "commercial_interest": "Author describes adding the models to their own website.",
+      "status": "small_sample_author_report"
+    },
+    {
+      "id": "C03",
+      "title": "ImagineArt: six GPT Image 2.6 design jobs",
+      "url": "https://www.imagine.art/insights/gpt-image-2-6-overview",
+      "kind": "author_report",
+      "published_on": "2026-11-12",
+      "updated_on": "2026-11-13",
+      "observation_dates": [
+        "2026-11-11",
+        "2026-11-12"
+      ],
+      "date_basis": "Article explicitly states publication, update and experiment dates.",
+      "checked_on": "2026-11-16",
+      "access_method": "Full original article text retrieved.",
+      "models_reported": [
+        "GPT Image 2.6 Flare",
+        "GPT Image 2.6 Sunburst"
+      ],
+      "surface": "ImagineArt app",
+      "settings_reported": "2K, High quality, prompt enhancer off; label edit reports low complexity.",
+      "sample": "One run per prompt, two app variations; six job headings do not establish the total independent-image count.",
+      "observation": "Four supplied strings matched a four-line poster request; requesting five lines instead caused invented copy. A marked label edit appeared to preserve named surrounding objects. The product-consistency example used one triptych, so it does not demonstrate consistency across independent generations.",
+      "limitations": "Small samples; the proposed cause of edit preservation was not isolated. No proof of pixel identity.",
+      "commercial_interest": "Image-generation vendor demonstrating its own app.",
+      "status": "small_sample_author_report"
+    },
+    {
+      "id": "C04",
+      "title": "Russ McKendrick: music-image production guide, November 15 revision",
+      "url": "https://github.com/russmckendrick/blog/blob/9a473769ba388e46054f7495ceaa8eeb693832c4/docs/guides/tunes-generator.md",
+      "kind": "author_report",
+      "published_on": null,
+      "updated_on": "2026-11-15",
+      "observation_dates": [
+        "2026-11-09",
+        "2026-11-15"
+      ],
+      "date_basis": "Pinned Git commit dated 2026-11-15T19:11:22Z; dated trial descriptions in the guide.",
+      "checked_on": "2026-11-16",
+      "access_method": "Full file and commit history retrieved through GitHub.",
+      "models_reported": [
+        "GPT Image 2.6 Sunburst"
+      ],
+      "surface": "FAL-backed custom music-image pipeline",
+      "settings_reported": "Backend defaults xhigh and 2560×1440; exact settings for every narrated trial not established.",
+      "sample": "Production trials described without a complete experiment count or controlled success-rate study.",
+      "observation": "November 15 group portraits inherited conflicting reference lighting. New expressions improved shared activity but weakened likenesses. The revised workflow separates setting and cast references, preserves face expression and angle, and unifies lighting and body placement. Scene-name changes previously retained similar framing.",
+      "limitations": "Operational self-report. Older repetition predates 2.6; face locks, cast limits and composition bans are workflow-specific choices.",
+      "commercial_interest": "Personal open-source workflow; commercial affiliation not established.",
+      "status": "production_self_report"
+    },
+    {
+      "id": "C05",
+      "title": "each::labs: Sunburst, Flare and complexity",
+      "url": "https://www.eachlabs.ai/blog/gpt-image-2-6-tested-on-eachlabs",
+      "kind": "author_report",
+      "published_on": "2026-11-06",
+      "updated_on": null,
+      "observation_dates": [],
+      "date_basis": "Explicit publication date; experiment described as launch-week testing without a separate calendar date.",
+      "checked_on": "2026-11-16",
+      "access_method": "Full original article text retrieved.",
+      "models_reported": [
+        "GPT Image 2.6 Flare",
+        "GPT Image 2.6 Sunburst",
+        "GPT Image 2.5 Flare"
+      ],
+      "surface": "each::labs API",
+      "settings_reported": "1536×1024, medium quality; 2.6 at low/high complexity. Edits used medium complexity and quality.",
+      "sample": "One crowded-shelf brief: five generation runs and two follow-up edits.",
+      "observation": "All five runs spelled the label correctly, but none produced exactly twelve mugs. High-complexity Flare arranged two rows. Subsequent requests to edit the third mug selected different rows on Flare and Sunburst, illustrating ambiguity in positional edit instructions.",
+      "limitations": "One run per generation condition. The host did not expose markup, GIF or SVG in this test; no universal spatial-compliance rate follows.",
+      "commercial_interest": "API vendor demonstrating its own endpoints.",
+      "status": "single_brief_author_report"
+    },
+    {
+      "id": "C06",
+      "title": "Frameloop: GPT Image 2.6 versus 2.5 benchmark",
+      "url": "https://frameloop.ai/research/gpt-image-2-6-vs-2-5-comprehensive-benchmark",
+      "kind": "author_report",
+      "published_on": "2026-11-06",
+      "updated_on": "2026-11-06",
+      "observation_dates": [
+        "2026-11-05",
+        "2026-11-06"
+      ],
+      "date_basis": "Article explicitly dates the experiment and publication/update.",
+      "checked_on": "2026-11-16",
+      "access_method": "Initial page open and full indexed article text; later opens timed out.",
+      "models_reported": [
+        "GPT Image 2.5 Flare",
+        "GPT Image 2.5 Sunburst",
+        "GPT Image 2.6 Flare",
+        "GPT Image 2.6 Sunburst"
+      ],
+      "surface": "Multiple API routes; complete raw-data files not independently examined",
+      "settings_reported": "Main 2.6 runs medium/high quality and high reasoning; 2.5 default for preference comparisons. Most conditions repeated twice.",
+      "sample": "16 prompts, 224 attempts, 163 images. 45 preference pairs; noise inspection used 30 crops plus 24 additional probe images.",
+      "observation": "One blinded reviewer preferred 2.5 in twenty-one pairs and 2.6 in sixteen, with eight tied or unusable pairs. Repeated prompts often produced similar layouts. No definite recurring grid artifact was found, although one inspected crop appeared slightly patterned.",
+      "limitations": "Pairs reused 2.5 images; quality, routes and dimensions differed. Preferences are not independent votes. November 6 SVG errors are historical, not a current blanket limitation; see C10.",
+      "commercial_interest": "Video-generation vendor.",
+      "status": "one_reviewer_comparison"
+    },
+    {
+      "id": "C07",
+      "title": "Reddit: five prompting tips on Sunburst and Flare",
+      "url": "https://www.reddit.com/r/ArtificialInteligence/comments/1xsau14/gpt_image_26_sunburst_vs_flare_i_tested_five_tips/",
+      "kind": "author_report",
+      "published_on": "2026-11-10",
+      "updated_on": "2026-11-12",
+      "observation_dates": [],
+      "date_basis": "Absolute dates in indexed original post and author follow-up; exact generation dates unspecified.",
+      "checked_on": "2026-11-16",
+      "access_method": "Search-indexed original body and author follow-up; direct open unavailable.",
+      "models_reported": [
+        "GPT Image 2.6 Sunburst, author-declared",
+        "GPT Image 2.6 Flare, author-declared"
+      ],
+      "surface": "Atlas Cloud linked by author; exact endpoint unspecified",
+      "settings_reported": "Same unspecified dimensions, medium quality, high complexity where supported.",
+      "sample": "12 outputs across five prompting examples.",
+      "observation": "The author reports correct quoted copy, useful explicit edit invariants and fewer unwanted objects with structured prompts than with underspecified one-line prompts. Timing order varied by task. Because the prompts changed content as well as structure, the comparison does not isolate formatting.",
+      "limitations": "Small sample; backend model IDs not verified. No independent replication or universal verbosity/model-winner conclusion.",
+      "commercial_interest": "Self-promotional provider link; affiliation not established.",
+      "status": "small_sample_author_report"
+    },
+    {
+      "id": "C08",
+      "title": "OpenAI forum: downstream image prompt contradicts project sources",
+      "url": "https://community.openai.com/t/gpt-6-claims-it-checked-project-sources-then-tells-the-image-model-to-do-the-opposite/1415830",
+      "kind": "author_report",
+      "published_on": "2026-11-13",
+      "updated_on": "2026-11-13",
+      "observation_dates": [
+        "2026-11-13"
+      ],
+      "date_basis": "Original incident post explicitly dated November 13.",
+      "checked_on": "2026-11-16",
+      "access_method": "Original incident body opened.",
+      "models_reported": [
+        "GPT-6, unspecified variant",
+        "image backend not recorded"
+      ],
+      "surface": "ChatGPT project with attached PDFs; client unspecified",
+      "settings_reported": null,
+      "sample": "One reported session with two illustrated outputs after an initial failed attempt.",
+      "observation": "The reporter describes submitted image prompts requesting illustration despite project sources requiring photography. This points to requirement extraction, prompt assembly and acceptance checks as a possible failure layer, rather than demonstrating that the image model ignored the request it actually received.",
+      "limitations": "Underlying private trace unavailable and no controlled reproduction. This is not evidence of a GPT Image 2.6 rendering defect.",
+      "commercial_interest": "None disclosed.",
+      "status": "reported_orchestration_incident"
+    },
+    {
+      "id": "C09",
+      "title": "Reddit: character identity drift and over-beautification",
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xwcffw/gpt_image_26_still_struggles_with_character/",
+      "kind": "author_report",
+      "published_on": "2026-11-14",
+      "updated_on": "2026-11-15",
+      "observation_dates": [],
+      "date_basis": "Absolute post/reply dates from indexed text; opened page also contains cached relative dates. Generation dates unspecified.",
+      "checked_on": "2026-11-16",
+      "access_method": "Original body and available replies opened; absolute dates checked in indexed text.",
+      "models_reported": [
+        "GPT Image 2.6 in post title; exact backend unverified"
+      ],
+      "surface": "ChatGPT; app or web unspecified",
+      "settings_reported": null,
+      "sample": "Unspecified repeated personal attempts.",
+      "observation": "The user reports identity changes after pose or scene changes, anatomy and clothing defects, and unwanted beautification, while describing earlier graininess as improved. A reply proposes explicit reference routing, but provides no controlled demonstration that the suggestion corrects these failures.",
+      "limitations": "No reproducible prompts, parameters or denominator. Guardrails as a cause are speculation; detector-bot comments are not provenance evidence.",
+      "commercial_interest": "None disclosed in the original body.",
+      "status": "anecdotal_report_causality_unknown"
+    },
+    {
+      "id": "C10",
+      "title": "OpenAI forum: SVG poster failures and later recovery",
+      "url": "https://community.openai.com/t/gpt-image-2-6-svg-generation-returns-500-502-for-a-poster-prompt-while-simple-svgs-succeed/1413821",
+      "kind": "author_report",
+      "published_on": "2026-11-07",
+      "updated_on": "2026-11-14",
+      "observation_dates": [
+        "2026-11-05",
+        "2026-11-07",
+        "2026-11-14"
+      ],
+      "date_basis": "Failures described for November 5–7; original reporter posted recovery on November 14.",
+      "checked_on": "2026-11-16",
+      "access_method": "Full thread including the latest author update opened.",
+      "models_reported": [
+        "gpt-image-2.6-flare",
+        "gpt-6.1-sol and gpt-6.1-terra in reported SVG pipeline requests"
+      ],
+      "surface": "Reported Images and Responses API requests; each request route must be distinguished",
+      "settings_reported": "Reduced/default and explicit request payloads in the thread; not independently executed.",
+      "sample": "Several failed poster requests, simple-SVG and same-poster-PNG controls; another participant reported reproduction.",
+      "observation": "Poster SVG requests failed while simple SVG and the poster PNG succeeded. The anonymized public reproduction prompt was not retested by its author. On November 14, the original reporter said SVG worked normally again, so the earlier failure should not remain current guidance.",
+      "limitations": "One poster family; root cause unknown. Recovery is confirmed only by that reporter, not as a universal service resolution.",
+      "commercial_interest": "None disclosed.",
+      "status": "reported_resolved_on_2026-11-14"
+    }
+  ],
+  "held_or_excluded": [
+    {
+      "title": "Fontly typography comparison",
+      "url": "https://fontly.io/how-well-do-gpt-image-2-6-sunburst-and-flare-set-type/",
+      "status": "held_date_unverified",
+      "reason": "No explicit publication or experiment date in retrieved body; search says last week. Provider links and a placeholder API host further limit attribution."
+    },
+    {
+      "title": "AI Samson primary results",
+      "url": "https://ltx.aifilmmaker.academy/gpt-image-2-6-sunburst/",
+      "status": "held_primary_unavailable",
+      "reason": "Primary page inaccessible on this pass; secondary summaries were not promoted to verified primary evidence."
+    },
+    {
+      "title": "Successive-edit detail degradation on an older model",
+      "url": "https://community.openai.com/t/image-detail-degrades-across-successive-v1-images-edits-requests/1412207",
+      "status": "excluded_model_and_date_mismatch",
+      "reason": "Older 2.5 report preceding the 2.6 release; not evidence of current 2.6 behavior."
+    },
+    {
+      "title": "Mixed launch-day texture discussion",
+      "url": "https://www.reddit.com/r/singularity/comments/1xo4rah/try_out_gpt_image_26_and_report_back/",
+      "status": "held_primary_date_uncertain",
+      "reason": "Opened primary body provided cached relative dates. Precise primary publication date, settings and denominators were not established."
+    },
+    {
+      "title": "Current support reply to an October reference-loss incident",
+      "url": "https://community.openai.com/t/image-generation-loses-reference-and-task-state-in-long-multi-image-projects/1403820/2",
+      "status": "excluded_as_current_behavioral_evidence",
+      "reason": "Advice dated November 13 concerns an October 6 incident. The new reply is not proof that the older failure persists on 2.6 or that the suggested intervention succeeded."
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "Q01",
+      "question": "Which optical title effects remain visibly effective at the intended thumbnail size?",
+      "status": "unverified",
+      "evidence_needed": "Actual output viewed without explanatory labels at the intended size; record the perceived effect and any ambiguity."
+    },
+    {
+      "id": "Q02",
+      "question": "Which connections from lyrics, song title or album title to a visual rule survive generation?",
+      "status": "unverified",
+      "evidence_needed": "Compare the supplied musical evidence, stated interpretation and visible image relationship; distinguish creator intent from an observer's reading."
+    },
+    {
+      "id": "Q03",
+      "question": "Does PR #8 improve visible first-round diversity and impact while preserving the selected concept?",
+      "status": "unverified",
+      "evidence_needed": "Review subsequent ordinary-use outputs, their assembled prompts and selected previews. No dedicated regeneration batch was run for this review."
+    }
+  ]
+}
