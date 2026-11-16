@@ -69,7 +69,9 @@ requirements take precedence; if the host cannot meet one, report that gap.
 - `concept-preview` produces title-integrated concept images for selection,
   with any unresolved lettering issues disclosed. These are not vetted finals. Use its declared
   preview minimum dimension, not the production requirement, for preview checks.
-- `production-candidate` uses a selected preview's original source and SHA-256.
+- `production-candidate` uses a selected preview source and SHA-256. For a
+  four-up sheet this is its unaltered selected panel crop; preserve the original
+  generated sheet, its hash, and quadrant mapping as provenance too.
   Keep its `preview_candidate_id`, interpretation, visual mechanism,
   `preserve_in_production` list, and composition signature. Preserve the selected
   intent rather than asking a higher-quality model to invent a cleaner design.
@@ -84,8 +86,8 @@ requirements take precedence; if the host cannot meet one, report that gap.
 
 If the host cannot edit the selected file or cannot meet production dimensions,
 retain the selected concept and report what remains incomplete. Do not create a
-different image, silently upscale it, or substitute a contact-sheet crop and
-claim it is the selected source. Preserve the existing export policy and record
+different image, silently upscale it, or treat a panel crop as the finished
+cover. Preserve the existing export policy and record
 any authorized delivery transformations.
 
 ## Static-cover scope

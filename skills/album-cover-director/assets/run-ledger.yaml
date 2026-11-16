@@ -36,7 +36,7 @@ jsonl_record:
   selected_source: # Copy the selected preview's evidence; never hash a replacement.
     candidate_id: null
     direction_id: null
-    source_path: null # Absolute original preview path, not a contact-sheet crop.
+    source_path: null # Absolute selected preview path; for a four-up sheet, the unaltered panel crop.
     source_sha256: null # Compute from the actual file; do not invent a digest.
     reason: null
   changed_variable: null

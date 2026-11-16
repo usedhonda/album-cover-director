@@ -199,13 +199,14 @@ diagrammatic, or product-like direction.
 
 ## Variants
 
-Generate independent candidates during `concept-preview`. Do not use one image
-and request palette-only variants when the brief requires structural diversity.
-Every preview is still a complete cover with the exact image-native title.
-Record its interpretation, visual mechanism, composition signature, prompt,
-actual source file, and SHA-256; a contact-sheet thumbnail is not that source.
+Generate distinct concepts during `concept-preview`: for the default twelve,
+use three 2×2 sheets as described in `concept-exploration.md`. Do not request
+palette-only variants when structural diversity is required. Each panel is a
+rough square cover with the exact image-native title. Retain each original sheet
+and the unaltered panel crop, its quadrant mapping and hashes; a later comparison
+thumbnail is not a substitute for either source.
 
-After selection, use the selected preview as the parent of a
+After selection, generate a new standalone cover using the selected preview as the parent of a
 `production-candidate`. Record `preview_candidate_id` and the selected source
 path/SHA-256 before editing. Check that the source still matches its recorded
 hash. Keep title silhouette, occupied area, reading route, negative space,

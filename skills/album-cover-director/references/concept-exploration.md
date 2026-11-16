@@ -67,11 +67,14 @@ direction:
 | Volume | Distinct preview directions | Production after selection |
 | --- | ---: | --- |
 | quick | 4 | 1 candidate per selected concept |
-| standard | 12 | 2 candidates per selected concept |
-| deep | 16 | 2 candidates per selected concept, with more deliberate comparison |
+| standard | 12 | 1 standalone candidate for the selected concept |
+| deep | 16 | 1 standalone candidate per selected concept |
 
-Generate one independent preview per direction. Explicit counts override the
-defaults. Split larger requests into boards of at most 24, preserving IDs
+For the standard 12, use [`select1from12`](../skills/select1from12/SKILL.md):
+generate three 2×2 sheets of four distinct concepts, select one, then produce it
+as a standalone cover.
+Explicit counts override the defaults; use groups of up to four for other counts.
+Split larger requests into boards of at most 24, preserving IDs
 across rounds. The legacy direct-production route can still use three
 directions with 3/6/12 total candidates; use it only when requested or when an
 existing choice makes exploration unnecessary.
@@ -131,21 +134,31 @@ square, not a promotional poster, an illustrated synopsis, or an optical-test
 sheet. Keep one dominant signal and a title/image relationship particular to
 the release. Do not make difference by adding copy, frames or clutter.
 
-Prompt each preview as one square cover, with the exact allowed title natively
-integrated. Request opaque output unless transparency is intentional. Never
-ask the image model for a sheet of 12 finished covers: shared palettes,
-cross-panel labels, and uncertain individual outputs make selection and
-source preservation harder. Specify visible letter anatomy, contact points,
+Prompt each 2×2 sheet as four separate square album-jacket ideas, each with
+the exact allowed title natively integrated. Assign each direction to a fixed
+quadrant in the prompt; request clear boundaries and no external labels inside
+the artwork. Keep the four concepts' composition, palette, viewpoint, and title
+mechanism independent, not variations on a shared scene. Request opaque output
+unless transparency is intentional. Specify visible letter anatomy, contact points,
 plane crossings, occlusion and depth for material/spatial/character concepts.
 A normal title printed on a dimensional sign is not letter-level integration.
 Preview quality may reduce fine finish, not erase the mechanism or postpone
-its optical relationship to production. Assemble independently generated files into the
-board afterward. Preview size/quality follow the available host; a 256 px
+its optical relationship to production. Save each original sheet and record its
+path, SHA-256, exact sent prompt, and quadrant-to-direction mapping in the
+existing ledger. Inspect the sheet; crop each actual square panel without
+altering or upscaling it and register the crop as that candidate's preview
+`output_path`, retaining its sheet provenance. Use those panel files in the
+existing board and selection scripts. Do not assume perfectly equal quadrants
+if the image did not produce them; a missing, merged, or unreadable panel is
+not a successful candidate. Preview size/quality follow the available host; a 256 px
 displayed thumbnail does not imply a 256 px generation request.
 
 When controls are exposed, use a fast iteration model and a suitable preview
 quality, then spend final-resolution work on selected ideas. When controls
 are not exposed, use the available image tool and record what is known.
+Three sheets mean three output images instead of twelve, but actual token and
+cost savings depend on host, image size, quality, inputs and retries; do not
+promise a percentage. Each panel has less detail than a full-size output.
 Do not promise exact API model selection, cost, latency, or batch concurrency
 from a prompt-only host. Consult `references/gpt-image-2.md`.
 
@@ -224,10 +237,11 @@ Japanese and mixed-script labels. Its default four-column layout shows:
 Labels belong outside the artwork; they never enter `allowed_readable_text`.
 Keep longer mechanisms and preview notes secondary. Attach or open the board
 in the host's supported preview surface. If HTML cannot be displayed, show
-the same individually generated thumbnails with their external labels; do
+the same panel thumbnails with their external labels; do
 not replace the requested visual comparison with a list of descriptions.
 
-The user can say “C07,” “C02 and C09,” or ask for another round. Repeat
+The default choice is one of the twelve, e.g. “C07”; the user may also say
+“C02 and C09” or ask for another round. Repeat
 `--candidate` for multiple independent selections. If the user requested
 automatic art direction, select from the inspected board and record the
 reason without asking for unnecessary confirmation. Otherwise the board is
@@ -240,8 +254,11 @@ preview paths/checksums, evidence links, mechanisms, planned composition, and
 `preserve_in_production` invariants. It starts with an empty production
 candidate list; the previews cannot masquerade as finished candidates.
 
-Use the selected image as the composition reference when the host supports
-editing or image references. Make the first production prompt an explicit
+Use the selected panel as the composition reference when the host supports
+editing or image references. Generate a new standalone square cover, not a
+cropped panel presented as a final. Preserve the original sheet, panel crop and
+their mapping; the crop is the selected preview source, not the generated sheet
+or the finished cover. Make the first production prompt an explicit
 translation of the selected concept: what to preserve, what needs work, and
 what must not be normalized. Do not translate “properly finish this” into
 more objects, a centered hero, glossy realism, or giant standalone lettering.

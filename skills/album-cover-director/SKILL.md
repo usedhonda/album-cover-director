@@ -56,8 +56,8 @@ inside that ignored artist-local directory. Do not commit or upload it.
 - Initial exploration: `quick` = 4 distinct ideas, `standard` = 12 (default),
   `deep` = 16. Explicit counts and budgets override these defaults. Each is
   a different direction, not another render of the same one.
-- After selection: generate 1 production candidate per selected idea for
-  `quick`, or 2 for `standard`/`deep`. Keep unused ideas available.
+- After selection: make one standalone production candidate from the chosen
+  idea; generate further candidates only when requested. Keep unused ideas available.
 - A request for direct production or an already chosen concept skips the
   board. Legacy three-direction runs retain their 3/6/12 candidate budgets.
 - Typography: `auto`, `image-native`, or `custom-wordmark`.
@@ -189,7 +189,7 @@ flat or pristine work, preserve its graphic clarity. The title must be largest
 Start `run-contract.json` from `assets/run-contract.json` with schema version 2
 and `stage: concept-preview`. Complete release text, evidence, runtime, rights,
 and the chosen directions. Run `scripts/prompt-preflight.py --contract
-run-contract.json`. Write `directions.md` and one prompt per concept. Keep
+run-contract.json`. Write `directions.md` and a distinct instruction per concept. Keep
 release-wide constraints separate from candidate-specific visual decisions;
 check the assembled prompt and reference roles once before sending. See
 [shared and direction-specific instructions](references/gpt-image-2.md#separate-shared-and-direction-specific-instructions). Define
@@ -201,11 +201,11 @@ golden casts. If warmth is intentional, name its cause, bounded regions, and
 neutral anchor. Do not invent an illumination requirement for a flat graphic
 palette. Use `references/gpt-image-2.md` for host-aware execution.
 
-Generate each concept independently, preserving its source file. Notice early
-if actual compositions start to converge and adjust the remaining ideas before
-spending calls on them. This is a light check during the same run, not a fixed
-pilot batch, extra test images or a per-image scoring loop. Do not ask
-for one image containing the whole grid. Record stage, prompt, runtime,
+For the default 12 concepts, use the bundled
+[`select1from12`](skills/select1from12/SKILL.md) workflow: three 2×2 preview
+sheets, selection of one of the twelve, then a new standalone cover.
+Check for visual convergence during the same run without extra test images or
+per-image scoring. Record stage, prompt, runtime,
 references, source dimensions, and result in `run-ledger.jsonl` using
 `assets/run-ledger.yaml`. Add each output and any visible lettering issue to
 `candidates`. An initial preview may have a disclosed glyph issue, but must
@@ -251,7 +251,9 @@ Use `scripts/concept-selection.py` to create `production-contract.json` from
 the selected previews. It preserves their source paths/checksums, evidence,
 mechanisms, composition signatures, and invariants. For a combination, name
 one primary composition and scope the donor trait; do not average all ideas.
-Use the primary image as a reference/edit source when supported. Record the
+For a sheet preview use the selected panel as a reference and generate one new
+standalone square cover, preserving the selected concept; a panel crop is not
+the finished artwork. Use the primary image as a reference/edit source when supported. Record the
 primary `preview_candidate_id` on each resulting production candidate.
 
 Switch to `stage: production-candidate`, apply the source-resolution capability

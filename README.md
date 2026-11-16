@@ -6,8 +6,11 @@ The project is for musicians, track makers, producers, independent labels, and d
 
 ## Explore widely, then finish the choice
 
-The default first pass is **12 different ideas**, each shown as a small image
-with an ID, short name, and the meaning it picks up from the music. `deep`
+The default first pass is **12 different ideas** on three four-panel preview
+sheets, each with an ID, short name, and the meaning it picks up from the music.
+Choose one and the skill generates a new standalone cover from that idea; the
+panel crop is not the final artwork. Actual savings depend on the host and run.
+`deep`
 opens that to 16. The goal is to make the first board interesting enough to
 choose from without having to ask for “more” first.
 
@@ -162,8 +165,8 @@ Run volumes:
 | Volume | Initial distinct concepts | Production candidates per selected concept |
 | --- | ---: | ---: |
 | quick | 4 | 1 |
-| standard (default) | 12 | 2 |
-| deep | 16 | 2 |
+| standard (default) | 12 | 1 |
+| deep | 16 | 1 |
 
 Explicit counts and budgets override these defaults. A request for direct
 production, or an existing selected concept, can skip the board. Legacy
